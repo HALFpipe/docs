@@ -1,0 +1,430 @@
+---
+title: "New UI"
+---
+
+Authors: Clara El Khantour, Lea Waller, Pierre Lune Bellec, Frank Hillary, Ilya Veer, Clara Moreau
+
+# How to launch the new UI
+
+::: {.panel-tabset}
+
+### Singularity/Apptainer
+
+__Note__: If running on a HPC, you need to run an Interactive Job on the cluster. To do this, please refer to your HPC’s documentation. Then load Singularity/Apptainer packages: `module load singularity`
+
+You can run with singularity or apptainer
+
+```bash
+apptainer run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.sif --use_cluster --tui 
+```
+
+### Docker
+
+You need to run the following command via the terminal on Docker Desktop.
+
+```bash
+docker run --interactive --tty --volume /:/ext halfpipe/halfpipe:1.2.3 --subject-chunks --nipype-n-procs 1 --keep none --tui
+```
+
+__Note 1__: The flags `--subject-chunks` and `--nipype-n-procs 1` are optional. While they may slow down the pipeline, they help ensure you don’t exceed your computer’s processing capacity. Use them if you're concerned about system limitations.
+
+__Note 2__: On some systems, Docker will restrict the number of CPU cores available to HALFpipe by default. If your computer can handle it, you can allocate more CPUs using the Docker flag `--cpus`. Refer to your system’s documentation to learn your CPU limitations.
+
+By adding more CPUs, you can add the HALFpipe flag --nipype-n-procs to accelerate the process. For example: 
+```bash
+docker run --interactive --tty --cpus=3 --volume /:/ext halfpipe/halfpipe:1.2.3 --nipype-n-procs --subject-chunks --keep none
+```
+:::
+
+# Pipeline settings
+You are now on the new UI of HALFpipe. You will just have to follos the instructions below by using your mouse and clinking on the different parameters you would like to use.
+
+::: {.callout-tip collapse="true"}
+## Understanding the Icons
+
+With this new UI, there are different icons you can interact with:
+
+👁️ : to visualize files found
+
+🖌️ : to edit the section
+
+❌ : to delete the section
+
+❎ : item selected
+
+✖️ : item not selected
+
+ℹ️ : to get more information about the section
+:::
+
+## Specify your working directory
+- Click on Browse.
+- Indicate the path you want your working directory to be located
+
+::: {.callout-note collapse="true"}
+### You can either select an already existing folder, or create a new one. 
+If you want to create a new file, simply add the name of the directory at the end of the path. A message indicating that the file was not found will appear, but then it will ask if you want to create this working directory.
+:::
+
+## Specify your Data location
+Indicate whether or not the data are in BIDS format
+
+::: {.panel-tabset}
+### If in BIDS, specify the path
+1. Click on browse
+2. Specify the path and then click ok. 
+
+Files will be automatically found, this can take a moment.
+
+### If not in BIDS 
+1. Switch the button to off
+2. Click on Browse for the T1W-weighted images
+3. Select the path of 1 subject, you will then edit this path to find all subjects.
+4. Delete the unique subject ID and replace it with {subject}. If applicable, do the same with {run} and {session}.
+5. Do the same for the BOLD data and Field maps (if applicable)
+::: 
+
+Verify all the files have been properly found. You can click on the 👁️ to see the detail of the file.
+
+## General Preprocessing settings
+1. Switch recon-all to on
+2. Switch slice timing to on. This process can take a little time, please wait. 
+- If applicable, select the slice acquisition.
+- Check the metadata automatically found. Then click yes if these are the expected numbers, otherwise no and specify them.
+3. Switch advanced setting to on
+
+::: {.callout-important collapse="False"}
+- If on a cluster, switch “generate workflow for running on a cluster” to on
+:::
+- You can specify the path to the freesurfer license.
+- Choose which intermediate files to keep. Select None if you have space constraints.
+
+# Features
+
+- Click on New
+
+::: {.callout-note collapse="true"}
+### Seed-based connectivity
+- Select Seed-based connectivity
+- Feature name: Type seedCorr1 (adjust the number for each pipeline)
+
+#### General settings
+
+1. Select task
+-If applicable select session(s) or task(s) for resting state data
+
+2. Seed images
+- Add path to seed images. Click on browse to indicate the path. 
+- Select one existing seed. Then modify the path with {seed}.nii.gz
+- Proceed with these values: yes. Then verify that all the seeds are selected.
+5. Minimum brain coverage:
+- Set to 0.8
+6. Preprocesssing settings
+- Switch low-pass temporal filter width to OFF
+
+#### Remove confounds
+- Select le confunds of Pipeline 1
+- Then click on duplicate and go directly to the section Remove confound to select the other confounds.
+
+::: {.panel-tabset}
+##### Pipeline 1
+✅ aCompCor (top five components)
+
+##### Pipeline 2
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+✅ Motion scrubbing
+
+##### Pipeline 3
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+✅ Motion scrubbing
+
+✅ Global signal
+
+##### Pipeline 4 (optional)
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+##### Pipeline 5 (optional)
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+✅ Global signal
+:::
+Once you are done with all the pipeline, click on New and got to the next Feature section
+
+:::
+
+::: {.callout-note collapse="true"}
+### Atlas-based connectivity matrix
+- Select Atals-based connectivity matrix
+- Feature name: Type corrMatrix1 (adjust the number for each pipeline)
+
+#### General settings
+
+1. Select task
+-If applicable select session(s) or task(s) for resting state data
+
+2. Atlas images
+- Add path to atlas images. Click on browse to indicate the path. 
+- Select one existing atlas. Then modify the path with {atlas}.nii.gz
+- Proceed with these values: yes. Then verify that the atlas is selected.
+5. Minimum brain coverage:
+- Set to 0.5
+6. Preprocesssing settings
+- Switch low-pass temporal filter width to OFF
+
+#### Remove confounds
+- Select le confunds of Pipeline 1
+- Then click on duplicate and go directly to the section Remove confound to select the other confounds.
+
+::: {.panel-tabset}
+##### Pipeline 1
+✅ aCompCor (top five components)
+
+##### Pipeline 2
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+✅ Motion scrubbing
+
+##### Pipeline 3
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+✅ Motion scrubbing
+
+✅ Global signal
+
+##### Pipeline 4 (optional)
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+##### Pipeline 5 (optional)
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+✅ Global signal
+:::
+Once you are done with all the pipeline, click on New and got to the next Feature section
+
+:::
+
+::: {.callout-note collapse="true"}
+### ReHo
+- Select ReHo
+- Feature name: Type reHo1 (adjust the number for each pipeline)
+
+#### General settings
+
+1. Select task
+- If applicable select session(s) or task(s) for resting state data
+
+2. Preprocessing settings
+- Switch low-pass temporal filter width to OFF
+
+#### Remove confounds
+- Select le confunds of Pipeline 1
+- Then click on duplicate and go directly to the section Remove confound to select the other confounds.
+
+::: {.panel-tabset}
+##### Pipeline 1
+✅ aCompCor (top five components)
+
+##### Pipeline 2
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+✅ Motion scrubbing
+
+##### Pipeline 3
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+✅ Motion scrubbing
+
+✅ Global signal
+
+##### Pipeline 4 (optional)
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+##### Pipeline 5 (optional)
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+✅ Global signal
+:::
+Once you are done with all the pipeline, click on New and got to the next Feature section
+
+:::
+
+::: {.callout-note collapse="true"}
+### fALFF
+- Select Atals-based connectivity matrix
+- Feature name: Type fALFF1 (adjust the number for each pipeline)
+
+#### General settings
+
+1. Select task
+- If applicable select session(s) or task(s) for resting state data
+
+2. Preprocessing settings
+- Switch low-pass temporal filter width to OFF
+
+#### Remove confounds
+- Select le confunds of Pipeline 1
+- Then click on duplicate and go directly to the section Remove confound to select the other confounds.
+
+::: {.panel-tabset}
+##### Pipeline 1
+✅ aCompCor (top five components)
+
+##### Pipeline 2
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+✅ Motion scrubbing
+
+##### Pipeline 3
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+✅ Motion scrubbing
+
+✅ Global signal
+
+##### Pipeline 4 (optional)
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+##### Pipeline 5 (optional)
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+✅ Global signal
+:::
+:::
+
+Once you are now done with all the features and pipelines 🎉
+
+# Check and Run
+
+1. Click on Refresh.
+
+You will see the spec.json file that contain all the settings and parameters you have selected.
+
+::: {.callout-tip collapse="false"}
+If you modify the settings or features, always refresh before running.
+:::
+
+2. Click on save.
+
+3. Click on run. 
+
+Let it run until you see a message saying the submit.sh files have been created. You can now edit and run the submit.sh  🎉 (same as in the full manual)
+
+::: {.panel-tabset}
+## On HPC
+
+Check out the Run HALFpipe page.
+
+Now run the pipeline by submitting the submit.slurm script that has been created in the pipeline folder. 
+
+| Submit file | Commande line            |
+|:------------|:-------------------------|
+| SLURM       | `sbatch submit.slurm.sh` |
+| SGE         | `qsub submit.sge.sh`     |
+| Torque/PBS  | `qsub submit.torque.sh`  |
+
+: Example of command line syntax to submit a job
+
+The pipeline will now preprocess all subjects. When they are finished, the quality has to be checked (see webpage).
+
+## On a local machine
+
+If you are running this on a local computer, the pipeline will have started. Once it has finished, continue to section 9 to check pre-processing.
+:::
