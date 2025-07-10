@@ -1,6 +1,5 @@
 ---
 title: "Installation instructions"
-lightbox: true
 author: 
     name: Clara El Khantour, Lea Waller, Seann Wang, Pierre Lune Bellec, Frank Hillary, Ilya Veer, Clara Moreau
 
@@ -98,11 +97,7 @@ If using Apptainer or Singularity, the command syntax is identical. Replace the 
 :::
 :::
 
-# Working Environment Setup
-
-::: {.callout-note collapse="false"}
-# Steps to prepare the environment
-
+## Working Environment Setup
 Here are the steps of setting up your base and working directory where HALFpipe will be run.
 
 1. Open a terminal session. *Only if using a HPC*: connect to your server.
@@ -116,15 +111,12 @@ Here are the steps of setting up your base and working directory where HALFpipe 
 4. Then do `cd your_enigma_directory` to enter the folder just created.
 
 5. Then type `mkdir your_working_dir` to create the working directory where all the outputs will be stored.
-:::
 
 # Downloading HALFpipe
 
 **Download the container image file:**
-1. Open a terminal session.
 
 ::: {.panel-tabset}
-
 ## Docker desktop
 1. Open the terminal in Docker desktop. Refer to this documentation: Explore Docker Desktop 
 2. Use the following command
@@ -146,25 +138,19 @@ Here are the steps of setting up your base and working directory where HALFpipe 
 | Singularity (3.x) or Apptainer | `curl -O https://download.fmri.science/singularity/halfpipe-1.2.3.sif`                       | 
 |                                | Run `find $(pwd) -maxdepth 1` to show all files in the current directory with their full path. You should see a file named `halfpipe-1.2.3.sif`, or similar, listed among the files. |
 |                                | This file is the container image that includes all software and code needed for processing. Please note down the path to this file, you will need this later. |
-| Singularity (2.x)             | `curl -O https://download.fmri.science/singularity/halfpipe-1.2.3.simg`|
+| Singularity (2.x)              | `curl -O https://download.fmri.science/singularity/halfpipe-1.2.3.simg`                      |
 
 :::
 
 ::: {.callout-important collapse="false"}
 ### HALFpipe version
 **Note:** We recommend installing version 1.2.3 of HALFpipe, which includes fMRIPrep LTS. Compatibility testing with the newer fMRIPrep release is ongoing (as of April 2025, already available in the development version).
+
+**Additional Information:** You will need the paths to both your data and the atlases when running HALFpipe. You will need to specify their locations during the settings configuration. These files do not need to be in the same location as the pipeline image file—just be sure you know where they are stored. To do this, please use the command cd to navigate to your atlas or data folder, then run the command `pwd` (or `cd` on Windows).
 :::
 
-::: {.callout-tip collapse="false"}
-### Additional Information
-You will need the paths to both your data and the atlases when running HALFpipe. You will need to specify their locations during the settings configuration. These files do not need to be in the same location as the pipeline image file—just be sure you know where they are stored. To do this, please use the command cd to navigate to your atlas or data folder, then run the command pwd (or cd on Windows).
-:::
 
-# Working Environment Check
-
-::: {.callout-note collapse="false"}
-# Check your working Environment before launching the pipeline
-
+## Working Environment Check
 Here we ensure that the working environment is correctly set up before beginning to run HALFpipe.
 
 1. Open a terminal session.
@@ -196,4 +182,3 @@ Open a terminal session. Only if using a HPC: connect to your server.
 7. Ensure that these items are accessible in your environment before proceeding:
 - Atlas and Seed files (downloaded in section [Before Starting](#before-starting))
 - Your unprocessed, resting-state fMRI dataset. 
-:::
