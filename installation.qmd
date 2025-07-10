@@ -22,8 +22,11 @@ author:
 *Estimated with a sample size of n=155 and n=261.*
 
 On a local machine:
+
 - Few hours (varies by dataset).
+
 On High-Performance Cluster:
+
 - Working directory creation: >1 hour (varies by dataset). 
 - Full pipeline run: Approximately 2–3 hours.
 :::
@@ -66,7 +69,7 @@ We recommend that you write down the path where these files are located, you wil
 1. Use Docker from the install link below.
 2. Install Docker Desktop
 
-| Container         | Installation                                                                          |
+| Platform          | Installation                                                                          |
 |:------------------|:--------------------------------------------------------------------------------------|
 | Docker Desktop    | Follow install instructions here: [Docker Desktop](https://docs.docker.com/desktop/)  |
 
@@ -81,7 +84,7 @@ We recommend that you write down the path where these files are located, you wil
 
 2. Install the platform
 
-| Container         | Installation                                                                                 |
+| Platform          | Installation                                                                                 |
 |:------------------|:---------------------------------------------------------------------------------------------|
 | Singularity (3.x) | Follow install instructions [link](https://sylabs.io/guides/3.5/user-guide/quick_start.html) |
 | Singularity (2.x) | `sudo apt install singularity-container`                                                     |
@@ -92,7 +95,7 @@ We recommend that you write down the path where these files are located, you wil
 - If you see instructions on using Singularity and do not get `command not found`, then you can proceed to the next section.
 
 ::: {.callout-tip collapse="true"}
-## Apptainer/Singularity, what's the difference?
+## Note
 If using Apptainer or Singularity, the command syntax is identical. Replace the tool name accordingly in the commands below.
 :::
 :::
@@ -118,7 +121,7 @@ Here are the steps of setting up your base and working directory where HALFpipe 
 
 ::: {.panel-tabset}
 ## Docker desktop
-1. Open the terminal in Docker desktop. Refer to this documentation: Explore Docker Desktop 
+1. Open the terminal in Docker desktop. Refer to this documentation: [Explore Docker Desktop](https://docs.docker.com/desktop/use-desktop/#docker-terminal) 
 2. Use the following command
 
 | Container         | Instructions                                                          |
@@ -129,7 +132,7 @@ Here are the steps of setting up your base and working directory where HALFpipe 
 
 
 ## Singularity or Apptainer:
-1. Open a terminal session. Only if using a HPC: connect to your server.
+1. Open a terminal session. *Only if using a HPC*: connect to your server.
 2. Navigate to your base directory with `cd path/to/your_working_space/your_enigma_directory`
 3. Use one of the following commands:
 
@@ -144,9 +147,9 @@ Here are the steps of setting up your base and working directory where HALFpipe 
 
 ::: {.callout-important collapse="false"}
 ### HALFpipe version
-**Note:** We recommend installing version 1.2.3 of HALFpipe, which includes fMRIPrep LTS. Compatibility testing with the newer fMRIPrep release is ongoing (as of April 2025, already available in the development version).
+**Note:** We recommend installing version **1.2.3** of HALFpipe, which includes fMRIPrep LTS. Compatibility testing with the newer fMRIPrep release is ongoing (as of April 2025, already available in the development version).
 
-**Additional Information:** You will need the paths to both your data and the atlases when running HALFpipe. You will need to specify their locations during the settings configuration. These files do not need to be in the same location as the pipeline image file—just be sure you know where they are stored. To do this, please use the command cd to navigate to your atlas or data folder, then run the command `pwd` (or `cd` on Windows).
+**Additional Information:** You will need the paths to **both your data and the atlases** when running HALFpipe. You will need to specify their locations during the settings configuration. These files do not need to be in the same location as the pipeline image file—just be sure you know where they are stored. To do this, please use the command cd to navigate to your atlas or data folder, then run the command `pwd` (or `cd` on Windows).
 :::
 
 
@@ -162,7 +165,9 @@ Open the terminal in Docker desktop. Refer to this documentation: [Explore Docke
 *Note that you need to launch HALFpipe via Docker Desktop.*
 
 ## Singularity or Apptainer:
-Open a terminal session. Only if using a HPC: connect to your server.
+Open a terminal session. 
+
+*Only if using a HPC*: connect to your server.
 :::
 
 2. Navigate to your working directory using this command: `cd path/to/your_working_space/your_enigma_directory/your_working_dir` 
@@ -173,10 +178,10 @@ Open a terminal session. Only if using a HPC: connect to your server.
 - Freesurfer license file (license.txt).
 - You can move the license.txt file using the command `mv path/to/license.txt path/to/your_working_space/your_enigma_directory/your_working_dir` (on Windows, use `move`)
 
-5. Navigate back to your base directory (i.e. your_enigma_directory) using this command: `cd ..`
+5. Navigate back to your base directory (i.e. `your_enigma_directory`) using this command: `cd ..`
 
 6. Use the command `ls`. Ensure that these items are directly inside your base directory before proceeding:
-- Your working directory (i.e. your_working_dir)
+- Your working directory (i.e. `your_working_dir`)
 - If Singularity or Apptainer: HALFpipe container file (.sif or .simg)
 
 7. Ensure that these items are accessible in your environment before proceeding:
