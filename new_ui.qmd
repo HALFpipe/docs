@@ -149,8 +149,8 @@ Recommended for multiverse analyses (optional pipelines)
 
 3. Navigate through the sections below one by one.
 
-::: {.callout-note collapse="true"}
-### Seed-based connectivity
+::: {.callout-note collapse="true" icon=false}
+### 1. Seed-based connectivity
 - Select Seed-based connectivity
 - Feature name: Type seedCorr1
 
@@ -184,8 +184,8 @@ Recommended for multiverse analyses (optional pipelines)
 
 :::
 
-::: {.callout-note collapse="true"}
-### Atlas-based connectivity Matrix
+::: {.callout-note collapse="true" icon=false}
+### 2. Atlas-based connectivity Matrix
 - Select Atlas-based connectivity matrix
 - Feature name: Type corrMatrix1
 
@@ -219,8 +219,8 @@ Recommended for multiverse analyses (optional pipelines)
 
 :::
 
-::: {.callout-note collapse="true"}
-### ReHo
+::: {.callout-note collapse="true" icon=false}
+### 3. ReHo
 - Select ReHo
 - Feature name: Type reHo1
 
@@ -247,8 +247,8 @@ Recommended for multiverse analyses (optional pipelines)
 
 :::
 
-::: {.callout-note collapse="true"}
-### fALFF
+::: {.callout-note collapse="true" icon=false}
+### 5. fALFF
 - Select fALFF
 - Feature name: Type fALFF1 (adjust the number for each pipeline)
 
