@@ -1,10 +1,38 @@
 [
   {
+    "objectID": "analysis.html",
+    "href": "analysis.html",
+    "title": "HALFpipe",
+    "section": "",
+    "text": "Hello!\n\nimport geopandas as gp\n\n...\n\nEllipsis"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "quality-control.html",
+    "href": "quality-control.html",
+    "title": "Quality control",
+    "section": "",
+    "text": "The manual and so on"
+  },
+  {
+    "objectID": "manual_old_ui.html",
+    "href": "manual_old_ui.html",
+    "title": "Manual Old UI",
+    "section": "",
+    "text": "If you are running it on a local computer: run 6.1\nIf you are running it on a high-performance cluster: run 6.2\nNote: if you have a large dataset (&gt;500 participants), we recommend that you look at point 5 on the Troubleshooting page (section 11) or contact halfpipe@fmri.science. You can also join the HALFpipe team Mattermost (similar to Slack) using this link.\n\n\n\nOpen a terminal session (if using Docker open the terminal via Docker Desktop).\n\nRun the appropriate command for your container platform.\nNote: to access your files more easily, you can bind in the path where the data, working directory and atlases are located.\nFor example: --bind /home/user/scratch:/home/user/scratch\n\n\n\n\nSingularity or Apptainer (3.x)\n\n\nsingularity run --contain --cleanenv --bind /:/ext \\\nhalfpipe_1.2.3.sif --subject-chunks --nipype-n-procs 1 --keep none\n\n\n\n\nSingularity (2.x)\n\n\nsingularity run --contain --cleanenv --bind /:/ext \\\nhalfpipe_1.2.3.simg --subject-chunks --nipype-n-procs 1 --keep none\n\n\n\n\nDocker Desktop\n\n\n\nOn MacOS\n\ndocker run --interactive --tty --volume /:/ext \\\nhalfpipe/halfpipe:1.2.3 --subject-chunks --nipype-n-procs 1 --keep none\n\nOn Windows:\n\n\n\nUse forward slashes (/) instead of backslashes () to specify file paths.\n\n\nBe sure to replace C: with the appropriate drive letter for your system.\n\n\ndocker run --interactive --tty --volume C:/:/ext \\\nhalfpipe/halfpipe:1.2.3 --subject-chunks --nipype-n-procs 1 --keep none\n\n\n\n\nNote 1\nThe flags --subject-chunks and --nipype-n-procs 1 are optional.\nWhile they may slow down the pipeline, they help ensure you don’t exceed your computer’s processing capacity.\nUse them if you’re concerned about system limitations.\n\n\nNote 2\nOn some systems, Docker will restrict the number of CPU cores available to HALFpipe by default.\nIf your computer can handle it, you can allocate more CPUs using the Docker flag --cpus.\nRefer to your system’s documentation to learn your CPU limitations.\nBy adding more CPUs, you can add the HALFpipe flag --nipype-n-procs to accelerate the process.\n\nExample using Docker:\ndocker run –interactive –tty –cpus=3 –volume /:/ext halfpipe/halfpipe:1.2.3 –nipype-n-procs –subject-chunks –keep none\n\nGo to Section 7.\n\n\n\n\n\nOpen a terminal session and connect to your HPC.\nRunning an Interactive Job on the cluster\n\nOn HPC, start an interactive job to run the HALFpipe container. To do this, please refer to your HPC’s documentation or your IT support. Here are a few examples of how to do this:\n\n\n\nSLURM\n\n\nsrun --time 0-6 --ntasks=1 --pty bash\n\n\n\n\nSGE\n\n\nqlogin -now no\n\n\n\n\nTorque / PBS\n\n\nqsub -I -l walltime=12:00:00\n\n\n\nLoad Singularity/Apptainer packages: module load singularity\nNote: Re-run this command every time you log out and back in again, and every time you start working on a node.\n\nRun the Execution Command for your container software.\n\n\n\n\nSingularity (3.x)\n\n\nsingularity run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.sif --use-cluster\n\n\n\n\nSingularity (2.x)\n\n\nsingularity run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.simg --use-cluster\n\n\n\n\nApptainer\n\n\napptainer run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.sif --use-cluster\n\n\n\n\nGo to Section 7.\n\nAdditional Information:\n\nFile Location: Ensure the HALFpipe_1.2.3.sif file is in your current working directory or specify its full path.\nDirectory Binding: The –bind (or -B) option maps directories from your host system into the container. For example, /home/user/Documents on the host becomes /ext/home/user/Documents inside the container.\nCluster Flag: Use the –use-cluster flag when running the execution command on an HPC."
+  },
+  {
+    "objectID": "manual_old_ui.html#launching-the-pipeline",
+    "href": "manual_old_ui.html#launching-the-pipeline",
+    "title": "Manual Old UI",
+    "section": "",
+    "text": "If you are running it on a local computer: run 6.1\nIf you are running it on a high-performance cluster: run 6.2\nNote: if you have a large dataset (&gt;500 participants), we recommend that you look at point 5 on the Troubleshooting page (section 11) or contact halfpipe@fmri.science. You can also join the HALFpipe team Mattermost (similar to Slack) using this link.\n\n\n\nOpen a terminal session (if using Docker open the terminal via Docker Desktop).\n\nRun the appropriate command for your container platform.\nNote: to access your files more easily, you can bind in the path where the data, working directory and atlases are located.\nFor example: --bind /home/user/scratch:/home/user/scratch\n\n\n\n\nSingularity or Apptainer (3.x)\n\n\nsingularity run --contain --cleanenv --bind /:/ext \\\nhalfpipe_1.2.3.sif --subject-chunks --nipype-n-procs 1 --keep none\n\n\n\n\nSingularity (2.x)\n\n\nsingularity run --contain --cleanenv --bind /:/ext \\\nhalfpipe_1.2.3.simg --subject-chunks --nipype-n-procs 1 --keep none\n\n\n\n\nDocker Desktop\n\n\n\nOn MacOS\n\ndocker run --interactive --tty --volume /:/ext \\\nhalfpipe/halfpipe:1.2.3 --subject-chunks --nipype-n-procs 1 --keep none\n\nOn Windows:\n\n\n\nUse forward slashes (/) instead of backslashes () to specify file paths.\n\n\nBe sure to replace C: with the appropriate drive letter for your system.\n\n\ndocker run --interactive --tty --volume C:/:/ext \\\nhalfpipe/halfpipe:1.2.3 --subject-chunks --nipype-n-procs 1 --keep none\n\n\n\n\nNote 1\nThe flags --subject-chunks and --nipype-n-procs 1 are optional.\nWhile they may slow down the pipeline, they help ensure you don’t exceed your computer’s processing capacity.\nUse them if you’re concerned about system limitations.\n\n\nNote 2\nOn some systems, Docker will restrict the number of CPU cores available to HALFpipe by default.\nIf your computer can handle it, you can allocate more CPUs using the Docker flag --cpus.\nRefer to your system’s documentation to learn your CPU limitations.\nBy adding more CPUs, you can add the HALFpipe flag --nipype-n-procs to accelerate the process.\n\nExample using Docker:\ndocker run –interactive –tty –cpus=3 –volume /:/ext halfpipe/halfpipe:1.2.3 –nipype-n-procs –subject-chunks –keep none\n\nGo to Section 7.\n\n\n\n\n\nOpen a terminal session and connect to your HPC.\nRunning an Interactive Job on the cluster\n\nOn HPC, start an interactive job to run the HALFpipe container. To do this, please refer to your HPC’s documentation or your IT support. Here are a few examples of how to do this:\n\n\n\nSLURM\n\n\nsrun --time 0-6 --ntasks=1 --pty bash\n\n\n\n\nSGE\n\n\nqlogin -now no\n\n\n\n\nTorque / PBS\n\n\nqsub -I -l walltime=12:00:00\n\n\n\nLoad Singularity/Apptainer packages: module load singularity\nNote: Re-run this command every time you log out and back in again, and every time you start working on a node.\n\nRun the Execution Command for your container software.\n\n\n\n\nSingularity (3.x)\n\n\nsingularity run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.sif --use-cluster\n\n\n\n\nSingularity (2.x)\n\n\nsingularity run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.simg --use-cluster\n\n\n\n\nApptainer\n\n\napptainer run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.sif --use-cluster\n\n\n\n\nGo to Section 7.\n\nAdditional Information:\n\nFile Location: Ensure the HALFpipe_1.2.3.sif file is in your current working directory or specify its full path.\nDirectory Binding: The –bind (or -B) option maps directories from your host system into the container. For example, /home/user/Documents on the host becomes /ext/home/user/Documents inside the container.\nCluster Flag: Use the –use-cluster flag when running the execution command on an HPC."
   },
   {
     "objectID": "index.html",
@@ -14,17 +42,24 @@
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
-    "objectID": "analysis.html",
-    "href": "analysis.html",
-    "title": "HALFpipe",
-    "section": "",
-    "text": "Hello!\n\nimport geopandas as gp\n\n...\n\nEllipsis"
+    "objectID": "manual_old_ui.html#on-a-high-performance-cluster-hpc",
+    "href": "manual_old_ui.html#on-a-high-performance-cluster-hpc",
+    "title": "Manual Old UI",
+    "section": "6.2 On a High-Performance Cluster (HPC)",
+    "text": "6.2 On a High-Performance Cluster (HPC)\n1: Open a terminal session and connect to your HPC.\n\n2: Running an Interactive Job on the cluster\nOn HPC, start an interactive job to run the HALFpipe container. To do this, please refer to your HPC’s documentation or your IT support. Here are a few examples of how to do this:\n\n\n\nSLURM\n\n\nsrun --time 0-6 --ntasks=1 --pty bash\n\n\n\n\nSGE\n\n\nqlogin -now no\n\n\n\n\nTorque / PBS\n\n\nqsub -I -l walltime=12:00:00\n\n\n\n\nLoad Singularity/Apptainer packages: module load singularity\nNote: Re-run this command every time you log out and back in again, and every time you start working on a node.\n3: Run the Execution Command for your container software.\n\n\n\nSingularity (3.x)\n\n\nsingularity run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.sif --use-cluster\n\n\n\n\nSingularity (2.x)\n\n\nsingularity run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.simg --use-cluster\n\n\n\n\nApptainer\n\n\napptainer run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.sif --use-cluster\n\n\n\n4: Go to Section 7.\nAdditional Information:\n\nFile Location: Ensure the HALFpipe_1.2.3.sif file is in your current working directory or specify its full path.\nDirectory Binding: The –bind (or -B) option maps directories from your host system into the container. For example, /home/user/Documents on the host becomes /ext/home/user/Documents inside the container.\nCluster Flag: Use the –use-cluster flag when running the execution command on an HPC."
   },
   {
-    "objectID": "quality-control.html",
-    "href": "quality-control.html",
-    "title": "Quality control",
-    "section": "",
-    "text": "The manual and so on"
+    "objectID": "manual_old_ui.html#pipeline-setting",
+    "href": "manual_old_ui.html#pipeline-setting",
+    "title": "Manual Old UI",
+    "section": "7. Pipeline Setting",
+    "text": "7. Pipeline Setting"
+  },
+  {
+    "objectID": "manual_old_ui.html#pipeline-settings",
+    "href": "manual_old_ui.html#pipeline-settings",
+    "title": "Manual Old UI",
+    "section": "7. Pipeline Settings",
+    "text": "7. Pipeline Settings\nYou have now oppened the user interface, which should look like this:\n\nThe prompts that will be displayed by HALFpipe are shown below in blue, examples are in yellow, answers that need to be input/selected are underscored and red.\nWe will first specify the Data (see section 7.1) and then the Features (see section 7.2).\nNote: If you want to go back/deselect an option, you can use Ctrl+C\n\n7.1 DATA\n\nSpecify Working directory: Your output folder.\n\nYou can navigate using the Up/Down arrow keys ↓ to go to a folder and the right arrow key → to select this folder.\n\nDo this until you get to path/to/your_working_directory\n\nIs the data available in BIDS format?\nIf your data is already in BIDS format, follow the instructions of point 2.1. If not, follow the instructions of point 2.2.\nNote: When running on a local computer, be aware that the BIDS format is very strict. If you’re unsure whether your data is properly formatted, we recommend answering “No” to this question and specifying the file name manually, as shown in Point 2.2. This can help prevent errors during execution."
   }
 ]
