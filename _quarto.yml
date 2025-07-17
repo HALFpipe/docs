@@ -5,20 +5,19 @@ website:
   title: "HALFpipe"
   navbar:
     left:
-      - href: index.qmd
+      - file: index.qmd
         text: Home
-      - about.qmd
-      - quality-control.qmd
-      - analysis.ipynb
-      - README.rst
+      - file: about.qmd
+        text: About
+      - file: quality-control.qmd
+        text: Quality Control
+      - file: analysis.ipynb
+        text: Analysis
+      - file: manual_old_ui.qmd
+        text: Manual Old UI
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: cosmo
     css: styles.css
     toc: true
-
-
-
