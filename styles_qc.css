@@ -1,0 +1,28 @@
+/* css styles */
+
+
+table.bordered {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table.bordered td {
+  border: 1px solid #aaa;
+  padding: 8px;
+  vertical-align: top;
+}
+
+.grid-item {
+    width: 25%;
+    float: left;
+    background: #FFFFFF;
+    border: 2px solid #333;
+    border-color: hsla(0, 0%, 0%, 0.5);
+    border-radius: 5px;
+}
+figcaption {
+    display: none;
+}
+.quarto-figure {
+    margin-bottom: 0px;
+    }
