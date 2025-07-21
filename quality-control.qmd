@@ -117,9 +117,9 @@ The reports contain images for each participant for the following pre-processing
 5. EPI ICA-based artefact removal
 6. EPI spatial normalisationƒ
 
-**Each pre-processing step should be rated for each participant (good, uncertain, bad)** using the emoticons. You can zoom in by clicking on the report (or clicking on 'report detail view' from the dropdown menu). All images/subjects should be rated (i.e., either good, uncertain, or bad), in order to have a comprehensive QA from each site.
+**Each pre-processing step should be rated for each participant (<span style="color: #28a745;">good</span>, <span style="color: #f4a261;">uncertain</span>, <span style="color: #d00;">bad</span>)** using the emoticons. You can zoom in by clicking on the report (or clicking on 'report detail view' from the dropdown menu). All images/subjects should be rated (i.e., either good, uncertain, or bad), in order to have a comprehensive QA from each site.
 
-Instead of using the mouse clicks to rate the images, you can also use the following keyboard acuts: [w] rates image as good, [s] as uncertain and [x] as bad. The keys [d] and [a] jump to the next, respectively the previous image. 
+Instead of using the mouse clicks to rate the images, you can also use the following keyboard acuts: [w] rates image as good, [s] as uncertain and [x] as <span style="color: #d00;">bad</span>. The keys [d] and [a] jump to the next, respectively the previous image. 
 
 After rating the images (see below for the explanation), the rating should be exported by going to the menu (the icon in the upper left corner, see example) of the reports page, and then clicking **"Export"**. They will be saved as ‘exclude.json’. The ratings are also displayed in the summary and ratings for each feature chart. If ratings do not get exported, there's a risk of losing your progress once you delete your cookies. 
 
@@ -133,7 +133,7 @@ Below we report examples of each pre-processing step, how they should look like,
 
 ::: {.callout-important collapse="false"}
 
-If you rate a subject as **'bad'*** in one of the images, it will later automatically be excluded from the group analysis. 
+If you rate a subject as **'<span style="color: #d00;">bad</span>'*** in one of the images, it will later automatically be excluded from the group analysis. 
 
 Obvious issues (e.g., large portion of the brain missing after skull stripping, poor T1 or EPI normalisation, very clear artefacts in the EPI showing in the tSNR) are usually worth the exclusion of the subject (or you can try to re-run the subject if the problem is for example skull stripping). 
 
@@ -146,14 +146,14 @@ The carpet plot and the ICA AROMA report can be hard to interpret on their own a
 ### T1w skull stripping 
 Skull stripping is the process separating the brain (cortex and cerebellum) from the skull. The red line follows the outline of the brain and it separates it from the skull.
 
-**Example of a good subject** 
+**<span style="color: #28a745;">Example of a good subject</span>** 
 
 - There are no skull stripping errors, such as portions of the brain missing, or too much of the skull retained
 - The red line follows the outline of the brain
 
 {{< include /examples/qc/_skull_stripping_good.qmd >}}
 
-**Example of a bad subject**
+**<span style="color: #d00;">Example of a bad subject</span>** 
 
 - There are skull stripping errors, such as portions of the brain missing, or too much of the skull retained
 - **NOTE:** check all the images (slices) in the report. If only one image (slice) looks problematic, it is possible that the subject is okay and it is just a visual issue in that particular screenshot 
@@ -167,13 +167,13 @@ This QC step shows the registration of the T1 image to MNI space.
 The registered T1 image is shown in the background with a brain atlas in MNI space as an overlay.
 
 
-**Example of a good subject**
+**<span style="color: #28a745;">Example of a good subject</span>** 
 
 - If the registration performed well, you should see an overlap (i.e., correspondence of structures) between the MNI template and the T1 registered to the MNI space. 
 
 {{< include /examples/qc/_dt1w_spatial_normalisation_good.qmd >}}
 
-**Example of a bad subject**
+**<span style="color: #d00;">Example of a bad subject</span>** 
 
 - In case of poor registration, you should see a misalignment between the MNI template and the T1 (e.g., brain shifted down).  
 
@@ -182,12 +182,14 @@ The registered T1 image is shown in the background with a brain atlas in MNI spa
 ### EPI tSNR
 In the signal to noise ratio images of the resting state image the desired signal is compared to the amount of background noise. It is important to check all the views (sagittal, coronal, axial) because some artefacts (e.g., stripes) may be evident only in one particular view.
 
-**Example of a good subject:**
+**<span style="color: #28a745;">Example of a good subject</span>** 
+
 - Signal to noise is symmetrically distributed and there is no signal distortion
 
 {{< include /examples/qc/_epi_tsnr_good.qmd >}}
 
-**Example of a bad subject:**
+**<span style="color: #d00;">Example of a bad subject</span>** 
+
 - Asymmetry
 - Potential signal distortion (might represent an artefact) 
 - Signal drop-out
@@ -205,14 +207,14 @@ A carpet plot is a 2D 'heatmap' of relevant time series within a scan, with voxe
 
 In the carpet plot it is important to look for changes in heatmap/intensity and how they relate to motion (frame-wise displacement (FD)) and global signal (GS) measures (the graphs above the carpet plot). Unusual changes might represent other artefacts (e.g., hardware related) or changes in respiratory patterns.
 
-**Example of a good subject**
+**<span style="color: #28a745;">Example of a good subject</span>** 
 
 - No changes in the heatmap, low motion (FD mean < 0.5), no sudden large jumps in the FD line or GS
 - Small changes in the heatmap identifiable as caused by motion or other causes (i.e., corresponding to changes in the graphs above the heatmap)
 
 {{< include /examples/qc/_epi_confounds_good.qmd >}}
 
-**Example of a bad subject**
+**<span style="color: #d00;">Example of a bad subject</span>** 
 
 - Large changes in the heatmap can be indicative of motion. If this is the case, they will usually correspond to changes in the FD line (purple line) above the heatmap. Mean FD and max FD are also reported in the plot for each subject
 
@@ -248,13 +250,13 @@ We don't expect you to check all the components for every subject. Rather, try t
 
 :::
 
-**Example of a good subject**
+**<span style="color: #28a745;">Example of a good subject</span>** 
 
 - Components correctly classified in noise (red) and signal (green), conservative classification (uncertain components classified as signal).
 
 {{< include /examples/qc/_epi_ica_good.qmd >}}
 
-**Example of a bad subject**
+**<span style="color: #d00;">Example of a bad subject</span>** 
 
 - ICA AROMA might have performed poorly if it classified all/most of the components as noise, when some of them could have been signal. These types of errors are more likely to occur in task fMRI with block designs, whereby some task-related activity may be classified as motion. In resting state, try to look for common large brain networks such as the default mode network/salience network. If they have been classified as noise, ICA-AROMA might have not performed well. It is possible that ICA AROMA classified all/most of the components as noise if the subject was particularly problematic (lot of motion, artefacts)
 - Components that look like rings, bandings or stripes are usually acquisition-related artefacts (e.g., interleaved acquisition, multi-band). The presence of these artefacts is not an issue by itself, but ideally these components should be classified as noise. Note that ICA AROMA was not trained on multiband data, so it is possible that it classifies some of these components as signal (nothing we can do about).
@@ -271,14 +273,14 @@ We don't expect you to check all the components for every subject. Rather, try t
 
 This QC step shows the registration of the EPI image to MNI space. 
 
-**Example of a good subject**
+**<span style="color: #28a745;">Example of a good subject</span>** 
 
 - If the registration performed well, you should see an overlap (i.e., correspondence of structures) between the MNI template and the EPI registered to the MNI space. 
 - If parts of the brain are missing due to the scanner field of view, this is fine. For example, the cerebellum may be cut off for a participant with a large head.
 
 {{< include /examples/qc/_epi_spatial_normalisation_good.qmd >}}
 
-**Example of a bad the subject**
+**<span style="color: #d00;">Example of a bad subject</span>** 
 
 - In case of poor registration, you should see a misalignment of the EPI and the MNI template
 
