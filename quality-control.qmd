@@ -1,5 +1,11 @@
 ---
 title: "Quality control"
+
+format:
+  html:
+    theme: cosmo
+    css: styles_qc.css
+    toc: true
 ---
 
 Written by Lina Mograby
@@ -294,3 +300,61 @@ After finishing the QC, it makes sense to check if all of the “outliers” (wh
 Once you have finished the QC, click on the three horizontal stripes on the left (to open the menu), and select ‘Export’ (see page 4). An exclude.json file with the ratings will now be created.
 
 ![](images/qc/09-setp2b.png)
+
+# Table summary for QC
+
+|good                                                                                                        |bad                                                               |
+|:-----------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------|
+|the brain is fully inside the red line                                                                      | structures like the cranium or the eyes are inside the red line  |
+|no important brain structures are outside of the red line red line follows the natural outline of the brain | important brain structures are missing inside of the red line    |
+: T1w skull stripping
+
+:::{.callout-note collapse="false"}
+ -> if only one slice is problematic, it could be an issue related to the visual depiction of the data instead of an issue related to the test subject
+:::
+
+
+
+|good                                                                  |bad                                                                                                         |
+|:---------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|
+|structures of the MNI template and the registered T1 are well aligned | structures of the MNI template and the registered T1 aren't well aligned, e.g. brain is shifted downwards  |
+: dT1w spatial normalisation
+
+
+
+|good                                              |bad                                                               |
+|:-------------------------------------------------|:-----------------------------------------------------------------|
+|symmetrical distribution of noise and signal      | asymmetry                                                        |
+|no disruptions of the signal (no “black patches”) | potential signal disruptions (could be related to artefacts)     |
+|no stripes (sign of high motion)                  |signal drop                                                       |
+|                                                  |stripe artefacts (“zebra” stripes due to motion)                  |               
+: EPI tSNR
+
+
+
+|good                                                        |bad                                                               |
+|:-----------------------------------------------------------|:-----------------------------------------------------------------|
+|no changes in the heatmap                                   | big changes (could be related to motion (change in the FD-line)) |
+|small changes in the heatmap caused by motion mean FD < 0.5 |mean FD > 0.5 or maximum FD > 3 mm                                |
+|DVARS and FD “similar”                                      |stripe artefacts (“zebra” stripes due to motion)                  |
+| no big spikes                                              |                                                                  |               
+: wEPI confounds (carpet plot)
+
+
+
+|good                                                     |bad                                                                                   |
+|:--------------------------------------------------------|:-------------------------------------------------------------------------------------|
+|time series (at the top): no sudden jumps power (bottom) |more noise (red) than signal (green)                                                  |
+|spatial patterns are visible                             | occurs more often with block design                                                  |
+|low frequency                                            |or “problematic” subject (lots of movement, lots of artefacts) rings, bands, artefacts|
+|no sudden jumps/spikes                                   | should be classified as noise                                                        |
+: EPI ICA-based artefact removal
+
+
+
+|good                                                                                                |bad                                            |
+|:---------------------------------------------------------------------------------------------------|:----------------------------------------------|
+|overlap (i.e. match of structures) between the MNI template and the EPI registered in the MNI space | misalignment of the EPI and the MNI template  |
+|if parts of the brain are missing because the field of view of the scanner is limited, the EPI spatial normalisation does not have to be excluded (e.g. cerebellum cut off in person with large head)
+| |
+: EPI spatial normalisation
