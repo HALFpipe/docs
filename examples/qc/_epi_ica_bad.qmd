@@ -1,0 +1,9 @@
+---
+lightbox: auto
+---
+
+::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
+
+![ICA AROMA: example of a bad subject: a large part of the components has been classified as noise (picture on the left). Other QC images of the same participant show that this subject is problematic: the tSNR page for this subjects shows stripes artefacts (picture on the right).](../../images/qc/07-epi_ica_bad.png){group="bad-epi_ica"}
+
+:::

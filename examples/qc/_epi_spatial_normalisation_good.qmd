@@ -1,0 +1,26 @@
+---
+lightbox: auto
+---
+
+::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
+
+![EPI spatial normalisation: example of a good subject](../../images/qc/08-epi_spatial_normalisation_good-01.jpg){group="good-epi_spatial_normalisation"}
+
+![EPI spatial normalisation: example of a good subject.](../../images/qc/08-epi_spatial_normalisation_good-04.png){group="good-epi_spatial_normalisation"}
+
+![EPI spatial normalisation: example of a good subject.](../../images/qc/08-epi_spatial_normalisation_good-05.png){group="good-epi_spatial_normalisation"}
+
+![EPI spatial normalisation: example of a good subject.](../../images/qc/08-epi_spatial_normalisation_good-06.png){group="good-epi_spatial_normalisation"}
+
+![EPI spatial normalisation: example of a good subject.](../../images/qc/08-epi_spatial_normalisation_good-07.png){group="good-epi_spatial_normalisation"}
+
+![EPI spatial normalisation: example of a good subject.](../../images/qc/08-epi_spatial_normalisation_good-08.png){group="good-epi_spatial_normalisation"}
+
+![EPI spatial normalisation: example of a good subject.](../../images/qc/08-epi_spatial_normalisation_good-09.png){group="good-epi_spatial_normalisation"}
+
+![EPI spatial normalisation: example of a good subject.](../../images/qc/08-epi_spatial_normalisation_good-10.png){group="good-epi_spatial_normalisation"}
+
+![EPI spatial normalisation: example of a good subject.](../../images/qc/08-epi_spatial_normalisation_good-11.png){group="good-epi_spatial_normalisation"}
+
+
+:::
