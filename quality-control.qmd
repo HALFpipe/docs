@@ -214,6 +214,16 @@ In the carpet plot it is important to look for changes in heatmap/intensity and 
 
 {{< include /examples/qc/_epi_confounds_good.qmd >}}
 
+**<span style="color: #f4a261;">Example of an uncertain subject</span>** 
+
+::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
+
+![Example of a uncertain subject: small changes in the heatmap that correspond to spikes of motion < 3 mm (FD max here is 2.110)](../../images/qc/06-epi_confounds_uncertain-01.png){group="good-epi_confounds"}
+
+![Example of a uncertain subject: changes in the heatmap that correspond to spikes of motion, max FD is below 3, mean FD is below 0.5](../../images/qc/06-epi_confounds_uncertain-02.png){group="good-epi_confounds"}
+
+:::
+
 **<span style="color: #d00;">Example of a bad subject</span>** 
 
 - Large changes in the heatmap can be indicative of motion. If this is the case, they will usually correspond to changes in the FD line (purple line) above the heatmap. Mean FD and max FD are also reported in the plot for each subject

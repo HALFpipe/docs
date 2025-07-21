@@ -6,8 +6,4 @@ lightbox: auto
 
 ![Example of a good subject: no clear changes in the heatmap, low motion, no large jumps/ changes](../../images/qc/06-epi_confounds_good-01.png){group="good-epi_confounds"}
 
-![Example of a uncertain subject: small changes in the heatmap that correspond to spikes of motion < 3 mm (FD max here is 2.110)](../../images/qc/06-epi_confounds_uncertain-01.png){group="good-epi_confounds"}
-
-![Example of a uncertain subject: changes in the heatmap that correspond to spikes of motion, max FD is below 3, mean FD is below 0.5](../../images/qc/06-epi_confounds_uncertain-02.png){group="good-epi_confounds"}
-
 :::
