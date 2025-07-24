@@ -4,17 +4,21 @@ project:
 website:
   title: "HALFpipe"
   navbar:
+    title: false
+    logo: "/images/HALFpipe_logo.svg"
     left:
       - file: index.qmd
         text: Home
       - file: about.qmd
         text: About
+      - file: installation.qmd
+        text: Installation
+      - file: manual_old_ui.qmd
+        text: rsfMRI Manual Old UI
+      - file: new_ui.qmd
+        text: rsfMRI Manual New UI
       - file: quality-control.qmd
         text: Quality Control
-      - file: analysis.ipynb
-        text: Analysis
-      - file: manual_old_ui.qmd
-        text: Manual Old UI
 
 format:
   html:
