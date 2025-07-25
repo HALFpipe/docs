@@ -1,0 +1,17 @@
+---
+lightbox: auto
+---
+
+::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
+
+![Example of a very bad carpet plot: many sudden changes in the heatmap that correspond to high spikes of motion (max FD is very high) and mean FD > 0.5](../../images/qc/06-epi_confounds_bad-01.png){group="good-epi_confounds"}
+
+![Carpet plot: example of a bad subject: large changes in the heatmap that correspond to motion. This subject has mean FD =1.161 and max FD = 11.072, meaning that it should be excluded because of high motion. Because mean FD > 0.5, it will be automatically excluded from the group analysis.](../../images/qc/06-epi_confounds_bad-02.png){group="good-epi_confounds"}
+
+![Carpet plot: example of a potentially bad subject: Changes in the heatmap without clear causes (such as motion) that may indicate other artefacts. Check the other QC images to decide whether to exclude this subject](../../images/qc/06-epi_confounds_bad-04.png){group="good-epi_confounds"}
+
+![Carpet plot: example of a bad subject. Very high FD at the beginning of the scan and mean FD > 0.5.](../../images/qc/06-epi_confounds_bad-05.png){group="good-epi_confounds"}
+
+![Carpet plot: example of a subject that might be excluded. Changes in the heatmap can be explained through motion and mean FD is below 0.5, but max FD above 3 mm. With a carpet plot like this, it makes sense to check the other images to see if any issues that lead to exclusion have come up either way.](../../images/qc/06-epi_confounds_bad-06.png){group="good-epi_confounds"}
+
+:::

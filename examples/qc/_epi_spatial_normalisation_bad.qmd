@@ -1,0 +1,21 @@
+---
+lightbox: auto
+---
+
+::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
+
+![EPI spatial normalisation: example of a bad subject, the EPI and the MNI template do not properly overlap](../../images/qc/08-epi_spatial_normalisation_bad-01.png){group="bad-epi_spatial_normalisation"}
+
+![EPI spatial normalisation: example of a bad subject, EPI and MNI template do not properly overlap](../../images/qc/08-epi_spatial_normalisation_bad-02.png){group="bad-epi_spatial_normalisation"}
+
+![EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap](../../images/qc/08-epi_spatial_normalisation_bad-03.png){group="bad-epi_spatial_normalisation"}
+
+![EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap](../../images/qc/08-epi_spatial_normalisation_bad-04.png){group="bad-epi_spatial_normalisation"}
+
+![EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap](../../images/qc/08-epi_spatial_normalisation_bad-05.png){group="bad-epi_spatial_normalisation"}
+
+![EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap, it seems like there was a significant technical issue](../../images/qc/08-epi_spatial_normalisation_bad-06.png){group="bad-epi_spatial_normalisation"}
+
+![EPI spatial normalisation: example of a bad subject. EPI and MNI do not properly overlap.](../../images/qc/08-epi_spatial_normalisation_bad-07.png){group="bad-epi_spatial_normalisation"}
+
+:::

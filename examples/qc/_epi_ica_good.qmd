@@ -1,0 +1,9 @@
+---
+lightbox: auto
+---
+
+::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
+
+![ICA AROMA: example of a good/ok subject](../../images/qc/07-epi_ica_good.jpg){group="good-epi_ica"}
+
+:::
