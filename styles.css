@@ -11,3 +11,8 @@ table.bordered td {
   padding: 8px;
   vertical-align: top;
 }
+
+/* Increase size of logo in navbar */
+.navbar-logo {
+  max-height: 80px;
+}

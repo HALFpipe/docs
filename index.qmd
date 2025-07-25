@@ -1,7 +1,32 @@
 ---
-title: "HALFpipe"
+listing: 
+  contents:
+    - "installation.qmd"
+    - "manual_old_ui.qmd"
+    - "new_ui.qmd"
+    - "quality-control.qmd"
+  type: grid
+  fields: [image, title]
+  image-placeholder: "/images/HALFpipe_logo.png"
 ---
 
-This is a Quarto website.
+# Welcome to ENIGMA HALFpipe!
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+[![badges](https://github.com/HALFpipe/HALFpipe/actions/workflows/continuous_integration.yml/badge.svg)](https://github.com/HALFpipe/HALFpipe/actions/workflows/continuous_integration.yml) 
+[![codecov](https://codecov.io/gh/HALFpipe/HALFpipe/branch/main/graph/badge.svg)](https://codecov.io/gh/HALFpipe/HALFpipe) 
+[![codecov](https://zenodo.org/badge/DOI/10.5281/zenodo.5657185.svg)](https://doi.org/10.5281/zenodo.5657185)
+
+``HALFpipe`` is a user-friendly software that facilitates reproducible analysis of fMRI data, including preprocessing, single-subject, and group analysis. It provides state-of-the-art preprocessing using [fmriprep](https://fmriprep.readthedocs.io/), but removes the necessity to convert data to the [BIDS](https://bids-specification.readthedocs.io/en/stable/>) format. Common resting-state and task-based fMRI features can then be calculated on the
+fly.
+
+`HALFpipe` relies on tools from well-established neuroimaging software
+packages, either directly or through our dependencies, including [ANTs](https://antspy.readthedocs.io/), [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/),  [FSL](http://fsl.fmrib.ox.ac.uk/), [AFNI](https://afni.nimh.nih.gov/>) and [nipype](https://nipype.readthedocs.io/>).
+We strongly urge users to acknowledge these tools when publishing results obtained
+with HALFpipe.
+
+Subscribe to our [mailing list](https://mailman.charite.de/mailman/listinfo/halfpipe-announcements) to stay up to date with new developments and releases.
+
+
+If you encounter issues, please see the [troubleshooting section](https://github.com/HALFpipe/HALFpipe/issues) on GitHub.
+
+# Quick start
