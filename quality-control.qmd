@@ -4,7 +4,6 @@ title: "Quality control"
 format:
   html:
     theme: cosmo
-    css: styles_qc.css
     toc: true
 ---
 
