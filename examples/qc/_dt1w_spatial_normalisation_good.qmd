@@ -1,9 +1,3 @@
----
-lightbox: auto
----
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
 ![T1w spatial normalisation: example of a good subject](../../images/qc/04-dt1w_spatial_normalisation_good-03.png){group="good-dt1w-spatial-normalisation"}
 
 ![T1w spatial normalisation: example of a good subject](../../images/qc/04-dt1w_spatial_normalisation_good-04.png){group="good-dt1w-spatial-normalisation"}
@@ -15,5 +9,3 @@ lightbox: auto
 ![T1w spatial normalisation: example of a good subject](../../images/qc/04-dt1w_spatial_normalisation_good-07.png){group="good-dt1w-spatial-normalisation"}
 
 ![T1w spatial normalisation: example of a good subject](../../images/qc/04-dt1w_spatial_normalisation_good-08.png){group="good-dt1w-spatial-normalisation"}
-
-:::

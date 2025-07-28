@@ -1,9 +1,3 @@
----
-lightbox: auto
----
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
 ![T1w skull stripping: example of a bad subject: some portions of the brain have been left out. Note that in this subject, the 'ring' markers at the edge of the brain are likely indicative of high motion.](../../images/qc/03-t1w_skull_stripping_bad-01.png){group="bad-skull-stripping"}
 
 ![T1w skull stripping: example of a bad subject: images in the upper and lower row look very distorted, possibly due to an issue with the scanner. Large portions of the brain have been left out even in the middle row.](../../images/qc/03-t1w_skull_stripping_bad-02.png){group="bad-skull-stripping"}
@@ -21,5 +15,3 @@ lightbox: auto
 ![T1w skull stripping: example of a bad subject: portions of the brain have been left out, large parts of the cranium and the eyes are included in the red line. The shape of the brain does not correspond to the shape drawn by the red line.](../../images/qc/03-t1w_skull_stripping_bad-09.png){group="bad-skull-stripping"}
 
 ![T1w skull stripping: example of a bad subject: portions of the brain have been left out, large parts of the cranium and the eyes are included in the red line. The shape of the brain does not correspond to the shape drawn by the red line. The jaw region, the oral cavity and the neck region look off, a scanner issue might be possible here.](../../images/qc/03-t1w_skull_stripping_bad-10.png){group="bad-skull-stripping"}
-
-:::

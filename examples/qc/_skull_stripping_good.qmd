@@ -1,9 +1,3 @@
----
-lightbox: auto
----
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
 ![T1w skull stripping: examples of good subjects](../../images/qc/03-t1w_skull_stripping_good-03.png){group="good-skull-stripping"}
 
 ![T1w skull stripping: examples of good subjects](../../images/qc/03-t1w_skull_stripping_good-04.png){group="good-skull-stripping"}
@@ -27,5 +21,3 @@ lightbox: auto
 ![T1w skull stripping: examples of good subjects](../../images/qc/03-t1w_skull_stripping_good-13.png){group="good-skull-stripping"}
 
 ![T1w skull stripping: examples of good subjects](../../images/qc/03-t1w_skull_stripping_good-14.png){group="good-skull-stripping"}
-
-:::
