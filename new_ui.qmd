@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Resting-State fMRI with the new UI"
+title: "Resting-State fMRI with the new UI"
 lightbox: true
 author: 
     name: Clara El Khantour, Lea Waller, Pierre Lune Bellec, Frank Hillary, Ilya Veer, Clara Moreau
@@ -21,7 +21,7 @@ author:
 apptainer run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.sif --use_cluster --tui 
 ```
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="false"}
 #### Understanding the command line
 - File Location: Ensure the HALFpipe_1.2.3.sif file is in your current working directory or specify its full path.
 
@@ -81,6 +81,9 @@ With this new UI, there are different icons you can interact with:
 :::
 
 ## Specify your working directory
+
+![Welcome to the new UI of HALFpipe](images/HALFpipe_new_ui/halfpipe_new_ui_working-dir_1.png){group="working-dir"}
+
 1. Click on Browse.
 2. Indicate the path you want your working directory to be located. This correspond to your output folder.
 
@@ -97,15 +100,6 @@ To create a new directory, simply add its name to the end of the path. If the fo
 
 3. After specifying the working directory, click on **Input Data** in the top navigation bar.
 
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
-![Welcome to the new UI of HALFpipe](images/HALFpipe_new_ui/halfpipe_new_ui_working-dir_1.png){group="working-dir"}
-
-![How to select a working directory](images/HALFpipe_new_ui/halfpipe_new_ui_working-dir_2.png){group="working-dir"}
-
-![Working directory selected](images/HALFpipe_new_ui/halfpipe_new_ui_working-dir_5.png){group="working-dir"}
-:::
-
 ## Specify your Data location
 Indicate whether or not the data is in BIDS format
 
@@ -115,21 +109,8 @@ Indicate whether or not the data is in BIDS format
 2. Here, simply indicate the path to your BIDS data. Files will be automatically found, this can take a moment.
 3. Click on **General preprocessing settings** in the top navigation bar, and go to the next section.
 
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
+![Data in BIDS switch to ON](images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_1.png){group="input-bids"}
 
-![1. Data in BIDS switch to ON](images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_1.png){group="input-bids"}
-
-![2. Select bids working directory](images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_2.png){group="input-bids"}
-
-![3. Data input success](images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_3.png){group="input-bids"}
-
-![4. Input successful message](images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_4.png){group="input-bids"}
-
-![5. Verify data input (number)](images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_5.png){group="input-bids"}
-
-![6. Verify data input (👁️)](images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_6.png){group="input-bids"}
-
-:::
 
 ### If not in BIDS 
 1. Switch the button to **OFF**
@@ -138,6 +119,7 @@ Indicate whether or not the data is in BIDS format
 4. Delete the unique subject ID and replace it with `{subject}`. If applicable, do the same with `{run}` and `{session}`. 
     - As you modify the path, HALFpipe will indicate how many files it has found. Once your path is correct and all subject files are detected, click __OK__ to save the path.
 5. Follow the same logic for the BOLD data and Field maps (if any) sections.
+    - Check repetition time values : click on **YES** (unless the TR is incorrect)
 6. Go to the bottom, and click on **Confirm**
 7. Click on **General preprocessing settings** in the top navigation bar, and go to the next section.
 
@@ -147,27 +129,22 @@ Indicate whether or not the data is in BIDS format
 - It will then find T1 files for all subjects: `path/to/T1/subj01/T1.nii.gz`, `path/to/T1/subj02/T1.nii.gz` etc…
 :::
 
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
+![Data in BIDS switch to OFF](images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_1.png){group="input-not-bids"}
 
-![1. Data in BIDS switch to OFF](images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_1.png){group="input-not-bids"}
-
-![2. Select T1W data of 1 subject](images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_3.png){group="input-not-bids"}
-
-![3. Replace path with {subject} and {session}](images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_6.png){group="input-not-bids"}
-
-![4. Verify data found (👁️)](images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_7.png){group="input-not-bids"}
-
-![5. Do the same with BOLD data](images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_8.png){group="input-not-bids"}
-
-![6. Check meta data (repetition values)](images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_9.png){group="input-not-bids"}
-
-![7. Click on Confirm](images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_11.png){group="input-not-bids"}
-
-:::
+![Example of path with {subject} and {session}](images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_6.png){group="input-not-bids"}
 
 ::: 
 
-Verify all the files have been properly found. You can click on the 👁️ to see the detail of the file.
+If your files have been successfully imported, you should see the follow message:
+
+![Data input success](images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_3.png){group="input-bids"}
+
+![Input successful message](images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_4.png){group="input-bids"}
+
+::: {.callout-tip collapse="false"}
+### Verify files imported
+Verify all the files have been properly found. You can do that by looking at the number of file found. You can also click on the 👁️ to see the detail of the file.
+:::
 
 ## General Preprocessing settings
 1. Switch _Slice timing_ to :
@@ -182,14 +159,9 @@ Verify all the files have been properly found. You can click on the 👁️ to s
 - Switch _“Generate workflow for running on a cluster”_ to __ON__
 :::
 
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
+![General settings to select](images/HALFpipe_new_ui/halfpipe_new_ui_general_preproc_2.png){group="general-preproc"}
 
-![1. Switch slice timing to ON](images/HALFpipe_new_ui/halfpipe_new_ui_general_preproc_2.png){group="general-preproc"}
-
-![2. Verify slice timing](images/HALFpipe_new_ui/halfpipe_new_ui_general_preproc_1.png){group="general-preproc"}
-
-![3. Advance settings](images/HALFpipe_new_ui/halfpipe_new_ui_general_preproc_3.png){group="general-preproc"}
-:::
+![Advance settings](images/HALFpipe_new_ui/halfpipe_new_ui_general_preproc_3.png){group="general-preproc"}
 
 2. Click on **Features** in the top navigation bar, and go to the next section.
 
@@ -209,8 +181,54 @@ Recommended for multiverse analyses (optional pipelines)
 
 ::: {.callout-important collapse="false" icon="false"}
 ## Summary of confounds to select
+
 ::: {.panel-tabset}
-{{< include _rsfmri_pipelines.qmd >}}
+##### Pipeline 1
+✅ aCompCor (top five components)
+
+##### Pipeline 2
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+✅ Motion scrubbing
+
+##### Pipeline 3
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+✅ Motion scrubbing
+
+✅ Global signal
+
+##### Pipeline 4 (optional)
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+##### Pipeline 5 (optional)
+✅ Motion parameters
+
+✅ Derivatives of motion parameters
+
+✅ Motion parameters squared
+
+✅ Derivatives of motion parameters squared
+
+✅ Global signal
 :::
 :::
 
@@ -220,10 +238,7 @@ Recommended for multiverse analyses (optional pipelines)
 - Select Seed-based connectivity
 - Feature name: Type seedCorr1
 
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
 ![Feature name](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_1.png){group="seed"}
-:::
 
 ### General settings
 
@@ -240,25 +255,12 @@ Recommended for multiverse analyses (optional pipelines)
 6. Preprocesssing settings
 - Switch _low-pass temporal filter_ to __OFF__
 
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
-![Find all the seeds](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_4.png){group="seed"}
-
-![Check meta data](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_6.png){group="seed"}
-
-![Preprocessing settings](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_8.png){group="seed"}
-
-:::
+![Find seeds](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_4.png){group="seed"}
 
 ### Remove confounds for 5 pipelines
 1. **Pipeline 1**: Select the confounds for **Pipeline 1**. Click on :
 
-❎ aCompCor (top five components)
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
 ![Pipeline 1](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_9.png){group="seed"}
-:::
-
 
 We will now repeat the same procedure for the other pipelines.
 
@@ -272,19 +274,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Go to the **Remove confounds** section and select the confounds for **Pipeline 2**: 
 
-❎  Motion parameters
-
-❎  Derivatives of motion parameters
-
-❎  Motion parameters squared
-
-❎  Derivatives of motion parameters squared
-
-❎  Motion scrubbing
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_10.png){group="seed"}
-:::
+![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_11.png){group="seed"}
 
 3. Pipeline 3: 
 - click **Duplicate** in the left navigation bar.
@@ -292,21 +282,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Select the confounds for **Pipeline 3**: 
 
-❎  Motion parameters
-
-❎  Derivatives of motion parameters
-
-❎  Motion parameters squared
-
-❎  Derivatives of motion parameters squared
-
-❎  Motion scrubbing
-
-❎ Global signal
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_11.png){group="seed"}
-:::
+![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_12.png){group="seed"}
 
 4. Pipeline 4: 
 - Again, click **Duplicate** in the left navigation bar.
@@ -344,11 +320,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - Select Atlas-based connectivity matrix
 - Feature name: Type corrMatrix1
 
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
 ![Feature name](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_1.png){group="corr"}
-:::
-
 
 ### General settings
 
@@ -356,29 +328,20 @@ In the next steps, you will only modify the confounds in the final step to match
 - If applicable select session(s) or task(s) for resting state data
 
 2. Atlas images
-- Add path to atlas images. Click on _Browse_ to indicate the path. 
+- Add path to atlas images. Click on **_Browse_** to indicate the path. 
 - Select one existing atlas. Then modify the path with `{atlas}.nii.gz`
 - Proceed with these values: yes. 
 - Then only select `atlas-Schaefer2018Combined_dseg.nii.gz`. 
+
+![Find atlas](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_3.png){group="corr"}
+
 5. Minimum brain coverage:
-- Set to **0.5**
+- Set to **<span style="color: #d00;">0.5</span>**
 6. Preprocesssing settings
 - Switch _low-pass temporal filter_ width to **OFF**
 
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
-![Select atlas](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_3.png){group="corr"}
-
-![Check meta data](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_4.png){group="corr"}
-
-![Preprocessing settings](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_5.png){group="corr"}
-
-:::
-
 ### Remove confounds for 5 pipelines
 1. **Pipeline 1**: Select the confounds for **Pipeline 1**. Click on :
-
-❎ aCompCor (top five components)
 
 ![Pipeline 1](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_5.png){group="corr"}
 
@@ -394,17 +357,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Go to the **Remove confounds** section and select the confounds for **Pipeline 2**: 
 
-❎  Motion parameters
-
-❎  Derivatives of motion parameters
-
-❎  Motion parameters squared
-
-❎  Derivatives of motion parameters squared
-
-❎  Motion scrubbing
-
-![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_6.png){group="corr"}
+![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_7.png){group="corr"}
 
 3. Pipeline 3: 
 - click **Duplicate** in the left navigation bar.
@@ -412,19 +365,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Select the confounds for **Pipeline 3**: 
 
-❎  Motion parameters
-
-❎  Derivatives of motion parameters
-
-❎  Motion parameters squared
-
-❎  Derivatives of motion parameters squared
-
-❎  Motion scrubbing
-
-❎ Global signal
-
-![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_7.png){group="corr"}
+![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_8.png){group="corr"}
 
 4. Pipeline 4: 
 - Again, click **Duplicate** in the left navigation bar.
@@ -471,20 +412,10 @@ In the next steps, you will only modify the confounds in the final step to match
 2. Preprocessing settings
 - Switch _low-pass temporal filter_ to **OFF**
 
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
-![General settings](images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_1.png){group="reho"}
-:::
-
 ### Remove confounds for 5 pipelines
 1. **Pipeline 1**: Select the confounds for **Pipeline 1**. Click on :
 
-❎ aCompCor (top five components)
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
 ![Pipeline 1](images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_1.png){group="reho"}
-:::
 
 We will now repeat the same procedure for the other pipelines.
 
@@ -498,20 +429,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Go to the **Remove confounds** section and select the confounds for **Pipeline 2**: 
 
-❎  Motion parameters
-
-❎  Derivatives of motion parameters
-
-❎  Motion parameters squared
-
-❎  Derivatives of motion parameters squared
-
-❎  Motion scrubbing
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
 ![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_2.png){group="reho"}
-:::
 
 3. Pipeline 3: 
 - click **Duplicate** in the left navigation bar.
@@ -519,22 +437,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Select the confounds for **Pipeline 3**: 
 
-❎  Motion parameters
-
-❎  Derivatives of motion parameters
-
-❎  Motion parameters squared
-
-❎  Derivatives of motion parameters squared
-
-❎  Motion scrubbing
-
-❎ Global signal
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
 ![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_3.png){group="reho"}
-:::
 
 4. Pipeline 4: 
 - Again, click **Duplicate** in the left navigation bar.
@@ -580,20 +483,10 @@ In the next steps, you will only modify the confounds in the final step to match
 2. Preprocessing settings
 - Switch _low-pass temporal filter_ to **OFF**
 
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
-![General settings](images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_1.png){group="falff"}
-:::
-
 ### Remove confounds for 5 pipelines
 1. **Pipeline 1**: Select the confounds for **Pipeline 1**. Click on :
 
-❎ aCompCor (top five components)
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
 ![Pipeline 1](images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_1.png){group="falff"}
-:::
 
 We will now repeat the same procedure for the other pipelines.
 
@@ -607,20 +500,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Go to the **Remove confounds** section and select the confounds for **Pipeline 2**: 
 
-❎  Motion parameters
-
-❎  Derivatives of motion parameters
-
-❎  Motion parameters squared
-
-❎  Derivatives of motion parameters squared
-
-❎  Motion scrubbing
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
 ![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_2.png){group="falff"}
-:::
 
 3. Pipeline 3: 
 - click **Duplicate** in the left navigation bar.
@@ -628,22 +508,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Select the confounds for **Pipeline 3**: 
 
-❎  Motion parameters
-
-❎  Derivatives of motion parameters
-
-❎  Motion parameters squared
-
-❎  Derivatives of motion parameters squared
-
-❎  Motion scrubbing
-
-❎ Global signal
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
 ![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_3.png){group="falff"}
-:::
 
 4. Pipeline 4: 
 - Again, click **Duplicate** in the left navigation bar.
@@ -694,42 +559,13 @@ If you make changes to the settings or selected features, always click Refresh b
 
 3. Click on __Run__. 
 
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
-![Before check](images/HALFpipe_new_ui/halfpipe_new_ui_check_1.png){group="check"}
-
-![After clicking on check](images/HALFpipe_new_ui/halfpipe_new_ui_check_2.png){group="check"}
-
-![Saving the spec.json](images/HALFpipe_new_ui/halfpipe_new_ui_check_3.png){group="check"}
-:::
-
 ::: {.panel-tabset}
 ## On HPC
 HALFpipe will generate files that you need to run by submitting jobs on your cluster. Wait for the green confirmation message indicating that the cluster submission script templates have been created
 
-Once the files have been created:
-1. In your terminal, navigate to your working directory
-2. Open the submit.slurm/sge/torque base on your cluster information.
-3. You can edit the `#bin bash` command (e.g. add `#SBATCH --account=def-account`). Please refer to your cluster documentation.
-4. Run the pipeline by submitting the _submit file_ script that has been created in the pipeline folder. For example:
-
-| Submit file | Commande line            |
-|:------------|:-------------------------|
-| SLURM       | `sbatch submit.slurm.sh` |
-| SGE         | `qsub submit.sge.sh`     |
-| Torque/PBS  | `qsub submit.torque.sh`  |
-
-: Example of command line syntax to submit a job
-
-The pipeline will now preprocess all subjects. When they are finished, the quality has to be checked.
+You can then see how to run HALFpipe on [HPC](check_run.qmd)
 
 ## On a local machine
 
-If you are running this on a local computer, the pipeline will have started. Once it has finished, continue to section 9 to check pre-processing.
+If you are running this on a local computer, the pipeline will have started. Once it has finished, [continue to check your preprocessing](check_run.qmd#check-pre-processing-and-re-run-if-necessary).
 :::
-
-# Check pre-processing and re-run if necessary
-{{< include _check_preprocessing.qmd >}}
-
-# Quality control
-Once all subjects have been processed, you can proceed with the [quality assessment](quality-control.qmd).
