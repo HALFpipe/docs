@@ -90,12 +90,6 @@ With this new UI, there are different icons you can interact with:
 ::: {.callout-note collapse="true"}
 ### You can either select an already existing folder, or create a new one. 
 To create a new directory, simply add its name to the end of the path. If the folder doesn’t exist, a message will appear indicating it wasn’t found and will prompt you to create it. Click 'Yes' to proceed and generate the output folder.
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-![Error message when creating a new working directory](images/HALFpipe_new_ui/halfpipe_new_ui_working-dir_3.png){group="working-dir"}
-
-![Message confirming working directory creation](images/HALFpipe_new_ui/halfpipe_new_ui_working-dir_4.png){group="working-dir"}
-:::
 :::
 
 3. After specifying the working directory, click on **Input Data** in the top navigation bar.
