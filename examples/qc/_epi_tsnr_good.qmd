@@ -1,9 +1,3 @@
----
-lightbox: auto
----
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
 ![tSNR: example of a good subject](../../images/qc/05-epi_tsnr_good-01.png){group="good-epi_tsnr"}
 
 ![tSNR: example of a good subject](../../images/qc/05-epi_tsnr_good-02.png){group="good-epi_tsnr"}
@@ -27,5 +21,3 @@ lightbox: auto
 ![tSNR: example of a good subject](../../images/qc/05-epi_tsnr_good-11.png){group="good-epi_tsnr"}
 
 ![tSNR: example of a good subject](../../images/qc/05-epi_tsnr_good-12.png){group="good-epi_tsnr"}
-
-:::

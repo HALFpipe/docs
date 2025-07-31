@@ -1,9 +1,3 @@
----
-lightbox: auto
----
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
 ![T1w spatial normalisation: example of a bad subject](../../images/qc/04-dt1w_spatial_normalisation_bad-01.png){group="bad-dt1w-spatial-normalisation"}
 
 ![T1w spatial normalisation: example of a bad subject. The MNI and the T1 don't align.](../../images/qc/04-dt1w_spatial_normalisation_bad-02.png){group="bad-dt1w-spatial-normalisation"}
@@ -15,4 +9,3 @@ lightbox: auto
 ![T1 spatial normalisation: example of a bad subject. MNI and T1 are very misaligned.](../../images/qc/04-dt1w_spatial_normalisation_bad-06.png){group="bad-dt1w-spatial-normalisation"}
 
 ![T1 spatial normalisation: example of a bad subject. MNI and T1 are misaligned.](../../images/qc/04-dt1w_spatial_normalisation_bad-07.png){group="bad-dt1w-spatial-normalisation"}
-:::

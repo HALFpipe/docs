@@ -1,9 +1,1 @@
----
-lightbox: auto
----
-
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
-
 ![Example of a good subject: no clear changes in the heatmap, low motion, no large jumps/ changes](../../images/qc/06-epi_confounds_good-01.png){group="good-epi_confounds"}
-
-:::

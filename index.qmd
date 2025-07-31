@@ -5,6 +5,7 @@ listing:
     - "manual_old_ui.qmd"
     - "new_ui.qmd"
     - "quality-control.qmd"
+    - "check_run.qmd"
   type: grid
   fields: [image, title]
   image-placeholder: "/images/HALFpipe_logo.png"

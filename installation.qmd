@@ -8,9 +8,7 @@ author:
 
 # Before starting
 
-## Requirements 
-::: {.panel-tabset}
-### 1. Resources
+## 1. Resources
 - 8GB of RAM.
 - Disk Space : 
     - 0.1GB for Atlas and Seeds Folder 
@@ -18,7 +16,7 @@ author:
     - ~500 MB for a working directory for one subject, one task, and one session.
 
 ::: {.callout-note collapse="false"}
-#### Processing Time 
+### Processing Time 
 *Estimated with a sample size of n=155 and n=261.*
 
 On a local machine:
@@ -31,10 +29,10 @@ On High-Performance Cluster:
 - Full pipeline run: Approximately 2–3 hours.
 :::
 
-### 2. Licensing
+## 2. Licensing
 Preprocessing requires a **FreeSurfer license** file which you can get for free when you submit the [FreeSurfer Registration form](https://surfer.nmr.mgh.harvard.edu/registration.html). You will receive the license in the following minutes via email.
 
-### 3. Downloads
+## 3. Downloads
 Please ensure these downloaded items are accessible in your environment before proceeding. This means either placed inside your base directory or another directory available to your environment (for example, if using a High-Performing cluster, you need to put the atlas folder on your cluster). 
 
 ::: {.callout-tip collapse="false"}
@@ -45,18 +43,19 @@ We recommend that you write down the path where these files are located, you wil
 
 - *Optional Trial Dataset*: For a small and clean dataset (≈8 GB) to trial this pipeline, use the open-source dataset ds004101 found on OpenNeuro [here](https://brainlife.io/dataset/OpenNeuro/ds004101/1.0.1).
 
-### 4. Data
+## 4. Data
 - **Raw (non-skull-stripped) 3D T1-weighted (anatomical) image** with .nii or .nii.gz extension. De-faced images will work out of the box.
 - **Raw 4D functional (task) image** with .nii or .nii.gz extension.
 - **Field map images (if available).** Three types are supported if the required metadata is available (e.g., echo spacing, echo time, etc.):
     - Siemens field maps, as phase and magnitude image pairs.
     - Philips field maps, as one field map image and one or two magnitude images.
     - Blip-up/blip-down field maps, as a pair of EPI images with opposite phase encoding directions (mostly AP and PA). 
-:::
 
+::: {.callout-important collapse="false"}
 **Recommended**: Processing using multiple cores or on a high-performance compute cluster (HPC) will be faster and more resource efficient. The manual is built for these conditions although single core processing is possible.
 
 **Troubleshooting**: If you encounter issues running the pipeline, please refer to the GitHub page [here](https://github.com/HALFpipe/HALFpipe). For further assistance, submit a GitHub issue using the form [here](https://github.com/HALFpipe/HALFpipe/issues/new/choose) (recommended) or contact the support email at halfpipe@fmri.science. You can also join the HALFpipe Mattermost (similar to Slack) using this [link](https://mattermost.fmri.science/signup_user_complete/?id=hcc766b7wjdazexwe799hbsuwc&md=link&sbr=su).
+:::
 
 # Installing container platform
 
@@ -72,6 +71,8 @@ We recommend that you write down the path where these files are located, you wil
 | Platform          | Installation                                                                          |
 |:------------------|:--------------------------------------------------------------------------------------|
 | Docker Desktop    | Follow install instructions here: [Docker Desktop](https://docs.docker.com/desktop/)  |
+
+**Check to see if the container platform is installed:**
 
 3. You should now have an application named Docker Desktop on your computer. Look at your applications folder.
 4. Open it to finish the installation.
@@ -90,7 +91,8 @@ We recommend that you write down the path where these files are located, you wil
 | Singularity (2.x) | `sudo apt install singularity-container`                                                     |
 | Apptainer         | Follow install instructions link or `sudo apt install -y apptainer`                          |
 
-3. Verify your installation :
+3. **Check to see if the container platform is installed:**
+- Open a terminal session. **_Only if using a HPC_**: connect to your server.
 - Type `apptainer` or `singularity` and press enter.
 - If you see instructions on using Singularity and do not get `command not found`, then you can proceed to the next section.
 
@@ -103,7 +105,7 @@ If using Apptainer or Singularity, the command syntax is identical. Replace the 
 ## Working Environment Setup
 Here are the steps of setting up your base and working directory where HALFpipe will be run.
 
-1. Open a terminal session. *Only if using a HPC*: connect to your server.
+1. Open a terminal session. **_Only if using a HPC_**: connect to your server.
 
 2. Type `pwd` (or `cd` on Windows) and verify that this is the location where you want to begin creation of your environment. 
     - If not, please move to the folder where you want to run the pipeline and save the outputs using the command `cd path/to/your_working_space/`
@@ -132,7 +134,7 @@ Here are the steps of setting up your base and working directory where HALFpipe 
 
 
 ## Singularity or Apptainer:
-1. Open a terminal session. *Only if using a HPC*: connect to your server.
+1. Open a terminal session. **_Only if using a HPC_**: connect to your server.
 2. Navigate to your base directory with `cd path/to/your_working_space/your_enigma_directory`
 3. Use one of the following commands:
 
