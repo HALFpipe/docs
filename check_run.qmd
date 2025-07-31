@@ -1,3 +1,8 @@
+---
+title: "How to run the pipeline, check the outputs , and rerun the failed subjects"
+format: html
+---
+
 # **1\. Run the pipeline** {#1.-run-the-pipeline}
 
 ::: {.panel-tabset}
@@ -21,12 +26,6 @@
 ::: {.callout-note collapse="false"}
 
 Depending on your cluster’s configuration (e.g., SGE or Torque), these modifications may need to be applied to a different submit file than the SLURM example provided. Please consult your cluster’s documentation or contact your IT support team to confirm.*
-
-:::
-
-## **1.2 On a Local Machine** 
-
-If you are running this on a local computer, the pipeline will have started. Once it has finished, continue to **section 2** to check pre-processing.
 
 :::
 
@@ -161,6 +160,12 @@ qsub submit.torque.sh
 The pipeline will now preprocess all subjects. When they are finished, the quality has to be checked (**see section 2 and page quality control**).
 
 ---
+
+## **1.2 On a Local Machine** 
+
+If you are running this on a local computer, the pipeline will have started. Once it has finished, continue to **section 2** to check pre-processing.
+
+:::
 
 # **2\. Check pre-processing and re-run if necessary** 
 

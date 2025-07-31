@@ -177,11 +177,11 @@ We will first specify the Data (**see section 2.1**) and then the Features (**se
 ### 2. <span style="background-color: #cce5ff;">Is the data available in BIDS format?</span>  
    If your data is already in BIDS format, follow the instructions of point 2.1. If not, follow the instructions of point 2.2. 
 
-   ::: {.callout-tip collapse="true" title="If you're unsure whether your data is in BIDS"}
+::: {.callout-tip collapse="true" title="If you're unsure whether your data is in BIDS"}
 
    *When running on a local computer, be aware that the BIDS format is very strict. If you're unsure whether your data is properly formatted, we recommend answering "No" to this question and specifying the file name manually, as shown in Point 2.2. This can help prevent errors during execution.*
 
-   :::
+:::
 
 ::: {.panel-tabset}
 
