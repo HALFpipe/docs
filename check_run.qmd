@@ -9,7 +9,11 @@ format: html
 
 ## **1.1 On a High-performing cluster (HPC)** 
 
-1. Navigate to your working directory in terminal: cd path/to/your\_working\_space/your\_enigma\_directory/your\_working\_dir
+1. Navigate to your working directory in terminal: 
+
+```bash
+cd path/to/your_working_space/your_enigma_directory/your_working_dir
+```
 
 2. Let’s visualize the files that have been created with ls   
    1. Check for the files and folders: **derivatives, nipype, rawdata, reports, submit.slurm.sh, work, workflow\*\*\*.pickle.xz, execgraph\*\*\*.pickle.xz.**   
@@ -17,7 +21,7 @@ format: html
 
 3. Open the automatically generated submit.slurm file. Please compare your output to the example provided in the next page:
 
-   1. Make sure that the path associated with the flag  \--bind is the same as the one you used to launch the pipeline (**see section 6.2**).  
+   1. Make sure that the path associated with the flag  \--bind is the same as the one you used to launch the pipeline (**[section 1.2 of the old manual](manual_old_ui.qmd#)**).  
    2. Verify all the paths, make sure that they are all correct.  
    3. If necessary   
       1. You can edit the \#bin bash command (e.g. add \#SBATCH \--account=def-account in **submit.slurm.sh**).   
@@ -72,13 +76,13 @@ Example of a submit.slurm.sh file modified to reduce number of file produced and
 
 <table style="width:100%; border-collapse:collapse">
   <tr>
-    <td style="vertical-align: top; width: 17%; padding-right: 0.5em; line-height: 0.4;">
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <td style="vertical-align: top; width: 18%; padding-right: 0.5em; line-height: 0.4;">
+      <br><br><br><br><br><br><br><br><br><b><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       <strong>modification =></strong><br><br><br>
-      <strong>copy-paste ===></strong><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <strong>copy-paste ===></strong><br><br><br><br><br><br>
-      <strong>copy-paste ===></strong><br><br><br><br><br><br><br><br><br><br>
-      <strong>copy-paste ===></strong><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <strong>copy-paste ==></strong><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <strong>copy-paste ==></strong><br><br><br><br><br><br>
+      <strong>copy-paste ==></strong><br><br><br><br><br><br><br><br><br><br>
+      <strong>copy-paste ==></strong><br><br><br><br><br><br><br><br><br><br><br><br><br>
       <strong>modification =></strong>
     </td>
     <td style="vertical-align: top; width: 83%;">
@@ -169,7 +173,7 @@ If you are running this on a local computer, the pipeline will have started. Onc
 
 # **2\. Check pre-processing and re-run if necessary** 
 
-::: {.callout-warning collapse="false" title="If you have a large dataset"}
+::: {.callout-warning collapse="false"}
 
 In some cases, you will need to ensure the code is compatible with your setup (not just copy and paste), especially regarding the container bindings. The text highlighted in <span style="background-color:rgb(255, 204, 204);">red</span> requires your attention.
 
@@ -222,12 +226,15 @@ Use `ls` to view the contents of your working directory.
 
 **b.** If some subjects have fewer files than expected:
 - Open `err.txt` to check for errors.
-- Note: Subjects may legitimately have fewer files (e.g., fewer runs or sessions).  
-  _Cross-check with your original dataset before considering a re-run._
+
+::: {.callout-warning collapse="false"}
+Subjects may legitimately have fewer files (e.g., fewer runs or sessions).  
+_Cross-check with your original dataset before considering a re-run._
+:::
 
 **c.** Manually edit the previously empty file `incomplete-subject-list.txt` and list only the subject IDs that need to be reprocessed.
 
-**d.** If **all subjects** were successfully processed, go directly to **Section 10**.  
+**d.** If **all subjects** were successfully processed, go directly to the **[Quality Control Guide](quality-control.qmd#)**.  
 If not, continue to **Step 7** to re-run the pipeline for incomplete subjects.
 
 
@@ -237,7 +244,7 @@ If not, continue to **Step 7** to re-run the pipeline for incomplete subjects.
 **Right**: Count-files-subject-list.txt output showing inconsistent file counts per subject; 
 
 7. **Rerun HALFpipe**  
-   1. Run HALFpipe again with the same command as in **Section 6**, but add the option \--subject-list \<path/to/**incomplete-subject-list.txt**\> to the end of the command. Then select Run without modification. 
+   1. Run HALFpipe again with the same command as in **[Section 1 of the old manual](manual_old_ui.qmd#)**, but add the option \--subject-list \<path/to/**incomplete-subject-list.txt**\> to the end of the command. Then select Run without modification. 
 
 For example:
 
@@ -279,7 +286,7 @@ apptainer run \
 
 
 8. **Only if running on a HPC**:  
-* Submit again the job following instruction in **Section 1.2.**  
+* Submit again the job following instruction in **Section 1.1.**  
 * After the jobs have finished, rerun the steps in the section until no incomplete subjects remain. 
 
 *Content of the output*
@@ -291,3 +298,9 @@ Example of the working directory generated by HALFpipe after completing **one of
 Example of the derivative folder generated by HALFpipe after completing **Section 1**:
 
 ![](images/check_run/3.png)
+
+# What next?
+
+Once everything has run as expected, you should be able to perform the **[quality control](quality-control.qmd)** of your preprocessed images.
+
+If you encounter any problems, please check the **[troubleshooting page](troubleshooting.qmd#)**!
