@@ -16,3 +16,20 @@ table.bordered td {
 .navbar-logo {
   max-height: 60px;
 }
+
+#quarto-sidebar {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+}
+
+/* ↑ Supprime l’espace laissé par la sidebar */
+body.nav-sidebar .quarto-content,
+body.nav-sidebar .sidebar-margin {
+  margin-left: 0 !important;
+}
+
+/* cache aussi l’icône menu (mobile/tablette) */
+.quarto-btn-toggle {
+  display: none !important;
+}

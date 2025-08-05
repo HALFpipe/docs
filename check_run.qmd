@@ -169,6 +169,12 @@ If you are running this on a local computer, the pipeline will have started. Onc
 
 # **2\. Check pre-processing and re-run if necessary** 
 
+::: {.callout-warning collapse="false" title="If you have a large dataset"}
+
+In some cases, you will need to ensure the code is compatible with your setup (not just copy and paste), especially regarding the container bindings. The text highlighted in <span style="background-color:rgb(255, 204, 204);">red</span> requires your attention.
+
+:::
+
 Below are instructions to validate a run of the HALFpipe pipeline and re-run any incomplete subjects.
 
 1. **Open a terminal session.**
@@ -235,20 +241,44 @@ If not, continue to **Step 7** to re-run the pipeline for incomplete subjects.
 
 For example:
 
-<table class="bordered">
-  <tr>
-    <td><strong>Apptainer</strong></td>
-    <td><code>apptainer run --contain --cleanenv --bind /:/ext halfpipe-1.2.3.sif --subject-chunks --nipype-n-procs 1 --keep none --subject-list &lt;path/to/incomplete-subject-list.txt&gt;</code></td>
-  </tr>
-  <tr>
-    <td><strong>Docker</strong></td>
-    <td><em>Warning!!: Do not forget to adapt your number of CPUs</em><br>
-    <code>docker run --interactive --tty --cpus=3 --volume /:/ext halfpipe/halfpipe:1.2.3 --subject-chunks --nipype-n-procs --keep none --subject-list &lt;path/to/incomplete-subject-list.txt&gt;</code></td>
-  </tr>
-</table>
+::: {.panel-tabset}
+
+## Aptainer
+
+<pre><code class="language-bash">
+apptainer run \
+  --contain \
+  --cleanenv \
+  --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
+  halfpipe-1.2.3.sif \
+  --subject-chunks \
+  --nipype-n-procs 1 \
+  --keep none \
+  --subject-list path/to/incomplete-subject-list.txt
+</code></pre>
+
+## Docker
+
+::: {.callout-warning collapse="false" title="If you have a large dataset"}
+Do not forget to adapt your number of CPUs
+:::
+
+<pre><code class="language-bash">
+apptainer run \
+  --contain \
+  --cleanenv \
+  --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
+  halfpipe-1.2.3.sif \
+  --subject-chunks \
+  --nipype-n-procs 1 \
+  --keep none \
+  --subject-list path/to/incomplete-subject-list.txt
+</code></pre>
+
+:::
 
 
-2. **Only if running on a HPC**:  
+8. **Only if running on a HPC**:  
 * Submit again the job following instruction in **Section 1.2.**  
 * After the jobs have finished, rerun the steps in the section until no incomplete subjects remain. 
 
