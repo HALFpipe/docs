@@ -11,13 +11,13 @@ If the information is this section doesn’t help with your issue, please visit 
 
 :::
 
-::: {.callout-warning collapse="false" title="If you have a large dataset"}
+::: {.callout-warning collapse="false"}
 
 In some cases, you will need to ensure the code is compatible with your setup (not just copy and paste), especially regarding the container bindings. The text highlighted in <span style="background-color:rgb(255, 204, 204);">red</span> requires your attention.
 
 :::
 
-## 1. **Errors implying Freesurfer license**
+## 1. **If you see errors implying Freesurfer license:**
 
 If you get the following error:  
 
@@ -31,7 +31,7 @@ RuntimeError: fMRIPrep needs to use FreeSurfer commands, but a valid license fil
 
 Please request the license at [https://surfer.nmr.mgh.harvard.edu/registration.html](https://surfer.nmr.mgh.harvard.edu/registration.html). You will receive an email with the license.txt file that you can copy and put directly in your current working directory.
 
-## 2. **If you see errors with 'OOM'**
+## 2. **If you see errors with 'OOM':**
 
 Example of an error in log.txt or in err.txt
 
@@ -58,7 +58,7 @@ Some of your processes may have been killed by the cgroup out- of-memory handler
   </tr>
 </table>
 
-## 3. **Singularity error**
+## 3. **If you see errors implying singularity:**
 
 Example of an error in log.txt:  
 
@@ -68,13 +68,13 @@ singularity: command not found
 
 **Solution**: load singularity before submitting the job (depends per cluster, for example: module load singularity)
 
-## 4. **Environment Errors in HPC**
+## 4. **Your script keep crashing after few moments: it could be an environment Errors in HPC:**
 
 * Ensure consistent **--bind** option used when building the container and the one in slurm.submit file as well as version of Singularity or Apptainer.  
 * If you have to load an environment in your submit.slurm (e.g. **module load StdEnv/2020**), make sure to load the environment before loading Singularity or Apptainer (i.e. **module load Singularity**)  
 * Make sure that all paths in the submit.slurm file are either **all relative or all absolute**—do not mix both types. **Consistency** is important to ensure the job runs correctly.
 
-## 5. **Large dataset (for advanced user)**
+## 5. **The creation of sumbit-scripts take too much time: you may have a very large dataset (for advanced user)**
 
 **On HPC cluster only:** if you have a large sample, you can submit **step 6** as a job (instead of running it via interactive session). To do this, take the following steps:
 
