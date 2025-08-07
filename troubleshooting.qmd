@@ -13,7 +13,7 @@ If the information is this section doesn’t help with your issue, please visit 
 
 ::: {.callout-warning collapse="false"}
 
-In some cases, you will need to ensure the code is compatible with your setup (not just copy and paste), especially regarding the container bindings. The text highlighted in <span style="background-color:rgb(255, 204, 204);">red</span> requires your attention.
+In some cases, you will need to ensure the code is compatible with your setup (not just copy and paste), especially regarding the container bindings (**see the section 4**). The text highlighted in <span style="background-color:rgb(255, 204, 204);">red</span> requires your attention.
 
 :::
 
@@ -68,7 +68,7 @@ singularity: command not found
 
 **Solution**: load singularity before submitting the job (depends per cluster, for example: module load singularity)
 
-## 4. **Your script keep crashing after few moments: it could be an environment Errors in HPC:**
+## 4. **Your script keep crashing after few moments: it could be caused by an environment errors in HPC:**
 
 * Ensure consistent **--bind** option used when building the container and the one in slurm.submit file as well as version of Singularity or Apptainer.  
 * If you have to load an environment in your submit.slurm (e.g. **module load StdEnv/2020**), make sure to load the environment before loading Singularity or Apptainer (i.e. **module load Singularity**)  
@@ -80,7 +80,7 @@ singularity: command not found
 
 * To specify the settings run: 
 
-<pre><code class="language-bash">
+<pre style="background-color:#f7f7f7; padding:10px; border-radius:4px;"><code class="language-bash">
 singularity run \
   --no-home \
   --cleanenv \
@@ -94,14 +94,14 @@ This will open the user interface as described above.
 * Refer to **step 6** for the settings to enter. Once you have entered all the settings, a spec.json file will be created.  
 * Submit the following job to create the workflow and execgraph files: 
 
-<pre><code class="language-bash">
+<pre style="background-color:#f7f7f7; padding:10px; border-radius:4px;"><code class="language-bash">
 singularity run \
---no-home \
---cleanenv \
---bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
-<path/to/the/pipeline>/halfpipe_latest.sif \
---use-cluster \
---skip-spec-ui
+  --no-home \
+  --cleanenv \
+  --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
+  <path/to/the/pipeline>/halfpipe_latest.sif \
+  --use-cluster \
+  --skip-spec-ui
 </code></pre>
 
 
