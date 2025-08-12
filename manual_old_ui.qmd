@@ -18,9 +18,15 @@ Please address questions and comments to [enigma@charite.de](enigma@charite.de).
 If you are running it on a local computer: run 1.1  
 If you are running it on a high-performance cluster: run 1.2
 
+::: {.callout-warning collapse="false"}
+
+In some cases, you will need to ensure the code is compatible with your setup (not just copy and paste), especially regarding the container bindings (**[see the section 4 of the troubleshooting page](troubleshooting.qmd#your-script-keep-crashing-after-few-moments-it-could-be-caused-by-an-environment-errors-in-hpc)**). The text highlighted in <span style="background-color:rgb(255, 204, 204);">red</span> requires your attention.
+
+:::
+
 ::: {.callout-tip collapse="true" title="If you have a large dataset"}
 
-*If you have a large dataset (>500 participants), we recommend that you look at point 5 on the Troubleshooting page (section 11) or contact [halfpipe@fmri.science](mailto:halfpipe@fmri.science). You can also join the HALFpipe team Mattermost (similar to Slack) using this link.*
+If you have a large dataset (>500 participants), we recommend that you look at point 5 on the Troubleshooting page (section 11) or contact [halfpipe@fmri.science](mailto:halfpipe@fmri.science). You can also join the HALFpipe team Mattermost (similar to Slack) using this link.
 
 :::
 
@@ -40,26 +46,37 @@ To access your files more easily, you can bind in the path where the data, worki
 
 *<span style="background-color: #fff3cd;">For example:</span> `--bind /home/user/scratch:/home/user/scratch`*
 
+::: {.panel-tabset}
+
+## Singularity / Apptainer
+
 <table class="bordered">
   <tr>
     <td><strong>Singularity or Apptainer (3.x)</strong></td>
     <td>
-      <pre><code>singularity run --contain --cleanenv --bind /:/ext \
+      <pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
 halfpipe_1.2.3.sif --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
     </td>
   </tr>
   <tr>
     <td><strong>Singularity (2.x)</strong></td>
     <td>
-      <pre><code>singularity run --contain --cleanenv --bind /:/ext \
+      <pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
 halfpipe_1.2.3.simg --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
     </td>
   </tr>
+</table>
+
+---
+
+## Docker
+
+<table class="bordered">
   <tr>
     <td><strong>Docker Desktop</strong></td>
     <td>
       <p><em>On MacOS</em></p>
-      <pre><code>docker run --interactive --tty --volume /:/ext \
+      <pre><code>docker run --interactive --tty --volume <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
 halfpipe/halfpipe:1.2.3 --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
 
       <p><em>On Windows:</em></p>
@@ -67,34 +84,34 @@ halfpipe/halfpipe:1.2.3 --subject-chunks --nipype-n-procs 1 --keep none</code></
         <li>Use forward slashes (/) instead of backslashes (\) to specify file paths.</li>
         <li>Be sure to replace <code>C:</code> with the appropriate drive letter for your system.</li>
       </ul>
-      <pre> 
-      
-      <code> docker run --interactive --tty --volume C:/:/ext \
+      <pre><code>docker run --interactive --tty --volume C:<span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
 halfpipe/halfpipe:1.2.3 --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
     </td>
   </tr>
 </table>
 
+:::
+
 ::: {.callout-tip collapse="true" title="Optional flags"}
 
-> The flags `--subject-chunks` and `--nipype-n-procs 1` are optional.  
-> While they may slow down the pipeline, they help ensure you don’t exceed your computer’s processing capacity.  
-> Use them if you're concerned about system limitations.*
+The flags `--subject-chunks` and `--nipype-n-procs 1` are optional.  
+While they may slow down the pipeline, they help ensure you don’t exceed your computer’s processing capacity.  
+Use them if you're concerned about system limitations.*
 
 :::
 
 ::: {.callout-tip collapse="true" title="How to use multiple CPU cores"}
  
-> On some systems, Docker will restrict the number of CPU cores available to HALFpipe by default.  
-> If your computer can handle it, you can allocate more CPUs using the Docker flag `--cpus`.  
-> Refer to your system’s documentation to learn your CPU limitations.  
-> By adding more CPUs, you can add the HALFpipe flag `--nipype-n-procs` to accelerate the process.*
-
-:::
+On some systems, Docker will restrict the number of CPU cores available to HALFpipe by default.  
+If your computer can handle it, you can allocate more CPUs using the Docker flag `--cpus`.  
+Refer to your system’s documentation to learn your CPU limitations.  
+By adding more CPUs, you can add the HALFpipe flag `--nipype-n-procs` to accelerate the process.*
 
 <span style="background-color: #fff3cd;">**Example using Docker:**</span>
 
-docker run --interactive --tty --cpus=3 --volume /:/ext halfpipe/halfpipe:1.2.3 --nipype-n-procs --subject-chunks --keep none
+`docker run --interactive --tty --cpus=3 --volume /:/ext halfpipe/halfpipe:1.2.3 --nipype-n-procs --subject-chunks --keep none`
+
+:::
 
 3. Go to Section 2.
 
@@ -135,22 +152,23 @@ Re-run this command every time you log out and back in again, and every time you
   <tr>
     <td><strong>Singularity (3.x)</strong></td>
     <td>
-      <pre><code>singularity run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.sif --use-cluster</code></pre>
+      <pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.2.3.sif --use-cluster</code></pre>
     </td>
   </tr>
   <tr>
     <td><strong>Singularity (2.x)</strong></td>
     <td>
-      <pre><code>singularity run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.simg --use-cluster</code></pre>
+      <pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.2.3.simg --use-cluster</code></pre>
     </td>
   </tr>
   <tr>
     <td><strong>Apptainer</strong></td>
     <td>
-      <pre><code>apptainer run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.sif --use-cluster</code></pre>
+      <pre><code>apptainer run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.2.3.sif --use-cluster</code></pre>
     </td>
   </tr>
 </table>
+
 
 4. Go to Section 2.
 
@@ -174,7 +192,7 @@ We will first specify the Data (**see section 2.1**) and then the Features (**se
 
 ::: {.callout-note collapse="false" title="Note"}
 
-*If you want to go back/deselect an option, you can use Ctrl+C*
+If you want to go back/deselect an option, you can use Ctrl+C
 
 :::
 
@@ -189,7 +207,7 @@ We will first specify the Data (**see section 2.1**) and then the Features (**se
 
 ::: {.callout-tip collapse="true" title="If you're unsure whether your data is in BIDS"}
 
-   *When running on a local computer, be aware that the BIDS format is very strict. If you're unsure whether your data is properly formatted, we recommend answering "No" to this question and specifying the file name manually, as shown in Point 2.2. This can help prevent errors during execution.*
+   When running on a local computer, be aware that the BIDS format is very strict. If you're unsure whether your data is properly formatted, we recommend answering "No" to this question and specifying the file name manually, as shown in Point 2.2. This can help prevent errors during execution.*
 
 :::
 
@@ -228,7 +246,7 @@ You can now directly go to **point 3**.
   `path/to/T1/subj02/T1.nii.gz`, etc.  
 - It will print how many files are found, <span style="background-color: #fff3cd;">for example:</span> `Found 9 files for 9 subjects and 1 session`
 
-<span style="background-color: #fff3cd;">For example</span>
+<span style="background-color: #fff3cd;">For example:</span>
 
 ![](images/old_ui/2.png)
 
@@ -459,7 +477,7 @@ We will now specify different settings:
    1. Low-pass width \[0\] \[<span style="background-color: #f8d7da; text-decoration: underline;">Skip</span>\]  
    2. High-pass width \[<span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>\] \[Skip\]
 
-<span style="background-color: #fff3cd;">For example</span>  
+<span style="background-color: #fff3cd;">For example:</span>  
 ![](images/old_ui/11.png) 
 As we performed for Seed-based connectivity, we will apply the 3 pipelines for atlas-based connectivity matrix. You can look at the figures for Seed-based if you need visual support.
 
@@ -536,7 +554,7 @@ We will now add another atlas-based connectivity (repeat all the steps 1-8), but
 
 5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
 
-<span style="background-color: #fff3cd;">For example</span>  
+<span style="background-color: #fff3cd;">For example:</span>  
 
 ![](images/old_ui/12.png) 
 
@@ -605,7 +623,7 @@ We will now select all motion scrubbing, motion parameters and their derivatives
 
 5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
 
-<span style="background-color: #fff3cd;">For example</span> 
+<span style="background-color: #fff3cd;">For example:</span> 
 ![](images/old_ui/13.png)
 
 Again, we will run the 3 pipelines
@@ -671,7 +689,7 @@ We have completed specifying all pipelines for the available features, and **no 
 
 <span style="background-color: #cce5ff;">Specify group-level model?</span> <span style="background-color: #f8d7da; text-decoration: underline;">No</span> For now, you can choose No, however, if you would like to have group statistics, you can select Yes, load in a file with group and covariate information and choose your preferred settings
 
-**You have now finished specifying the settings\! 🎉**
+**You have now finished specifying the settings\! 🎉 See the [Check and run page](check_run.qmd#) to see the next steps.**
 
 
 
