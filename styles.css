@@ -17,6 +17,10 @@ table.bordered td {
   max-height: 60px;
 }
 
+.author-text {
+  font-size: 0.8em;
+}
+
 #quarto-sidebar {
   position: absolute;
   left: -9999px;

@@ -1,1 +1,0 @@
-![ICA AROMA: example of a good/ok subject](../../images/qc/07-epi_ica_good.jpg){group="good-epi_ica"}
