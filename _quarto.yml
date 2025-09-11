@@ -3,46 +3,27 @@ project:
 
 website:
   title: "HALFpipe"
-  page-navigation: true       
-
-  navbar:
-    title: false
-    logo: images/HALFpipe_logo.svg
-    left:
-      - file: index.qmd
-        text: Home
-      - file: about.qmd
-        text: About
-      - file: installation.qmd
-        text: Installation
-      - file: manual_old_ui.qmd
-        text: rsfMRI Manual Old UI
-      - file: new_ui.qmd
-        text: Resting‑State fMRI (New UI)
-      - file: quality-control.qmd
-        text: Quality Control
-      - file: check_run.qmd
-        text: Check and Run
-      - file: troubleshooting.qmd
-        text: Troubleshooting
-
+  navbar: false
   sidebar:
-    style: floating            
+    style: docked
+    pinned: true
+    search: true
+    collapse-level: 1
     contents:
       - index.qmd
       - about.qmd
       - installation.qmd
-      - manual_old_ui.qmd
-      - new_ui.qmd
+      - section: "Manuals"
+        contents:
+          - text: "rsfMRI Manual (Old UI)"
+            file: manual_old_ui.qmd
+          - text: "Resting-State fMRI (New UI)"
+            file: new_ui.qmd
       - quality-control.qmd
       - check_run.qmd
       - troubleshooting.qmd
-
-  reader-mode: false            
-
 format:
   html:
     theme: cosmo
-    css: styles.css
     toc: true
-    page-navigation: true        
+    page-navigation: true
