@@ -411,7 +411,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - If applicable select session(s) or task(s) for resting state data
 
 2. Preprocessing settings
-- Switch _low-pass temporal filter_ to **OFF**
+- Verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 
 ### Remove confounds for 5 pipelines
 1. **Pipeline 1**: Select the confounds for **Pipeline 1**. Click on :
@@ -427,7 +427,7 @@ In the next steps, you will only modify the confounds in the final step to match
 2. **Pipeline 2**: 
 - To do so, click **Duplicate** in the left navigation bar (located below the New button). This will create a new panel for seed-based connectivity, automatically pre-filled with the general settings.
 - Feature name: Enter **reHo2**
-- In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
+- In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Go to the **Remove confounds** section and select the confounds for **Pipeline 2**: 
 
 ![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_2.png){group="reho"}
@@ -435,7 +435,7 @@ In the next steps, you will only modify the confounds in the final step to match
 3. Pipeline 3: 
 - click **Duplicate** in the left navigation bar.
 - Feature name: Enter **reHo3**
-- In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
+- In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Select the confounds for **Pipeline 3**: 
 
 ![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_3.png){group="reho"}
@@ -443,7 +443,7 @@ In the next steps, you will only modify the confounds in the final step to match
 4. Pipeline 4: 
 - Again, click **Duplicate** in the left navigation bar.
 - Feature name: Enter **reHo4**
-- In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
+- In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Select the confounds for **Pipeline 4**: 
 
 ✅ Motion parameters
@@ -457,7 +457,7 @@ In the next steps, you will only modify the confounds in the final step to match
 5. Pipeline 5: 
 - Again, click **Duplicate** in the left navigation bar.
 - Feature name: Enter **reHo5**
-- In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
+- In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Select the confounds for **Pipeline 5**: 
 
 ✅ Motion parameters
@@ -482,7 +482,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - If applicable select session(s) or task(s) for resting state data
 
 2. Preprocessing settings
-- Switch _low-pass temporal filter_ to **OFF**
+- Verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 
 ### Remove confounds for 5 pipelines
 1. **Pipeline 1**: Select the confounds for **Pipeline 1**. Click on :
@@ -498,7 +498,7 @@ In the next steps, you will only modify the confounds in the final step to match
 2. **Pipeline 2**: 
 - To do so, click **Duplicate** in the left navigation bar (located below the New button). This will create a new panel for seed-based connectivity, automatically pre-filled with the general settings.
 - Feature name: Enter **fALFF2**
-- In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
+- In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Go to the **Remove confounds** section and select the confounds for **Pipeline 2**: 
 
 ![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_2.png){group="falff"}
@@ -506,7 +506,7 @@ In the next steps, you will only modify the confounds in the final step to match
 3. Pipeline 3: 
 - click **Duplicate** in the left navigation bar.
 - Feature name: Enter **fALFF3**
-- In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
+- In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Select the confounds for **Pipeline 3**: 
 
 ![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_3.png){group="falff"}
@@ -514,7 +514,7 @@ In the next steps, you will only modify the confounds in the final step to match
 4. Pipeline 4: 
 - Again, click **Duplicate** in the left navigation bar.
 - Feature name: Enter **fALFF4**
-- In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
+- In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Select the confounds for **Pipeline 4**: 
 
 ✅ Motion parameters
@@ -528,7 +528,7 @@ In the next steps, you will only modify the confounds in the final step to match
 5. Pipeline 5: 
 - Again, click **Duplicate** in the left navigation bar.
 - Feature name: Enter **fALFF5**
-- In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
+- In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Select the confounds for **Pipeline 5**: 
 
 ✅ Motion parameters
