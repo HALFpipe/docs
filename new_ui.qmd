@@ -252,7 +252,7 @@ Recommended for multiverse analyses (optional pipelines)
 - Select the path of one existing seed. Then modify the path with `{seed}.nii.gz`
 - Proceed with these values: __Yes__. Then verify that all the seeds are selected.
 5. Minimum brain coverage:
-- Set minimum brain coverage to __0.8__
+- Set minimum brain coverage to __0.5__
 6. Preprocesssing settings
 - Switch _low-pass temporal filter_ to __OFF__
 
