@@ -15,5 +15,4 @@ Subscribe to our [mailing list](https://mailman.charite.de/mailman/listinfo/half
 
 If you encounter issues, please see the [troubleshooting section](https://github.com/HALFpipe/HALFpipe/issues) on GitHub.
 
-# Flowchart
 ![](./images/Website_workflow.svg)
