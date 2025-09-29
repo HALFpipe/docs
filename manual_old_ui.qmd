@@ -322,6 +322,7 @@ We will now specify which features we’d like to extract and specify their sett
 ![](images/old_ui/Workflow-Halfpipe.svg)
 
 The features will be extracted with **three** types of confound removal using:  
+
 1. **Pipeline 1**: aCompCor  
 2. **Pipeline 2**: Motion parameters with scrubbing  
 3. **Pipeline 3**: Pipeline 2 + Global Signal (GSR)
@@ -335,13 +336,15 @@ Here is a summary of the confound parameters to apply for each pipeline when run
 ### **Seed-based connectivity** {#seed-based-connectivity}
 
 1. <span style="background-color: #cce5ff;">Specify the feature type</span>: Use the **↓ (down arrow key)** until you reach Seed-based connectivity, then **press enter.**  
-  [Task-based]  
-  <span style="background-color: #f8d7da; text-decoration: underline;">[Seed-based connectivity]</span>  
-  [Dual regression]  
-  [Group-information guided ICA]
-  [Atlas-based connectivity matrix]  
-  [ReHo]  
-  [fALFF]
+  ```bash
+  [] Task-based 
+  [*] Seed-based connectivity 
+  [] Dual regression 
+  [] Group-information guided ICA
+  [] Atlas-based connectivity matrix
+  [] ReHo
+  [] fALFF
+  ```
 
 2. <span style="background-color: #cce5ff;">Specify feature name</span>: Type <span style="background-color: #f8d7da; text-decoration: underline;">seedCorr1</span> (and then **press enter**)
 

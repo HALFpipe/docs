@@ -185,9 +185,6 @@ Each of the features will be extracted with three types of confound removal usin
 - Pipeline 1: aCompCor 
 - Pipeline 2: Motion parameters with scrubbing
 - Pipeline 3: Pipeline 2 + Global Signal (GSR) 
-
-Recommended for multiverse analyses (optional pipelines)
-
 - Pipeline 4:  Motion parameters
 - Pipeline 5:  Pipeline 4 + Global Signal (GSR)
 
@@ -222,7 +219,7 @@ Recommended for multiverse analyses (optional pipelines)
 
 ✅ Global signal
 
-##### Pipeline 4 (optional)
+##### Pipeline 4
 ✅ Motion parameters
 
 ✅ Derivatives of motion parameters
@@ -231,7 +228,7 @@ Recommended for multiverse analyses (optional pipelines)
 
 ✅ Derivatives of motion parameters squared
 
-##### Pipeline 5 (optional)
+##### Pipeline 5
 ✅ Motion parameters
 
 ✅ Derivatives of motion parameters
