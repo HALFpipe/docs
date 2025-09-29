@@ -362,11 +362,13 @@ Here is a summary of the confound parameters to apply for each pipeline when run
 
 5. <span style="background-color: #cce5ff;">Specify minimum seed coverage by individual brain mask</span>: <span style="background-color: #f8d7da; text-decoration: underline;">0.5</span>
 
-6. <span style="background-color: #cce5ff;">Apply smoothing</span>: <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>
+6. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
 
-7. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm</span>: <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span> (This should be by default 6.0, simply **press enter**)
+7. <span style="background-color: #cce5ff;">Apply smoothing</span>: <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>
 
-8. <span style="background-color: #cce5ff;">Specify the filter width in seconds</span>  
+8. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm</span>: <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span> (This should be by default 6.0, simply **press enter**)
+
+9. <span style="background-color: #cce5ff;">Specify the filter width in seconds</span>  
    1. Low-pass width \[0\] \[<span style="background-color: #f8d7da; text-decoration: underline;">Skip\] </span> 
    2. High-pass width \[<span style="background-color: #f8d7da; text-decoration: underline;">125.0\]</span> \[Skip\]  
       
@@ -374,7 +376,7 @@ Here is a summary of the confound parameters to apply for each pipeline when run
 **For pipeline 1**  
 We will apply pipeline 1, i.e. aCompCor:
 
-9. <span style="background-color: #cce5ff;">Remove confounds?</span>   
+10. <span style="background-color: #cce5ff;">Remove confounds?</span>   
 * Use your **down arrow key** ↓ until   
   <span style="background-color: #f8d7da; text-decoration: underline;">aCompCor</span> (top five components)  
 * Then **press space** to select it**.** Make sure no other confounds are selected, and **press enter**
@@ -384,7 +386,7 @@ We will apply pipeline 1, i.e. aCompCor:
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 <span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
-We will now add another seed-based connectivity (repeat all the steps, **from 1 to 8**), but in the last step we will select all motion parameters, their derivatives, and motion scrubbing for **pipeline 2** instead of aCompCor. 
+We will now add another seed-based connectivity (repeat all the steps, **from 1 to 9**), but in the last step we will select all motion parameters, their derivatives, and motion scrubbing for **pipeline 2** instead of aCompCor. 
 
 In short, you will now choose: 
 
@@ -393,13 +395,14 @@ In short, you will now choose:
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
 4. <span style="background-color: #cce5ff;">Specify the seed masks:</span> **press enter**    
 5. <span style="background-color: #cce5ff;">Specify minimum seed coverage:</span> **press enter**   
-6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
-7. <span style="background-color: #cce5ff;">Specify smoothing FWHM:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>,   
-8. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
+6. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+7. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+8. <span style="background-color: #cce5ff;">Specify smoothing FWHM:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>,   
+9. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
 
 **For pipeline 2**
 
-9. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key** ↓ and **press space** for each parameter.  
+10. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key** ↓ and **press space** for each parameter.  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
@@ -420,13 +423,14 @@ We will now add another seed-based connectivity (repeat all the steps), but in t
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
 4. <span style="background-color: #cce5ff;">Specify the seed masks:</span> **press enter**   
 5. <span style="background-color: #cce5ff;">Specify minimum seed coverage:</span> **press enter**   
-6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
-7. <span style="background-color: #cce5ff;">Specify smoothing FWHM:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>,   
-8. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
+6. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+7. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+8. <span style="background-color: #cce5ff;">Specify smoothing FWHM:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>,   
+9. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
 
 **For pipeline 3**
 
-9. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter. Once the selection is done, **press enter**:  
+10. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter. Once the selection is done, **press enter**:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
@@ -439,20 +443,21 @@ We will now add another seed-based connectivity (repeat all the steps), but in t
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 <span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
-We will now add another seed-based connectivity (repeat all the steps 1-8), but in the last step (remove confounds) we will select all motion parameters and their derivatives (**pipeline 4**) .
+We will now add another seed-based connectivity (repeat all the steps 1-9), but in the last step (remove confounds) we will select all motion parameters and their derivatives (**pipeline 4**) .
 
 1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Seed-based connectivity</span>,   
 2. <span style="background-color: #cce5ff;">Specify feature name:</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">seedCorr4</span>,   
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
 4. <span style="background-color: #cce5ff;">Specify the seed masks:</span> **press enter**   
 5. <span style="background-color: #cce5ff;">Specify minimum seed coverage:</span> **press enter**   
-6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
-7. <span style="background-color: #cce5ff;">Specify smoothing FWHM:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>,   
-8. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
+6. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+7. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+8. <span style="background-color: #cce5ff;">Specify smoothing FWHM:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>,   
+9. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
 
 **For pipeline 4**
 
-9. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter. Once the selection is done, **press enter**:  
+10. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter. Once the selection is done, **press enter**:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
@@ -468,13 +473,14 @@ We will now add another seed-based connectivity (repeat all the steps), but in t
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
 4. <span style="background-color: #cce5ff;">Specify the seed masks:</span> **press enter**   
 5. <span style="background-color: #cce5ff;">Specify minimum seed coverage:</span> **press enter**   
-6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
-7. <span style="background-color: #cce5ff;">Specify smoothing FWHM:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>,   
-8. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
+6. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+7. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+8. <span style="background-color: #cce5ff;">Specify smoothing FWHM:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>,   
+9. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
 
 **For pipeline 5**
 
-9. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter. Once the selection is done, **press enter**:  
+10. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter. Once the selection is done, **press enter**:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
@@ -514,29 +520,31 @@ We will now specify different settings:
 
 5. <span style="background-color: #cce5ff;">Specify minimum atlas region coverage by individual brain mask:</span> <span style="background-color: #f8d7da; text-decoration: underline;">0.5</span>
 
-6. <span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>
+6. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
 
-7. <span style="background-color: #cce5ff;">Specify the type of temporal filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span>
+7. <span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>
 
-8. <span style="background-color: #cce5ff;">Specify the filter width in seconds</span>
+8. <span style="background-color: #cce5ff;">Specify the type of temporal filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span>
+
+9. <span style="background-color: #cce5ff;">Specify the filter width in seconds</span>
    1. Low-pass width \[0\] \[<span style="background-color: #f8d7da; text-decoration: underline;">Skip</span>\]  
    2. High-pass width \[<span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>\] \[Skip\]
 
 <span style="background-color: #fff3cd;">For example:</span>  
 ![](images/old_ui/11.png) 
-As we performed for Seed-based connectivity, we will apply the 3 pipelines for atlas-based connectivity matrix. You can look at the figures for Seed-based if you need visual support.
+As we performed for Seed-based connectivity, we will apply the 5 pipelines for atlas-based connectivity matrix. You can look at the figures for Seed-based if you need visual support.
 
 **For pipeline 1**  
 We will first apply pipeline 1, i.e. aCompCor
 
-9. <span style="background-color: #cce5ff;">Remove confounds?</span>  
+10. <span style="background-color: #cce5ff;">Remove confounds?</span>  
 * Use your **down arrow key** ↓ until <span style="background-color: #f8d7da; text-decoration: underline;">aCompCor</span> (top five components)  
 * **Press space** to select and then **press enter**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 <span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span> /No  
-We will now add another atlas-based connectivity (repeat all the steps, **from step 1 to 8**), but in the last step (step 9 : remove confounds) we will select all parameters for pipeline 2\. 
+We will now add another atlas-based connectivity (repeat all the steps, **from step 1 to 9**), but in the last step (step 9 : remove confounds) we will select all parameters for pipeline 2\. 
 
 In short, you will now choose: 
 
@@ -545,13 +553,14 @@ In short, you will now choose:
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
 4. <span style="background-color: #cce5ff;">Specify atlas file(s):</span> **press enter**   
 5. <span style="background-color: #cce5ff;">Specify minimum atlas region coverage:</span> **press enter**   
-6. <span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
-7. <span style="background-color: #cce5ff;">Specify the type of temporal filter</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span>   
-8. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
+6. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+7. <span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+8. <span style="background-color: #cce5ff;">Specify the type of temporal filter</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span>   
+9. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
 
 **For pipeline 2**
 
-9. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+10. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
@@ -562,20 +571,21 @@ In short, you will now choose:
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 <span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
-We will now add another atlas-based connectivity (repeat all the steps 1-8), but in the last step (remove confounds) we will select all parameters for **pipeline 3**.
+We will now add another atlas-based connectivity (repeat all the steps 1-9), but in the last step (remove confounds) we will select all parameters for **pipeline 3**.
 
 1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Atlas-based connectivity matrix</span>   
 2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">corrMatrix3</span>,   
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
 4. <span style="background-color: #cce5ff;">Specify atlas file(s):</span> **press enter**   
 5. <span style="background-color: #cce5ff;">Specify minimum atlas region coverage:</span> **press enter**   
-6. <span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
-7. <span style="background-color: #cce5ff;">Specify the type of temporal filter</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span>   
-8. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
+6. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+7. <span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+8. <span style="background-color: #cce5ff;">Specify the type of temporal filter</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span>   
+9. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
 
 **For pipeline 3**
 
-9. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+10. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
@@ -588,20 +598,21 @@ We will now add another atlas-based connectivity (repeat all the steps 1-8), but
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 <span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
-We will now add another atlas-based connectivity (repeat all the steps 1-8), but in the last step (remove confounds) we will select all parameters for **pipeline 4**.
+We will now add another atlas-based connectivity (repeat all the steps 1-9), but in the last step (remove confounds) we will select all parameters for **pipeline 4**.
 
 1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Atlas-based connectivity matrix</span>   
 2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">corrMatrix4</span>,   
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
 4. <span style="background-color: #cce5ff;">Specify atlas file(s):</span> **press enter**   
 5. <span style="background-color: #cce5ff;">Specify minimum atlas region coverage:</span> **press enter**   
-6. <span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
-7. <span style="background-color: #cce5ff;">Specify the type of temporal filter</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span>   
-8. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
+6. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+7. <span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+8. <span style="background-color: #cce5ff;">Specify the type of temporal filter</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span>   
+9. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
 
 **For pipeline 4**
 
-9. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+10. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
@@ -612,20 +623,21 @@ We will now add another atlas-based connectivity (repeat all the steps 1-8), but
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 <span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
-We will now add another atlas-based connectivity (repeat all the steps 1-8), but in the last step (remove confounds) we will select all parameters for **pipeline 5**.
+We will now add another atlas-based connectivity (repeat all the steps 1-9), but in the last step (remove confounds) we will select all parameters for **pipeline 5**.
 
 1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Atlas-based connectivity matrix</span>   
 2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">corrMatrix5</span>,   
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
 4. <span style="background-color: #cce5ff;">Specify atlas file(s):</span> **press enter**   
 5. <span style="background-color: #cce5ff;">Specify minimum atlas region coverage:</span> **press enter**   
-6. <span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
-7. <span style="background-color: #cce5ff;">Specify the type of temporal filter</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span>   
-8. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
+6. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+7. <span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+8. <span style="background-color: #cce5ff;">Specify the type of temporal filter</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span>   
+9. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
 
 **For pipeline 5**
 
-9. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+10. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
@@ -644,9 +656,14 @@ We will now add another atlas-based connectivity (repeat all the steps 1-8), but
 
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> if you have multiple tasks or sessions, select the session(s) or task(s) corresponding to resting-state data. Press space **to untick** a session, **press enter** to validate the selection
 
-4. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>
+4. <span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span>
+style="background-color: #f8d7da; text-decoration: underline;">No</span>
 
-5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
+5. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+
+6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>
+
+7. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
 
 <span style="background-color: #fff3cd;">For example:</span>  
 
@@ -655,26 +672,29 @@ We will now add another atlas-based connectivity (repeat all the steps 1-8), but
 **For pipeline 1**  
 We will first apply pipeline 1, i.e. aCompCor
 
-6. <span style="background-color: #cce5ff;">Remove confounds?</span>   
+8. <span style="background-color: #cce5ff;">Remove confounds?</span>   
 * Use your **down arrow key** ↓ until <span style="background-color: #f8d7da; text-decoration: underline;">aCompCor</span> (top five components)  
 * **Press space** to select, then **press enter**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 <span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
-We will now add another ReHo (repeat all the steps, **from 1 to 5**), select confounds for **pipeline 2** 
+We will now add another ReHo (repeat all the steps, **from 1 to 7**), select confounds for **pipeline 2** 
 
 In short, you will now choose: 
 
 1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">ReHo</span>  
 2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">reHo2</span>   
-3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
-4. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
-5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
+3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter** 
+4. <span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span>
+style="background-color: #f8d7da; text-decoration: underline;">No</span>
+5. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
+7. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
 
 **For pipeline 2**
 
-6. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+8. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
@@ -690,12 +710,15 @@ We will now select all motion scrubbing, motion parameters and their derivatives
 1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">ReHo</span>  
 2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">reHo3</span>  
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
-4. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
-5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
+4. <span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span>
+style="background-color: #f8d7da; text-decoration: underline;">No</span>
+5. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
+7. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
 
 **For pipeline 3**
 
-6. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+8. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
@@ -711,12 +734,15 @@ We will now select all motion parameters and their derivatives (**pipeline 4**) 
 1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">ReHo</span>  
 2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">reHo3</span>  
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
-4. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
-5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
+4. <span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span>
+style="background-color: #f8d7da; text-decoration: underline;">No</span>
+5. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
+7. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
 
 **For pipeline 4**
 
-6. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+8. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
@@ -725,17 +751,20 @@ We will now select all motion parameters and their derivatives (**pipeline 4**) 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 <span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
-We will now select all  motion parameters and their derivatives as well as Global signal (**pipeline 5**) .
+We will now select all motion parameters and their derivatives as well as Global signal (**pipeline 5**) .
 
 1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">ReHo</span>  
 2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">reHo3</span>  
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
-4. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
-5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
+4. <span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span>
+style="background-color: #f8d7da; text-decoration: underline;">No</span>
+5. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
+7. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
 
 **For pipeline 5**
 
-6. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+8. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
@@ -754,9 +783,14 @@ We will now select all  motion parameters and their derivatives as well as Globa
 
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> if you have multiple tasks or sessions, select the session(s) or task(s) corresponding to resting-state data. Press space **to untick** a session, **press enter** to validate the selection
 
-4. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>
+4. <span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span>
+style="background-color: #f8d7da; text-decoration: underline;">No</span>
 
-5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
+5. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+
+6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
+
+7. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
 
 <span style="background-color: #fff3cd;">For example:</span> 
 ![](images/old_ui/13.png)
@@ -766,26 +800,29 @@ Again, we will run the 3 pipelines
 **For pipeline 1**  
 We will first apply pipeline 1, i.e. aCompCor
 
-6. <span style="background-color: #cce5ff;">Remove confounds?</span>   
+8. <span style="background-color: #cce5ff;">Remove confounds?</span>   
 * Use your **down arrow key** ↓ until <span style="background-color: #f8d7da; text-decoration: underline;">aCompCor</span> (top five components)  
 * then **press space** and **enter**
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 <span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
-We will now add another fALFF (repeat all the steps, **from step 1 to 5**), but in the last step (step 6: remove confounds) we will select all parameters for **pipeline 2** instead of aCompCor. 
+We will now add another fALFF (repeat all the steps, **from step 1 to 7**), but in the last step (step 6: remove confounds) we will select all parameters for **pipeline 2** instead of aCompCor. 
 
 In short, you will now choose: 
 
 1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">fALFF</span>  
 2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">fALFF2</span>   
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
-4. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
-5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
+4. <span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span>
+style="background-color: #f8d7da; text-decoration: underline;">No</span>
+5. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
+7. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
 
 **For pipeline 2**
 
-6. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+8. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
@@ -801,12 +838,14 @@ We will now select all motion scrubbing, motion parameters and their derivatives
 1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">fALFF</span>  
 2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">fALFF3</span>   
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
-4. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
-5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
-
+4. <span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span>
+style="background-color: #f8d7da; text-decoration: underline;">No</span>
+5. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
+7. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
 **For pipeline 3**
 
-6. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+8. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
@@ -822,12 +861,14 @@ We will now select all motion parameters and their derivatives (**pipeline 4**) 
 1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">fALFF</span>  
 2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">fALFF3</span>   
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
-4. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
-5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
-
+4. <span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span>
+style="background-color: #f8d7da; text-decoration: underline;">No</span>
+5. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
+7. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
 **For pipeline 4**
 
-6. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+8. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
@@ -841,12 +882,14 @@ We will now select all motion parameters and their derivatives as well as Global
 1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">fALFF</span>  
 2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">fALFF3</span>   
 3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
-4. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
-5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
-
+4. <span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span>
+style="background-color: #f8d7da; text-decoration: underline;">No</span>
+5. <span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span>
+6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
+7. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
 **For pipeline 5**
 
-6. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+8. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
