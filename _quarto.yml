@@ -31,8 +31,8 @@ website:
     type: primary
     position: below-navbar
 
-  repo-url: https://github.com/HALFpipe/docs
-  repo-actions: [issue, source]
+  repo-url: https://github.com/HALFpipe/HALFpipe
+  repo-actions: [issue]
     
 format:
   html:

@@ -1,9 +1,12 @@
 ---
 title: "Installation instructions"
+format: 
+  html:
+    css: styles.css
 ---
 
 ::: {.author-text}
- <span style="color: #808080;">AUTHOR</span>
+<span style="color: #808080;">AUTHOR</span>
 
 Written by Clara El Khantour, Lea Waller, Seann Wang, Pierre Lune Bellec, Frank Hillary, Ilya Veer, Clara Moreau
 

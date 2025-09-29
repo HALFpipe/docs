@@ -1,12 +1,23 @@
 ---
 title: "Resting-State fMRI with the new UI"
 lightbox: true
+format: 
+  html:
+    css: styles.css
 ---
 
-::: {.author-text}
- <span style="color: #808080;">AUTHOR</span>
+::: {.callout-caution icon=true}
 
- Written by Clara El Khantour, Lea Waller, Pierre Lune Bellec, Frank Hillary, Ilya Veer, Clara Moreau
+# The New-UI is still under development 
+
+We are still working on the implementation of the New UI for HALFpipe. Please report any issue you might encounter at enigma@charite.de or on GitHub
+
+:::
+
+::: {.author-text}
+<span style="color: #808080;">AUTHOR</span>
+
+Written by Clara El Khantour, Lea Waller, Pierre Lune Bellec, Frank Hillary, Ilya Veer, Clara Moreau
 
 Adapted from the **MDD ENIGMA resting-state fMRI manual** and the **OCD ENIGMA task-based fMRI manual**.
 

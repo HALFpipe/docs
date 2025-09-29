@@ -1,6 +1,4 @@
 /* css styles */
-
-
 table.bordered {
   border-collapse: collapse;
   width: 100%;
@@ -12,15 +10,10 @@ table.bordered td {
   vertical-align: top;
 }
 
-/* Increase size of logo in navbar */
-.navbar-logo {
-  max-height: 60px;
-}
-
 .author-text {
-  font-size: 14px;
+  font-size: 0.8em;
 }
 
 .footnotes {
-  font-size: 8px;
+  font-size: 0.8em;
 }
