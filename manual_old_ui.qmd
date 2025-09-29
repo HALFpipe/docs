@@ -198,11 +198,11 @@ If you want to go back/deselect an option, you can use Ctrl+C
 
 ## 2.1 Data
 
-### 1. <span style="background-color: #cce5ff;">Specify Working directory:</span> Your output folder.  
+1. <span style="background-color: #cce5ff;">Specify Working directory:</span> Your output folder.  
    - *You can navigate using the Up/Down arrow keys ↓ to go to a folder and the right arrow key → to select this folder.*  
    - *Do this until you get to path/to/your_working_directory*
 
-### 2. <span style="background-color: #cce5ff;">Is the data available in BIDS format?</span>  
+2. <span style="background-color: #cce5ff;">Is the data available in BIDS format?</span>  
    If your data is already in BIDS format, follow the instructions of point 2.1. If not, follow the instructions of point 2.2. 
 
 ::: {.callout-tip collapse="true" title="If you're unsure whether your data is in BIDS"}
@@ -213,7 +213,7 @@ If you want to go back/deselect an option, you can use Ctrl+C
 
 ::: {.panel-tabset}
 
-#### 2.1 If your data is in BIDS
+### 2.1 If your data is in BIDS
 
 <span style="background-color: #cce5ff;">Is the data available in BIDS format?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
 <span style="background-color: #cce5ff;">Specify the path of the BIDS directory</span>  
@@ -230,11 +230,11 @@ You can now directly go to **point 3**.
 
 ---
 
-#### 2.2 If your data is not in BIDS
+### 2.2 If your data is not in BIDS
 
 <span style="background-color: #cce5ff;">Is the data available in BIDS format?</span> <span style="background-color: #f8d7da; text-decoration: underline;">No</span>
 
-##### 2.2.1
+#### 2.2.1
 
 <span style="background-color: #cce5ff;">Specify anatomical/structural data<br>Specify the path of the T1-weighted image files</span>
   
@@ -250,7 +250,7 @@ You can now directly go to **point 3**.
 
 ![](images/old_ui/2.png)
 
-##### 2.2.2 
+#### 2.2.2 
 
 <span style="background-color: #cce5ff;">Specify functional data<br>Specify the path of the BOLD image files</span>  
 
@@ -265,58 +265,49 @@ You can now directly go to **point 3**.
 
 ![](images/old_ui/3.png)
 
-##### 2.2.3 
+#### 2.2.3 
 
 <span style="background-color: #cce5ff;">Check repetition time values</span> 
 Check if the repetition time values are correct.  
 <span style="background-color: #fff3cd;">For example:</span> 18 images - 2.4 seconds  
 <span style="background-color: #cce5ff;">Proceed with these values?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>/No (unless the TR is incorrect)
 
-##### 2.2.4
+#### 2.2.4
 
 <span style="background-color: #cce5ff;">Add more BOLD image files? Yes/<span style="background-color: #f8d7da; text-decoration: underline;">No</span> (unless you have more)</span>  
 
 :::
 
-### 3. <span style="background-color: #cce5ff;">Do slice timing?</span>  
+3. <span style="background-color: #cce5ff;">Do slice timing?</span>  
 
-#### 3.1 
+    3.1 <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span> if you know the slice timing details during the acquisition for your data.  
+    If unsure, check with the MR physicist/technician or any dataset information.  
+    In the following steps you will check the slice order and slice timing values.  
+    - Confirm with <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span> if they are correct.  
+    - Otherwise, select <span style="background-color: #f8d7da; text-decoration: underline;">No</span> and then enter the correct values.  
 
-<span style="background-color: #f8d7da; text-decoration: underline;">Yes</span> if you know the slice timing details during the acquisition for your data.  
-If unsure, check with the MR physicist/technician or any dataset information.  
-In the following steps you will check the slice order and slice timing values.  
-- Confirm with <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span> if they are correct.  
-- Otherwise, select <span style="background-color: #f8d7da; text-decoration: underline;">No</span> and then enter the correct values.  
+    3.2 <span style="background-color: #f8d7da; text-decoration: underline;">No</span> otherwise  
 
-#### 3.2
-
-<span style="background-color: #f8d7da; text-decoration: underline;">No</span> otherwise  
-
-### 4. <span style="background-color: #cce5ff;">Remove initial volumes from scans?</span> 
-
+4. <span style="background-color: #cce5ff;">Remove initial volumes from scans?</span> :
 Enter 0, which should be pre-filled.  
+
 If you believe that your data might require removal of initial volumes, for example due to non-equilibration, you can also enter a different value.  
 
-### 5. <span style="background-color: #cce5ff;">Specify field maps?</span>
+5. <span style="background-color: #cce5ff;">Specify field maps?</span>
+    
+    5.1 <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span> if you acquired field map images for your sample.  
+    In the following steps you will specify the type of field map, their file names and the acquisition parameters.  
+
+    5.2 <span style="background-color: #f8d7da; text-decoration: underline;">No</span> otherwise  
 
 ::: {.callout-note collapse="false" title="Note"}
 
-If the data was imported from a BIDS directory, this step will be omitted. 
+If the data was imported from a BIDS directory, Field maps will be omitted. 
 
 :::
 
-#### 5.1
-
-<span style="background-color: #f8d7da; text-decoration: underline;">Yes</span> if you acquired field map images for your sample.  
-In the following steps you will specify the type of field map, their file names and the acquisition parameters.  
-
-#### 5.2
-
-<span style="background-color: #f8d7da; text-decoration: underline;">No</span> otherwise  
-
-### 6. <span style="background-color: #cce5ff;">Specify first-level features?</span> 
-
-Select <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>
+  6. <span style="background-color: #cce5ff;">Specify first-level features?</span> : 
+  Select <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>
 
 ## 2.2 Features
 
