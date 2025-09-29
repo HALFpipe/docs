@@ -196,7 +196,7 @@ If you want to go back/deselect an option, you can use Ctrl+C
 
 :::
 
-## 2.1 DATA
+## 2.1 Data
 
 ### 1. <span style="background-color: #cce5ff;">Specify Working directory:</span> Your output folder.  
    - *You can navigate using the Up/Down arrow keys ↓ to go to a folder and the right arrow key → to select this folder.*  
@@ -323,29 +323,28 @@ Select <span style="background-color: #f8d7da; text-decoration: underline;">Yes<
 We will now specify which features we’d like to extract and specify their settings.
 
 
-![](images/old_ui/4.png)
+![](images/old_ui/Workflow-Halfpipe.svg)
 
 The features will be extracted with **three** types of confound removal using:  
 1. **Pipeline 1**: aCompCor  
 2. **Pipeline 2**: Motion parameters with scrubbing  
 3. **Pipeline 3**: Pipeline 2 + Global Signal (GSR)
+4. **Pipeline 4**: Pipeline 2 without Scrubbing
+5. **Pipeline 5**: Pipeline 3 without Scrubbing
 
 Here is a summary of the confound parameters to apply for each pipeline when running HALFpipe:
 
-![](images/old_ui/5.png)
-
-Optional: If you are planning to run a multiverse analysis, we recommend running two additional pipelines: Pipeline 2 and Pipeline 3, each without scrubbing.  
-You can also follow the manual as it is and add these optional pipelines later by using point 6 in the Troubleshooting section (Section 11), which explains how to add features after the initial setup.
+![](images/old_ui/HALFpipe-strategies.svg)
 
 ### **Seed-based connectivity** {#seed-based-connectivity}
 
 1. <span style="background-color: #cce5ff;">Specify the feature type</span>: Use the **↓ (down arrow key)** until you reach Seed-based connectivity, then **press enter.**  
-   \[Task-based\]  
-   \<span style="background-color: #f8d7da; text-decoration: underline;">[Seed-based connectivity\]</span>   
-   \[Dual regression\]  
-   \[Atlas-based connectivity matrix\]  
-   \[ReHo\]   
-   \[fALFF\]
+  [Task-based]  
+  <span style="background-color: #f8d7da; text-decoration: underline;">[Seed-based connectivity]</span>  
+  [Dual regression]  
+  [Atlas-based connectivity matrix]  
+  [ReHo]  
+  [fALFF]
 
 2. <span style="background-color: #cce5ff;">Specify feature name</span>: Type <span style="background-color: #f8d7da; text-decoration: underline;">seedCorr1</span> (and then **press enter**)
 
@@ -436,6 +435,52 @@ We will now add another seed-based connectivity (repeat all the steps), but in t
    <span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span>
 
 ![](images/old_ui/9.png)
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+<span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+We will now add another seed-based connectivity (repeat all the steps 1-8), but in the last step (remove confounds) we will select all motion parameters and their derivatives (**pipeline 4**) .
+
+1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Seed-based connectivity</span>,   
+2. <span style="background-color: #cce5ff;">Specify feature name:</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">seedCorr4</span>,   
+3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
+4. <span style="background-color: #cce5ff;">Specify the seed masks:</span> **press enter**   
+5. <span style="background-color: #cce5ff;">Specify minimum seed coverage:</span> **press enter**   
+6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
+7. <span style="background-color: #cce5ff;">Specify smoothing FWHM:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>,   
+8. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
+
+**For pipeline 4**
+
+9. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter. Once the selection is done, **press enter**:  
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,   
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+<span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+We will now add another seed-based connectivity (repeat all the steps), but in the last step (remove confounds) we will select all motion parameters and their derivatives as well as Global signal (**pipeline 5**) .
+
+1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Seed-based connectivity</span>,   
+2. <span style="background-color: #cce5ff;">Specify feature name:</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">seedCorr5</span>,   
+3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
+4. <span style="background-color: #cce5ff;">Specify the seed masks:</span> **press enter**   
+5. <span style="background-color: #cce5ff;">Specify minimum seed coverage:</span> **press enter**   
+6. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
+7. <span style="background-color: #cce5ff;">Specify smoothing FWHM:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>,   
+8. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
+
+**For pipeline 5**
+
+9. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter. Once the selection is done, **press enter**:  
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span>
+
 
 ### 
 
@@ -540,6 +585,55 @@ We will now add another atlas-based connectivity (repeat all the steps 1-8), but
 
 <span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span> 
 
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+<span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+We will now add another atlas-based connectivity (repeat all the steps 1-8), but in the last step (remove confounds) we will select all parameters for **pipeline 4**.
+
+1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Atlas-based connectivity matrix</span>   
+2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">corrMatrix4</span>,   
+3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
+4. <span style="background-color: #cce5ff;">Specify atlas file(s):</span> **press enter**   
+5. <span style="background-color: #cce5ff;">Specify minimum atlas region coverage:</span> **press enter**   
+6. <span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+7. <span style="background-color: #cce5ff;">Specify the type of temporal filter</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span>   
+8. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
+
+**For pipeline 4**
+
+9. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,   
+
+<span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span> 
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+<span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+We will now add another atlas-based connectivity (repeat all the steps 1-8), but in the last step (remove confounds) we will select all parameters for **pipeline 5**.
+
+1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Atlas-based connectivity matrix</span>   
+2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">corrMatrix5</span>,   
+3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
+4. <span style="background-color: #cce5ff;">Specify atlas file(s):</span> **press enter**   
+5. <span style="background-color: #cce5ff;">Specify minimum atlas region coverage:</span> **press enter**   
+6. <span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+7. <span style="background-color: #cce5ff;">Specify the type of temporal filter</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span>   
+8. <span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.
+
+**For pipeline 5**
+
+9. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span>
+
+<span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span> 
+
 ---
 
 ### **ReHo** {#reho}
@@ -609,6 +703,47 @@ We will now select all motion scrubbing, motion parameters and their derivatives
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion scrubbing</span>  
    <span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span>
 
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+<span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+We will now select all motion parameters and their derivatives (**pipeline 4**) .
+
+1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">ReHo</span>  
+2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">reHo3</span>  
+3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
+4. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
+5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
+
+**For pipeline 4**
+
+6. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,   
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+<span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+We will now select all  motion parameters and their derivatives as well as Global signal (**pipeline 5**) .
+
+1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">ReHo</span>  
+2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">reHo3</span>  
+3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
+4. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
+5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
+
+**For pipeline 5**
+
+6. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span>
+
+<span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+
 ---
 
 ### **fALFF** {#falff}
@@ -677,6 +812,45 @@ We will now select all motion scrubbing, motion parameters and their derivatives
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion scrubbing</span>  
+   <span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span>
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+<span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+We will now select all motion parameters and their derivatives (**pipeline 4**) .
+
+1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">fALFF</span>  
+2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">fALFF3</span>   
+3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
+4. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
+5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
+
+**For pipeline 4**
+
+6. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,   
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+<span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>   
+We will now select all motion parameters and their derivatives as well as Global signal (**pipeline 5**) .
+
+1. <span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">fALFF</span>  
+2. <span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">fALFF3</span>   
+3. <span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with **space**, then **press enter**  
+4. <span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
+5. <span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>
+
+**For pipeline 5**
+
+6. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
+   <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span>
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
