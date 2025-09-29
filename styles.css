@@ -18,22 +18,9 @@ table.bordered td {
 }
 
 .author-text {
-  font-size: 0.8em;
+  font-size: 14px;
 }
 
-#quarto-sidebar {
-  position: absolute;
-  left: -9999px;
-  visibility: hidden;
-}
-
-/* ↑ Supprime l’espace laissé par la sidebar */
-body.nav-sidebar .quarto-content,
-body.nav-sidebar .sidebar-margin {
-  margin-left: 0 !important;
-}
-
-/* cache aussi l’icône menu (mobile/tablette) */
-.quarto-btn-toggle {
-  display: none !important;
+.footnotes {
+  font-size: 8px;
 }

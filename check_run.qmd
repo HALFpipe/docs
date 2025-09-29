@@ -1,5 +1,5 @@
 ---
-title: "How to run the pipeline, check the outputs , and rerun the failed subjects"
+title: "How to run the pipeline, check the outputs, and rerun the failed subjects"
 format: html
 ---
 
