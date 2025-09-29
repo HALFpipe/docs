@@ -4,6 +4,7 @@ project:
 website:
   title: "HALFpipe"
   navbar: false
+
   sidebar:
     style: docked
     pinned: true
@@ -22,8 +23,22 @@ website:
       - quality-control.qmd
       - check_run.qmd
       - troubleshooting.qmd
+
+  announcement: 
+    icon: info-circle
+    dismissable: true
+    content: "**NEW RELEASE** - HALFpipe v1.3.0 is now available! Check out the [release notes](https://github.com/HALFpipe/HALFpipe/releases/tag/1.3.0) for more details."
+    type: primary
+    position: below-navbar
+
+  repo-url: https://github.com/HALFpipe/docs
+  repo-actions: [issue, source]
+    
 format:
   html:
     theme: cosmo
     toc: true
     page-navigation: true
+    page-layout: full
+    grid:
+      sidebar-width: 300px
