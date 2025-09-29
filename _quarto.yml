@@ -6,7 +6,7 @@ website:
   navbar: false
 
   sidebar:
-    style: docked
+    style: floating
     pinned: true
     search: true
     collapse-level: 1
@@ -37,8 +37,6 @@ website:
 format:
   html:
     theme: cosmo
+    css: styles.css
     toc: true
     page-navigation: true
-    page-layout: full
-    grid:
-      sidebar-width: 300px
