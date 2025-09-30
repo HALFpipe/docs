@@ -16,3 +16,8 @@ Subscribe to our [mailing list](https://mailman.charite.de/mailman/listinfo/half
 If you encounter issues, please see the [troubleshooting section](https://github.com/HALFpipe/HALFpipe/issues) on GitHub.
 
 ![](./images/Website_workflow.svg)
+
+## HALFpipe ENIGMA recommended pipelines
+
+![Resting State fMRI guidelines](images/old_ui/Workflow-Halfpipe.svg)
+

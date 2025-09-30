@@ -317,11 +317,7 @@ If the data was imported from a BIDS directory, Field maps will be omitted.
 ## 2.2 Features
 
 We will now specify which features we’d like to extract and specify their settings.
-
-
-![](images/old_ui/Workflow-Halfpipe.svg)
-
-The features will be extracted with **three** types of confound removal using:  
+The features will be extracted with **five** types of confound removal using:  
 
 1. **Pipeline 1**: aCompCor  
 2. **Pipeline 2**: Motion parameters with scrubbing  
