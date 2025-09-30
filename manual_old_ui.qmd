@@ -427,12 +427,12 @@ We will now add another seed-based connectivity (repeat all the steps), but in t
 
 **For pipeline 3**
 
-10. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter. Once the selection is done, **press enter**:  
+10. <span style="background-color: #cce5ff;">Remove confounds:</span> Use your **down arrow key ↓** and **press space** for each parameter:  
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,   
    <span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,   
-   <span style="background-color: #f8d7da; text-decoration: underline;">Motion scrubbing </span> 
+   <span style="background-color: #f8d7da; text-decoration: underline;">Motion scrubbing</span>  
    <span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span>
 
 ![](images/old_ui/pipeline3.svg)

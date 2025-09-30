@@ -325,7 +325,7 @@ In the next steps, you will only modify the confounds in the final step to match
 2. Atlas images
 - Add path to atlas images. Click on **_Browse_** to indicate the path. 
 - Select the atlas `atlas-Schaefer2018Combined_dseg.nii.gz`
-- Click the OK button and indicate the atlas name: `schaeferCombined`
+- Click the OK button and indicate the atlas name: `Schaefer2018Combined`
 - Check metadata: click on **yes**. 
 
 ![Find atlas](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_atlas_path.svg){group="corr"}
