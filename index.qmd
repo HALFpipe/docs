@@ -19,5 +19,7 @@ If you encounter issues, please see the [troubleshooting section](https://github
 
 ## HALFpipe ENIGMA recommended pipelines
 
+As part of the ENIGMA consortium, this website provides guidelines based on the consortium’s recommendations to support multiverse resting-state fMRI analyses.
+
 ![Resting State fMRI guidelines](images/old_ui/Workflow-Halfpipe.svg)
 
