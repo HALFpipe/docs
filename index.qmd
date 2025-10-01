@@ -16,3 +16,10 @@ Subscribe to our [mailing list](https://mailman.charite.de/mailman/listinfo/half
 If you encounter issues, please see the [troubleshooting section](https://github.com/HALFpipe/HALFpipe/issues) on GitHub.
 
 ![](./images/Website_workflow.svg)
+
+## HALFpipe ENIGMA recommended pipelines
+
+As part of the ENIGMA consortium, this website provides guidelines based on the consortium’s recommendations to support multiverse resting-state fMRI analyses.
+
+![Resting State fMRI guidelines](images/old_ui/Workflow-Halfpipe.svg)
+

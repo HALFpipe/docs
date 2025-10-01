@@ -1,12 +1,23 @@
 ---
 title: "Resting-State fMRI with the new UI"
 lightbox: true
+format: 
+  html:
+    css: styles.css
 ---
 
-::: {.author-text}
- <span style="color: #808080;">AUTHOR</span>
+::: {.callout-caution icon=true}
 
- Written by Clara El Khantour, Lea Waller, Pierre Lune Bellec, Frank Hillary, Ilya Veer, Clara Moreau
+# The New-UI is still under development 
+
+We are still working on the implementation of the New UI for HALFpipe. Please report any issue you might encounter at enigma@charite.de or on GitHub.
+
+:::
+
+::: {.author-text}
+<span style="color: #808080;">AUTHOR</span>
+
+Written by Clara El Khantour, Lea Waller, Pierre Lune Bellec, Frank Hillary, Ilya Veer, Clara Moreau
 
 Adapted from the **MDD ENIGMA resting-state fMRI manual** and the **OCD ENIGMA task-based fMRI manual**.
 
@@ -25,12 +36,12 @@ Please address questions and comments to [enigma@charite.de](enigma@charite.de).
 3. Run the Execution Command for your container software.
 
 ```bash
-apptainer run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.sif --use_cluster --tui 
+apptainer run --contain --cleanenv --bind /:/ext halfpipe_1.3.0.sif --use_cluster --tui 
 ```
 
 ::: {.callout-note collapse="false"}
 #### Understanding the command line
-- File Location: Ensure the HALFpipe_1.2.3.sif file is in your current working directory or specify its full path.
+- File Location: Ensure the HALFpipe-1.3.0.sif file is in your current working directory or specify its full path.
 
 - New UI flag: Use the `--tui` flag to launch HALFpipe with the new UI. 
 
@@ -43,7 +54,7 @@ apptainer run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.sif --use_cluste
 2. Run the docker command.
 
 ```bash
-docker run --interactive --tty --volume /:/ext halfpipe/halfpipe:1.2.3 --subject-chunks --nipype-n-procs 1 --keep none --tui
+docker run --interactive --tty --volume /:/ext halfpipe/halfpipe:1.3.0 --subject-chunks --nipype-n-procs 1 --keep none --tui
 ```
 - __Note__: To access your files more easily, you can bind in the path where the data, working directory and atlases are located. 
 
@@ -57,7 +68,7 @@ __Note 2__: On some systems, Docker will restrict the number of CPU cores availa
 
 By adding more CPUs, you can add the HALFpipe flag `--nipype-n-procs` to accelerate the process. For example: 
 ```bash
-docker run --interactive --tty --cpus=3 --volume /:/ext halfpipe/halfpipe:1.2.3 --nipype-n-procs --subject-chunks --keep none
+docker run --interactive --tty --cpus=3 --volume /:/ext halfpipe/halfpipe:1.3.0 --nipype-n-procs --subject-chunks --keep none
 ```
 :::
 :::
@@ -89,7 +100,7 @@ With this new UI, there are different icons you can interact with:
 
 ## Specify your working directory
 
-![Welcome to the new UI of HALFpipe](images/HALFpipe_new_ui/halfpipe_new_ui_working-dir_1.png){group="working-dir"}
+![Welcome to the new UI of HALFpipe](images/HALFpipe_new_ui/halfpipe_new_ui_working-dir_1.svg){group="working-dir"}
 
 1. Click on Browse.
 2. Indicate the path you want your working directory to be located. This correspond to your output folder.
@@ -106,11 +117,12 @@ Indicate whether or not the data is in BIDS format
 
 ::: {.panel-tabset}
 ### If in BIDS
-1. Click on Browse.
+1. Click on Browse. 
 2. Here, simply indicate the path to your BIDS data. Files will be automatically found, this can take a moment.
+Let Lesion mask set to OFF
 3. Click on **General preprocessing settings** in the top navigation bar, and go to the next section.
 
-![Data in BIDS switch to ON](images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_1.png){group="input-bids"}
+![Data in BIDS switch to ON](images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_1.svg){group="input-bids"}
 
 
 ### If not in BIDS 
@@ -130,17 +142,15 @@ Indicate whether or not the data is in BIDS format
 - It will then find T1 files for all subjects: `path/to/T1/subj01/T1.nii.gz`, `path/to/T1/subj02/T1.nii.gz` etc…
 :::
 
-![Data in BIDS switch to OFF](images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_1.png){group="input-not-bids"}
+![Data in BIDS switch to OFF](images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_1.svg){group="input-not-bids"}
 
-![Example of path with {subject} and {session}](images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_6.png){group="input-not-bids"}
+![Example of path with {subject} and {session}](images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_6.svg){group="input-not-bids"}
 
 ::: 
 
 If your files have been successfully imported, you should see the follow message:
 
-![Data input success](images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_3.png){group="input-bids"}
-
-![Input successful message](images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_4.png){group="input-bids"}
+![Data input success](images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_3.svg){group="input-bids"}
 
 ::: {.callout-tip collapse="false"}
 ### Verify files imported
@@ -160,9 +170,9 @@ Verify all the files have been properly found. You can do that by looking at the
 - Switch _“Generate workflow for running on a cluster”_ to __ON__
 :::
 
-![General settings to select](images/HALFpipe_new_ui/halfpipe_new_ui_general_preproc_2.png){group="general-preproc"}
+![General settings to select](images/HALFpipe_new_ui/halfpipe_new_ui_general_preproc_2.svg){group="general-preproc"}
 
-![Advance settings](images/HALFpipe_new_ui/halfpipe_new_ui_general_preproc_3.png){group="general-preproc"}
+![Advance settings](images/HALFpipe_new_ui/halfpipe_new_ui_general_preproc_advanced.svg){group="general-preproc"}
 
 2. Click on **Features** in the top navigation bar, and go to the next section.
 
@@ -174,9 +184,6 @@ Each of the features will be extracted with three types of confound removal usin
 - Pipeline 1: aCompCor 
 - Pipeline 2: Motion parameters with scrubbing
 - Pipeline 3: Pipeline 2 + Global Signal (GSR) 
-
-Recommended for multiverse analyses (optional pipelines)
-
 - Pipeline 4:  Motion parameters
 - Pipeline 5:  Pipeline 4 + Global Signal (GSR)
 
@@ -211,7 +218,7 @@ Recommended for multiverse analyses (optional pipelines)
 
 ✅ Global signal
 
-##### Pipeline 4 (optional)
+##### Pipeline 4
 ✅ Motion parameters
 
 ✅ Derivatives of motion parameters
@@ -220,7 +227,7 @@ Recommended for multiverse analyses (optional pipelines)
 
 ✅ Derivatives of motion parameters squared
 
-##### Pipeline 5 (optional)
+##### Pipeline 5
 ✅ Motion parameters
 
 ✅ Derivatives of motion parameters
@@ -239,7 +246,7 @@ Recommended for multiverse analyses (optional pipelines)
 - Select Seed-based connectivity
 - Feature name: Type seedCorr1
 
-![Feature name](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_1.png){group="seed"}
+![Feature name](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_1.svg){group="seed"}
 
 ### General settings
 
@@ -250,18 +257,21 @@ Recommended for multiverse analyses (optional pipelines)
 - Click on _Add_. 
 - Click on _Browse_ to indicate the path. 
 - Select the path of one existing seed. Then modify the path with `{seed}.nii.gz`
-- Proceed with these values: __Yes__. Then verify that all the seeds are selected.
+- Check metadata: click on **yes**. Then verify that all the seeds are selected.
+
+![Find seeds](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_4.svg){group="seed"}
+
+![Seed space](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_space.svg){group="corr"}
+
 5. Minimum brain coverage:
 - Set minimum brain coverage to __0.5__
 6. Preprocesssing settings
 - Switch _low-pass temporal filter_ to __OFF__
 
-![Find seeds](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_4.png){group="seed"}
-
 ### Remove confounds for 5 pipelines
 1. **Pipeline 1**: Select the confounds for **Pipeline 1**. Click on :
 
-![Pipeline 1](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_9.png){group="seed"}
+![Pipeline 1](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_pipeline1.svg){group="seed"}
 
 We will now repeat the same procedure for the other pipelines.
 
@@ -275,7 +285,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Go to the **Remove confounds** section and select the confounds for **Pipeline 2**: 
 
-![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_11.png){group="seed"}
+![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_pipeline2.svg){group="seed"}
 
 3. Pipeline 3: 
 - click **Duplicate** in the left navigation bar.
@@ -283,7 +293,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Select the confounds for **Pipeline 3**: 
 
-![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_12.png){group="seed"}
+![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_pipeline3.svg){group="seed"}
 
 4. Pipeline 4: 
 - Again, click **Duplicate** in the left navigation bar.
@@ -291,13 +301,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Select the confounds for **Pipeline 4**: 
 
-✅ Motion parameters
-
-✅ Derivatives of motion parameters
-
-✅ Motion parameters squared
-
-✅ Derivatives of motion parameters squared
+![Pipeline 4](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_pipeline4.svg){group="seed"}
 
 5. Pipeline 5: 
 - Again, click **Duplicate** in the left navigation bar.
@@ -305,23 +309,13 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Select the confounds for **Pipeline 5**: 
 
-✅ Motion parameters
-
-✅ Derivatives of motion parameters
-
-✅ Motion parameters squared
-
-✅ Derivatives of motion parameters squared
-
-✅ Global signal
+![Pipeline 5](images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_pipeline5.svg){group="seed"}
 
 6. Once you are done with all the pipeline, click on **New** in the left navigation bar and go to the next Feature section.
 
 ## 2. Atlas-based connectivity Matrix
 - Select Atlas-based connectivity matrix
 - Feature name: Type corrMatrix1
-
-![Feature name](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_1.png){group="corr"}
 
 ### General settings
 
@@ -330,11 +324,15 @@ In the next steps, you will only modify the confounds in the final step to match
 
 2. Atlas images
 - Add path to atlas images. Click on **_Browse_** to indicate the path. 
-- Select one existing atlas. Then modify the path with `{atlas}.nii.gz`
-- Proceed with these values: yes. 
-- Then only select `atlas-Schaefer2018Combined_dseg.nii.gz`. 
+- Select the atlas `atlas-Schaefer2018Combined_dseg.nii.gz`
+- Click the OK button and indicate the atlas name: `Schaefer2018Combined`
+- Check metadata: click on **yes**. 
 
-![Find atlas](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_3.png){group="corr"}
+![Find atlas](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_atlas_path.svg){group="corr"}
+
+![Atlas name](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_atlas_name.svg){group="corr"}
+
+![Atlas space](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_space.svg){group="corr"}
 
 5. Minimum brain coverage:
 - Set to **<span style="color: #d00;">0.5</span>**
@@ -344,7 +342,7 @@ In the next steps, you will only modify the confounds in the final step to match
 ### Remove confounds for 5 pipelines
 1. **Pipeline 1**: Select the confounds for **Pipeline 1**. Click on :
 
-![Pipeline 1](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_5.png){group="corr"}
+![Pipeline 1](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_pipeline1.svg){group="corr"}
 
 We will now repeat the same procedure for the other pipelines.
 
@@ -358,7 +356,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Go to the **Remove confounds** section and select the confounds for **Pipeline 2**: 
 
-![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_7.png){group="corr"}
+![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_pipeline2.svg){group="corr"}
 
 3. Pipeline 3: 
 - click **Duplicate** in the left navigation bar.
@@ -366,7 +364,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Select the confounds for **Pipeline 3**: 
 
-![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_8.png){group="corr"}
+![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_pipeline3.svg){group="corr"}
 
 4. Pipeline 4: 
 - Again, click **Duplicate** in the left navigation bar.
@@ -374,13 +372,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Select the confounds for **Pipeline 4**: 
 
-✅ Motion parameters
-
-✅ Derivatives of motion parameters
-
-✅ Motion parameters squared
-
-✅ Derivatives of motion parameters squared
+![Pipeline 4](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_pipeline4.svg){group="corr"}
 
 5. Pipeline 5: 
 - Again, click **Duplicate** in the left navigation bar.
@@ -388,22 +380,13 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: Switch _low-pass temporal filter_ to __OFF__
 - Select the confounds for **Pipeline 5**: 
 
-✅ Motion parameters
-
-✅ Derivatives of motion parameters
-
-✅ Motion parameters squared
-
-✅ Derivatives of motion parameters squared
-
-✅ Global signal
+![Pipeline 5](images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_pipeline5.svg){group="corr"}
 
 6. Once you are done with all the pipeline, click on **New** in the left navigation bar and go to the next Feature section.
 
 ## 3. ReHo
 - Select ReHo
 - Feature name: Type **reHo1**
-
 
 ### General settings
 
@@ -416,7 +399,7 @@ In the next steps, you will only modify the confounds in the final step to match
 ### Remove confounds for 5 pipelines
 1. **Pipeline 1**: Select the confounds for **Pipeline 1**. Click on :
 
-![Pipeline 1](images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_1.png){group="reho"}
+![Pipeline 1](images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_pipeline1.svg){group="reho"}
 
 We will now repeat the same procedure for the other pipelines.
 
@@ -430,7 +413,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Go to the **Remove confounds** section and select the confounds for **Pipeline 2**: 
 
-![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_2.png){group="reho"}
+![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_pipeline2.svg){group="reho"}
 
 3. Pipeline 3: 
 - click **Duplicate** in the left navigation bar.
@@ -438,7 +421,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Select the confounds for **Pipeline 3**: 
 
-![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_3.png){group="reho"}
+![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_pipeline3.svg){group="reho"}
 
 4. Pipeline 4: 
 - Again, click **Duplicate** in the left navigation bar.
@@ -446,13 +429,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Select the confounds for **Pipeline 4**: 
 
-✅ Motion parameters
-
-✅ Derivatives of motion parameters
-
-✅ Motion parameters squared
-
-✅ Derivatives of motion parameters squared
+![Pipeline 4](images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_pipeline4.svg){group="reho"}
 
 5. Pipeline 5: 
 - Again, click **Duplicate** in the left navigation bar.
@@ -460,15 +437,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Select the confounds for **Pipeline 5**: 
 
-✅ Motion parameters
-
-✅ Derivatives of motion parameters
-
-✅ Motion parameters squared
-
-✅ Derivatives of motion parameters squared
-
-✅ Global signal
+![Pipeline 5](images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_pipeline5.svg){group="reho"}
 
 6. Once you are done with all the pipeline, click on **New** in the left navigation bar and go to the next Feature section.
 
@@ -487,7 +456,7 @@ In the next steps, you will only modify the confounds in the final step to match
 ### Remove confounds for 5 pipelines
 1. **Pipeline 1**: Select the confounds for **Pipeline 1**. Click on :
 
-![Pipeline 1](images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_1.png){group="falff"}
+![Pipeline 1](images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_pipeline1.svg){group="falff"}
 
 We will now repeat the same procedure for the other pipelines.
 
@@ -501,7 +470,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Go to the **Remove confounds** section and select the confounds for **Pipeline 2**: 
 
-![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_2.png){group="falff"}
+![Pipeline 2](images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_pipeline2.svg){group="falff"}
 
 3. Pipeline 3: 
 - click **Duplicate** in the left navigation bar.
@@ -509,7 +478,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Select the confounds for **Pipeline 3**: 
 
-![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_3.png){group="falff"}
+![Pipeline 3](images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_pipeline3.svg){group="falff"}
 
 4. Pipeline 4: 
 - Again, click **Duplicate** in the left navigation bar.
@@ -517,13 +486,7 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Select the confounds for **Pipeline 4**: 
 
-✅ Motion parameters
-
-✅ Derivatives of motion parameters
-
-✅ Motion parameters squared
-
-✅ Derivatives of motion parameters squared
+![Pipeline 4](images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_pipeline4.svg){group="falff"}
 
 5. Pipeline 5: 
 - Again, click **Duplicate** in the left navigation bar.
@@ -531,15 +494,8 @@ In the next steps, you will only modify the confounds in the final step to match
 - In preprocesssing settings: verify that _low-pass temporal filter_ is set to __ON__ (0.01)
 - Select the confounds for **Pipeline 5**: 
 
-✅ Motion parameters
+![Pipeline 5](images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_pipeline5.svg){group="falff"}
 
-✅ Derivatives of motion parameters
-
-✅ Motion parameters squared
-
-✅ Derivatives of motion parameters squared
-
-✅ Global signal
 
 **You have now finished specifying the settings! 🎉**
 
@@ -550,6 +506,9 @@ In the next steps, you will only modify the confounds in the final step to match
 1. Click on __Refresh__.
 
 You will see the `spec.json` file that contain all the settings and parameters you have selected.
+
+![Spec file](images/HALFpipe_new_ui/halfpipe_new_ui_spec.svg){group="falff"}
+
 
 ::: {.callout-tip collapse="false"}
 ## Editing you settings

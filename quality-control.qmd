@@ -1,6 +1,9 @@
 ---
 title: "Quality control"
 lightbox: true
+format: 
+  html:
+    css: styles.css
 ---
 
 ::: {.author-text}
