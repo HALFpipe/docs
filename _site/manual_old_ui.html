@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.7.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Manual Old UI – HALFpipe</title>
+<title>Resting-State fMRI with the old UI – HALFpipe</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,32 +20,71 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./new_ui.html" rel="next">
+<link href="./installation.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e537b474ed2117ba6ecbbee7cab3fe2a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cacb8dcba27701cfdd59bf38b74f6f0f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -72,77 +111,134 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">HALFpipe</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./quality-control.html"> 
-<span class="menu-text">Quality Control</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./analysis.html"> 
-<span class="menu-text">Analysis</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./manual_old_ui.html" aria-current="page"> 
-<span class="menu-text">Manual Old UI</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./manual_old_ui.html">Manuals</a></li><li class="breadcrumb-item"><a href="./manual_old_ui.html">rsfMRI Manual (Old UI)</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+  <div id="quarto-announcement" data-announcement-id="5bb81ccef88da40994e1c6fa3544dc2c" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>NEW RELEASE</strong> - HALFpipe v1.3.0 is now available! Check out the <a href="https://github.com/HALFpipe/HALFpipe/releases/tag/1.3.0">release notes</a> for more details.</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">HALFpipe</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome to ENIGMA HALFpipe!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installation instructions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Manuals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./manual_old_ui.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">rsfMRI Manual (Old UI)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./new_ui.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resting-State fMRI (New UI)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quality-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality control</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./check_run.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to run the pipeline, check the outputs, and rerun the failed subjects</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#launching-the-pipeline" id="toc-launching-the-pipeline" class="nav-link active" data-scroll-target="#launching-the-pipeline">6. Launching the Pipeline</a>
+  <li><a href="#launching-the-pipeline" id="toc-launching-the-pipeline" class="nav-link active" data-scroll-target="#launching-the-pipeline">1. Launching the Pipeline</a></li>
+  <li><a href="#pipeline-settings" id="toc-pipeline-settings" class="nav-link" data-scroll-target="#pipeline-settings">2. Pipeline Settings</a>
   <ul class="collapse">
-  <li><a href="#on-a-local-machine" id="toc-on-a-local-machine" class="nav-link" data-scroll-target="#on-a-local-machine">6.1 On a Local Machine</a></li>
-  <li><a href="#on-a-high-performance-cluster-hpc" id="toc-on-a-high-performance-cluster-hpc" class="nav-link" data-scroll-target="#on-a-high-performance-cluster-hpc">6.2 On a High-Performance Cluster (HPC)</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">2.1 Data</a></li>
+  <li><a href="#features" id="toc-features" class="nav-link" data-scroll-target="#features">2.2 Features</a>
+  <ul class="collapse">
+  <li><a href="#seed-based-connectivity" id="toc-seed-based-connectivity" class="nav-link" data-scroll-target="#seed-based-connectivity"><strong>Seed-based connectivity</strong></a></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4"></a></li>
+  <li><a href="#atlas-based-connectivity-matrix" id="toc-atlas-based-connectivity-matrix" class="nav-link" data-scroll-target="#atlas-based-connectivity-matrix"><strong>Atlas-based connectivity matrix</strong></a></li>
+  <li><a href="#reho" id="toc-reho" class="nav-link" data-scroll-target="#reho"><strong>ReHo</strong></a></li>
+  <li><a href="#falff" id="toc-falff" class="nav-link" data-scroll-target="#falff"><strong>fALFF</strong></a></li>
   </ul></li>
-  <li><a href="#pipeline-settings" id="toc-pipeline-settings" class="nav-link" data-scroll-target="#pipeline-settings">7. Pipeline Settings</a>
-  <ul class="collapse">
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">7.1 DATA</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/HALFpipe/HALFpipe/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./manual_old_ui.html">Manuals</a></li><li class="breadcrumb-item"><a href="./manual_old_ui.html">rsfMRI Manual (Old UI)</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Manual Old UI</h1>
+<h1 class="title">Resting-State fMRI with the old UI</h1>
 </div>
 
 
@@ -159,28 +255,85 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="launching-the-pipeline" class="level2">
-<h2 class="anchored" data-anchor-id="launching-the-pipeline">6. Launching the Pipeline</h2>
-<p>If you are running it on a local computer: run 6.1<br>
-If you are running it on a high-performance cluster: run 6.2</p>
-<p><em>Note: if you have a large dataset (&gt;500 participants), we recommend that you look at point 5 on the Troubleshooting page (section 11) or contact <a href="mailto:halfpipe@fmri.science">halfpipe@fmri.science</a>. You can also join the HALFpipe team Mattermost (similar to Slack) using this link.</em></p>
-<section id="on-a-local-machine" class="level3">
-<h3 class="anchored" data-anchor-id="on-a-local-machine">6.1 On a Local Machine</h3>
+<div class="author-text">
+<p><span style="color: #808080;">AUTHOR</span></p>
+<p>Written by Clara El Khantour, Lea Waller, Seann Wang, Pierre Lune Bellec, Frank Hillary, Ilya Veer, Clara Moreau</p>
+<p>Adapted from the <strong>MDD ENIGMA resting-state fMRI manual</strong> and the <strong>OCD ENIGMA task-based fMRI manual</strong>.</p>
+<p>Please address questions and comments to <a href="enigma@charite.de">enigma@charite.de</a>. You can also join the HALFpipe Mattermost (similar to Slack) using this <a href="https://mattermost.fmri.science/signup_user_complete/?id=hcc766b7wjdazexwe799hbsuwc&amp;md=link&amp;sbr=su">link</a>.</p>
+</div>
+<section id="launching-the-pipeline" class="level1">
+<h1>1. Launching the Pipeline</h1>
+<p>If you are running it on a local computer: run 1.1<br>
+If you are running it on a high-performance cluster: run 1.2</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>In some cases, you will need to ensure the code is compatible with your setup (not just copy and paste), especially regarding the container bindings (<strong><a href="./troubleshooting.html#your-script-keep-crashing-after-few-moments-it-could-be-caused-by-an-environment-errors-in-hpc">see the section 4 of the troubleshooting page</a></strong>). The text highlighted in <span style="background-color:rgb(255, 204, 204);">red</span> requires your attention.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="If you have a large dataset">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+If you have a large dataset
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If you have a large dataset (&gt;500 participants), we recommend that you look at point 5 on the Troubleshooting page (section 11) or contact <a href="mailto:halfpipe@fmri.science">halfpipe@fmri.science</a>. You can also join the HALFpipe team Mattermost (similar to Slack) using this link.</p>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" aria-current="page">1.1 On a Local Machine</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">1.2 On a High-Performance Cluster (HPC)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <ol type="1">
-<li>Open a terminal session (if using Docker open the terminal via Docker Desktop).<br>
-</li>
-<li>Run the appropriate command for your container platform.<br>
-<em>Note: to access your files more easily, you can bind in the path where the data, working directory and atlases are located.<br>
-For example: <code>--bind /home/user/scratch:/home/user/scratch</code></em></li>
+<li><p>Open a terminal session (if using Docker open the terminal via Docker Desktop).</p></li>
+<li><p>Run the appropriate command for your container platform.</p></li>
 </ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Note">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>To access your files more easily, you can bind in the path where the data, working directory and atlases are located.</p>
+</div>
+</div>
+</div>
+<p><em><span style="background-color: #fff3cd;">For example:</span> <code>--bind /home/user/scratch:/home/user/scratch</code></em></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Singularity / Apptainer</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Docker</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <table class="bordered">
 <tbody><tr>
 <td>
 <strong>Singularity or Apptainer (3.x)</strong>
 </td>
 <td>
-<pre><code>singularity run --contain --cleanenv --bind /:/ext \
-halfpipe_1.2.3.sif --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
+<pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
+halfpipe-1.3.0.sif --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
 </td>
 </tr>
 <tr>
@@ -188,11 +341,16 @@ halfpipe_1.2.3.sif --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
 <strong>Singularity (2.x)</strong>
 </td>
 <td>
-<pre><code>singularity run --contain --cleanenv --bind /:/ext \
-halfpipe_1.2.3.simg --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
+<pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
+halfpipe-1.3.0.simg --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
 </td>
 </tr>
-<tr>
+</tbody></table>
+<hr>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<table class="bordered">
+<tbody><tr>
 <td>
 <strong>Docker Desktop</strong>
 </td>
@@ -200,8 +358,8 @@ halfpipe_1.2.3.simg --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
 <p>
 <em>On MacOS</em>
 </p>
-<pre><code>docker run --interactive --tty --volume /:/ext \
-halfpipe/halfpipe:1.2.3 --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
+<pre><code>docker run --interactive --tty --volume <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
+halfpipe/halfpipe:1.3.0 --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
 <p>
 <em>On Windows:</em>
 </p>
@@ -213,32 +371,58 @@ Use forward slashes (/) instead of backslashes () to specify file paths.
 Be sure to replace <code>C:</code> with the appropriate drive letter for your system.
 </li>
 </ul>
-<pre><code>docker run --interactive --tty --volume C:/:/ext \
-halfpipe/halfpipe:1.2.3 --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
+<pre><code>docker run --interactive --tty --volume C:<span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
+halfpipe/halfpipe:1.3.0 --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
 </td>
 </tr>
 </tbody></table>
-<blockquote class="blockquote">
-<p><em>Note 1<br>
-The flags <code>--subject-chunks</code> and <code>--nipype-n-procs 1</code> are optional.<br>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Optional flags">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Optional flags
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The flags <code>--subject-chunks</code> and <code>--nipype-n-procs 1</code> are optional.<br>
 While they may slow down the pipeline, they help ensure you don’t exceed your computer’s processing capacity.<br>
-Use them if you’re concerned about system limitations.</em></p>
-</blockquote>
-<blockquote class="blockquote">
-<p><em>Note 2<br>
-On some systems, Docker will restrict the number of CPU cores available to HALFpipe by default.<br>
+Use them if you’re concerned about system limitations.*</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="How to use multiple CPU cores">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How to use multiple CPU cores
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>On some systems, Docker will restrict the number of CPU cores available to HALFpipe by default.<br>
 If your computer can handle it, you can allocate more CPUs using the Docker flag <code>--cpus</code>.<br>
 Refer to your system’s documentation to learn your CPU limitations.<br>
-By adding more CPUs, you can add the HALFpipe flag <code>--nipype-n-procs</code> to accelerate the process.</em></p>
-</blockquote>
-<p><strong>Example using Docker:</strong></p>
-<p>docker run –interactive –tty –cpus=3 –volume /:/ext halfpipe/halfpipe:1.2.3 –nipype-n-procs –subject-chunks –keep none</p>
+By adding more CPUs, you can add the HALFpipe flag <code>--nipype-n-procs</code> to accelerate the process.*</p>
+<p><span style="background-color: #fff3cd;"><strong>Example using Docker:</strong></span></p>
+<p><code>docker run --interactive --tty --cpus=3 --volume /:/ext halfpipe/halfpipe:1.3.0 --nipype-n-procs --subject-chunks --keep none</code></p>
+</div>
+</div>
+</div>
 <ol start="3" type="1">
-<li>Go to Section 7.</li>
+<li>Go to Section 2.</li>
 </ol>
-</section>
-<section id="on-a-high-performance-cluster-hpc" class="level3">
-<h3 class="anchored" data-anchor-id="on-a-high-performance-cluster-hpc">6.2 On a High-Performance Cluster (HPC)</h3>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <ol type="1">
 <li><p>Open a terminal session and connect to your HPC.</p></li>
 <li><p>Running an Interactive Job on the cluster</p></li>
@@ -271,7 +455,22 @@ By adding more CPUs, you can add the HALFpipe flag <code>--nipype-n-procs</code>
 </tr>
 </tbody></table>
 <p>Load Singularity/Apptainer packages: module load singularity</p>
-<p>Note: Re-run this command every time you log out and back in again, and every time you start working on a node.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Note">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Re-run this command every time you log out and back in again, and every time you start working on a node.</p>
+</div>
+</div>
+</div>
 <ol start="3" type="1">
 <li>Run the Execution Command for your container software.</li>
 </ol>
@@ -281,7 +480,7 @@ By adding more CPUs, you can add the HALFpipe flag <code>--nipype-n-procs</code>
 <strong>Singularity (3.x)</strong>
 </td>
 <td>
-<pre><code>singularity run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.sif --use-cluster</code></pre>
+<pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.3.0.sif --use-cluster</code></pre>
 </td>
 </tr>
 <tr>
@@ -289,7 +488,7 @@ By adding more CPUs, you can add the HALFpipe flag <code>--nipype-n-procs</code>
 <strong>Singularity (2.x)</strong>
 </td>
 <td>
-<pre><code>singularity run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.simg --use-cluster</code></pre>
+<pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.3.0.simg --use-cluster</code></pre>
 </td>
 </tr>
 <tr>
@@ -297,43 +496,830 @@ By adding more CPUs, you can add the HALFpipe flag <code>--nipype-n-procs</code>
 <strong>Apptainer</strong>
 </td>
 <td>
-<pre><code>apptainer run --contain --cleanenv --bind /:/ext halfpipe_1.2.3.sif --use-cluster</code></pre>
+<pre><code>apptainer run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.3.0.sif --use-cluster</code></pre>
 </td>
 </tr>
 </tbody></table>
 <ol start="4" type="1">
-<li>Go to Section 7.</li>
+<li>Go to Section 2.</li>
 </ol>
 <p>Additional Information:</p>
 <ul>
-<li>File Location: Ensure the HALFpipe_1.2.3.sif file is in your current working directory or specify its full path.</li>
+<li>File Location: Ensure the HALFpipe_1.3.0.sif file is in your current working directory or specify its full path.</li>
 <li>Directory Binding: The –bind (or -B) option maps directories from your host system into the container. For example, /home/user/Documents on the host becomes /ext/home/user/Documents inside the container.</li>
 <li>Cluster Flag: Use the –use-cluster flag when running the execution command on an HPC.</li>
 </ul>
+</div>
+</div>
+</div>
 </section>
-</section>
-<section id="pipeline-settings" class="level2">
-<h2 class="anchored" data-anchor-id="pipeline-settings">7. Pipeline Settings</h2>
+<section id="pipeline-settings" class="level1">
+<h1>2. Pipeline Settings</h1>
 <p>You have now oppened the user interface, which should look like this:</p>
-<p><img src="images/ui_first.png" class="img-fluid"></p>
+<p><a href="images/old_ui/ui_first.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/old_ui/ui_first.png" class="img-fluid"></a></p>
 <p>The prompts that will be displayed by HALFpipe are shown below in <span style="background-color: #cce5ff;">blue</span>, examples are in <span style="background-color: #fff3cd;">yellow</span>, answers that need to be input/selected are <span style="background-color: #f8d7da; text-decoration: underline;">underscored and red</span>.<br>
-We will first specify the Data (<strong>see section 7.1</strong>) and then the Features (<strong>see section 7.2</strong>).</p>
-<p><em>Note: If you want to go back/deselect an option, you can use Ctrl+C</em></p>
-<section id="data" class="level3">
-<h3 class="anchored" data-anchor-id="data">7.1 DATA</h3>
+We will first specify the Data (<strong>see section 2.1</strong>) and then the Features (<strong>see section 2.2</strong>).</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Note">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>If you want to go back/deselect an option, you can use Ctrl+C</p>
+</div>
+</div>
+</div>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">2.1 Data</h2>
 <ol type="1">
-<li><p><span style="background-color: #cce5ff;">Specify Working directory:</span> Your output folder.</p>
+<li><span style="background-color: #cce5ff;">Specify Working directory:</span> Your output folder.
 <ul>
 <li><em>You can navigate using the Up/Down arrow keys ↓ to go to a folder and the right arrow key → to select this folder.</em><br>
 </li>
 <li><em>Do this until you get to path/to/your_working_directory</em></li>
 </ul></li>
-<li><p><span style="background-color: #cce5ff;">Is the data available in BIDS format?</span><br>
-If your data is already in BIDS format, follow the instructions of point 2.1. If not, follow the instructions of point 2.2.</p>
-<p><em>Note: When running on a local computer, be aware that the BIDS format is very strict. If you’re unsure whether your data is properly formatted, we recommend answering “No” to this question and specifying the file name manually, as shown in Point 2.2. This can help prevent errors during execution.</em></p></li>
+<li><span style="background-color: #cce5ff;">Is the data available in BIDS format?</span><br>
+If your data is already in BIDS format, follow the instructions of point 2.1. If not, follow the instructions of point 2.2.</li>
 </ol>
+<div class="callout callout-style-default callout-tip callout-titled" title="If you're unsure whether your data is in BIDS">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+If you’re unsure whether your data is in BIDS
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>When running on a local computer, be aware that the BIDS format is very strict. If you’re unsure whether your data is properly formatted, we recommend answering “No” to this question and specifying the file name manually, as shown in Point 2.2. This can help prevent errors during execution.*</p>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">2.1 If your data is in BIDS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">2.2 If your data is not in BIDS</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p><span style="background-color: #cce5ff;">Is the data available in BIDS format?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+<span style="background-color: #cce5ff;">Specify the path of the BIDS directory</span></p>
+<ul>
+<li><p>Simply indicate the path to your BIDS data, e.g.&nbsp;<code>path/to/bids/dataset/</code>, using the arrow keys.<br>
+</p></li>
+<li><p>It will now print how many T1-weighted files were found.<br>
+<span style="background-color: #fff3cd;">for example:</span> <code>Found 9 files for 9 subjects and 1 session</code><br>
+</p></li>
+<li><p>Then it will print how many BOLD files were found.<br>
+<span style="background-color: #fff3cd;">for example:</span> <code>Found 9 files for 9 subjects, 2 sessions, and 1 task</code></p>
+<p><a href="images/old_ui/1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/old_ui/1.png" class="img-fluid"></a></p></li>
+</ul>
+<p>You can now directly go to <strong>point 3</strong>.</p>
+<hr>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p><span style="background-color: #cce5ff;">Is the data available in BIDS format?</span> <span style="background-color: #f8d7da; text-decoration: underline;">No</span></p>
+<section id="section" class="level4">
+<h4 class="anchored" data-anchor-id="section">2.2.1</h4>
+<p><span style="background-color: #cce5ff;">Specify anatomical/structural data<br>Specify the path of the T1-weighted image files</span></p>
+<ul>
+<li>If your data is organized as <code>path/to/T1/subj01/T1.nii.gz</code> — where <code>subj01</code> can be any ID — enter:<br>
+<code>path/to/T1/{subject}/T1.nii.gz</code><br>
+</li>
+<li>It will then find T1 files for all subjects, e.g.:<br>
+<code>path/to/T1/subj01/T1.nii.gz</code>,<br>
+<code>path/to/T1/subj02/T1.nii.gz</code>, etc.<br>
+</li>
+<li>It will print how many files are found, <span style="background-color: #fff3cd;">for example:</span> <code>Found 9 files for 9 subjects and 1 session</code></li>
+</ul>
+<p><span style="background-color: #fff3cd;">For example:</span></p>
+<p><a href="images/old_ui/2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="images/old_ui/2.png" class="img-fluid"></a></p>
+</section>
+<section id="section-1" class="level4">
+<h4 class="anchored" data-anchor-id="section-1">2.2.2</h4>
+<p><span style="background-color: #cce5ff;">Specify functional data<br>Specify the path of the BOLD image files</span></p>
+<div class="callout callout-style-default callout-note callout-titled" title="Note">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>{task} can be used to tag task names (e.g., auditory), as well as a resting-state paradigm.</p>
+</div>
+</div>
+</div>
+<ul>
+<li>It will now tell you how many files have been found: Found 9 files for 9 subjects, 2 sessions, and 1 task.<br>
+<span style="background-color: #fff3cd;">For example:</span> Found 9 files for 9 subjects and 1 task</li>
+</ul>
+<p><a href="images/old_ui/3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="images/old_ui/3.png" class="img-fluid"></a></p>
+</section>
+<section id="section-2" class="level4">
+<h4 class="anchored" data-anchor-id="section-2">2.2.3</h4>
+<p><span style="background-color: #cce5ff;">Check repetition time values</span> Check if the repetition time values are correct.<br>
+<span style="background-color: #fff3cd;">For example:</span> 18 images - 2.4 seconds<br>
+<span style="background-color: #cce5ff;">Proceed with these values?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>/No (unless the TR is incorrect)</p>
+</section>
+<section id="section-3" class="level4">
+<h4 class="anchored" data-anchor-id="section-3">2.2.4</h4>
+<p><span style="background-color: #cce5ff;">Add more BOLD image files? Yes/<span style="background-color: #f8d7da; text-decoration: underline;">No</span> (unless you have more)</span></p>
+</section>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li><p><span style="background-color: #cce5ff;">Do slice timing?</span></p>
+<p>3.1 <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span> if you know the slice timing details during the acquisition for your data.<br>
+If unsure, check with the MR physicist/technician or any dataset information.<br>
+In the following steps you will check the slice order and slice timing values.</p>
+<ul>
+<li>Confirm with <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span> if they are correct.<br>
+</li>
+<li>Otherwise, select <span style="background-color: #f8d7da; text-decoration: underline;">No</span> and then enter the correct values.</li>
+</ul>
+<p>3.2 <span style="background-color: #f8d7da; text-decoration: underline;">No</span> otherwise</p></li>
+<li><p><span style="background-color: #cce5ff;">Remove initial volumes from scans?</span> : Enter 0, which should be pre-filled.</p></li>
+</ol>
+<p>If you believe that your data might require removal of initial volumes, for example due to non-equilibration, you can also enter a different value.</p>
+<ol start="5" type="1">
+<li><p><span style="background-color: #cce5ff;">Specify field maps?</span></p>
+<p>5.1 <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span> if you acquired field map images for your sample.<br>
+In the following steps you will specify the type of field map, their file names and the acquisition parameters.</p>
+<p>5.2 <span style="background-color: #f8d7da; text-decoration: underline;">No</span> otherwise</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled" title="Note">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>If the data was imported from a BIDS directory, Field maps will be omitted.</p>
+</div>
+</div>
+</div>
+<ol start="6" type="1">
+<li><span style="background-color: #cce5ff;">Specify first-level features?</span> : Select <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span></li>
+</ol>
+</section>
+<section id="features" class="level2">
+<h2 class="anchored" data-anchor-id="features">2.2 Features</h2>
+<p>We will now specify which features we’d like to extract and specify their settings. The features will be extracted with <strong>five</strong> types of confound removal using:</p>
+<ol type="1">
+<li><strong>Pipeline 1</strong>: aCompCor<br>
+</li>
+<li><strong>Pipeline 2</strong>: Motion parameters with scrubbing<br>
+</li>
+<li><strong>Pipeline 3</strong>: Pipeline 2 + Global Signal (GSR)</li>
+<li><strong>Pipeline 4</strong>: Pipeline 2 without Scrubbing</li>
+<li><strong>Pipeline 5</strong>: Pipeline 3 without Scrubbing</li>
+</ol>
+<p>Here is a summary of the confound parameters to apply for each pipeline when running HALFpipe:</p>
+<p><a href="images/old_ui/HALFpipe-strategies.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="images/old_ui/HALFpipe-strategies.svg" class="img-fluid"></a></p>
+<section id="seed-based-connectivity" class="level3">
+<h3 class="anchored" data-anchor-id="seed-based-connectivity"><strong>Seed-based connectivity</strong></h3>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type</span>: Use the <strong>↓ (down arrow key)</strong> until you reach Seed-based connectivity, then <strong>press enter.</strong><br>
+</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[]</span> Task-based </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">[*]</span> Seed-based connectivity </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">[]</span> Dual regression </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">[]</span> Group-information guided ICA</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">[]</span> Atlas-based connectivity matrix</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">[]</span> ReHo</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">[]</span> fALFF</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li><p><span style="background-color: #cce5ff;">Specify feature name</span>: Type <span style="background-color: #f8d7da; text-decoration: underline;">seedCorr1</span> (and then <strong>press enter</strong>)</p></li>
+<li><p><span style="background-color: #cce5ff;">Specify images to use</span>: if you have multiple tasks or sessions, select the session(s) or task(s) corresponding to resting-state data. To do this, <strong>press space</strong> <strong>to untick</strong> a session, <strong>press enter</strong> to validate the selection.</p></li>
+<li><p><span style="background-color: #cce5ff;">Specify path to seed</span>: give the path to the folder that contains seed files.</p>
+<ol type="1">
+<li>To do this, add your path followed by {seed}.nii.gz : path/to/enigma/{seed}.nii.gz.<br>
+It will now tell you, <span style="background-color: #fff3cd;">for example:</span> Found 19 files for 19 seeds<br>
+</li>
+<li><span style="background-color: #cce5ff;">Proceed with these values</span>: <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span></li>
+<li><span style="background-color: #cce5ff;">Specify the seed masks</span>, just leave all seeds selected (<strong>press enter</strong>)</li>
+</ol></li>
+</ol>
+<p><span style="background-color: #fff3cd;">Example seed mask selection:</span></p>
+<p><a href="images/old_ui/6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="images/old_ui/6.png" class="img-fluid"></a></p>
+<ol start="5" type="1">
+<li><p><span style="background-color: #cce5ff;">Specify minimum seed coverage by individual brain mask</span>: <span style="background-color: #f8d7da; text-decoration: underline;">0.5</span></p></li>
+<li><p><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></p></li>
+<li><p><span style="background-color: #cce5ff;">Apply smoothing</span>: <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span></p></li>
+<li><p><span style="background-color: #cce5ff;">Specify smoothing FWHM in mm</span>: <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span> (This should be by default 6.0, simply <strong>press enter</strong>)</p></li>
+<li><p><span style="background-color: #cce5ff;">Specify the filter width in seconds</span></p>
+<ol type="1">
+<li>Low-pass width [0] [<span style="background-color: #f8d7da; text-decoration: underline;">Skip] </span></li>
+<li>High-pass width [<span style="background-color: #f8d7da; text-decoration: underline;">125.0]</span> [Skip]</li>
+</ol></li>
+</ol>
+<p><a href="images/old_ui/seed.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="images/old_ui/seed.png" class="img-fluid"></a></p>
+<p><strong>For pipeline 1</strong><br>
+We will apply pipeline 1, i.e.&nbsp;aCompCor:</p>
+<ol start="10" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds?</span><br>
+</li>
+</ol>
+<ul>
+<li>Use your <strong>down arrow key</strong> ↓ until<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">aCompCor</span> (top five components)<br>
+</li>
+<li>Then <strong>press space</strong> to select it<strong>.</strong> Make sure no other confounds are selected, and <strong>press enter</strong></li>
+</ul>
+<p><a href="images/old_ui/pipeline1.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="images/old_ui/pipeline1.svg" class="img-fluid"></a></p>
+<p>________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+We will now add another seed-based connectivity (repeat all the steps, <strong>from 1 to 9</strong>), but in the last step we will select all motion parameters, their derivatives, and motion scrubbing for <strong>pipeline 2</strong> instead of aCompCor.</p>
+<p>In short, you will now choose:</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type</span>: <span style="background-color: #f8d7da; text-decoration: underline;">Seed-based connectivity</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name:</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">seedCorr2</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the seed masks:</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify minimum seed coverage:</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify smoothing FWHM:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.</li>
+</ol>
+<p><strong>For pipeline 2</strong></p>
+<ol start="10" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key</strong> ↓ and <strong>press space</strong> for each parameter.<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion scrubbing</span></li>
+</ol>
+<p><a href="images/old_ui/pipeline2.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="images/old_ui/pipeline2.svg" class="img-fluid"></a></p>
+<p>It will then ask:<br>
+<span style="background-color: #cce5ff;">Do you really want to use inconsistent confounds across features?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+We will now add another seed-based connectivity (repeat all the steps), but in the last step (remove confounds) we will select all motion scrubbing, motion parameters and their derivatives as well as Global signal (<strong>pipeline 3</strong>) .</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Seed-based connectivity</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name:</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">seedCorr3</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the seed masks:</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify minimum seed coverage:</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify smoothing FWHM:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.</li>
+</ol>
+<p><strong>For pipeline 3</strong></p>
+<ol start="10" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key ↓</strong> and <strong>press space</strong> for each parameter:<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion scrubbing</span><br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span></li>
+</ol>
+<p><a href="images/old_ui/pipeline3.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="images/old_ui/pipeline3.svg" class="img-fluid"></a></p>
+<p>________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+We will now add another seed-based connectivity (repeat all the steps 1-9), but in the last step (remove confounds) we will select all motion parameters and their derivatives (<strong>pipeline 4</strong>) .</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Seed-based connectivity</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name:</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">seedCorr4</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the seed masks:</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify minimum seed coverage:</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify smoothing FWHM:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.</li>
+</ol>
+<p><strong>For pipeline 4</strong></p>
+<ol start="10" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key ↓</strong> and <strong>press space</strong> for each parameter. Once the selection is done, <strong>press enter</strong>:<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,</li>
+</ol>
+<p><a href="images/old_ui/pipeline4.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="images/old_ui/pipeline4.svg" class="img-fluid"></a></p>
+<p>________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+We will now add another seed-based connectivity (repeat all the steps), but in the last step (remove confounds) we will select all motion parameters and their derivatives as well as Global signal (<strong>pipeline 5</strong>) .</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Seed-based connectivity</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name:</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">seedCorr5</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the seed masks:</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify minimum seed coverage:</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify smoothing FWHM:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.</li>
+</ol>
+<p><strong>For pipeline 5</strong></p>
+<ol start="10" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key ↓</strong> and <strong>press space</strong> for each parameter. Once the selection is done, <strong>press enter</strong>:<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span></li>
+</ol>
+<p><a href="images/old_ui/pipeline5.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="images/old_ui/pipeline5.svg" class="img-fluid"></a></p>
+</section>
+<section id="section-4" class="level3">
+<h3 class="anchored" data-anchor-id="section-4"></h3>
+<hr>
+</section>
+<section id="atlas-based-connectivity-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="atlas-based-connectivity-matrix"><strong>Atlas-based connectivity matrix</strong></h3>
+<p><span style="background-color: #cce5ff;">Add another first-level feature? <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span></span></p>
+<p>We will now specify different settings:</p>
+<ol type="1">
+<li><p><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Atlas-based connectivity matrix</span></p></li>
+<li><p><span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">corrMatrix1</span> and then <strong>press enter</strong></p></li>
+<li><p><span style="background-color: #cce5ff;">Specify images to use:</span> if you have multiple tasks or sessions, select the session(s) or task(s) corresponding to resting-state data. Press space <strong>to untick</strong> a session, <strong>press enter</strong> to validate the selection</p></li>
+<li><p><span style="background-color: #cce5ff;">Specify atlas file(s)</span> give path to folder that includes the atlas.</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the path of the atlas image files.</span> Use your keys to navigate through the path until the schaefer atlas : path/to/enigma/atlas-Schaefer2018Combined_dseg.nii.gz<br>
+It will now tell you how many atlases were found, for <span style="background-color: #fff3cd;">example:</span> Found 1 file<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the atlas name:</span> Here write <span style="background-color: #f8d7da; text-decoration: underline;">Schaefer2018Combined</span>,then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Check space values</span></li>
+</ol>
+<p><span style="background-color: #cce5ff;">Proceed with these values?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span></p>
+<ol start="4" type="1">
+<li><span style="background-color: #cce5ff;">Specify atlas file(s)</span>: <strong>press enter</strong></li>
+</ol>
+<p><span style="background-color: #fff3cd;">For example:</span></p></li>
+</ol>
+<p><a href="images/old_ui/10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="images/old_ui/10.png" class="img-fluid"></a></p>
+<ol start="5" type="1">
+<li><p><span style="background-color: #cce5ff;">Specify minimum atlas region coverage by individual brain mask:</span> <span style="background-color: #f8d7da; text-decoration: underline;">0.5</span></p></li>
+<li><p><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></p></li>
+<li><p><span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span></p></li>
+<li><p><span style="background-color: #cce5ff;">Specify the type of temporal filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span></p></li>
+<li><p><span style="background-color: #cce5ff;">Specify the filter width in seconds</span></p>
+<ol type="1">
+<li>Low-pass width [0] [<span style="background-color: #f8d7da; text-decoration: underline;">Skip</span>]<br>
+</li>
+<li>High-pass width [<span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>] [Skip]</li>
+</ol></li>
+</ol>
+<p><span style="background-color: #fff3cd;">For example:</span></p>
+<p><a href="images/old_ui/11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="images/old_ui/11.png" class="img-fluid"></a></p>
+<p>As we performed for Seed-based connectivity, we will apply the 5 pipelines for atlas-based connectivity matrix. You can look at the figures for Seed-based if you need visual support.</p>
+<p><strong>For pipeline 1</strong><br>
+We will first apply pipeline 1, i.e.&nbsp;aCompCor</p>
+<ol start="10" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds?</span><br>
+</li>
+</ol>
+<ul>
+<li>Use your <strong>down arrow key</strong> ↓ until <span style="background-color: #f8d7da; text-decoration: underline;">aCompCor</span> (top five components)<br>
+</li>
+<li><strong>Press space</strong> to select and then <strong>press enter</strong></li>
+</ul>
+<p>________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span> /No<br>
+We will now add another atlas-based connectivity (repeat all the steps, <strong>from step 1 to 9</strong>), but in the last step (step 9 : remove confounds) we will select all parameters for pipeline 2.</p>
+<p>In short, you will now choose:</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Atlas-based connectivity matrix</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">corrMatrix2</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify atlas file(s):</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify minimum atlas region coverage:</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the type of temporal filter</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.</li>
+</ol>
+<p><strong>For pipeline 2</strong></p>
+<ol start="10" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key ↓</strong> and <strong>press space</strong> for each parameter:<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion scrubbing</span></li>
+</ol>
+<p><span style="background-color: #cce5ff;">Do you really want to use inconsistent confounds across features?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+We will now add another atlas-based connectivity (repeat all the steps 1-9), but in the last step (remove confounds) we will select all parameters for <strong>pipeline 3</strong>.</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Atlas-based connectivity matrix</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">corrMatrix3</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify atlas file(s):</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify minimum atlas region coverage:</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the type of temporal filter</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.</li>
+</ol>
+<p><strong>For pipeline 3</strong></p>
+<ol start="10" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key ↓</strong> and <strong>press space</strong> for each parameter:<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion scrubbing</span><br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span></li>
+</ol>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span></p>
+<p>________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+We will now add another atlas-based connectivity (repeat all the steps 1-9), but in the last step (remove confounds) we will select all parameters for <strong>pipeline 4</strong>.</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Atlas-based connectivity matrix</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">corrMatrix4</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify atlas file(s):</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify minimum atlas region coverage:</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the type of temporal filter</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.</li>
+</ol>
+<p><strong>For pipeline 4</strong></p>
+<ol start="10" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key ↓</strong> and <strong>press space</strong> for each parameter:<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,</li>
+</ol>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span></p>
+<p>________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+We will now add another atlas-based connectivity (repeat all the steps 1-9), but in the last step (remove confounds) we will select all parameters for <strong>pipeline 5</strong>.</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Atlas-based connectivity matrix</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">corrMatrix5</span>,<br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify atlas file(s):</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify minimum atlas region coverage:</span> <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply a temporal filter?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the type of temporal filter</span> <span style="background-color: #f8d7da; text-decoration: underline;">Gaussian-weighted</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify the filter:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Skip</span> and <span style="background-color: #f8d7da; text-decoration: underline;">125.0</span>.</li>
+</ol>
+<p><strong>For pipeline 5</strong></p>
+<ol start="10" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key ↓</strong> and <strong>press space</strong> for each parameter:<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span></li>
+</ol>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span></p>
+<hr>
+</section>
+<section id="reho" class="level3">
+<h3 class="anchored" data-anchor-id="reho"><strong>ReHo</strong></h3>
+<ol type="1">
+<li><p><span style="background-color: #cce5ff;">Specify the feature type:</span> Use your keyboard to select <span style="background-color: #f8d7da; text-decoration: underline;">ReHo</span> and <strong>press enter</strong></p></li>
+<li><p><span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">reHo1</span> then <strong>press enter</strong></p></li>
+<li><p><span style="background-color: #cce5ff;">Specify images to use:</span> if you have multiple tasks or sessions, select the session(s) or task(s) corresponding to resting-state data. Press space <strong>to untick</strong> a session, <strong>press enter</strong> to validate the selection</p></li>
+<li><p><span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span> style=“background-color: #f8d7da; text-decoration: underline;”&gt;No</p></li>
+<li><p><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></p></li>
+<li><p><span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span></p></li>
+<li><p><span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span></p></li>
+</ol>
+<p><span style="background-color: #fff3cd;">For example:</span></p>
+<p><a href="images/old_ui/12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="images/old_ui/12.png" class="img-fluid"></a></p>
+<p><strong>For pipeline 1</strong><br>
+We will first apply pipeline 1, i.e.&nbsp;aCompCor</p>
+<ol start="8" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds?</span><br>
+</li>
+</ol>
+<ul>
+<li>Use your <strong>down arrow key</strong> ↓ until <span style="background-color: #f8d7da; text-decoration: underline;">aCompCor</span> (top five components)<br>
+</li>
+<li><strong>Press space</strong> to select, then <strong>press enter</strong></li>
+</ul>
+<p>________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+We will now add another ReHo (repeat all the steps, <strong>from 1 to 7</strong>), select confounds for <strong>pipeline 2</strong></p>
+<p>In short, you will now choose:</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">ReHo</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">reHo2</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong></li>
+<li><span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span> style=“background-color: #f8d7da; text-decoration: underline;”&gt;No</li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span></li>
+</ol>
+<p><strong>For pipeline 2</strong></p>
+<ol start="8" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key ↓</strong> and <strong>press space</strong> for each parameter:<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion scrubbing</span></li>
+</ol>
+<p><span style="background-color: #cce5ff;">Do you really want to use inconsistent confounds across features?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+We will now select all motion scrubbing, motion parameters and their derivatives as well as Global signal (<strong>pipeline 3</strong>) .</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">ReHo</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">reHo3</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span> style=“background-color: #f8d7da; text-decoration: underline;”&gt;No</li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span></li>
+</ol>
+<p><strong>For pipeline 3</strong></p>
+<ol start="8" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key ↓</strong> and <strong>press space</strong> for each parameter:<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion scrubbing</span><br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span></li>
+</ol>
+<p>________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+We will now select all motion parameters and their derivatives (<strong>pipeline 4</strong>) .</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">ReHo</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">reHo3</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span> style=“background-color: #f8d7da; text-decoration: underline;”&gt;No</li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span></li>
+</ol>
+<p><strong>For pipeline 4</strong></p>
+<ol start="8" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key ↓</strong> and <strong>press space</strong> for each parameter:<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,</li>
+</ol>
+<p>________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+We will now select all motion parameters and their derivatives as well as Global signal (<strong>pipeline 5</strong>) .</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">ReHo</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">reHo3</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span> style=“background-color: #f8d7da; text-decoration: underline;”&gt;No</li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span></li>
+</ol>
+<p><strong>For pipeline 5</strong></p>
+<ol start="8" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key ↓</strong> and <strong>press space</strong> for each parameter:<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span></li>
+</ol>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span></p>
+<hr>
+</section>
+<section id="falff" class="level3">
+<h3 class="anchored" data-anchor-id="falff"><strong>fALFF</strong></h3>
+<ol type="1">
+<li><p><span style="background-color: #cce5ff;">Specify the feature type:</span> use your keyboard to select <span style="background-color: #f8d7da; text-decoration: underline;">fALFF</span>, then <strong>press enter</strong></p></li>
+<li><p><span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">fALFF1</span></p></li>
+<li><p><span style="background-color: #cce5ff;">Specify images to use:</span> if you have multiple tasks or sessions, select the session(s) or task(s) corresponding to resting-state data. Press space <strong>to untick</strong> a session, <strong>press enter</strong> to validate the selection</p></li>
+<li><p><span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span> style=“background-color: #f8d7da; text-decoration: underline;”&gt;No</p></li>
+<li><p><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></p></li>
+<li><p><span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span></p></li>
+<li><p><span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span></p></li>
+</ol>
+<p><span style="background-color: #fff3cd;">For example:</span></p>
+<p><a href="images/old_ui/13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="images/old_ui/13.png" class="img-fluid"></a></p>
+<p>Again, we will run the 3 pipelines</p>
+<p><strong>For pipeline 1</strong><br>
+We will first apply pipeline 1, i.e.&nbsp;aCompCor</p>
+<ol start="8" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds?</span><br>
+</li>
+</ol>
+<ul>
+<li>Use your <strong>down arrow key</strong> ↓ until <span style="background-color: #f8d7da; text-decoration: underline;">aCompCor</span> (top five components)<br>
+</li>
+<li>then <strong>press space</strong> and <strong>enter</strong></li>
+</ul>
+<p>________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+We will now add another fALFF (repeat all the steps, <strong>from step 1 to 7</strong>), but in the last step (step 6: remove confounds) we will select all parameters for <strong>pipeline 2</strong> instead of aCompCor.</p>
+<p>In short, you will now choose:</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">fALFF</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">fALFF2</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span> <span style="background-color: #f8d7da; text-decoration: underline;">No</span></li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span></li>
+</ol>
+<p><strong>For pipeline 2</strong></p>
+<ol start="8" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key ↓</strong> and <strong>press space</strong> for each parameter:<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion scrubbing</span></li>
+</ol>
+<p><span style="background-color: #cce5ff;">Do you really want to use inconsistent confounds across features?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+We will now select all motion scrubbing, motion parameters and their derivatives as well as Global signal (<strong>pipeline 3</strong>) .</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">fALFF</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">fALFF3</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span> <span style="background-color: #f8d7da; text-decoration: underline;">No</span></li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span></li>
+</ol>
+<p><strong>For pipeline 3</strong></p>
+<ol start="8" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key ↓</strong> and <strong>press space</strong> for each parameter:<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion scrubbing</span><br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span></li>
+</ol>
+<p>________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+We will now select all motion parameters and their derivatives (<strong>pipeline 4</strong>) .</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">fALFF</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">fALFF3</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span> <span style="background-color: #f8d7da; text-decoration: underline;">No</span></li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span></li>
+</ol>
+<p><strong>For pipeline 4</strong></p>
+<ol start="8" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key ↓</strong> and <strong>press space</strong> for each parameter:<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,</li>
+</ol>
+<p>________________________________________</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+We will now select all motion parameters and their derivatives as well as Global signal (<strong>pipeline 5</strong>) .</p>
+<ol type="1">
+<li><span style="background-color: #cce5ff;">Specify the feature type:</span> <span style="background-color: #f8d7da; text-decoration: underline;">fALFF</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify feature name?</span> Type <span style="background-color: #f8d7da; text-decoration: underline;">fALFF3</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify images to use:</span> select session(s) or task(s) with <strong>space</strong>, then <strong>press enter</strong><br>
+</li>
+<li><span style="background-color: #cce5ff;">Apply within-subject Z-score scaling?</span> <span style="background-color: #f8d7da; text-decoration: underline;">No</span></li>
+<li><span style="background-color: #cce5ff;">Specify space:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Standard space (MNI ICBM 2009c Nonlinear Asymmetric)</span></li>
+<li><span style="background-color: #cce5ff;">Apply smoothing:</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span><br>
+</li>
+<li><span style="background-color: #cce5ff;">Specify smoothing FWHM in mm:</span> <span style="background-color: #f8d7da; text-decoration: underline;">6.0</span></li>
+</ol>
+<p><strong>For pipeline 5</strong></p>
+<ol start="8" type="1">
+<li><span style="background-color: #cce5ff;">Remove confounds:</span> Use your <strong>down arrow key ↓</strong> and <strong>press space</strong> for each parameter:<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Derivatives of motion parameters squared</span>,<br>
+<span style="background-color: #f8d7da; text-decoration: underline;">Global signal</span></li>
+</ol>
+<p>________________________________________</p>
+<p>We have completed specifying all pipelines for the available features, and <strong>no additional first-level features</strong> will be added.</p>
+<p><span style="background-color: #cce5ff;">Add another first-level feature?</span> <span style="background-color: #f8d7da; text-decoration: underline;">No</span></p>
+<p><span style="background-color: #cce5ff;">Output a preprocessed image?</span> <span style="background-color: #f8d7da; text-decoration: underline;">No</span> For ENIGMA the preprocessed image is <strong>not</strong> needed.</p>
+<p><span style="background-color: #cce5ff;">Specify group-level model?</span> <span style="background-color: #f8d7da; text-decoration: underline;">No</span> For now, you can choose No, however, if you would like to have group statistics, you can select Yes, load in a file with group and covariate information and choose your preferred settings</p>
+<p><strong>You have now finished specifying the settings! 🎉 See the <a href="./check_run.html#">Check and run page</a> to see the next steps.</strong></p>
+<div class="footnotes">
+<p><em>We aknowledge that the manuals were adapted from the <strong>MDD ENIGMA resting-state fMRI manual</strong> and the <strong>OCD ENIGMA task-based fMRI manual</strong>.</em></p>
+</div>
 
 
+</section>
 </section>
 </section>
 
@@ -737,7 +1723,51 @@ If your data is already in BIDS format, follow the instructions of point 2.1. If
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./installation.html" class="pagination-link" aria-label="Installation instructions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Installation instructions</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./new_ui.html" class="pagination-link" aria-label="Resting-State fMRI (New UI)">
+        <span class="nav-page-text">Resting-State fMRI (New UI)</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/HALFpipe/HALFpipe/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

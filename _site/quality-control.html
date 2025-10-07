@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.7.30">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,28 +24,32 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./check_run.html" rel="next">
+<link href="./new_ui.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e537b474ed2117ba6ecbbee7cab3fe2a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-cacb8dcba27701cfdd59bf38b74f6f0f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
+  "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
+  "panel-placement": "start",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -72,56 +76,163 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">HALFpipe</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-  <span class="navbar-toggler-icon"></span>
-</button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./quality-control.html" aria-current="page"> 
-<span class="menu-text">Quality Control</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./analysis.html"> 
-<span class="menu-text">Analysis</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./manual_old_ui.html"> 
-<span class="menu-text">Manual Old UI</span></a>
-  </li>  
-</ul>
-          </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
-</div>
-      </div> <!-- /container-fluid -->
-    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quality-control.html">Quality control</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+  <div id="quarto-announcement" data-announcement-id="5bb81ccef88da40994e1c6fa3544dc2c" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>NEW RELEASE</strong> - HALFpipe v1.3.0 is now available! Check out the <a href="https://github.com/HALFpipe/HALFpipe/releases/tag/1.3.0">release notes</a> for more details.</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">HALFpipe</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome to ENIGMA HALFpipe!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installation instructions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Manuals</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./manual_old_ui.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">rsfMRI Manual (Old UI)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./new_ui.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resting-State fMRI (New UI)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quality-control.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Quality control</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./check_run.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to run the pipeline, check the outputs, and rerun the failed subjects</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#before-starting-the-qc" id="toc-before-starting-the-qc" class="nav-link active" data-scroll-target="#before-starting-the-qc">Before starting the QC</a></li>
+  <li><a href="#step-1-open-the-summary-report-in-the-reports-folder" id="toc-step-1-open-the-summary-report-in-the-reports-folder" class="nav-link" data-scroll-target="#step-1-open-the-summary-report-in-the-reports-folder">Step 1: Open the summary report in the reports folder</a>
+  <ul class="collapse">
+  <li><a href="#step-1.1-check-for-missing-files-in-the-summary-report" id="toc-step-1.1-check-for-missing-files-in-the-summary-report" class="nav-link" data-scroll-target="#step-1.1-check-for-missing-files-in-the-summary-report">Step 1.1: Check for missing files in the summary report</a></li>
+  </ul></li>
+  <li><a href="#step-2-open-the-index.html-page" id="toc-step-2-open-the-index.html-page" class="nav-link" data-scroll-target="#step-2-open-the-index.html-page">Step 2: Open the index.html page</a>
+  <ul class="collapse">
+  <li><a href="#charts" id="toc-charts" class="nav-link" data-scroll-target="#charts">Charts</a></li>
+  <li><a href="#explore-reports" id="toc-explore-reports" class="nav-link" data-scroll-target="#explore-reports">Explore reports</a></li>
+  <li><a href="#t1w-skull-stripping" id="toc-t1w-skull-stripping" class="nav-link" data-scroll-target="#t1w-skull-stripping">T1w skull stripping</a>
+  <ul class="collapse">
+  <li><a href="#example-of-a-good-subject" id="toc-example-of-a-good-subject" class="nav-link" data-scroll-target="#example-of-a-good-subject"><strong><span style="color: #28a745;">Example of a good subject</span></strong></a></li>
+  <li><a href="#example-of-a-bad-subject" id="toc-example-of-a-bad-subject" class="nav-link" data-scroll-target="#example-of-a-bad-subject"><strong><span style="color: #d00;">Example of a bad subject</span></strong></a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><strong>Summary</strong></a></li>
+  </ul></li>
+  <li><a href="#dt1w-spatial-normalisation" id="toc-dt1w-spatial-normalisation" class="nav-link" data-scroll-target="#dt1w-spatial-normalisation">dT1w spatial normalisation</a>
+  <ul class="collapse">
+  <li><a href="#example-of-a-good-subject-1" id="toc-example-of-a-good-subject-1" class="nav-link" data-scroll-target="#example-of-a-good-subject-1"><strong><span style="color: #28a745;">Example of a good subject</span></strong></a></li>
+  <li><a href="#example-of-a-bad-subject-1" id="toc-example-of-a-bad-subject-1" class="nav-link" data-scroll-target="#example-of-a-bad-subject-1"><strong><span style="color: #d00;">Example of a bad subject</span></strong></a></li>
+  <li><a href="#summary-1" id="toc-summary-1" class="nav-link" data-scroll-target="#summary-1"><strong>Summary</strong></a></li>
+  </ul></li>
+  <li><a href="#epi-tsnr" id="toc-epi-tsnr" class="nav-link" data-scroll-target="#epi-tsnr">EPI tSNR</a>
+  <ul class="collapse">
+  <li><a href="#example-of-a-good-subject-2" id="toc-example-of-a-good-subject-2" class="nav-link" data-scroll-target="#example-of-a-good-subject-2"><strong><span style="color: #28a745;">Example of a good subject</span></strong></a></li>
+  <li><a href="#example-of-a-bad-subject-2" id="toc-example-of-a-bad-subject-2" class="nav-link" data-scroll-target="#example-of-a-bad-subject-2"><strong><span style="color: #d00;">Example of a bad subject</span></strong></a></li>
+  <li><a href="#summary-2" id="toc-summary-2" class="nav-link" data-scroll-target="#summary-2"><strong>Summary</strong></a></li>
+  </ul></li>
+  <li><a href="#epi-confounds-carpet-plot" id="toc-epi-confounds-carpet-plot" class="nav-link" data-scroll-target="#epi-confounds-carpet-plot">EPI confounds (carpet plot)</a>
+  <ul class="collapse">
+  <li><a href="#example-of-a-good-subject-3" id="toc-example-of-a-good-subject-3" class="nav-link" data-scroll-target="#example-of-a-good-subject-3"><strong><span style="color: #28a745;">Example of a good subject</span></strong></a></li>
+  <li><a href="#example-of-an-uncertain-subject" id="toc-example-of-an-uncertain-subject" class="nav-link" data-scroll-target="#example-of-an-uncertain-subject"><strong><span style="color: #f4a261;">Example of an uncertain subject</span></strong></a></li>
+  <li><a href="#example-of-a-bad-subject-3" id="toc-example-of-a-bad-subject-3" class="nav-link" data-scroll-target="#example-of-a-bad-subject-3"><strong><span style="color: #d00;">Example of a bad subject</span></strong></a></li>
+  <li><a href="#summary-3" id="toc-summary-3" class="nav-link" data-scroll-target="#summary-3"><strong>Summary</strong></a></li>
+  </ul></li>
+  <li><a href="#epi-ica-based-artefact-removal" id="toc-epi-ica-based-artefact-removal" class="nav-link" data-scroll-target="#epi-ica-based-artefact-removal">EPI ICA-based artefact removal</a>
+  <ul class="collapse">
+  <li><a href="#example-of-a-good-subject-4" id="toc-example-of-a-good-subject-4" class="nav-link" data-scroll-target="#example-of-a-good-subject-4"><strong><span style="color: #28a745;">Example of a good subject</span></strong></a></li>
+  <li><a href="#example-of-a-bad-subject-4" id="toc-example-of-a-bad-subject-4" class="nav-link" data-scroll-target="#example-of-a-bad-subject-4"><strong><span style="color: #d00;">Example of a bad subject</span></strong></a></li>
+  <li><a href="#summary-4" id="toc-summary-4" class="nav-link" data-scroll-target="#summary-4"><strong>Summary</strong></a></li>
+  </ul></li>
+  <li><a href="#epi-spatial-normalisation" id="toc-epi-spatial-normalisation" class="nav-link" data-scroll-target="#epi-spatial-normalisation">EPI spatial normalisation</a>
+  <ul class="collapse">
+  <li><a href="#example-of-a-good-subject-5" id="toc-example-of-a-good-subject-5" class="nav-link" data-scroll-target="#example-of-a-good-subject-5"><strong><span style="color: #28a745;">Example of a good subject</span></strong></a></li>
+  <li><a href="#example-of-a-bad-subject-5" id="toc-example-of-a-bad-subject-5" class="nav-link" data-scroll-target="#example-of-a-bad-subject-5"><strong><span style="color: #d00;">Example of a bad subject</span></strong></a></li>
+  <li><a href="#summary-5" id="toc-summary-5" class="nav-link" data-scroll-target="#summary-5"><strong>Summary</strong></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#step-2b-rerun-subjects-if-needed" id="toc-step-2b-rerun-subjects-if-needed" class="nav-link" data-scroll-target="#step-2b-rerun-subjects-if-needed">Step 2b: Rerun subjects (if needed)</a></li>
+  <li><a href="#cheat-sheet" id="toc-cheat-sheet" class="nav-link" data-scroll-target="#cheat-sheet">Cheat Sheet</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/HALFpipe/HALFpipe/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -145,9 +256,1270 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The manual and so on</p>
+<div class="author-text">
+<p><span style="color: #808080;">AUTHOR</span></p>
+<p>Written by Lina Mograby.</p>
+<p>Previous version by Elena Pozzi, Yara Toenders, Ilya Veer, Lea Waller, Courtney Haswell, Rajendra Morey, and Lianne Schmaal</p>
+<p>Please address questions and comments to <a href="enigma@charite.de">enigma@charite.de</a>. You can also join the HALFpipe Mattermost (similar to Slack) using this <a href="https://mattermost.fmri.science/signup_user_complete/?id=hcc766b7wjdazexwe799hbsuwc&amp;md=link&amp;sbr=su">link</a>.</p>
+</div>
+<section id="before-starting-the-qc" class="level1">
+<h1>Before starting the QC</h1>
+<p>After running the pipeline, an output folder will be created. If the pipeline ran successfully, your output folder should look like this:</p>
+<pre><code>📂 /Output
+├──reports → this contains all the QC information
+├──derivatives → this contains the extracted features for each subject (from the CorrMatrix, DualReg, fALFF, ReHo, SeedCorr analyses), along with the confound file (confounds.tsv), the preprocessed image(s) (preproc.nii.gz) and the mask_file.nii.gz
+├──nypipe  → this contains the intermediate pre-processing files. When using the standard pipeline, not all intermediate images are saved to save space. However you can choose to save everything by changing the flag: --keep (more information can be found on GitHub)
+├──rawdata → this folder contains the raw T1 images and epi in BIDS
+├──log.txt
+├──err.txt
+├──halfpipe.log.txt 
+├──spec.json
+├── an execgraph and workflow file (you can ignore this)
+└──possibly files starting with ‘crash’</code></pre>
+<p>The files important for <strong>QC</strong> are in the <strong>reports</strong> folder. This contains:</p>
+<ul>
+<li>The web file <code>index.html</code>, which is the main web page that you will use to perform quality control (see below)</li>
+<li><code>reportvals.txt</code> → this is a group file that contains the mean of the quality metrics (aroma_noise_frac, the fd_gt_0_5, mean_fd, mean_gm_tsnr) for each subject</li>
+<li><code>reportpreproc.txt</code> → this is a group file that reports the status of the pre-processing (done/missing) of the resting state image for each subject</li>
+<li>In the reports folder there are also individual subject folders (that contain the images used to create the index.html and other files .js and .json.lock. You don’t have to worry about these files.)</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><strong>Note:</strong> you can copy the QC folder (reports) anywhere (e.g., on a local machine) as long as you copy the entire reports folder. The reports folder will take ~10 MB of space per subject plus 10 MB for each functional image. So if each subject has just the resting state, it would take ~20 MB per subject.</p>
+</div>
+</div>
+</div>
+<p>Important files for troubleshooting:</p>
+<ul>
+<li>The log.txt file contains the record of all the steps performed by the pipeline when it was running. Checking the log will help you troubleshoot if you run into any problems.</li>
+<li>The err.txt file contains the record of the errors</li>
+<li>The crash files might contain information about processes that crashed. If you submit an issue on GitHub, please include this file.</li>
+</ul>
+</section>
+<section id="step-1-open-the-summary-report-in-the-reports-folder" class="level1">
+<h1>Step 1: Open the summary report in the reports folder</h1>
+<p>The summary report (<code>reportpreproc.txt</code> in the reports folder) should look something like this:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">subject</th>
+<th style="text-align: left;">task</th>
+<th>status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">rest</td>
+<td>done</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">rest</td>
+<td>missing</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">rest</td>
+<td>missing</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">rest</td>
+<td>done</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>Done</strong> means that all the output files of interest (i.e., preprocessed image, confound files, connectivity matrices, ICA maps, seed connectivity maps, alff, reho) for that subject were created. These derivative files can be found in the folder <code>&lt;path/to/output/derivatives/halfpipe/subjectfolder&gt;</code>.</p></li>
+<li><p>Conversely, subjects with the status <strong>missing</strong> did not run completely. This means that not all the output files were created.</p></li>
+</ul>
+<section id="step-1.1-check-for-missing-files-in-the-summary-report" class="level2">
+<h2 class="anchored" data-anchor-id="step-1.1-check-for-missing-files-in-the-summary-report">Step 1.1: Check for missing files in the summary report</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">If you don’t have any subject listed under missing</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">If you have any subject listed under missing</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><em>If you are on a HPC</em>, you can download the entire <code>/reports</code> folder on a local machine to open and visualize the index.html file on your browser.</p>
+<p>Continue to <a href="#step-2-open-the-index.html-page">step 2</a>.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Please have a look at the <code>log.txt</code> file (located in the main output folder). To open the log file, you can use any text editor. Use the search function to search for ‘error’, to understand if something and what went wrong. Common errors are listed in the <code>troubleshooting section</code>.</p>
+<section id="step-1.1.1-re-run-missing-or-failed-subjects" class="level4">
+<h4 class="anchored" data-anchor-id="step-1.1.1-re-run-missing-or-failed-subjects">Step 1.1.1: Re-run missing or failed subjects</h4>
+<ul>
+<li>If there are any missing subjects, make a text file with all the missing subject IDs, one on each line. These could also be new participants that have not yet been processed.</li>
+<li>Re-run HALFpipe as before, but add the option <code>--subject-list &lt;full path to text file&gt; to the end of the command.</code></li>
+</ul>
+<p><em>Only if running on HPC </em> - Edit your submission script to add the option, and then submit the job to the HPC queue.</p>
+<p>If you are unable to troubleshoot, please open an issue on GitHub.</p>
+</section>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="step-2-open-the-index.html-page" class="level1">
+<h1>Step 2: Open the index.html page</h1>
+<p>Open the <strong>index.html</strong> file in the reports folder in your favourite browser. You can navigate through different windows by clicking on the drop-down menu (the three lines in the top left corner next to Nypipe status, see image below): <strong>charts, explore reports and report detail view</strong>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>As you make them, the ratings are saved in the browser’s local storage, and they will stay there unless you delete the <code>cookies/site</code> data. To review the ratings you made, open the index.html file from the same local machine using the same browser.</p>
+</div>
+</div>
+</div>
+<p><a href="images/qc/00-step2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="images/qc/00-step2.png" class="img-fluid"></a></p>
+<section id="charts" class="level2">
+<h2 class="anchored" data-anchor-id="charts">Charts</h2>
+<p>This is divided in 3 sections:</p>
+<ul>
+<li>Nipype status (pending, success, error)</li>
+<li>Summary and ratings for each feature (summary, T1w skull-stripping, T1w spatial normalization, EPI tSNR, EPI Confounds, EPI ICA, EPI spatial normalization)</li>
+<li>Group plots for Mean FD, % of frames with FD&gt;0.5, % IC classified as noise, mean GM tSNR → each dot is a subject, if you click on a dot it will take you to their QC page</li>
+</ul>
+<p><a href="images/qc/01-charts.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="images/qc/01-charts.png" class="img-fluid"></a></p>
+</section>
+<section id="explore-reports" class="level2">
+<h2 class="anchored" data-anchor-id="explore-reports">Explore reports</h2>
+<p>The reports contain images for each participant for the following pre-processing steps: 1. T1w skull stripping and segmentation 2. T1w spatial normalisation 3. EPI tSNR<br>
+4. EPI confounds (carpet plot) 5. EPI ICA-based artefact removal 6. EPI spatial normalisationƒ</p>
+<p><strong>Each pre-processing step should be rated for each participant (<span style="color: #28a745;">good</span>, <span style="color: #f4a261;">uncertain</span>, <span style="color: #d00;">bad</span>)</strong> using the emoticons. You can zoom in by clicking on the report (or clicking on ‘report detail view’ from the dropdown menu). All images/subjects should be rated (i.e., either good, uncertain, or bad), in order to have a comprehensive QA from each site.</p>
+<p>Instead of using the mouse clicks to rate the images, you can also use the following keyboard acuts: [w] rates image as good, [s] as uncertain and [x] as <span style="color: #d00;">bad</span>. The keys [d] and [a] jump to the next, respectively the previous image.</p>
+<p>After rating the images (see below for the explanation), the rating should be exported by going to the menu (the icon in the upper left corner, see example) of the reports page, and then clicking <strong>“Export”</strong>. They will be saved as ‘exclude.json’. The ratings are also displayed in the summary and ratings for each feature chart. If ratings do not get exported, there’s a risk of losing your progress once you delete your cookies.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/02-explore_reports.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Example: shows the menu and export button on the report"><img src="images/qc/02-explore_reports.jpg" class="img-fluid figure-img" alt="Example: shows the menu and export button on the report"></a></p>
+<figcaption>Example: shows the menu and export button on the report</figcaption>
+</figure>
+</div>
+<p>You can switch between sort <strong>‘per image type’</strong> or <strong>‘per subject’</strong>. Sorting the reports per image type (e.g., by skull stripping reports) will help you get a sense of how each image looks like across all subjects and will give you an idea of wwhat a ‘normal’ image looks like and what stands out.</p>
+<p>Sorting per subject will allow you to check how the same subject performed across the different pre-processing steps. We recommend sorting per image type, because that gives you an idea of what a good or bad image looks like. However, if you are unsure about the quality of a certain subject in one step, switch to sorting per subject to see how the same subject performed across the different steps (this could be useful to determine if they need to be excluded).</p>
+<p>Below we report examples of each pre-processing step, how they should look like, what to look for to identify errors and when to exclude a participant.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>If you rate a subject as <strong>‘<span style="color: #d00;">bad</span>’</strong>* in one of the images, it will later automatically be excluded from the group analysis.</p>
+<p>Obvious issues (e.g., large portion of the brain missing after skull stripping, poor T1 or EPI normalisation, very clear artefacts in the EPI showing in the tSNR) are usually worth the exclusion of the subject (or you can try to re-run the subject if the problem is for example skull stripping).</p>
+<p>Usually, bad examples of skull stripping, registration etc are the results of a problematic subject (e.g., lot of motion, not enough WM/GM contrast, signal loss, etc), so it is helpful to check all the reports for that subject, especially if you are unsure, before deciding to exclude them.</p>
+<p>The carpet plot and the ICA AROMA report can be hard to interpret on their own and (especially if you are unsure about the result) <strong>we recommend examining them in conjunction with the other images.</strong></p>
+</div>
+</div>
+</div>
+</section>
+<section id="t1w-skull-stripping" class="level2">
+<h2 class="anchored" data-anchor-id="t1w-skull-stripping">T1w skull stripping</h2>
+<p>Skull stripping is the process separating the brain (cortex and cerebellum) from the skull. The red line follows the outline of the brain and it separates it from the skull.</p>
+<section id="example-of-a-good-subject" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-a-good-subject"><strong><span style="color: #28a745;">Example of a good subject</span></strong></h3>
+<ul>
+<li>There are no skull stripping errors, such as portions of the brain missing, or too much of the skull retained</li>
+<li>The red line follows the outline of the brain</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_good-03_crop.png" class="lightbox" data-gallery="good-skull-stripping" title="T1w skull stripping: examples of good subjects"><img src="images/qc/03-t1w_skull_stripping_good-03_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: examples of good subjects"></a></p>
+<figcaption>T1w skull stripping: examples of good subjects</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_good-04_crop.png" class="lightbox" data-gallery="good-skull-stripping" title="T1w skull stripping: examples of good subjects"><img src="images/qc/03-t1w_skull_stripping_good-04_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: examples of good subjects"></a></p>
+<figcaption>T1w skull stripping: examples of good subjects</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_good-05_crop.png" class="lightbox" data-gallery="good-skull-stripping" title="T1w skull stripping: examples of good subjects"><img src="images/qc/03-t1w_skull_stripping_good-05_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: examples of good subjects"></a></p>
+<figcaption>T1w skull stripping: examples of good subjects</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_good-06_crop.png" class="lightbox" data-gallery="good-skull-stripping" title="T1w skull stripping: examples of good subjects"><img src="images/qc/03-t1w_skull_stripping_good-06_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: examples of good subjects"></a></p>
+<figcaption>T1w skull stripping: examples of good subjects</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_good-07_crop.png" class="lightbox" data-gallery="good-skull-stripping" title="T1w skull stripping: examples of good subjects"><img src="images/qc/03-t1w_skull_stripping_good-07_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: examples of good subjects"></a></p>
+<figcaption>T1w skull stripping: examples of good subjects</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_good-08_crop.png" class="lightbox" data-gallery="good-skull-stripping" title="T1w skull stripping: examples of good subjects"><img src="images/qc/03-t1w_skull_stripping_good-08_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: examples of good subjects"></a></p>
+<figcaption>T1w skull stripping: examples of good subjects</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_good-09_crop.png" class="lightbox" data-gallery="good-skull-stripping" title="T1w skull stripping: examples of good subjects"><img src="images/qc/03-t1w_skull_stripping_good-09_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: examples of good subjects"></a></p>
+<figcaption>T1w skull stripping: examples of good subjects</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_good-10_crop.png" class="lightbox" data-gallery="good-skull-stripping" title="T1w skull stripping: examples of good subjects"><img src="images/qc/03-t1w_skull_stripping_good-10_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: examples of good subjects"></a></p>
+<figcaption>T1w skull stripping: examples of good subjects</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_good-11_crop.png" class="lightbox" data-gallery="good-skull-stripping" title="T1w skull stripping: examples of good subjects"><img src="images/qc/03-t1w_skull_stripping_good-11_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: examples of good subjects"></a></p>
+<figcaption>T1w skull stripping: examples of good subjects</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_good-12_crop.png" class="lightbox" data-gallery="good-skull-stripping" title="T1w skull stripping: examples of good subjects"><img src="images/qc/03-t1w_skull_stripping_good-12_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: examples of good subjects"></a></p>
+<figcaption>T1w skull stripping: examples of good subjects</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_good-13_crop.png" class="lightbox" data-gallery="good-skull-stripping" title="T1w skull stripping: examples of good subjects"><img src="images/qc/03-t1w_skull_stripping_good-13_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: examples of good subjects"></a></p>
+<figcaption>T1w skull stripping: examples of good subjects</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_good-14_crop.png" class="lightbox" data-gallery="good-skull-stripping" title="T1w skull stripping: examples of good subjects"><img src="images/qc/03-t1w_skull_stripping_good-14_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: examples of good subjects"></a></p>
+<figcaption>T1w skull stripping: examples of good subjects</figcaption>
+</figure>
+</div>
+</section>
+<section id="example-of-a-bad-subject" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-a-bad-subject"><strong><span style="color: #d00;">Example of a bad subject</span></strong></h3>
+<ul>
+<li>There are skull stripping errors, such as portions of the brain missing, or too much of the skull retained</li>
+<li><strong>NOTE:</strong> check all the images (slices) in the report. If only one image (slice) looks problematic, it is possible that the subject is okay and it is just a visual issue in that particular screenshot</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_bad-01_crop.png" class="lightbox" data-gallery="bad-skull-stripping" title="T1w skull stripping: example of a bad subject: some portions of the brain have been left out. Note that in this subject, the ‘ring’ markers at the edge of the brain are likely indicative of high motion."><img src="images/qc/03-t1w_skull_stripping_bad-01_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: example of a bad subject: some portions of the brain have been left out. Note that in this subject, the ‘ring’ markers at the edge of the brain are likely indicative of high motion."></a></p>
+<figcaption>T1w skull stripping: example of a bad subject: some portions of the brain have been left out. Note that in this subject, the ‘ring’ markers at the edge of the brain are likely indicative of high motion.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_bad-02_crop.png" class="lightbox" data-gallery="bad-skull-stripping" title="T1w skull stripping: example of a bad subject: images in the upper and lower row look very distorted, possibly due to an issue with the scanner. Large portions of the brain have been left out even in the middle row."><img src="images/qc/03-t1w_skull_stripping_bad-02_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: example of a bad subject: images in the upper and lower row look very distorted, possibly due to an issue with the scanner. Large portions of the brain have been left out even in the middle row."></a></p>
+<figcaption>T1w skull stripping: example of a bad subject: images in the upper and lower row look very distorted, possibly due to an issue with the scanner. Large portions of the brain have been left out even in the middle row.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_bad-03_crop.png" class="lightbox" data-gallery="bad-skull-stripping" title="T1w skull stripping: example of a bad subject: large portions of the brain have been left out."><img src="images/qc/03-t1w_skull_stripping_bad-03_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: example of a bad subject: large portions of the brain have been left out."></a></p>
+<figcaption>T1w skull stripping: example of a bad subject: large portions of the brain have been left out.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_bad-05_crop.png" class="lightbox" data-gallery="bad-skull-stripping" title="T1w skull stripping: example of a bad subject: the red line includes areas (in the upper row) which don’t contain brain tissue."><img src="images/qc/03-t1w_skull_stripping_bad-05_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: example of a bad subject: the red line includes areas (in the upper row) which don’t contain brain tissue."></a></p>
+<figcaption>T1w skull stripping: example of a bad subject: the red line includes areas (in the upper row) which don’t contain brain tissue.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_bad-06_crop.png" class="lightbox" data-gallery="bad-skull-stripping" title="T1w skull stripping: example of a bad subject: portions of the brain have been left out, parts of the cranium and the eyes are included in the red line."><img src="images/qc/03-t1w_skull_stripping_bad-06_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: example of a bad subject: portions of the brain have been left out, parts of the cranium and the eyes are included in the red line."></a></p>
+<figcaption>T1w skull stripping: example of a bad subject: portions of the brain have been left out, parts of the cranium and the eyes are included in the red line.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_bad-07_crop.png" class="lightbox" data-gallery="bad-skull-stripping" title="T1w skull stripping: example of a bad subject: parts of the cranium and the eyes are included in the red line."><img src="images/qc/03-t1w_skull_stripping_bad-07_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: example of a bad subject: parts of the cranium and the eyes are included in the red line."></a></p>
+<figcaption>T1w skull stripping: example of a bad subject: parts of the cranium and the eyes are included in the red line.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_bad-08_crop.png" class="lightbox" data-gallery="bad-skull-stripping" title="T1w skull stripping: example of a bad subject: portions of the brain have been left out (especially the cerebellum), parts of the cranium and the eyes are included in the red line."><img src="images/qc/03-t1w_skull_stripping_bad-08_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: example of a bad subject: portions of the brain have been left out (especially the cerebellum), parts of the cranium and the eyes are included in the red line."></a></p>
+<figcaption>T1w skull stripping: example of a bad subject: portions of the brain have been left out (especially the cerebellum), parts of the cranium and the eyes are included in the red line.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_bad-09_crop.png" class="lightbox" data-gallery="bad-skull-stripping" title="T1w skull stripping: example of a bad subject: portions of the brain have been left out, large parts of the cranium and the eyes are included in the red line. The shape of the brain does not correspond to the shape drawn by the red line."><img src="images/qc/03-t1w_skull_stripping_bad-09_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: example of a bad subject: portions of the brain have been left out, large parts of the cranium and the eyes are included in the red line. The shape of the brain does not correspond to the shape drawn by the red line."></a></p>
+<figcaption>T1w skull stripping: example of a bad subject: portions of the brain have been left out, large parts of the cranium and the eyes are included in the red line. The shape of the brain does not correspond to the shape drawn by the red line.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/03-t1w_skull_stripping_bad-10_crop.png" class="lightbox" data-gallery="bad-skull-stripping" title="T1w skull stripping: example of a bad subject: portions of the brain have been left out, large parts of the cranium and the eyes are included in the red line. The shape of the brain does not correspond to the shape drawn by the red line. The jaw region, the oral cavity and the neck region look off, a scanner issue might be possible here."><img src="images/qc/03-t1w_skull_stripping_bad-10_crop.png" class="img-fluid figure-img" width="1200" alt="T1w skull stripping: example of a bad subject: portions of the brain have been left out, large parts of the cranium and the eyes are included in the red line. The shape of the brain does not correspond to the shape drawn by the red line. The jaw region, the oral cavity and the neck region look off, a scanner issue might be possible here."></a></p>
+<figcaption>T1w skull stripping: example of a bad subject: portions of the brain have been left out, large parts of the cranium and the eyes are included in the red line. The shape of the brain does not correspond to the shape drawn by the red line. The jaw region, the oral cavity and the neck region look off, a scanner issue might be possible here.</figcaption>
+</figure>
+</div>
+</section>
+<section id="summary" class="level3">
+<h3 class="anchored" data-anchor-id="summary"><strong>Summary</strong></h3>
+<table class="table-striped table-hover caption-top table">
+<caption>Table summary for skull stripping</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Good</strong></th>
+<th style="text-align: left;"><strong>Bad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">The brain is fully inside the red line</td>
+<td style="text-align: left;">Structures like the cranium or the eyes are inside the red line</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">No important brain structures are outside of the red line red line follows the natural outline of the brain</td>
+<td style="text-align: left;">Important brain structures are missing inside of the red line</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>-&gt; if only one slice is problematic, it could be an issue related to the visual depiction of the data instead of an issue related to the test subject</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="dt1w-spatial-normalisation" class="level2">
+<h2 class="anchored" data-anchor-id="dt1w-spatial-normalisation">dT1w spatial normalisation</h2>
+<p>This QC step shows the registration of the T1 image to MNI space.</p>
+<p>The registered T1 image is shown in the background with a brain atlas in MNI space as an overlay.</p>
+<section id="example-of-a-good-subject-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-a-good-subject-1"><strong><span style="color: #28a745;">Example of a good subject</span></strong></h3>
+<ul>
+<li>If the registration performed well, you should see an overlap (i.e., correspondence of structures) between the MNI template and the T1 registered to the MNI space.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/04-dt1w_spatial_normalisation_good-03.png" class="lightbox" data-gallery="good-dt1w-spatial-normalisation" title="T1w spatial normalisation: example of a good subject"><img src="images/qc/04-dt1w_spatial_normalisation_good-03.png" class="img-fluid figure-img" alt="T1w spatial normalisation: example of a good subject"></a></p>
+<figcaption>T1w spatial normalisation: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/04-dt1w_spatial_normalisation_good-04.png" class="lightbox" data-gallery="good-dt1w-spatial-normalisation" title="T1w spatial normalisation: example of a good subject"><img src="images/qc/04-dt1w_spatial_normalisation_good-04.png" class="img-fluid figure-img" alt="T1w spatial normalisation: example of a good subject"></a></p>
+<figcaption>T1w spatial normalisation: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/04-dt1w_spatial_normalisation_good-05.png" class="lightbox" data-gallery="good-dt1w-spatial-normalisation" title="T1w spatial normalisation: example of a good subject"><img src="images/qc/04-dt1w_spatial_normalisation_good-05.png" class="img-fluid figure-img" alt="T1w spatial normalisation: example of a good subject"></a></p>
+<figcaption>T1w spatial normalisation: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/04-dt1w_spatial_normalisation_good-06.png" class="lightbox" data-gallery="good-dt1w-spatial-normalisation" title="T1w spatial normalisation: example of a good subject"><img src="images/qc/04-dt1w_spatial_normalisation_good-06.png" class="img-fluid figure-img" alt="T1w spatial normalisation: example of a good subject"></a></p>
+<figcaption>T1w spatial normalisation: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/04-dt1w_spatial_normalisation_good-07.png" class="lightbox" data-gallery="good-dt1w-spatial-normalisation" title="T1w spatial normalisation: example of a good subject"><img src="images/qc/04-dt1w_spatial_normalisation_good-07.png" class="img-fluid figure-img" alt="T1w spatial normalisation: example of a good subject"></a></p>
+<figcaption>T1w spatial normalisation: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/04-dt1w_spatial_normalisation_good-08.png" class="lightbox" data-gallery="good-dt1w-spatial-normalisation" title="T1w spatial normalisation: example of a good subject"><img src="images/qc/04-dt1w_spatial_normalisation_good-08.png" class="img-fluid figure-img" alt="T1w spatial normalisation: example of a good subject"></a></p>
+<figcaption>T1w spatial normalisation: example of a good subject</figcaption>
+</figure>
+</div>
+</section>
+<section id="example-of-a-bad-subject-1" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-a-bad-subject-1"><strong><span style="color: #d00;">Example of a bad subject</span></strong></h3>
+<ul>
+<li>In case of poor registration, you should see a misalignment between the MNI template and the T1 (e.g., brain shifted down).</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/04-dt1w_spatial_normalisation_bad-01.png" class="lightbox" data-gallery="bad-dt1w-spatial-normalisation" title="T1w spatial normalisation: example of a bad subject"><img src="images/qc/04-dt1w_spatial_normalisation_bad-01.png" class="img-fluid figure-img" alt="T1w spatial normalisation: example of a bad subject"></a></p>
+<figcaption>T1w spatial normalisation: example of a bad subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/04-dt1w_spatial_normalisation_bad-02.png" class="lightbox" data-gallery="bad-dt1w-spatial-normalisation" title="T1w spatial normalisation: example of a bad subject. The MNI and the T1 don’t align."><img src="images/qc/04-dt1w_spatial_normalisation_bad-02.png" class="img-fluid figure-img" alt="T1w spatial normalisation: example of a bad subject. The MNI and the T1 don’t align."></a></p>
+<figcaption>T1w spatial normalisation: example of a bad subject. The MNI and the T1 don’t align.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/04-dt1w_spatial_normalisation_bad-03.png" class="lightbox" data-gallery="bad-dt1w-spatial-normalisation" title="T1w spatial normalisation: example of a bad subject. MNI and T1 don’t align, which can be seen especially in the lowest row."><img src="images/qc/04-dt1w_spatial_normalisation_bad-03.png" class="img-fluid figure-img" alt="T1w spatial normalisation: example of a bad subject. MNI and T1 don’t align, which can be seen especially in the lowest row."></a></p>
+<figcaption>T1w spatial normalisation: example of a bad subject. MNI and T1 don’t align, which can be seen especially in the lowest row.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/04-dt1w_spatial_normalisation_bad-05.png" class="lightbox" data-gallery="bad-dt1w-spatial-normalisation" title="T1w spatial normalisation: example of a bad subject. MNI and T1 are very misaligned."><img src="images/qc/04-dt1w_spatial_normalisation_bad-05.png" class="img-fluid figure-img" alt="T1w spatial normalisation: example of a bad subject. MNI and T1 are very misaligned."></a></p>
+<figcaption>T1w spatial normalisation: example of a bad subject. MNI and T1 are very misaligned.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/04-dt1w_spatial_normalisation_bad-06.png" class="lightbox" data-gallery="bad-dt1w-spatial-normalisation" title="T1 spatial normalisation: example of a bad subject. MNI and T1 are very misaligned."><img src="images/qc/04-dt1w_spatial_normalisation_bad-06.png" class="img-fluid figure-img" alt="T1 spatial normalisation: example of a bad subject. MNI and T1 are very misaligned."></a></p>
+<figcaption>T1 spatial normalisation: example of a bad subject. MNI and T1 are very misaligned.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/04-dt1w_spatial_normalisation_bad-07.png" class="lightbox" data-gallery="bad-dt1w-spatial-normalisation" title="T1 spatial normalisation: example of a bad subject. MNI and T1 are misaligned."><img src="images/qc/04-dt1w_spatial_normalisation_bad-07.png" class="img-fluid figure-img" alt="T1 spatial normalisation: example of a bad subject. MNI and T1 are misaligned."></a></p>
+<figcaption>T1 spatial normalisation: example of a bad subject. MNI and T1 are misaligned.</figcaption>
+</figure>
+</div>
+</section>
+<section id="summary-1" class="level3">
+<h3 class="anchored" data-anchor-id="summary-1"><strong>Summary</strong></h3>
+<table class="table-striped table-hover caption-top table">
+<caption>Table summary for dT1w spatial normalisation</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>good</strong></th>
+<th><strong>bad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Structures of the MNI template and the registered T1 are well aligned</td>
+<td>Structures of the MNI template and the registered T1 aren’t well aligned, <br><em>e.g.&nbsp;brain is shifted downwards</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="epi-tsnr" class="level2">
+<h2 class="anchored" data-anchor-id="epi-tsnr">EPI tSNR</h2>
+<p>In the signal to noise ratio images of the resting state image the desired signal is compared to the amount of background noise. It is important to check all the views (sagittal, coronal, axial) because some artefacts (e.g., stripes) may be evident only in one particular view.</p>
+<section id="example-of-a-good-subject-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-a-good-subject-2"><strong><span style="color: #28a745;">Example of a good subject</span></strong></h3>
+<ul>
+<li>Signal to noise is symmetrically distributed and there is no signal distortion</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_good-01.png" class="lightbox" data-gallery="good-epi_tsnr" title="tSNR: example of a good subject"><img src="images/qc/05-epi_tsnr_good-01.png" class="img-fluid figure-img" alt="tSNR: example of a good subject"></a></p>
+<figcaption>tSNR: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_good-02.png" class="lightbox" data-gallery="good-epi_tsnr" title="tSNR: example of a good subject"><img src="images/qc/05-epi_tsnr_good-02.png" class="img-fluid figure-img" alt="tSNR: example of a good subject"></a></p>
+<figcaption>tSNR: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_good-03.png" class="lightbox" data-gallery="good-epi_tsnr" title="tSNR: example of a good subject"><img src="images/qc/05-epi_tsnr_good-03.png" class="img-fluid figure-img" alt="tSNR: example of a good subject"></a></p>
+<figcaption>tSNR: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_good-04.png" class="lightbox" data-gallery="good-epi_tsnr" title="tSNR: example of a good subject"><img src="images/qc/05-epi_tsnr_good-04.png" class="img-fluid figure-img" alt="tSNR: example of a good subject"></a></p>
+<figcaption>tSNR: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_good-05.png" class="lightbox" data-gallery="good-epi_tsnr" title="tSNR: example of a good subject"><img src="images/qc/05-epi_tsnr_good-05.png" class="img-fluid figure-img" alt="tSNR: example of a good subject"></a></p>
+<figcaption>tSNR: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_good-06.png" class="lightbox" data-gallery="good-epi_tsnr" title="tSNR: example of a good subject"><img src="images/qc/05-epi_tsnr_good-06.png" class="img-fluid figure-img" alt="tSNR: example of a good subject"></a></p>
+<figcaption>tSNR: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_good-07.png" class="lightbox" data-gallery="good-epi_tsnr" title="tSNR: example of a good subject"><img src="images/qc/05-epi_tsnr_good-07.png" class="img-fluid figure-img" alt="tSNR: example of a good subject"></a></p>
+<figcaption>tSNR: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_good-08.png" class="lightbox" data-gallery="good-epi_tsnr" title="tSNR: example of a good subject"><img src="images/qc/05-epi_tsnr_good-08.png" class="img-fluid figure-img" alt="tSNR: example of a good subject"></a></p>
+<figcaption>tSNR: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_good-09.png" class="lightbox" data-gallery="good-epi_tsnr" title="tSNR: example of a good subject"><img src="images/qc/05-epi_tsnr_good-09.png" class="img-fluid figure-img" alt="tSNR: example of a good subject"></a></p>
+<figcaption>tSNR: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_good-10.png" class="lightbox" data-gallery="good-epi_tsnr" title="tSNR: example of a good subject"><img src="images/qc/05-epi_tsnr_good-10.png" class="img-fluid figure-img" alt="tSNR: example of a good subject"></a></p>
+<figcaption>tSNR: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_good-11.png" class="lightbox" data-gallery="good-epi_tsnr" title="tSNR: example of a good subject"><img src="images/qc/05-epi_tsnr_good-11.png" class="img-fluid figure-img" alt="tSNR: example of a good subject"></a></p>
+<figcaption>tSNR: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_good-12.png" class="lightbox" data-gallery="good-epi_tsnr" title="tSNR: example of a good subject"><img src="images/qc/05-epi_tsnr_good-12.png" class="img-fluid figure-img" alt="tSNR: example of a good subject"></a></p>
+<figcaption>tSNR: example of a good subject</figcaption>
+</figure>
+</div>
+</section>
+<section id="example-of-a-bad-subject-2" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-a-bad-subject-2"><strong><span style="color: #d00;">Example of a bad subject</span></strong></h3>
+<ul>
+<li>Asymmetry</li>
+<li>Potential signal distortion (might represent an artefact)</li>
+<li>Signal drop-out</li>
+<li>Stripes artefact</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Clear large artefact (e.g., zebra stripes in example 1) are worth the exclusion of the subject. If you are unsure, <em>check the other quality metrics for that subject to decide whether they should be excluded</em>.</p>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_bad-01.png" class="lightbox" data-gallery="bad-epi_tsnr" title="tSNR: example of a bad subject: stripes"><img src="images/qc/05-epi_tsnr_bad-01.png" class="img-fluid figure-img" alt="tSNR: example of a bad subject: stripes"></a></p>
+<figcaption>tSNR: example of a bad subject: stripes</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_bad-02.png" class="lightbox" data-gallery="bad-epi_tsnr" title="tSNR: example of a bad subject: frontal signal distortion/drop"><img src="images/qc/05-epi_tsnr_bad-02.png" class="img-fluid figure-img" alt="tSNR: example of a bad subject: frontal signal distortion/drop"></a></p>
+<figcaption>tSNR: example of a bad subject: frontal signal distortion/drop</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_bad-03.png" class="lightbox" data-gallery="bad-epi_tsnr" title="tSNR: example of a bad subject: stripes artefact in sagittal and coronal view"><img src="images/qc/05-epi_tsnr_bad-03.png" class="img-fluid figure-img" alt="tSNR: example of a bad subject: stripes artefact in sagittal and coronal view"></a></p>
+<figcaption>tSNR: example of a bad subject: stripes artefact in sagittal and coronal view</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_bad-04.png" class="lightbox" data-gallery="bad-epi_tsnr" title="tSNR: example of a bad subject: signal distortion/drop caused by motion"><img src="images/qc/05-epi_tsnr_bad-04.png" class="img-fluid figure-img" alt="tSNR: example of a bad subject: signal distortion/drop caused by motion"></a></p>
+<figcaption>tSNR: example of a bad subject: signal distortion/drop caused by motion</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_bad-05.png" class="lightbox" data-gallery="bad-epi_tsnr" title="tSNR: example of bad subject: signal distortion"><img src="images/qc/05-epi_tsnr_bad-05.png" class="img-fluid figure-img" alt="tSNR: example of bad subject: signal distortion"></a></p>
+<figcaption>tSNR: example of bad subject: signal distortion</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_bad-07.png" class="lightbox" data-gallery="bad-epi_tsnr" title="tSNR: example of a bad subject: artefacts in sagittal and coronal view."><img src="images/qc/05-epi_tsnr_bad-07.png" class="img-fluid figure-img" alt="tSNR: example of a bad subject: artefacts in sagittal and coronal view."></a></p>
+<figcaption>tSNR: example of a bad subject: artefacts in sagittal and coronal view.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_bad-08.png" class="lightbox" data-gallery="bad-epi_tsnr" title="tSNR: example of a bad subject: artefacts in sagittal and coronal view."><img src="images/qc/05-epi_tsnr_bad-08.png" class="img-fluid figure-img" alt="tSNR: example of a bad subject: artefacts in sagittal and coronal view."></a></p>
+<figcaption>tSNR: example of a bad subject: artefacts in sagittal and coronal view.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_bad-09.png" class="lightbox" data-gallery="bad-epi_tsnr" title="tSNR: example of a bad subject: shape of the brain looks very off in sagittal and coronal view."><img src="images/qc/05-epi_tsnr_bad-09.png" class="img-fluid figure-img" alt="tSNR: example of a bad subject: shape of the brain looks very off in sagittal and coronal view."></a></p>
+<figcaption>tSNR: example of a bad subject: shape of the brain looks very off in sagittal and coronal view.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_bad-10.png" class="lightbox" data-gallery="bad-epi_tsnr" title="tSNR: example of a bad subject: asymmetric signal drop."><img src="images/qc/05-epi_tsnr_bad-10.png" class="img-fluid figure-img" alt="tSNR: example of a bad subject: asymmetric signal drop."></a></p>
+<figcaption>tSNR: example of a bad subject: asymmetric signal drop.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/05-epi_tsnr_bad-11.png" class="lightbox" data-gallery="bad-epi_tsnr" title="tSNR: example of a bad subject: due to a technical issue, no normal brain shape is recognizable in the upper two rows"><img src="images/qc/05-epi_tsnr_bad-11.png" class="img-fluid figure-img" alt="tSNR: example of a bad subject: due to a technical issue, no normal brain shape is recognizable in the upper two rows"></a></p>
+<figcaption>tSNR: example of a bad subject: due to a technical issue, no normal brain shape is recognizable in the upper two rows</figcaption>
+</figure>
+</div>
+</section>
+<section id="summary-2" class="level3">
+<h3 class="anchored" data-anchor-id="summary-2"><strong>Summary</strong></h3>
+<table class="table-striped table-hover caption-top table">
+<caption>Table summary for EPI tSNR</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>good</strong></th>
+<th><strong>bad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Symmetrical distribution of noise and signal</td>
+<td>Asymmetry</td>
+</tr>
+<tr class="even">
+<td>No disruptions of the signal <br>(no “black patches”)</td>
+<td>Potential signal disruptions <br>(could be related to artefacts)</td>
+</tr>
+<tr class="odd">
+<td>No stripes <br>(sign of high motion)</td>
+<td>Signal drop</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Stripe artefacts <br>(“zebra” stripes due to motion)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="epi-confounds-carpet-plot" class="level2">
+<h2 class="anchored" data-anchor-id="epi-confounds-carpet-plot">EPI confounds (carpet plot)</h2>
+<p>A carpet plot is a 2D ‘heatmap’ of relevant time series within a scan, with voxels on the vertical axis and time on the horizontal axis. Voxels are grouped into blue=cortical GM, orange=subcortical GM, green=cerebellum, red=white matter and CSF, as indicated by the colour map on the left-hand side of the plot.</p>
+<p>In the carpet plot it is important to look for changes in heatmap/intensity and how they relate to motion (frame-wise displacement (FD)) and global signal (GS) measures (the graphs above the carpet plot). Unusual changes might represent other artefacts (e.g., hardware related) or changes in respiratory patterns.</p>
+<section id="example-of-a-good-subject-3" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-a-good-subject-3"><strong><span style="color: #28a745;">Example of a good subject</span></strong></h3>
+<ul>
+<li>No changes in the heatmap, low motion (FD mean &lt; 0.5), no sudden large jumps in the FD line or GS</li>
+<li>Small changes in the heatmap identifiable as caused by motion or other causes (i.e., corresponding to changes in the graphs above the heatmap)</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/06-epi_confounds_good-01.png" class="lightbox" data-gallery="good-epi_confounds" title="Example of a good subject: no clear changes in the heatmap, low motion, no large jumps/ changes"><img src="images/qc/06-epi_confounds_good-01.png" class="img-fluid figure-img" alt="Example of a good subject: no clear changes in the heatmap, low motion, no large jumps/ changes"></a></p>
+<figcaption>Example of a good subject: no clear changes in the heatmap, low motion, no large jumps/ changes</figcaption>
+</figure>
+</div>
+</section>
+<section id="example-of-an-uncertain-subject" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-an-uncertain-subject"><strong><span style="color: #f4a261;">Example of an uncertain subject</span></strong></h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/06-epi_confounds_uncertain-01.png" class="lightbox" data-gallery="good-epi_confounds" title="Example of a uncertain subject: small changes in the heatmap that correspond to spikes of motion < 3 mm (FD max here is 2.110)"><img src="images/qc/06-epi_confounds_uncertain-01.png" class="img-fluid figure-img" alt="Example of a uncertain subject: small changes in the heatmap that correspond to spikes of motion < 3 mm (FD max here is 2.110)"></a></p>
+<figcaption>Example of a uncertain subject: small changes in the heatmap that correspond to spikes of motion &lt; 3 mm (FD max here is 2.110)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/06-epi_confounds_uncertain-02.png" class="lightbox" data-gallery="good-epi_confounds" title="Example of a uncertain subject: changes in the heatmap that correspond to spikes of motion, max FD is below 3, mean FD is below 0.5"><img src="images/qc/06-epi_confounds_uncertain-02.png" class="img-fluid figure-img" alt="Example of a uncertain subject: changes in the heatmap that correspond to spikes of motion, max FD is below 3, mean FD is below 0.5"></a></p>
+<figcaption>Example of a uncertain subject: changes in the heatmap that correspond to spikes of motion, max FD is below 3, mean FD is below 0.5</figcaption>
+</figure>
+</div>
+</section>
+<section id="example-of-a-bad-subject-3" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-a-bad-subject-3"><strong><span style="color: #d00;">Example of a bad subject</span></strong></h3>
+<ul>
+<li>Large changes in the heatmap can be indicative of motion. If this is the case, they will usually correspond to changes in the FD line (purple line) above the heatmap. Mean FD and max FD are also reported in the plot for each subject</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>For group analysis, there will be the option to automatically exclude subjects with mean FD &gt; 0.5, so you don’t have to check the mean FD for all subjects at this stage (but it could be helpful to look at FD values if you are unsure about whether to exclude or not a subject). Although we have not included a hard threshold for max FD, values &gt; 3mm could be indicative of a problematic subject (i.e., with sudden jumps). In data sets with a high percentage of high motion individuals, it is worth considering whether the threshold should be raised to &gt;3.5mm, in order to include a larger percentage of subjects.</li>
+<li>Changes in the heatmap without clear causes may indicate other artefacts, such as hardware-related artefacts. Other sudden changes could be related to respiratory patterns</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>If you think that the carpet plot shows artefacts or other problematic issues, check the other quality metrics for that subject to decide whether they should be excluded</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/06-epi_confounds_bad-01.png" class="lightbox" data-gallery="good-epi_confounds" title="Example of a very bad carpet plot: many sudden changes in the heatmap that correspond to high spikes of motion (max FD is very high) and mean FD > 0.5"><img src="images/qc/06-epi_confounds_bad-01.png" class="img-fluid figure-img" alt="Example of a very bad carpet plot: many sudden changes in the heatmap that correspond to high spikes of motion (max FD is very high) and mean FD > 0.5"></a></p>
+<figcaption>Example of a very bad carpet plot: many sudden changes in the heatmap that correspond to high spikes of motion (max FD is very high) and mean FD &gt; 0.5</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/06-epi_confounds_bad-02.png" class="lightbox" data-gallery="good-epi_confounds" title="Carpet plot: example of a bad subject: large changes in the heatmap that correspond to motion. This subject has mean FD =1.161 and max FD = 11.072, meaning that it should be excluded because of high motion. Because mean FD > 0.5, it will be automatically excluded from the group analysis."><img src="images/qc/06-epi_confounds_bad-02.png" class="img-fluid figure-img" alt="Carpet plot: example of a bad subject: large changes in the heatmap that correspond to motion. This subject has mean FD =1.161 and max FD = 11.072, meaning that it should be excluded because of high motion. Because mean FD > 0.5, it will be automatically excluded from the group analysis."></a></p>
+<figcaption>Carpet plot: example of a bad subject: large changes in the heatmap that correspond to motion. This subject has mean FD =1.161 and max FD = 11.072, meaning that it should be excluded because of high motion. Because mean FD &gt; 0.5, it will be automatically excluded from the group analysis.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/06-epi_confounds_bad-04.png" class="lightbox" data-gallery="good-epi_confounds" title="Carpet plot: example of a potentially bad subject: Changes in the heatmap without clear causes (such as motion) that may indicate other artefacts. Check the other QC images to decide whether to exclude this subject"><img src="images/qc/06-epi_confounds_bad-04.png" class="img-fluid figure-img" alt="Carpet plot: example of a potentially bad subject: Changes in the heatmap without clear causes (such as motion) that may indicate other artefacts. Check the other QC images to decide whether to exclude this subject"></a></p>
+<figcaption>Carpet plot: example of a potentially bad subject: Changes in the heatmap without clear causes (such as motion) that may indicate other artefacts. Check the other QC images to decide whether to exclude this subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/06-epi_confounds_bad-05.png" class="lightbox" data-gallery="good-epi_confounds" title="Carpet plot: example of a bad subject. Very high FD at the beginning of the scan and mean FD > 0.5."><img src="images/qc/06-epi_confounds_bad-05.png" class="img-fluid figure-img" alt="Carpet plot: example of a bad subject. Very high FD at the beginning of the scan and mean FD > 0.5."></a></p>
+<figcaption>Carpet plot: example of a bad subject. Very high FD at the beginning of the scan and mean FD &gt; 0.5.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/06-epi_confounds_bad-06.png" class="lightbox" data-gallery="good-epi_confounds" title="Carpet plot: example of a subject that might be excluded. Changes in the heatmap can be explained through motion and mean FD is below 0.5, but max FD above 3 mm. With a carpet plot like this, it makes sense to check the other images to see if any issues that lead to exclusion have come up either way."><img src="images/qc/06-epi_confounds_bad-06.png" class="img-fluid figure-img" alt="Carpet plot: example of a subject that might be excluded. Changes in the heatmap can be explained through motion and mean FD is below 0.5, but max FD above 3 mm. With a carpet plot like this, it makes sense to check the other images to see if any issues that lead to exclusion have come up either way."></a></p>
+<figcaption>Carpet plot: example of a subject that might be excluded. Changes in the heatmap can be explained through motion and mean FD is below 0.5, but max FD above 3 mm. With a carpet plot like this, it makes sense to check the other images to see if any issues that lead to exclusion have come up either way.</figcaption>
+</figure>
+</div>
+</section>
+<section id="summary-3" class="level3">
+<h3 class="anchored" data-anchor-id="summary-3"><strong>Summary</strong></h3>
+<table class="table-striped table-hover caption-top table">
+<caption>Table summary for wEPI confounds (carpet plot)</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>good</strong></th>
+<th><strong>bad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No changes in the heatmap</td>
+<td>Big changes: <br>- could be related to motion <br>(change in the FD-line)</td>
+</tr>
+<tr class="even">
+<td>Small changes in the heatmap caused by motion mean FD &lt; 0.5</td>
+<td>Mean FD &gt; 0.5 or maximum FD &gt; 3 mm</td>
+</tr>
+<tr class="odd">
+<td>DVARS and FD “similar”</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>No big spikes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="epi-ica-based-artefact-removal" class="level2">
+<h2 class="anchored" data-anchor-id="epi-ica-based-artefact-removal">EPI ICA-based artefact removal</h2>
+<p>The fMRI data for each subject are decomposed into spatially independent components. Each component is represented by a spatial map and a time course. Some components represent noise, some signal. ICA AROMA is trained to automatically classify these components. Signal components are usually represented by <strong>low numbers of large clusters</strong> (some of which may represent known networks such as the Default Mode Network), located in the <strong>GM and away from WM, CSF, blood vessels,</strong> or the edges of the brain. Signal components usually do not have a particular shape, while noise components may show banding or ring patterns. Signal components usually have low frequency (0.01-0.1 Hz) (i.e., few spikes on the left hand side of the power spectra plot), <strong>while noise high frequency</strong>, or very low. The time series of signal components is oscillatory and fairly regular, while in noise we may see sudden spikes or differing patterns (see Griffanti et al., 2017. Hand classification of fMRI ICA noise components. NeuroImage).</p>
+<p>Some examples are presented below. For each component, there is a spatial map (on the left), the time series (top plot on the right) and the power spectra (bottom plot on the right). Of note, ICA AROMA errors cannot be ‘fixed’, as it automatically classifies the components.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>We don’t expect you to check all the components for every subject. Rather, try to eyeball the report and see whether generally clusters that should be signal (according to the description above) are coloured in green. If you think that ICA AROMA performed poorly, check the other quality metrics for that subject to decide whether they should be excluded.</p>
+</div>
+</div>
+</div>
+<div class="lightbox" style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/07-epi_ica-01.png" class="lightbox" data-gallery="epi_ica" title="Example of a signal component (the Default Mode Network)"><img src="images/qc/07-epi_ica-01.png" class="img-fluid figure-img" alt="Example of a signal component (the Default Mode Network)"></a></p>
+<figcaption>Example of a signal component (the Default Mode Network)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/07-epi_ica-02.png" class="lightbox" data-gallery="epi_ica" title="Example of a noise component (movement)"><img src="images/qc/07-epi_ica-02.png" class="img-fluid figure-img" alt="Example of a noise component (movement)"></a></p>
+<figcaption>Example of a noise component (movement)</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/07-epi_ica-03.png" class="lightbox" data-gallery="epi_ica" title="Example of a noise component (MRI acquisition artefacts)"><img src="images/qc/07-epi_ica-03.png" class="img-fluid figure-img" alt="Example of a noise component (MRI acquisition artefacts)"></a></p>
+<figcaption>Example of a noise component (MRI acquisition artefacts)</figcaption>
+</figure>
+</div>
+</div>
+<section id="example-of-a-good-subject-4" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-a-good-subject-4"><strong><span style="color: #28a745;">Example of a good subject</span></strong></h3>
+<ul>
+<li>Components correctly classified in noise (red) and signal (green), conservative classification (uncertain components classified as signal).</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/07-epi_ica_good.jpg" class="lightbox" data-gallery="good-epi_ica" title="ICA AROMA: example of a good/ok subject"><img src="images/qc/07-epi_ica_good.jpg" class="img-fluid figure-img" alt="ICA AROMA: example of a good/ok subject"></a></p>
+<figcaption>ICA AROMA: example of a good/ok subject</figcaption>
+</figure>
+</div>
+</section>
+<section id="example-of-a-bad-subject-4" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-a-bad-subject-4"><strong><span style="color: #d00;">Example of a bad subject</span></strong></h3>
+<ul>
+<li>ICA AROMA might have performed poorly if it classified all/most of the components as noise, when some of them could have been signal. These types of errors are more likely to occur in task fMRI with block designs, whereby some task-related activity may be classified as motion. In resting state, try to look for common large brain networks such as the default mode network/salience network. If they have been classified as noise, ICA-AROMA might have not performed well. It is possible that ICA AROMA classified all/most of the components as noise if the subject was particularly problematic (lot of motion, artefacts)</li>
+<li>Components that look like rings, bandings or stripes are usually acquisition-related artefacts (e.g., interleaved acquisition, multi-band). The presence of these artefacts is not an issue by itself, but ideally these components should be classified as noise. Note that ICA AROMA was not trained on multiband data, so it is possible that it classifies some of these components as signal (nothing we can do about).</li>
+<li><strong>We don’t expect you to check all the components for every subject. Rather, try to eyeball the report to get a general idea. If unsure, and there is a recurring issue across youdr dataset, please send us some screenshots.</strong></li>
+<li>In case of uncertain components, it is preferable that ICA AROMA behaved conservatively, and did not remove these components, because they may contain some signal</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><strong>NOTE:</strong> If you think that ICA AROMA performed poorly or the subject looks problematic, check the other quality metrics for that subject to decide whether they should be excluded.</p>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/07-epi_ica_bad.png" class="lightbox" data-gallery="bad-epi_ica" title="ICA AROMA: example of a bad subject: a large part of the components has been classified as noise (picture on the left). Other QC images of the same participant show that this subject is problematic: the tSNR page for this subjects shows stripes artefacts (picture on the right)."><img src="images/qc/07-epi_ica_bad.png" class="img-fluid figure-img" alt="ICA AROMA: example of a bad subject: a large part of the components has been classified as noise (picture on the left). Other QC images of the same participant show that this subject is problematic: the tSNR page for this subjects shows stripes artefacts (picture on the right)."></a></p>
+<figcaption>ICA AROMA: example of a bad subject: a large part of the components has been classified as noise (picture on the left). Other QC images of the same participant show that this subject is problematic: the tSNR page for this subjects shows stripes artefacts (picture on the right).</figcaption>
+</figure>
+</div>
+</section>
+<section id="summary-4" class="level3">
+<h3 class="anchored" data-anchor-id="summary-4"><strong>Summary</strong></h3>
+<table class="table-striped table-hover caption-top table">
+<caption>Table summary for EPI ICA-based artefact removal (carpet plot)</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>good</strong></th>
+<th><strong>bad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Time series (at the top): no sudden jumps power (bottom)</td>
+<td>More noise (red) than signal (green): <br>- Occurs more often with block design <br>- or “problematic” subject (lots of movement, lots of artefacts) rings, bands, artefacts <br>- should be classified as noise</td>
+</tr>
+<tr class="even">
+<td>Spatial patterns are visible</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>No sudden jumps/spikes</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>No big spikes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="epi-spatial-normalisation" class="level2">
+<h2 class="anchored" data-anchor-id="epi-spatial-normalisation">EPI spatial normalisation</h2>
+<p>This QC step shows the registration of the EPI image to MNI space.</p>
+<section id="example-of-a-good-subject-5" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-a-good-subject-5"><strong><span style="color: #28a745;">Example of a good subject</span></strong></h3>
+<ul>
+<li>If the registration performed well, you should see an overlap (i.e., correspondence of structures) between the MNI template and the EPI registered to the MNI space.</li>
+<li>If parts of the brain are missing due to the scanner field of view, this is fine. For example, the cerebellum may be cut off for a participant with a large head.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_good-01.jpg" class="lightbox" data-gallery="good-epi_spatial_normalisation" title="EPI spatial normalisation: example of a good subject"><img src="images/qc/08-epi_spatial_normalisation_good-01.jpg" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a good subject"></a></p>
+<figcaption>EPI spatial normalisation: example of a good subject</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_good-04.png" class="lightbox" data-gallery="good-epi_spatial_normalisation" title="EPI spatial normalisation: example of a good subject."><img src="images/qc/08-epi_spatial_normalisation_good-04.png" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a good subject."></a></p>
+<figcaption>EPI spatial normalisation: example of a good subject.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_good-05.png" class="lightbox" data-gallery="good-epi_spatial_normalisation" title="EPI spatial normalisation: example of a good subject."><img src="images/qc/08-epi_spatial_normalisation_good-05.png" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a good subject."></a></p>
+<figcaption>EPI spatial normalisation: example of a good subject.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_good-06.png" class="lightbox" data-gallery="good-epi_spatial_normalisation" title="EPI spatial normalisation: example of a good subject."><img src="images/qc/08-epi_spatial_normalisation_good-06.png" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a good subject."></a></p>
+<figcaption>EPI spatial normalisation: example of a good subject.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_good-07.png" class="lightbox" data-gallery="good-epi_spatial_normalisation" title="EPI spatial normalisation: example of a good subject."><img src="images/qc/08-epi_spatial_normalisation_good-07.png" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a good subject."></a></p>
+<figcaption>EPI spatial normalisation: example of a good subject.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_good-08.png" class="lightbox" data-gallery="good-epi_spatial_normalisation" title="EPI spatial normalisation: example of a good subject."><img src="images/qc/08-epi_spatial_normalisation_good-08.png" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a good subject."></a></p>
+<figcaption>EPI spatial normalisation: example of a good subject.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_good-09.png" class="lightbox" data-gallery="good-epi_spatial_normalisation" title="EPI spatial normalisation: example of a good subject."><img src="images/qc/08-epi_spatial_normalisation_good-09.png" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a good subject."></a></p>
+<figcaption>EPI spatial normalisation: example of a good subject.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_good-10.png" class="lightbox" data-gallery="good-epi_spatial_normalisation" title="EPI spatial normalisation: example of a good subject."><img src="images/qc/08-epi_spatial_normalisation_good-10.png" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a good subject."></a></p>
+<figcaption>EPI spatial normalisation: example of a good subject.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_good-11.png" class="lightbox" data-gallery="good-epi_spatial_normalisation" title="EPI spatial normalisation: example of a good subject."><img src="images/qc/08-epi_spatial_normalisation_good-11.png" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a good subject."></a></p>
+<figcaption>EPI spatial normalisation: example of a good subject.</figcaption>
+</figure>
+</div>
+</section>
+<section id="example-of-a-bad-subject-5" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-a-bad-subject-5"><strong><span style="color: #d00;">Example of a bad subject</span></strong></h3>
+<ul>
+<li>In case of poor registration, you should see a misalignment of the EPI and the MNI template</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_bad-01.png" class="lightbox" data-gallery="bad-epi_spatial_normalisation" title="EPI spatial normalisation: example of a bad subject, the EPI and the MNI template do not properly overlap"><img src="images/qc/08-epi_spatial_normalisation_bad-01.png" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a bad subject, the EPI and the MNI template do not properly overlap"></a></p>
+<figcaption>EPI spatial normalisation: example of a bad subject, the EPI and the MNI template do not properly overlap</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_bad-02.png" class="lightbox" data-gallery="bad-epi_spatial_normalisation" title="EPI spatial normalisation: example of a bad subject, EPI and MNI template do not properly overlap"><img src="images/qc/08-epi_spatial_normalisation_bad-02.png" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a bad subject, EPI and MNI template do not properly overlap"></a></p>
+<figcaption>EPI spatial normalisation: example of a bad subject, EPI and MNI template do not properly overlap</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_bad-03.png" class="lightbox" data-gallery="bad-epi_spatial_normalisation" title="EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap"><img src="images/qc/08-epi_spatial_normalisation_bad-03.png" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap"></a></p>
+<figcaption>EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_bad-04.png" class="lightbox" data-gallery="bad-epi_spatial_normalisation" title="EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap"><img src="images/qc/08-epi_spatial_normalisation_bad-04.png" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap"></a></p>
+<figcaption>EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_bad-05.png" class="lightbox" data-gallery="bad-epi_spatial_normalisation" title="EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap"><img src="images/qc/08-epi_spatial_normalisation_bad-05.png" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap"></a></p>
+<figcaption>EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_bad-06.png" class="lightbox" data-gallery="bad-epi_spatial_normalisation" title="EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap, it seems like there was a significant technical issue"><img src="images/qc/08-epi_spatial_normalisation_bad-06.png" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap, it seems like there was a significant technical issue"></a></p>
+<figcaption>EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap, it seems like there was a significant technical issue</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/qc/08-epi_spatial_normalisation_bad-07.png" class="lightbox" data-gallery="bad-epi_spatial_normalisation" title="EPI spatial normalisation: example of a bad subject. EPI and MNI do not properly overlap."><img src="images/qc/08-epi_spatial_normalisation_bad-07.png" class="img-fluid figure-img" alt="EPI spatial normalisation: example of a bad subject. EPI and MNI do not properly overlap."></a></p>
+<figcaption>EPI spatial normalisation: example of a bad subject. EPI and MNI do not properly overlap.</figcaption>
+</figure>
+</div>
+</section>
+<section id="summary-5" class="level3">
+<h3 class="anchored" data-anchor-id="summary-5"><strong>Summary</strong></h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>good</strong></th>
+<th><strong>bad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Overlap (i.e.&nbsp;match of structures) between the MNI template and the EPI registered in the MNI space</td>
+<td>Misalignment of the EPI and the MNI template</td>
+</tr>
+<tr class="even">
+<td>If parts of the brain are missing because the field of view of the scanner is limited, the EPI spatial normalisation does not have to be excluded <br><em>e.g.&nbsp;cerebellum cut off in person with large head</em></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-important callout-titled" title="Part of the brain missing">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Part of the brain missing
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>If parts of the brain are missing because the field of view of the scanner is limited, the EPI spatial normalisation does not have to be excluded (e.g.&nbsp;cerebellum cut off in person with large head)</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="step-2b-rerun-subjects-if-needed" class="level1">
+<h1>Step 2b: Rerun subjects (if needed)</h1>
+<p>If a subject is rated as ‘bad’ in one of the functional QC steps, it will be excluded. You can try to rerun these subjects.</p>
+<p>If you do not have to exclude or rerun any participants, continue to <a href="#step-3-share-with-enigma-mdd">step 3</a>.</p>
+<p>If you have to exclude participants: rerun these participants following the <a href="">steps in 1.1.1</a></p>
+<p>If you have already tried to rerun the excluded participants, but they still did not pass the QC, exclude them from your output and continue to <a href="">step 3</a>.</p>
+<p>After finishing the QC, it makes sense to check if all of the “outliers” (which show high mean framewise displacement) are excluded. If they aren’t, it makes sense to check again.</p>
+<p>Once you have finished the QC, click on the three horizontal stripes on the left (to open the menu), and select ‘Export’ (see page 4). An exclude.json file with the ratings will now be created.</p>
+<p><a href="images/qc/09-setp2b.png" class="lightbox" data-gallery="quarto-lightbox-gallery-88"><img src="images/qc/09-setp2b.png" class="img-fluid"></a></p>
+</section>
+<section id="cheat-sheet" class="level1">
+<h1>Cheat Sheet</h1>
+<p>This section brings together all the summary tables and can serve as a checklist for quality control once you’re familiar with both good and bad examples. However, we still recommend first going through the manual step by step and reviewing the provided examples carefully to build experience.</p>
+<table class="table-striped table-hover caption-top table">
+<caption>Table summary for skull stripping</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Good</strong></th>
+<th style="text-align: left;"><strong>Bad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">The brain is fully inside the red line</td>
+<td style="text-align: left;">Structures like the cranium or the eyes are inside the red line</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">No important brain structures are outside of the red line red line follows the natural outline of the brain</td>
+<td style="text-align: left;">Important brain structures are missing inside of the red line</td>
+</tr>
+</tbody>
+</table>
+<table class="table-striped table-hover caption-top table">
+<caption>Table summary for dT1w spatial normalisation</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Good</strong></th>
+<th><strong>Bad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Structures of the MNI template and the registered T1 are well aligned</td>
+<td>Structures of the MNI template and the registered T1 aren’t well aligned, <br><br><em>e.g.&nbsp;brain is shifted downwards</em></td>
+</tr>
+</tbody>
+</table>
+<table class="table-striped table-hover caption-top table">
+<caption>Table summary for EPI tSNR</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Good</strong></th>
+<th><strong>Bad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Symmetrical distribution of noise and signal</td>
+<td>Asymmetry</td>
+</tr>
+<tr class="even">
+<td>No disruptions of the signal <br>(no “black patches”)</td>
+<td>Potential signal disruptions <br>(could be related to artefacts)</td>
+</tr>
+<tr class="odd">
+<td>No stripes <br>(sign of high motion)</td>
+<td>Signal drop</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Stripe artefacts <br>(“zebra” stripes due to motion)</td>
+</tr>
+</tbody>
+</table>
+<table class="table-striped table-hover caption-top table">
+<caption>Table summary for wEPI confounds (carpet plot)</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Good</strong></th>
+<th><strong>Bad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>No changes in the heatmap</td>
+<td>Big changes: <br>- could be related to motion <br>(change in the FD-line)</td>
+</tr>
+<tr class="even">
+<td>Small changes in the heatmap caused by motion mean FD &lt; 0.5</td>
+<td>Mean FD &gt; 0.5 or maximum FD &gt; 3 mm</td>
+</tr>
+<tr class="odd">
+<td>DVARS and FD “similar”</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>No big spikes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="table-striped table-hover caption-top table">
+<caption>Table summary for EPI ICA-based artefact removal (carpet plot)</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Good</strong></th>
+<th><strong>Bad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Time series (at the top): no sudden jumps power (bottom)</td>
+<td>More noise (red) than signal (green): <br>- Occurs more often with block design <br>- or “problematic” subject (lots of movement, lots of artefacts) rings, bands, artefacts <br>- should be classified as noise</td>
+</tr>
+<tr class="even">
+<td>Spatial patterns are visible</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>No sudden jumps/spikes</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>No big spikes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="table-striped table-hover caption-top table">
+<caption>Table summary for EPI spatial normalisation (carpet plot)</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Good</strong></th>
+<th><strong>Bad</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Overlap (i.e.&nbsp;match of structures) between the MNI template and the EPI registered in the MNI space</td>
+<td>Misalignment of the EPI and the MNI template</td>
+</tr>
+<tr class="even">
+<td>If parts of the brain are missing because the field of view of the scanner is limited, the EPI spatial normalisation does not have to be excluded <br><br><em>e.g.&nbsp;cerebellum cut off in person with large head</em></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -549,7 +1921,51 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./new_ui.html" class="pagination-link" aria-label="Resting-State fMRI (New UI)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Resting-State fMRI (New UI)</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./check_run.html" class="pagination-link" aria-label="How to run the pipeline, check the outputs, and rerun the failed subjects">
+        <span class="nav-page-text">How to run the pipeline, check the outputs, and rerun the failed subjects</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/HALFpipe/HALFpipe/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 
