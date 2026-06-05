@@ -148,16 +148,16 @@ Here are the steps of setting up your base and working directory where HALFpipe 
 
 | Platform                       | Instructions                                                                                 |
 |:-------------------------------|:---------------------------------------------------------------------------------------------|
-| Singularity (3.x) or Apptainer | `curl -O https://download.fmri.science/singularity/halfpipe-1.3.0.sif`                       | 
-|                                | Run `find $(pwd) -maxdepth 1` to show all files in the current directory with their full path. You should see a file named `halfpipe-1.3.0.sif`, or similar, listed among the files. |
+| Singularity (3.x) or Apptainer | `curl -O https://download.fmri.science/singularity/halfpipe-1.3.1.sif`                       | 
+|                                | Run `find $(pwd) -maxdepth 1` to show all files in the current directory with their full path. You should see a file named `halfpipe-1.3.1.sif`, or similar, listed among the files. |
 |                                | This file is the container image that includes all software and code needed for processing. Please note down the path to this file, you will need this later. |
-| Singularity (2.x)              | `curl -O https://download.fmri.science/singularity/halfpipe-1.3.0.simg`                      |
+| Singularity (2.x)              | `curl -O https://download.fmri.science/singularity/halfpipe-1.3.1.simg`                      |
 
 :::
 
 ::: {.callout-important collapse="false"}
 ### HALFpipe version
-**Note:** We recommend installing version **1.3.0** of HALFpipe, which includes fMRIPrep 25.1.1 (As of September 2025). 
+**Note:** We recommend installing version **1.3.1** of HALFpipe, which includes fMRIPrep 25.1.1 (As of September 2025). 
 
 **Additional Information:** You will need the paths to **both your data and the atlases** when running HALFpipe. You will need to specify their locations during the settings configuration. These files do not need to be in the same location as the pipeline image file—just be sure you know where they are stored. To do this, please use the command cd to navigate to your atlas or data folder, then run the command `pwd` (or `cd` on Windows).
 :::
