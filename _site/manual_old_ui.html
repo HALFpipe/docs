@@ -129,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
   </nav>
   <div id="quarto-announcement" data-announcement-id="5bb81ccef88da40994e1c6fa3544dc2c" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p><strong>NEW RELEASE</strong> - HALFpipe v1.3.0 is now available! Check out the <a href="https://github.com/HALFpipe/HALFpipe/releases/tag/1.3.0">release notes</a> for more details.</p>
+<p><strong>NEW RELEASE</strong> - HALFpipe v1.3.1 is now available! Check out the <a href="https://github.com/HALFpipe/HALFpipe/releases/tag/1.3.1">release notes</a> for more details.</p>
 </div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
@@ -333,7 +333,7 @@ Note
 </td>
 <td>
 <pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
-halfpipe-1.3.0.sif --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
+halfpipe-1.3.1.sif --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
 </td>
 </tr>
 <tr>
@@ -342,7 +342,7 @@ halfpipe-1.3.0.sif --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
 </td>
 <td>
 <pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
-halfpipe-1.3.0.simg --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
+halfpipe-1.3.1.simg --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
 </td>
 </tr>
 </tbody></table>
@@ -359,7 +359,7 @@ halfpipe-1.3.0.simg --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
 <em>On MacOS</em>
 </p>
 <pre><code>docker run --interactive --tty --volume <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
-halfpipe/halfpipe:1.3.0 --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
+halfpipe/halfpipe:1.3.1 --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
 <p>
 <em>On Windows:</em>
 </p>
@@ -372,7 +372,7 @@ Be sure to replace <code>C:</code> with the appropriate drive letter for your sy
 </li>
 </ul>
 <pre><code>docker run --interactive --tty --volume C:<span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
-halfpipe/halfpipe:1.3.0 --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
+halfpipe/halfpipe:1.3.1 --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
 </td>
 </tr>
 </tbody></table>
@@ -414,7 +414,7 @@ If your computer can handle it, you can allocate more CPUs using the Docker flag
 Refer to your system’s documentation to learn your CPU limitations.<br>
 By adding more CPUs, you can add the HALFpipe flag <code>--nipype-n-procs</code> to accelerate the process.*</p>
 <p><span style="background-color: #fff3cd;"><strong>Example using Docker:</strong></span></p>
-<p><code>docker run --interactive --tty --cpus=3 --volume /:/ext halfpipe/halfpipe:1.3.0 --nipype-n-procs --subject-chunks --keep none</code></p>
+<p><code>docker run --interactive --tty --cpus=3 --volume /:/ext halfpipe/halfpipe:1.3.1 --nipype-n-procs --subject-chunks --keep none</code></p>
 </div>
 </div>
 </div>
@@ -480,7 +480,7 @@ Note
 <strong>Singularity (3.x)</strong>
 </td>
 <td>
-<pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.3.0.sif --use-cluster</code></pre>
+<pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.3.1.sif --use-cluster</code></pre>
 </td>
 </tr>
 <tr>
@@ -488,7 +488,7 @@ Note
 <strong>Singularity (2.x)</strong>
 </td>
 <td>
-<pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.3.0.simg --use-cluster</code></pre>
+<pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.3.1.simg --use-cluster</code></pre>
 </td>
 </tr>
 <tr>
@@ -496,7 +496,7 @@ Note
 <strong>Apptainer</strong>
 </td>
 <td>
-<pre><code>apptainer run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.3.0.sif --use-cluster</code></pre>
+<pre><code>apptainer run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.3.1.sif --use-cluster</code></pre>
 </td>
 </tr>
 </tbody></table>
@@ -505,7 +505,7 @@ Note
 </ol>
 <p>Additional Information:</p>
 <ul>
-<li>File Location: Ensure the HALFpipe_1.3.0.sif file is in your current working directory or specify its full path.</li>
+<li>File Location: Ensure the HALFpipe_1.3.1.sif file is in your current working directory or specify its full path.</li>
 <li>Directory Binding: The –bind (or -B) option maps directories from your host system into the container. For example, /home/user/Documents on the host becomes /ext/home/user/Documents inside the container.</li>
 <li>Cluster Flag: Use the –use-cluster flag when running the execution command on an HPC.</li>
 </ul>

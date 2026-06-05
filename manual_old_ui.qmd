@@ -58,14 +58,14 @@ To access your files more easily, you can bind in the path where the data, worki
     <td><strong>Singularity or Apptainer (3.x)</strong></td>
     <td>
       <pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
-halfpipe-1.3.0.sif --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
+halfpipe-1.3.1.sif --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
     </td>
   </tr>
   <tr>
     <td><strong>Singularity (2.x)</strong></td>
     <td>
       <pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
-halfpipe-1.3.0.simg --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
+halfpipe-1.3.1.simg --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
     </td>
   </tr>
 </table>
@@ -80,7 +80,7 @@ halfpipe-1.3.0.simg --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
     <td>
       <p><em>On MacOS</em></p>
       <pre><code>docker run --interactive --tty --volume <span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
-halfpipe/halfpipe:1.3.0 --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
+halfpipe/halfpipe:1.3.1 --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
 
       <p><em>On Windows:</em></p>
       <ul>
@@ -88,7 +88,7 @@ halfpipe/halfpipe:1.3.0 --subject-chunks --nipype-n-procs 1 --keep none</code></
         <li>Be sure to replace <code>C:</code> with the appropriate drive letter for your system.</li>
       </ul>
       <pre><code>docker run --interactive --tty --volume C:<span style="background-color:rgb(255, 204, 204);">/:/ext</span> \
-halfpipe/halfpipe:1.3.0 --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
+halfpipe/halfpipe:1.3.1 --subject-chunks --nipype-n-procs 1 --keep none</code></pre>
     </td>
   </tr>
 </table>
@@ -112,7 +112,7 @@ By adding more CPUs, you can add the HALFpipe flag `--nipype-n-procs` to acceler
 
 <span style="background-color: #fff3cd;">**Example using Docker:**</span>
 
-`docker run --interactive --tty --cpus=3 --volume /:/ext halfpipe/halfpipe:1.3.0 --nipype-n-procs --subject-chunks --keep none`
+`docker run --interactive --tty --cpus=3 --volume /:/ext halfpipe/halfpipe:1.3.1 --nipype-n-procs --subject-chunks --keep none`
 
 :::
 
@@ -155,19 +155,19 @@ Re-run this command every time you log out and back in again, and every time you
   <tr>
     <td><strong>Singularity (3.x)</strong></td>
     <td>
-      <pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.3.0.sif --use-cluster</code></pre>
+      <pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.3.1.sif --use-cluster</code></pre>
     </td>
   </tr>
   <tr>
     <td><strong>Singularity (2.x)</strong></td>
     <td>
-      <pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.3.0.simg --use-cluster</code></pre>
+      <pre><code>singularity run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.3.1.simg --use-cluster</code></pre>
     </td>
   </tr>
   <tr>
     <td><strong>Apptainer</strong></td>
     <td>
-      <pre><code>apptainer run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.3.0.sif --use-cluster</code></pre>
+      <pre><code>apptainer run --contain --cleanenv --bind <span style="background-color:rgb(255, 204, 204);">/:/ext</span> halfpipe_1.3.1.sif --use-cluster</code></pre>
     </td>
   </tr>
 </table>
@@ -177,7 +177,7 @@ Re-run this command every time you log out and back in again, and every time you
 
 Additional Information:
 
-- File Location: Ensure the HALFpipe_1.3.0.sif file is in your current working directory or specify its full path.
+- File Location: Ensure the HALFpipe_1.3.1.sif file is in your current working directory or specify its full path.
 - Directory Binding: The --bind (or -B) option maps directories from your host system into the container. For example, /home/user/Documents on the host becomes /ext/home/user/Documents inside the container.
 - Cluster Flag: Use the --use-cluster flag when running the execution command on an HPC.
 

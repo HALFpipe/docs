@@ -34,12 +34,12 @@ Please address questions and comments to [halfpipe@fmri.science](halfpipe@fmri.s
 3. Run the Execution Command for your container software.
 
 ```bash
-apptainer run --contain --cleanenv --bind /:/ext halfpipe_1.3.0.sif --use_cluster --tui 
+apptainer run --contain --cleanenv --bind /:/ext halfpipe_1.3.1.sif --use_cluster --tui 
 ```
 
 ::: {.callout-note collapse="false"}
 #### Understanding the command line
-- File Location: Ensure the HALFpipe-1.3.0.sif file is in your current working directory or specify its full path.
+- File Location: Ensure the HALFpipe-1.3.1.sif file is in your current working directory or specify its full path.
 
 - New UI flag: Use the `--tui` flag to launch HALFpipe with the new UI. 
 
@@ -52,7 +52,7 @@ apptainer run --contain --cleanenv --bind /:/ext halfpipe_1.3.0.sif --use_cluste
 2. Run the docker command.
 
 ```bash
-docker run --interactive --tty --volume /:/ext halfpipe/halfpipe:1.3.0 --subject-chunks --nipype-n-procs 1 --keep none --tui
+docker run --interactive --tty --volume /:/ext halfpipe/halfpipe:1.3.1 --subject-chunks --nipype-n-procs 1 --keep none --tui
 ```
 - __Note__: To access your files more easily, you can bind in the path where the data, working directory and atlases are located. 
 
@@ -66,7 +66,7 @@ __Note 2__: On some systems, Docker will restrict the number of CPU cores availa
 
 By adding more CPUs, you can add the HALFpipe flag `--nipype-n-procs` to accelerate the process. For example: 
 ```bash
-docker run --interactive --tty --cpus=3 --volume /:/ext halfpipe/halfpipe:1.3.0 --nipype-n-procs --subject-chunks --keep none
+docker run --interactive --tty --cpus=3 --volume /:/ext halfpipe/halfpipe:1.3.1 --nipype-n-procs --subject-chunks --keep none
 ```
 :::
 :::
