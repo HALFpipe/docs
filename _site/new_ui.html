@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Resting-State fMRI with the new UI – HALFpipe</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./quality-control.html" rel="next">
+<link href="./manual_old_ui.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-69d053b0040b7b38120c860d6ac5e767.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./manual_old_ui.html">Manuals</a></li><li class="breadcrumb-item"><a href="./new_ui.html">Resting-state fMRI Manual - Graphical UI</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+  <div id="quarto-announcement" data-announcement-id="fa90e2aa93aadffe8d347492b1b8e70d" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>NEW RELEASE</strong> - HALFpipe v1.3.2 is now available! Check out the <a href="https://github.com/HALFpipe/HALFpipe/releases/tag/1.3.2">release notes</a> for more details.</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">HALFpipe</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome to ENIGMA HALFpipe!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./installation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Installation instructions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Manuals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./manual_old_ui.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resting-state fMRI Manual - Terminal UI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./new_ui.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Resting-state fMRI Manual - Graphical UI</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quality-control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quality control</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./check_run.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to run the pipeline, check the outputs, and rerun the failed subjects</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wonkyconn_docs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wonkyconn</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#how-to-launch-the-new-ui" id="toc-how-to-launch-the-new-ui" class="nav-link active" data-scroll-target="#how-to-launch-the-new-ui">How to launch the new UI</a></li>
+  <li><a href="#pipeline-settings" id="toc-pipeline-settings" class="nav-link" data-scroll-target="#pipeline-settings">Pipeline settings</a>
+  <ul class="collapse">
+  <li><a href="#specify-your-working-directory" id="toc-specify-your-working-directory" class="nav-link" data-scroll-target="#specify-your-working-directory">Specify your working directory</a></li>
+  <li><a href="#specify-your-data-location" id="toc-specify-your-data-location" class="nav-link" data-scroll-target="#specify-your-data-location">Specify your Data location</a></li>
+  <li><a href="#general-preprocessing-settings" id="toc-general-preprocessing-settings" class="nav-link" data-scroll-target="#general-preprocessing-settings">General Preprocessing settings</a></li>
+  </ul></li>
+  <li><a href="#features" id="toc-features" class="nav-link" data-scroll-target="#features">Features</a>
+  <ul class="collapse">
+  <li><a href="#seed-based-connectivity" id="toc-seed-based-connectivity" class="nav-link" data-scroll-target="#seed-based-connectivity">1. Seed-based connectivity</a>
+  <ul class="collapse">
+  <li><a href="#general-settings" id="toc-general-settings" class="nav-link" data-scroll-target="#general-settings">General settings</a></li>
+  <li><a href="#remove-confounds-for-5-pipelines" id="toc-remove-confounds-for-5-pipelines" class="nav-link" data-scroll-target="#remove-confounds-for-5-pipelines">Remove confounds for 5 pipelines</a></li>
+  </ul></li>
+  <li><a href="#atlas-based-connectivity-matrix" id="toc-atlas-based-connectivity-matrix" class="nav-link" data-scroll-target="#atlas-based-connectivity-matrix">2. Atlas-based connectivity Matrix</a>
+  <ul class="collapse">
+  <li><a href="#general-settings-1" id="toc-general-settings-1" class="nav-link" data-scroll-target="#general-settings-1">General settings</a></li>
+  <li><a href="#remove-confounds-for-5-pipelines-1" id="toc-remove-confounds-for-5-pipelines-1" class="nav-link" data-scroll-target="#remove-confounds-for-5-pipelines-1">Remove confounds for 5 pipelines</a></li>
+  </ul></li>
+  <li><a href="#reho" id="toc-reho" class="nav-link" data-scroll-target="#reho">3. ReHo</a>
+  <ul class="collapse">
+  <li><a href="#general-settings-2" id="toc-general-settings-2" class="nav-link" data-scroll-target="#general-settings-2">General settings</a></li>
+  <li><a href="#remove-confounds-for-5-pipelines-2" id="toc-remove-confounds-for-5-pipelines-2" class="nav-link" data-scroll-target="#remove-confounds-for-5-pipelines-2">Remove confounds for 5 pipelines</a></li>
+  </ul></li>
+  <li><a href="#falff" id="toc-falff" class="nav-link" data-scroll-target="#falff">5. fALFF</a>
+  <ul class="collapse">
+  <li><a href="#general-settings-3" id="toc-general-settings-3" class="nav-link" data-scroll-target="#general-settings-3">General settings</a></li>
+  <li><a href="#remove-confounds-for-5-pipelines-3" id="toc-remove-confounds-for-5-pipelines-3" class="nav-link" data-scroll-target="#remove-confounds-for-5-pipelines-3">Remove confounds for 5 pipelines</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#check-and-run" id="toc-check-and-run" class="nav-link" data-scroll-target="#check-and-run">Check and Run</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/HALFpipe/HALFpipe/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./manual_old_ui.html">Manuals</a></li><li class="breadcrumb-item"><a href="./new_ui.html">Resting-state fMRI Manual - Graphical UI</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Resting-State fMRI with the new UI</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The New-UI is still under development
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We are still working on the implementation of the New UI for HALFpipe. Please report any issue you might encounter at halfpipe@fmri.science or on GitHub.</p>
+</div>
+</div>
+<div class="author-text">
+<p><span style="color: #808080;">AUTHOR</span></p>
+<p>Written by Clara El Khantour, Lea Waller, Pierre Lune Bellec, Frank Hillary, Ilya Veer, Clara Moreau</p>
+<p>Please address questions and comments to <a href="halfpipe@fmri.science">halfpipe@fmri.science</a>. You can also join the HALFpipe Mattermost (similar to Slack) using this <a href="https://mattermost.fmri.science/signup_user_complete/?id=hcc766b7wjdazexwe799hbsuwc&amp;md=link&amp;sbr=su">link</a>.</p>
+</div>
+<section id="how-to-launch-the-new-ui" class="level1">
+<h1>How to launch the new UI</h1>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Singularity/Apptainer</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Docker</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<ol type="1">
+<li>Open a terminal session and connect to your HPC (if applicable).</li>
+<li>Run an <strong>Interactive Job</strong> on the cluster (see the note above)</li>
+</ol>
+<ul>
+<li><strong>Note</strong>: If running on a HPC, you need to run an Interactive Job on the cluster. To do this, please refer to your HPC’s documentation. Then load Singularity/Apptainer packages: <code>module load singularity</code>.</li>
+</ul>
+<ol start="3" type="1">
+<li>Run the Execution Command for your container software.</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apptainer</span> run <span class="at">--contain</span> <span class="at">--cleanenv</span> <span class="at">--bind</span> /:/ext halfpipe_1.3.0.sif <span class="at">--use_cluster</span> <span class="at">--tui</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Understanding the command line
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>File Location: Ensure the HALFpipe-1.3.0.sif file is in your current working directory or specify its full path.</p></li>
+<li><p>New UI flag: Use the <code>--tui</code> flag to launch HALFpipe with the new UI.</p></li>
+<li><p>Cluster Flag: Use the <code>--use-cluster</code> flag when running the execution command on an HPC.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<ol type="1">
+<li>Open a terminal session via Docker Desktop.</li>
+<li>Run the docker command.</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--interactive</span> <span class="at">--tty</span> <span class="at">--volume</span> /:/ext halfpipe/halfpipe:1.3.0 <span class="at">--subject-chunks</span> <span class="at">--nipype-n-procs</span> 1 <span class="at">--keep</span> none <span class="at">--tui</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Note</strong>: To access your files more easily, you can bind in the path where the data, working directory and atlases are located.</li>
+</ul>
+<p>For example: <code>--volume /home/user/scratch:/home/user/scratch</code></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Adding more CPUs on a local machine
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Note 1</strong>: The flags <code>--subject-chunks</code> and <code>--nipype-n-procs 1</code> are optional. While they may slow down the pipeline, they help ensure you don’t exceed your computer’s processing capacity. Use them if you’re concerned about system limitations.</p>
+<p><strong>Note 2</strong>: On some systems, Docker will restrict the number of CPU cores available to HALFpipe by default. If your computer can handle it, you can allocate more CPUs using the Docker flag <code>--cpus</code>. Refer to your system’s documentation to learn your CPU limitations.</p>
+<p>By adding more CPUs, you can add the HALFpipe flag <code>--nipype-n-procs</code> to accelerate the process. For example:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--interactive</span> <span class="at">--tty</span> <span class="at">--cpus</span><span class="op">=</span>3 <span class="at">--volume</span> /:/ext halfpipe/halfpipe:1.3.0 <span class="at">--nipype-n-procs</span> <span class="at">--subject-chunks</span> <span class="at">--keep</span> none</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="pipeline-settings" class="level1">
+<h1>Pipeline settings</h1>
+<p>You have now opened the new user interface (UI) of HALFpipe.</p>
+<p>This new interface is user-friendly: you can navigate it using your mouse and select different parameters by clicking on them.</p>
+<p>We will first specify the <a href="#pipeline-settings">pipeline settings</a> and then the <a href="#features">Features</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Understanding the Icons
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>With this new UI, there are different icons you can interact with:</p>
+<p>👁️ : To visualize files found</p>
+<p>🖌️ : To edit the section</p>
+<p>❌ : To delete the section</p>
+<p>❎ : Item selected</p>
+<p>✖️ : Item not selected</p>
+<p>ℹ️ : To get more information about the section</p>
+</div>
+</div>
+</div>
+<section id="specify-your-working-directory" class="level2">
+<h2 class="anchored" data-anchor-id="specify-your-working-directory">Specify your working directory</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_working-dir_1.svg" class="lightbox" data-gallery="working-dir" title="Welcome to the new UI of HALFpipe"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_working-dir_1.svg" class="img-fluid figure-img" alt="Welcome to the new UI of HALFpipe"></a></p>
+<figcaption>Welcome to the new UI of HALFpipe</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li>Click on Browse.</li>
+<li>Indicate the path you want your working directory to be located. This correspond to your output folder.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+You can either select an already existing folder, or create a new one.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To create a new directory, simply add its name to the end of the path. If the folder doesn’t exist, a message will appear indicating it wasn’t found and will prompt you to create it. Click ‘Yes’ to proceed and generate the output folder.</p>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>After specifying the working directory, click on <strong>Input Data</strong> in the top navigation bar.</li>
+</ol>
+</section>
+<section id="specify-your-data-location" class="level2">
+<h2 class="anchored" data-anchor-id="specify-your-data-location">Specify your Data location</h2>
+<p>Indicate whether or not the data is in BIDS format</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">If in BIDS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">If not in BIDS</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<ol type="1">
+<li>Click on Browse.</li>
+<li>Here, simply indicate the path to your BIDS data. Files will be automatically found, this can take a moment. Let Lesion mask set to OFF</li>
+<li>Click on <strong>General preprocessing settings</strong> in the top navigation bar, and go to the next section.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_1.svg" class="lightbox" data-gallery="input-bids" title="Data in BIDS switch to ON"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_1.svg" class="img-fluid figure-img" alt="Data in BIDS switch to ON"></a></p>
+<figcaption>Data in BIDS switch to ON</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<ol type="1">
+<li>Switch the button to <strong>OFF</strong></li>
+<li>Under the section <em>T1W-weighted images</em>, click on Browse.</li>
+<li>Select the T1W-weighted file of 1 subject.</li>
+<li>Delete the unique subject ID and replace it with <code>{subject}</code>. If applicable, do the same with <code>{run}</code> and <code>{session}</code>.
+<ul>
+<li>As you modify the path, HALFpipe will indicate how many files it has found. Once your path is correct and all subject files are detected, click <strong>OK</strong> to save the path.</li>
+</ul></li>
+<li>Follow the same logic for the BOLD data and Field maps (if any) sections.
+<ul>
+<li>Check repetition time values : click on <strong>YES</strong> (unless the TR is incorrect)</li>
+</ul></li>
+<li>Go to the bottom, and click on <strong>Confirm</strong></li>
+<li>Click on <strong>General preprocessing settings</strong> in the top navigation bar, and go to the next section.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example of path
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>If your data is organized as <code>path/to/T1/subj01/T1.nii.gz</code> - where subj01 can be any ID you have to enter <code>path/to/T1/{subject}/T1.nii.gz</code>.</li>
+<li>It will then find T1 files for all subjects: <code>path/to/T1/subj01/T1.nii.gz</code>, <code>path/to/T1/subj02/T1.nii.gz</code> etc…</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_1.svg" class="lightbox" data-gallery="input-not-bids" title="Data in BIDS switch to OFF"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_1.svg" class="img-fluid figure-img" alt="Data in BIDS switch to OFF"></a></p>
+<figcaption>Data in BIDS switch to OFF</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_6.svg" class="lightbox" data-gallery="input-not-bids" title="Example of path with {subject} and {session}"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_input_not_bids_6.svg" class="img-fluid figure-img" alt="Example of path with {subject} and {session}"></a></p>
+<figcaption>Example of path with {subject} and {session}</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>If your files have been successfully imported, you should see the follow message:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_3.svg" class="lightbox" data-gallery="input-bids" title="Data input success"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_input_bids_3.svg" class="img-fluid figure-img" alt="Data input success"></a></p>
+<figcaption>Data input success</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Verify files imported
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Verify all the files have been properly found. You can do that by looking at the number of file found. You can also click on the 👁️ to see the detail of the file.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="general-preprocessing-settings" class="level2">
+<h2 class="anchored" data-anchor-id="general-preprocessing-settings">General Preprocessing settings</h2>
+<ol type="1">
+<li>Switch <em>Slice timing</em> to :
+<ul>
+<li><strong>ON</strong> if you know the slice timing details during the acquisition for your data. If unsure, check with the MR physicist/technician or any dataset information.
+<ul>
+<li>In the following steps you will check the slice order and slice timing values.</li>
+<li>Check the metadata automatically found. Then click <strong>Yes</strong> if these are the expected numbers, otherwise <strong>No</strong> and specify them.</li>
+</ul></li>
+<li><strong>OFF</strong> otherwise</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important: If on HPC
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Switch <em>Advanced setting</em> to <strong>ON</strong></li>
+<li>Switch <em>“Generate workflow for running on a cluster”</em> to <strong>ON</strong></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_general_preproc_2.svg" class="lightbox" data-gallery="general-preproc" title="General settings to select"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_general_preproc_2.svg" class="img-fluid figure-img" alt="General settings to select"></a></p>
+<figcaption>General settings to select</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_general_preproc_advanced.svg" class="lightbox" data-gallery="general-preproc" title="Advance settings"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_general_preproc_advanced.svg" class="img-fluid figure-img" alt="Advance settings"></a></p>
+<figcaption>Advance settings</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Click on <strong>Features</strong> in the top navigation bar, and go to the next section.</li>
+</ol>
+</section>
+</section>
+<section id="features" class="level1">
+<h1>Features</h1>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important – Correction to the a/cCompCor Pipeline Description
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Up to HALFpipe v1.3.2, Pipeline 1 in the graphical interface is labeled as aCompCor and indeed applies aCompCor (anatomical CompCor) denoising. This differs from the Terminal UI implementation, where Pipeline 1 applies cCompCor (CSF-only CompCor) (see the note in Section 2.2 of the <a href="./manual_old_ui.html">Resting-state fMRI Manual – Terminal UI</a>).</p>
+<p>To harmonize the graphical and terminal interfaces, a future release will introduce cCompCor as a separate denoising option in the graphical interface, following the Terminal UI guidelines.</p>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>Click on <em>New</em></li>
+<li>We will now run 4 feature types: <strong>Seed-based</strong> connectivity, <strong>Atlas-based</strong> connectivity Matrix, <strong>ReHo</strong> and <strong>fALFF</strong>. Each of the features will be extracted with three types of confound removal using:</li>
+</ol>
+<ul>
+<li>Pipeline 1: aCompCor</li>
+<li>Pipeline 2: Motion parameters with scrubbing</li>
+<li>Pipeline 3: Pipeline 2 + Global Signal (GSR)</li>
+<li>Pipeline 4: Motion parameters</li>
+<li>Pipeline 5: Pipeline 4 + Global Signal (GSR)</li>
+</ul>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Summary of confounds to select
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Pipeline 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Pipeline 2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Pipeline 3</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false">Pipeline 4</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-5" role="tab" aria-controls="tabset-3-5" aria-selected="false">Pipeline 5</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>✅ aCompCor (top five components)</p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>✅ Motion parameters</p>
+<p>✅ Derivatives of motion parameters</p>
+<p>✅ Motion parameters squared</p>
+<p>✅ Derivatives of motion parameters squared</p>
+<p>✅ Motion scrubbing</p>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<p>✅ Motion parameters</p>
+<p>✅ Derivatives of motion parameters</p>
+<p>✅ Motion parameters squared</p>
+<p>✅ Derivatives of motion parameters squared</p>
+<p>✅ Motion scrubbing</p>
+<p>✅ Global signal</p>
+</div>
+<div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
+<p>✅ Motion parameters</p>
+<p>✅ Derivatives of motion parameters</p>
+<p>✅ Motion parameters squared</p>
+<p>✅ Derivatives of motion parameters squared</p>
+</div>
+<div id="tabset-3-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-5-tab">
+<p>✅ Motion parameters</p>
+<p>✅ Derivatives of motion parameters</p>
+<p>✅ Motion parameters squared</p>
+<p>✅ Derivatives of motion parameters squared</p>
+<p>✅ Global signal</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Navigate through the sections below one by one.</li>
+</ol>
+<section id="seed-based-connectivity" class="level2">
+<h2 class="anchored" data-anchor-id="seed-based-connectivity">1. Seed-based connectivity</h2>
+<ul>
+<li>Select Seed-based connectivity</li>
+<li>Feature name: Type seedCorr1</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_1.svg" class="lightbox" data-gallery="seed" title="Feature name"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_1.svg" class="img-fluid figure-img" alt="Feature name"></a></p>
+<figcaption>Feature name</figcaption>
+</figure>
+</div>
+<section id="general-settings" class="level3">
+<h3 class="anchored" data-anchor-id="general-settings">General settings</h3>
+<ol type="1">
+<li>Select task</li>
+</ol>
+<ul>
+<li>Click on the session(s) or task(s) corresponding to your resting state data.</li>
+</ul>
+<ol start="2" type="1">
+<li>Seed images</li>
+</ol>
+<ul>
+<li>Click on <em>Add</em>.</li>
+<li>Click on <em>Browse</em> to indicate the path.</li>
+<li>Select the path of one existing seed. Then modify the path with <code>{seed}.nii.gz</code></li>
+<li>Check metadata: click on <strong>yes</strong>. Then verify that all the seeds are selected.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_4.svg" class="lightbox" data-gallery="seed" title="Find seeds"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_4.svg" class="img-fluid figure-img" alt="Find seeds"></a></p>
+<figcaption>Find seeds</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_space.svg" class="lightbox" data-gallery="corr" title="Seed space"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_space.svg" class="img-fluid figure-img" alt="Seed space"></a></p>
+<figcaption>Seed space</figcaption>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Minimum brain coverage:</li>
+</ol>
+<ul>
+<li>Set minimum brain coverage to <strong>0.5</strong></li>
+</ul>
+<ol start="6" type="1">
+<li>Preprocesssing settings</li>
+</ol>
+<ul>
+<li>Switch <em>low-pass temporal filter</em> to <strong>OFF</strong></li>
+</ul>
+</section>
+<section id="remove-confounds-for-5-pipelines" class="level3">
+<h3 class="anchored" data-anchor-id="remove-confounds-for-5-pipelines">Remove confounds for 5 pipelines</h3>
+<ol type="1">
+<li><strong>Pipeline 1</strong>: Select the confounds for <strong>Pipeline 1</strong>. Click on :</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_pipeline1.svg" class="lightbox" data-gallery="seed" title="Pipeline 1"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_pipeline1.svg" class="img-fluid figure-img" alt="Pipeline 1"></a></p>
+<figcaption>Pipeline 1</figcaption>
+</figure>
+</div>
+<p>We will now repeat the same procedure for the other pipelines.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>In the next steps, you will only modify the confounds in the final step to match the pipeline you want to apply.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li><strong>Pipeline 2</strong>:</li>
+</ol>
+<ul>
+<li>To do so, click <strong>Duplicate</strong> in the left navigation bar (located below the New button). This will create a new panel for seed-based connectivity, automatically pre-filled with the general settings.</li>
+<li>Feature name: Enter <strong>seedCorr2</strong></li>
+<li>In preprocesssing settings: Switch <em>low-pass temporal filter</em> to <strong>OFF</strong></li>
+<li>Go to the <strong>Remove confounds</strong> section and select the confounds for <strong>Pipeline 2</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_pipeline2.svg" class="lightbox" data-gallery="seed" title="Pipeline 2"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_pipeline2.svg" class="img-fluid figure-img" alt="Pipeline 2"></a></p>
+<figcaption>Pipeline 2</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Pipeline 3:</li>
+</ol>
+<ul>
+<li>click <strong>Duplicate</strong> in the left navigation bar.</li>
+<li>Feature name: Enter <strong>seedCorr3</strong></li>
+<li>In preprocesssing settings: Switch <em>low-pass temporal filter</em> to <strong>OFF</strong></li>
+<li>Select the confounds for <strong>Pipeline 3</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_pipeline3.svg" class="lightbox" data-gallery="seed" title="Pipeline 3"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_pipeline3.svg" class="img-fluid figure-img" alt="Pipeline 3"></a></p>
+<figcaption>Pipeline 3</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Pipeline 4:</li>
+</ol>
+<ul>
+<li>Again, click <strong>Duplicate</strong> in the left navigation bar.</li>
+<li>Feature name: Enter <strong>seedCorr4</strong></li>
+<li>In preprocesssing settings: Switch <em>low-pass temporal filter</em> to <strong>OFF</strong></li>
+<li>Select the confounds for <strong>Pipeline 4</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_pipeline4.svg" class="lightbox" data-gallery="seed" title="Pipeline 4"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_pipeline4.svg" class="img-fluid figure-img" alt="Pipeline 4"></a></p>
+<figcaption>Pipeline 4</figcaption>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Pipeline 5:</li>
+</ol>
+<ul>
+<li>Again, click <strong>Duplicate</strong> in the left navigation bar.</li>
+<li>Feature name: Enter <strong>seedCorr5</strong></li>
+<li>In preprocesssing settings: Switch <em>low-pass temporal filter</em> to <strong>OFF</strong></li>
+<li>Select the confounds for <strong>Pipeline 5</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_pipeline5.svg" class="lightbox" data-gallery="seed" title="Pipeline 5"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_seed_pipeline5.svg" class="img-fluid figure-img" alt="Pipeline 5"></a></p>
+<figcaption>Pipeline 5</figcaption>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Once you are done with all the pipeline, click on <strong>New</strong> in the left navigation bar and go to the next Feature section.</li>
+</ol>
+</section>
+</section>
+<section id="atlas-based-connectivity-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="atlas-based-connectivity-matrix">2. Atlas-based connectivity Matrix</h2>
+<ul>
+<li>Select Atlas-based connectivity matrix</li>
+<li>Feature name: Type corrMatrix1</li>
+</ul>
+<section id="general-settings-1" class="level3">
+<h3 class="anchored" data-anchor-id="general-settings-1">General settings</h3>
+<ol type="1">
+<li>Select task</li>
+</ol>
+<ul>
+<li>If applicable select session(s) or task(s) for resting state data</li>
+</ul>
+<ol start="2" type="1">
+<li>Atlas images</li>
+</ol>
+<ul>
+<li>Add path to atlas images. Click on <strong><em>Browse</em></strong> to indicate the path.</li>
+<li>Select the atlas <code>atlas-Schaefer2018Combined_dseg.nii.gz</code></li>
+<li>Click the OK button and indicate the atlas name: <code>Schaefer2018Combined</code></li>
+<li>Check metadata: click on <strong>yes</strong>.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_atlas_path.svg" class="lightbox" data-gallery="corr" title="Find atlas"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_atlas_path.svg" class="img-fluid figure-img" alt="Find atlas"></a></p>
+<figcaption>Find atlas</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_atlas_name.svg" class="lightbox" data-gallery="corr" title="Atlas name"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_atlas_name.svg" class="img-fluid figure-img" alt="Atlas name"></a></p>
+<figcaption>Atlas name</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_space.svg" class="lightbox" data-gallery="corr" title="Atlas space"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_space.svg" class="img-fluid figure-img" alt="Atlas space"></a></p>
+<figcaption>Atlas space</figcaption>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Minimum brain coverage:</li>
+</ol>
+<ul>
+<li>Set to <strong><span style="color: #d00;">0.5</span></strong></li>
+</ul>
+<ol start="6" type="1">
+<li>Preprocesssing settings</li>
+</ol>
+<ul>
+<li>Switch <em>low-pass temporal filter</em> width to <strong>OFF</strong></li>
+</ul>
+</section>
+<section id="remove-confounds-for-5-pipelines-1" class="level3">
+<h3 class="anchored" data-anchor-id="remove-confounds-for-5-pipelines-1">Remove confounds for 5 pipelines</h3>
+<ol type="1">
+<li><strong>Pipeline 1</strong>: Select the confounds for <strong>Pipeline 1</strong>. Click on :</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_pipeline1.svg" class="lightbox" data-gallery="corr" title="Pipeline 1"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_pipeline1.svg" class="img-fluid figure-img" alt="Pipeline 1"></a></p>
+<figcaption>Pipeline 1</figcaption>
+</figure>
+</div>
+<p>We will now repeat the same procedure for the other pipelines.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>In the next steps, you will only modify the confounds in the final step to match the pipeline you want to apply.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li><strong>Pipeline 2</strong>:</li>
+</ol>
+<ul>
+<li>To do so, click <strong>Duplicate</strong> in the left navigation bar (located below the New button). This will create a new panel for seed-based connectivity, automatically pre-filled with the general settings.</li>
+<li>Feature name: Enter <strong>corrMatrix2</strong></li>
+<li>In preprocesssing settings: Switch <em>low-pass temporal filter</em> to <strong>OFF</strong></li>
+<li>Go to the <strong>Remove confounds</strong> section and select the confounds for <strong>Pipeline 2</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_pipeline2.svg" class="lightbox" data-gallery="corr" title="Pipeline 2"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_pipeline2.svg" class="img-fluid figure-img" alt="Pipeline 2"></a></p>
+<figcaption>Pipeline 2</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Pipeline 3:</li>
+</ol>
+<ul>
+<li>click <strong>Duplicate</strong> in the left navigation bar.</li>
+<li>Feature name: Enter <strong>corrMatrix3</strong></li>
+<li>In preprocesssing settings: Switch <em>low-pass temporal filter</em> to <strong>OFF</strong></li>
+<li>Select the confounds for <strong>Pipeline 3</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_pipeline3.svg" class="lightbox" data-gallery="corr" title="Pipeline 3"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_pipeline3.svg" class="img-fluid figure-img" alt="Pipeline 3"></a></p>
+<figcaption>Pipeline 3</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Pipeline 4:</li>
+</ol>
+<ul>
+<li>Again, click <strong>Duplicate</strong> in the left navigation bar.</li>
+<li>Feature name: Enter <strong>corrMatrix4</strong></li>
+<li>In preprocesssing settings: Switch <em>low-pass temporal filter</em> to <strong>OFF</strong></li>
+<li>Select the confounds for <strong>Pipeline 4</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_pipeline4.svg" class="lightbox" data-gallery="corr" title="Pipeline 4"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_pipeline4.svg" class="img-fluid figure-img" alt="Pipeline 4"></a></p>
+<figcaption>Pipeline 4</figcaption>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Pipeline 5:</li>
+</ol>
+<ul>
+<li>Again, click <strong>Duplicate</strong> in the left navigation bar.</li>
+<li>Feature name: Enter <strong>corrMatrix5</strong></li>
+<li>In preprocesssing settings: Switch <em>low-pass temporal filter</em> to <strong>OFF</strong></li>
+<li>Select the confounds for <strong>Pipeline 5</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_pipeline5.svg" class="lightbox" data-gallery="corr" title="Pipeline 5"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_corr_pipeline5.svg" class="img-fluid figure-img" alt="Pipeline 5"></a></p>
+<figcaption>Pipeline 5</figcaption>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Once you are done with all the pipeline, click on <strong>New</strong> in the left navigation bar and go to the next Feature section.</li>
+</ol>
+</section>
+</section>
+<section id="reho" class="level2">
+<h2 class="anchored" data-anchor-id="reho">3. ReHo</h2>
+<ul>
+<li>Select ReHo</li>
+<li>Feature name: Type <strong>reHo1</strong></li>
+</ul>
+<section id="general-settings-2" class="level3">
+<h3 class="anchored" data-anchor-id="general-settings-2">General settings</h3>
+<ol type="1">
+<li>Select task</li>
+</ol>
+<ul>
+<li>If applicable select session(s) or task(s) for resting state data</li>
+</ul>
+<ol start="2" type="1">
+<li>Preprocessing settings</li>
+</ol>
+<ul>
+<li>Verify that <em>low-pass temporal filter</em> is set to <strong>ON</strong> (0.01)</li>
+</ul>
+</section>
+<section id="remove-confounds-for-5-pipelines-2" class="level3">
+<h3 class="anchored" data-anchor-id="remove-confounds-for-5-pipelines-2">Remove confounds for 5 pipelines</h3>
+<ol type="1">
+<li><strong>Pipeline 1</strong>: Select the confounds for <strong>Pipeline 1</strong>. Click on :</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_pipeline1.svg" class="lightbox" data-gallery="reho" title="Pipeline 1"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_pipeline1.svg" class="img-fluid figure-img" alt="Pipeline 1"></a></p>
+<figcaption>Pipeline 1</figcaption>
+</figure>
+</div>
+<p>We will now repeat the same procedure for the other pipelines.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>In the next steps, you will only modify the confounds in the final step to match the pipeline you want to apply.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li><strong>Pipeline 2</strong>:</li>
+</ol>
+<ul>
+<li>To do so, click <strong>Duplicate</strong> in the left navigation bar (located below the New button). This will create a new panel for seed-based connectivity, automatically pre-filled with the general settings.</li>
+<li>Feature name: Enter <strong>reHo2</strong></li>
+<li>In preprocesssing settings: verify that <em>low-pass temporal filter</em> is set to <strong>ON</strong> (0.01)</li>
+<li>Go to the <strong>Remove confounds</strong> section and select the confounds for <strong>Pipeline 2</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_pipeline2.svg" class="lightbox" data-gallery="reho" title="Pipeline 2"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_pipeline2.svg" class="img-fluid figure-img" alt="Pipeline 2"></a></p>
+<figcaption>Pipeline 2</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Pipeline 3:</li>
+</ol>
+<ul>
+<li>click <strong>Duplicate</strong> in the left navigation bar.</li>
+<li>Feature name: Enter <strong>reHo3</strong></li>
+<li>In preprocesssing settings: verify that <em>low-pass temporal filter</em> is set to <strong>ON</strong> (0.01)</li>
+<li>Select the confounds for <strong>Pipeline 3</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_pipeline3.svg" class="lightbox" data-gallery="reho" title="Pipeline 3"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_pipeline3.svg" class="img-fluid figure-img" alt="Pipeline 3"></a></p>
+<figcaption>Pipeline 3</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Pipeline 4:</li>
+</ol>
+<ul>
+<li>Again, click <strong>Duplicate</strong> in the left navigation bar.</li>
+<li>Feature name: Enter <strong>reHo4</strong></li>
+<li>In preprocesssing settings: verify that <em>low-pass temporal filter</em> is set to <strong>ON</strong> (0.01)</li>
+<li>Select the confounds for <strong>Pipeline 4</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_pipeline4.svg" class="lightbox" data-gallery="reho" title="Pipeline 4"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_pipeline4.svg" class="img-fluid figure-img" alt="Pipeline 4"></a></p>
+<figcaption>Pipeline 4</figcaption>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Pipeline 5:</li>
+</ol>
+<ul>
+<li>Again, click <strong>Duplicate</strong> in the left navigation bar.</li>
+<li>Feature name: Enter <strong>reHo5</strong></li>
+<li>In preprocesssing settings: verify that <em>low-pass temporal filter</em> is set to <strong>ON</strong> (0.01)</li>
+<li>Select the confounds for <strong>Pipeline 5</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_pipeline5.svg" class="lightbox" data-gallery="reho" title="Pipeline 5"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_reho_pipeline5.svg" class="img-fluid figure-img" alt="Pipeline 5"></a></p>
+<figcaption>Pipeline 5</figcaption>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Once you are done with all the pipeline, click on <strong>New</strong> in the left navigation bar and go to the next Feature section.</li>
+</ol>
+</section>
+</section>
+<section id="falff" class="level2">
+<h2 class="anchored" data-anchor-id="falff">5. fALFF</h2>
+<ul>
+<li>Select fALFF</li>
+<li>Feature name: Type <strong>fALFF1</strong> (adjust the number for each pipeline)</li>
+</ul>
+<section id="general-settings-3" class="level3">
+<h3 class="anchored" data-anchor-id="general-settings-3">General settings</h3>
+<ol type="1">
+<li>Select task</li>
+</ol>
+<ul>
+<li>If applicable select session(s) or task(s) for resting state data</li>
+</ul>
+<ol start="2" type="1">
+<li>Preprocessing settings</li>
+</ol>
+<ul>
+<li>Verify that <em>low-pass temporal filter</em> is set to <strong>ON</strong> (0.01)</li>
+</ul>
+</section>
+<section id="remove-confounds-for-5-pipelines-3" class="level3">
+<h3 class="anchored" data-anchor-id="remove-confounds-for-5-pipelines-3">Remove confounds for 5 pipelines</h3>
+<ol type="1">
+<li><strong>Pipeline 1</strong>: Select the confounds for <strong>Pipeline 1</strong>. Click on :</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_pipeline1.svg" class="lightbox" data-gallery="falff" title="Pipeline 1"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_pipeline1.svg" class="img-fluid figure-img" alt="Pipeline 1"></a></p>
+<figcaption>Pipeline 1</figcaption>
+</figure>
+</div>
+<p>We will now repeat the same procedure for the other pipelines.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>In the next steps, you will only modify the confounds in the final step to match the pipeline you want to apply.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li><strong>Pipeline 2</strong>:</li>
+</ol>
+<ul>
+<li>To do so, click <strong>Duplicate</strong> in the left navigation bar (located below the New button). This will create a new panel for seed-based connectivity, automatically pre-filled with the general settings.</li>
+<li>Feature name: Enter <strong>fALFF2</strong></li>
+<li>In preprocesssing settings: verify that <em>low-pass temporal filter</em> is set to <strong>ON</strong> (0.01)</li>
+<li>Go to the <strong>Remove confounds</strong> section and select the confounds for <strong>Pipeline 2</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_pipeline2.svg" class="lightbox" data-gallery="falff" title="Pipeline 2"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_pipeline2.svg" class="img-fluid figure-img" alt="Pipeline 2"></a></p>
+<figcaption>Pipeline 2</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Pipeline 3:</li>
+</ol>
+<ul>
+<li>click <strong>Duplicate</strong> in the left navigation bar.</li>
+<li>Feature name: Enter <strong>fALFF3</strong></li>
+<li>In preprocesssing settings: verify that <em>low-pass temporal filter</em> is set to <strong>ON</strong> (0.01)</li>
+<li>Select the confounds for <strong>Pipeline 3</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_pipeline3.svg" class="lightbox" data-gallery="falff" title="Pipeline 3"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_pipeline3.svg" class="img-fluid figure-img" alt="Pipeline 3"></a></p>
+<figcaption>Pipeline 3</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>Pipeline 4:</li>
+</ol>
+<ul>
+<li>Again, click <strong>Duplicate</strong> in the left navigation bar.</li>
+<li>Feature name: Enter <strong>fALFF4</strong></li>
+<li>In preprocesssing settings: verify that <em>low-pass temporal filter</em> is set to <strong>ON</strong> (0.01)</li>
+<li>Select the confounds for <strong>Pipeline 4</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_pipeline4.svg" class="lightbox" data-gallery="falff" title="Pipeline 4"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_pipeline4.svg" class="img-fluid figure-img" alt="Pipeline 4"></a></p>
+<figcaption>Pipeline 4</figcaption>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Pipeline 5:</li>
+</ol>
+<ul>
+<li>Again, click <strong>Duplicate</strong> in the left navigation bar.</li>
+<li>Feature name: Enter <strong>fALFF5</strong></li>
+<li>In preprocesssing settings: verify that <em>low-pass temporal filter</em> is set to <strong>ON</strong> (0.01)</li>
+<li>Select the confounds for <strong>Pipeline 5</strong>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_pipeline5.svg" class="lightbox" data-gallery="falff" title="Pipeline 5"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_feature_falff_pipeline5.svg" class="img-fluid figure-img" alt="Pipeline 5"></a></p>
+<figcaption>Pipeline 5</figcaption>
+</figure>
+</div>
+<p><strong>You have now finished specifying the settings! 🎉</strong></p>
+<ol start="6" type="1">
+<li>Click on <strong>Check and run</strong> in the top navigation bar, and go to the next section.</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="check-and-run" class="level1">
+<h1>Check and Run</h1>
+<ol type="1">
+<li>Click on <strong>Refresh</strong>.</li>
+</ol>
+<p>You will see the <code>spec.json</code> file that contain all the settings and parameters you have selected.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="images/HALFpipe_new_ui/halfpipe_new_ui_spec.svg" class="lightbox" data-gallery="falff" title="Spec file"><img src="images/HALFpipe_new_ui/halfpipe_new_ui_spec.svg" class="img-fluid figure-img" alt="Spec file"></a></p>
+<figcaption>Spec file</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Editing you settings
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>If you make changes to the settings or selected features, always click Refresh before saving and running the pipeline.</p>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li><p>Click on <strong>save</strong>.</p></li>
+<li><p>Click on <strong>Run</strong>.</p></li>
+</ol>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">On HPC</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">On a local machine</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>HALFpipe will generate files that you need to run by submitting jobs on your cluster. Wait for the green confirmation message indicating that the cluster submission script templates have been created</p>
+<p>You can then see how to run HALFpipe on <a href="./check_run.html">HPC</a></p>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p>If you are running this on a local computer, the pipeline will have started. Once it has finished, <a href="./check_run.html#check-pre-processing-and-re-run-if-necessary">continue to check your preprocessing</a>.</p>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./manual_old_ui.html" class="pagination-link" aria-label="Resting-state fMRI Manual - Terminal UI">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Resting-state fMRI Manual - Terminal UI</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./quality-control.html" class="pagination-link" aria-label="Quality control">
+        <span class="nav-page-text">Quality control</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/HALFpipe/HALFpipe/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div></div></footer><script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>
