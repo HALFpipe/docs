@@ -176,6 +176,14 @@ Verify all the files have been properly found. You can do that by looking at the
 
 # Features
 
+::: {.callout-important collapse="false"}
+# Important – Correction to the a/cCompCor Pipeline Description
+Up to HALFpipe v1.3.2, Pipeline 1 in the graphical interface is labeled as aCompCor and indeed applies aCompCor (anatomical CompCor) denoising. This differs from the Terminal UI implementation, where Pipeline 1 applies cCompCor (CSF-only CompCor) (see the note in Section 2.2 of the [Resting-state fMRI Manual – Terminal UI](manual_old_ui.qmd)).
+
+To harmonize the graphical and terminal interfaces, a future release will introduce cCompCor as a separate denoising option in the graphical interface, following the Terminal UI guidelines.
+
+:::
+
 1. Click on *New*
 2. We will now run 4 feature types: **Seed-based** connectivity, **Atlas-based** connectivity Matrix, **ReHo** and **fALFF**.
 Each of the features will be extracted with three types of confound removal using: 
@@ -185,7 +193,7 @@ Each of the features will be extracted with three types of confound removal usin
 - Pipeline 4:  Motion parameters
 - Pipeline 5:  Pipeline 4 + Global Signal (GSR)
 
-::: {.callout-important collapse="false" icon="false"}
+::: {.callout-note collapse="false" icon="false"}
 ## Summary of confounds to select
 
 ::: {.panel-tabset}

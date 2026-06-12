@@ -314,10 +314,16 @@ If the data was imported from a BIDS directory, Field maps will be omitted.
 
 ## 2.2 Features
 
+::: {.callout-important collapse="false"}
+# Important – Correction to the a/cCompCor Pipeline Description
+Up to HALFpipe v1.3.2, Pipeline 1 is incorrectly labeled as **aCompCor** in the Terminal UI and documentation. The actual denoising strategy applied is **cCompCor** (CSF only). This labeling issue will be corrected in a future release.
+
+:::
+
 We will now specify which features we’d like to extract and specify their settings.
 The features will be extracted with **five** types of confound removal using:  
 
-1. **Pipeline 1**: aCompCor  
+1. **Pipeline 1**: cCompCor (wrongly indicated as aCompCor in HALFpipe)  
 2. **Pipeline 2**: Motion parameters with scrubbing  
 3. **Pipeline 3**: Pipeline 2 + Global Signal (GSR)
 4. **Pipeline 4**: Pipeline 2 without Scrubbing

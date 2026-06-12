@@ -16,18 +16,19 @@ website:
       - installation.qmd
       - section: "Manuals"
         contents:
-          - text: "rsfMRI Manual (Old UI)"
+          - text: "Resting-state fMRI Manual - Terminal UI"
             file: manual_old_ui.qmd
-          - text: "Resting-State fMRI (New UI)"
+          - text: "Resting-state fMRI Manual - Graphical UI"
             file: new_ui.qmd
       - quality-control.qmd
       - check_run.qmd
+      - wonkyconn_docs.qmd
       - troubleshooting.qmd
 
   announcement: 
     icon: info-circle
     dismissable: true
-    content: "**NEW RELEASE** - HALFpipe v1.3.1 is now available! Check out the [release notes](https://github.com/HALFpipe/HALFpipe/releases/tag/1.3.1) for more details."
+    content: "**NEW RELEASE** - HALFpipe v1.3.2 is now available! Check out the [release notes](https://github.com/HALFpipe/HALFpipe/releases/tag/1.3.2) for more details."
     type: primary
     position: below-navbar
 
