@@ -48,3 +48,18 @@ test uses fabricated figures and a Bootstrap API stand-in, not participant data
 or a real browser. It covers navigation, thumbnail state, keyboard selection,
 boundaries, independent groups, singleton handling, and fallback. Touch behavior
 and the final visual layout still require browser/device testing.
+
+`preview-zoom.js` adds wheel zoom and mouse-drag panning to the existing Quarto
+lightbox. It uses its slide lifecycle hooks and disables the conflicting native
+mouse zoom/drag handlers before each image loads. Zoom is bounded from fit (100%)
+to 800%; the pointer stays over the same image location where pan bounds allow.
+The image cannot be dragged wholly out of view. Buttons provide zoom and Fit;
+when the image has keyboard focus, +/− zoom, 0 fits, and arrow keys pan while
+zoomed. Fit and switching/closing images reset the view, as does resizing. The
+page's normal scrolling and image files are unchanged. Native touch behavior
+still needs device testing. Styling is in `photo-viewer.css`.
+
+Run `node tests/qc-preview-zoom.mjs` for synthetic zoom/pan checks: cursor anchoring,
+wheel units, scale and translation bounds, pointer capture, controls, keyboard
+handling, and resets. It uses fabricated geometry and a lightbox-event stand-in;
+it does not verify real-browser GLightbox integration or touch interactions.

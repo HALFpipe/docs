@@ -59,3 +59,36 @@
   .qc-photo-viewer .carousel-item { display: block !important; float: none; }
   .qc-photo-controls, .qc-photo-thumbnails { display: none; }
 }
+
+/* Transforms affect only the open preview; captions and page images remain in place. */
+.qc-zoom-viewport { overflow: hidden; }
+.qc-zoom-viewport img { transform-origin: center; user-select: none; }
+.qc-zoom-viewport.qc-is-zoomed img { cursor: grab; }
+.qc-zoom-viewport.qc-is-dragging img { cursor: grabbing; }
+.qc-zoom-viewport:focus-visible { outline: 3px solid #79b9ff; outline-offset: -3px; }
+.qc-zoom-controls {
+  position: absolute;
+  top: .75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .3rem;
+  border-radius: .4rem;
+  background: #18222e;
+  color: #fff;
+}
+.qc-zoom-controls button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid #8a99a9;
+  border-radius: .25rem;
+  background: #263747;
+  color: #fff;
+  font: inherit;
+}
+.qc-zoom-controls button:disabled { opacity: .4; }
+.qc-zoom-controls button:focus-visible { outline: 3px solid #79b9ff; outline-offset: 1px; }
+.qc-zoom-controls [role="status"] { min-width: 3.5rem; text-align: center; }
