@@ -35,13 +35,22 @@ document.addEventListener("DOMContentLoaded", () => {
     toolbar.append(out, status, into, fit);
     slide.append(toolbar);
     let scale = 1, x = 0, y = 0, drag;
-    const clamp = (value, limit) => Math.max(-limit, Math.min(limit, value));
+    const bound = (position, size, center, screenSize) => {
+      const half = size * scale / 2;
+      const firstEdge = half - center;
+      const secondEdge = screenSize - half - center;
+      // Small images stay inside the window; larger images can pan to either edge.
+      return Math.max(Math.min(firstEdge, secondEdge),
+        Math.min(Math.max(firstEdge, secondEdge), position));
+    };
     const render = () => {
-      const limitX = Math.max(0, (image.clientWidth * scale - viewport.clientWidth) / 2);
-      const limitY = Math.max(0, (image.clientHeight * scale - viewport.clientHeight) / 2);
-      x = clamp(x, limitX); y = clamp(y, limitY);
+      const rect = viewport.getBoundingClientRect();
+      x = bound(x, image.clientWidth, rect.left + rect.width / 2, window.innerWidth);
+      y = bound(y, image.clientHeight, rect.top + rect.height / 2, window.innerHeight);
+      if (scale === 1) x = y = 0;
       image.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
       viewport.classList.toggle("qc-is-zoomed", scale > 1);
+      slide.classList.toggle("qc-preview-zoomed", scale > 1);
       status.textContent = `${Math.round(scale * 100)}%`;
       out.disabled = scale <= 1; into.disabled = scale >= 8;
     };

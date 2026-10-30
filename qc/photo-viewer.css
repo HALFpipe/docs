@@ -61,7 +61,10 @@
 }
 
 /* Transforms affect only the open preview; captions and page images remain in place. */
-.qc-zoom-viewport { overflow: hidden; }
+/* Only the full-window lightbox clips the image, not its original fitted frame. */
+.qc-zoom-viewport { overflow: visible; }
+.qc-preview-zoomed .gslide-description { visibility: hidden; }
+.glightbox-container .qc-preview-zoomed .gslide-media { box-shadow: none; background: transparent; }
 .qc-zoom-viewport img { transform-origin: center; user-select: none; }
 .qc-zoom-viewport.qc-is-zoomed img { cursor: grab; }
 .qc-zoom-viewport.qc-is-dragging img { cursor: grabbing; }
