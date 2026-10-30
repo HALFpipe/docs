@@ -21,9 +21,6 @@ We don't expect you to check all the components for every subject. Rather, try t
 :::
 
 
-<details class="qc-examples">
-<summary>Examples (3)</summary>
-
 ::: {.qc-example-gallery}
 
 ![Example of a signal component (the Default Mode Network)](../images/qc/07-epi_ica-01.png){group="epi_ica"}
@@ -34,15 +31,11 @@ We don't expect you to check all the components for every subject. Rather, try t
 
 :::
 
-</details>
 
 
 ## **<span style="color: #28a745;">Example of a good subject</span>**  {#example-of-a-good-subject-4}
 
 - Components correctly classified in noise (red) and signal (green), conservative classification (uncertain components classified as signal).
-
-<details class="qc-examples">
-<summary>Examples (1)</summary>
 
 ::: {.qc-example-gallery}
 
@@ -50,7 +43,6 @@ We don't expect you to check all the components for every subject. Rather, try t
 
 :::
 
-</details>
 
 ## **<span style="color: #d00;">Example of a bad subject</span>**  {#example-of-a-bad-subject-4}
 
@@ -63,16 +55,12 @@ We don't expect you to check all the components for every subject. Rather, try t
 **NOTE:** If you think that ICA AROMA performed poorly or the subject looks problematic, check the other quality metrics for that subject to decide whether they should be excluded.
 :::
 
-<details class="qc-examples">
-<summary>Examples (1)</summary>
-
 ::: {.qc-example-gallery}
 
 ![ICA AROMA: example of a bad subject: a large part of the components has been classified as noise (picture on the left). Other QC images of the same participant show that this subject is problematic: the tSNR page for this subjects shows stripes artefacts (picture on the right).](../images/qc/07-epi_ica_bad.png){group="bad-epi_ica"}
 
 :::
 
-</details>
 
 ## **Summary** {#summary-4}
 

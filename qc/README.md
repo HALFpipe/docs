@@ -6,8 +6,17 @@ shared sidebar and reading order; `_metadata.yml` applies the QC page class and
 lightbox setting. Existing captions, rating labels, tables, and instructional
 wording are retained. Header levels and link paths changed to suit separate pages.
 
-The fourteen collapsible example galleries are retained. Their layout and the
-landing-page cards use scoped rules in `../styles.css`. There is no new rating
+The fourteen example groups retain their existing figures and captions. A shared
+`photo-viewer.js` upgrades them into one-image viewers with previous/next buttons,
+a scrolling thumbnail strip, keyboard selection, and Bootstrap touch swiping.
+`photo-viewer.css` controls the image stage and strip; `../styles.css` retains the
+plain grid used when JavaScript is unavailable. The original lightbox links remain
+on the large images. Singleton groups display one image without redundant controls.
+There is no autoplay or wraparound. Printing includes every original figure.
+
+Bootstrap already ships with the Quarto site; no new runtime dependency is added.
+See https://getbootstrap.com/docs/5.3/components/carousel/ for its API. Navigation
+controls are generated from the existing figures, so captions stay in one place. There is no new rating
 workflow, example classification, or decision policy. ICA remains because this
 change is about layout, not revising the scientific content.
 
@@ -28,8 +37,14 @@ quarto render --output-dir _preview-layout
 
 Open `_preview-layout/quality-control.html`. Generated preview files are locally
 excluded from Git; the tracked `_site` tree is not changed by this command. Edit
-the source pages, not the generated HTML. Test page navigation, galleries, old
-bookmarks, keyboard use, and narrow screens before publication.
+the source pages, not the generated HTML. Test page navigation, photo viewers, old
+bookmarks, keyboard use, touch swiping, and narrow screens before publication.
 
 Run `node tests/qc-legacy-links.mjs` to check the bookmark-routing script with
 synthetic URLs. It does not load images or participant records.
+
+Run `node tests/qc-photo-viewer.mjs` for the photo-viewer controller checks. The
+test uses fabricated figures and a Bootstrap API stand-in, not participant data
+or a real browser. It covers navigation, thumbnail state, keyboard selection,
+boundaries, independent groups, singleton handling, and fallback. Touch behavior
+and the final visual layout still require browser/device testing.

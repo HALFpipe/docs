@@ -18,9 +18,6 @@ In the signal to noise ratio images of the resting state image the desired signa
 
 - Signal to noise is symmetrically distributed and there is no signal distortion
 
-<details class="qc-examples">
-<summary>Examples (12)</summary>
-
 ::: {.qc-example-gallery}
 
 ![tSNR: example of a good subject](../images/qc/05-epi_tsnr_good-01.png){group="good-epi_tsnr"}
@@ -49,7 +46,6 @@ In the signal to noise ratio images of the resting state image the desired signa
 
 :::
 
-</details>
 
 ## **<span style="color: #d00;">Example of a bad subject</span>**  {#example-of-a-bad-subject-2}
 
@@ -61,9 +57,6 @@ In the signal to noise ratio images of the resting state image the desired signa
 ::: {.callout-note collapse="false"}
 Clear large artefact (e.g., zebra stripes in example 1) are worth the exclusion of the subject. If you are unsure, *check the other quality metrics for that subject to decide whether they should be excluded*.
 :::
-
-<details class="qc-examples">
-<summary>Examples (10)</summary>
 
 ::: {.qc-example-gallery}
 
@@ -89,7 +82,6 @@ Clear large artefact (e.g., zebra stripes in example 1) are worth the exclusion 
 
 :::
 
-</details>
 
 ## **Summary** {#summary-2}
 

@@ -21,21 +21,14 @@ In the carpet plot it is important to look for changes in heatmap/intensity and 
 - No changes in the heatmap, low motion (FD mean < 0.5), no sudden large jumps in the FD line or GS
 - Small changes in the heatmap identifiable as caused by motion or other causes (i.e., corresponding to changes in the graphs above the heatmap)
 
-<details class="qc-examples">
-<summary>Examples (1)</summary>
-
 ::: {.qc-example-gallery}
 
 ![Example of a good subject: no clear changes in the heatmap, low motion, no large jumps/ changes](../images/qc/06-epi_confounds_good-01.png){group="good-epi_confounds"}
 
 :::
 
-</details>
 
 ## **<span style="color: #f4a261;">Example of an uncertain subject</span>**  {#example-of-an-uncertain-subject}
-
-<details class="qc-examples">
-<summary>Examples (2)</summary>
 
 ::: {.qc-example-gallery}
 
@@ -45,7 +38,6 @@ In the carpet plot it is important to look for changes in heatmap/intensity and 
 
 :::
 
-</details>
 
 
 ## **<span style="color: #d00;">Example of a bad subject</span>**  {#example-of-a-bad-subject-3}
@@ -61,9 +53,6 @@ In the carpet plot it is important to look for changes in heatmap/intensity and 
 - If you think that the carpet plot shows artefacts or other problematic issues, check the other quality metrics for that subject to decide whether they should be excluded
 :::
 
-<details class="qc-examples">
-<summary>Examples (5)</summary>
-
 ::: {.qc-example-gallery}
 
 ![Example of a very bad carpet plot: many sudden changes in the heatmap that correspond to high spikes of motion (max FD is very high) and mean FD > 0.5](../images/qc/06-epi_confounds_bad-01.png){group="good-epi_confounds"}
@@ -78,7 +67,6 @@ In the carpet plot it is important to look for changes in heatmap/intensity and 
 
 :::
 
-</details>
 
 ## **Summary** {#summary-3}
 

@@ -19,9 +19,6 @@ Skull stripping is the process separating the brain (cortex and cerebellum) from
 - There are no skull stripping errors, such as portions of the brain missing, or too much of the skull retained
 - The red line follows the outline of the brain
 
-<details class="qc-examples">
-<summary>Examples (12)</summary>
-
 ::: {.qc-example-gallery}
 
 ![T1w skull stripping: examples of good subjects](../images/qc/03-t1w_skull_stripping_good-03_crop.png){group="good-skull-stripping" width=1200}
@@ -50,15 +47,11 @@ Skull stripping is the process separating the brain (cortex and cerebellum) from
 
 :::
 
-</details>
 
 ## **<span style="color: #d00;">Example of a bad subject</span>**  {#example-of-a-bad-subject}
 
 - There are skull stripping errors, such as portions of the brain missing, or too much of the skull retained
 - **NOTE:** check all the images (slices) in the report. If only one image (slice) looks problematic, it is possible that the subject is okay and it is just a visual issue in that particular screenshot
-
-<details class="qc-examples">
-<summary>Examples (9)</summary>
 
 ::: {.qc-example-gallery}
 
@@ -82,7 +75,6 @@ Skull stripping is the process separating the brain (cortex and cerebellum) from
 
 :::
 
-</details>
 
 ## **Summary** {#summary}
 

@@ -19,9 +19,6 @@ This QC step shows the registration of the EPI image to MNI space.
 - If the registration performed well, you should see an overlap (i.e., correspondence of structures) between the MNI template and the EPI registered to the MNI space.
 - If parts of the brain are missing due to the scanner field of view, this is fine. For example, the cerebellum may be cut off for a participant with a large head.
 
-<details class="qc-examples">
-<summary>Examples (9)</summary>
-
 ::: {.qc-example-gallery}
 
 ![EPI spatial normalisation: example of a good subject](../images/qc/08-epi_spatial_normalisation_good-01.jpg){group="good-epi_spatial_normalisation"}
@@ -44,14 +41,10 @@ This QC step shows the registration of the EPI image to MNI space.
 
 :::
 
-</details>
 
 ## **<span style="color: #d00;">Example of a bad subject</span>**  {#example-of-a-bad-subject-5}
 
 - In case of poor registration, you should see a misalignment of the EPI and the MNI template
-
-<details class="qc-examples">
-<summary>Examples (7)</summary>
 
 ::: {.qc-example-gallery}
 
@@ -71,7 +64,6 @@ This QC step shows the registration of the EPI image to MNI space.
 
 :::
 
-</details>
 
 ## **Summary** {#summary-5}
 

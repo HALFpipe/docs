@@ -18,21 +18,6 @@ table.bordered td {
   font-size: 0.8em;
 }
 
-/* QC examples stay collapsed until opened; every montage remains uncropped. */
-.qc-examples {
-  margin: 1rem 0;
-  border: 1px solid #d7dde3;
-  border-radius: .35rem;
-}
-.qc-examples > summary {
-  cursor: pointer;
-  padding: .65rem .85rem;
-  font-weight: 600;
-}
-.qc-examples > summary:focus-visible {
-  outline: 3px solid #0759a5;
-  outline-offset: 2px;
-}
 .qc-example-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));

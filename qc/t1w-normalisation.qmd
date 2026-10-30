@@ -21,9 +21,6 @@ The registered T1 image is shown in the background with a brain atlas in MNI spa
 
 - If the registration performed well, you should see an overlap (i.e., correspondence of structures) between the MNI template and the T1 registered to the MNI space.
 
-<details class="qc-examples">
-<summary>Examples (6)</summary>
-
 ::: {.qc-example-gallery}
 
 ![T1w spatial normalisation: example of a good subject](../images/qc/04-dt1w_spatial_normalisation_good-03.png){group="good-dt1w-spatial-normalisation"}
@@ -40,14 +37,10 @@ The registered T1 image is shown in the background with a brain atlas in MNI spa
 
 :::
 
-</details>
 
 ## **<span style="color: #d00;">Example of a bad subject</span>**  {#example-of-a-bad-subject-1}
 
 - In case of poor registration, you should see a misalignment between the MNI template and the T1 (e.g., brain shifted down).
-
-<details class="qc-examples">
-<summary>Examples (6)</summary>
 
 ::: {.qc-example-gallery}
 
@@ -65,7 +58,6 @@ The registered T1 image is shown in the background with a brain atlas in MNI spa
 
 :::
 
-</details>
 
 ## **Summary** {#summary-1}
 
