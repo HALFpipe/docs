@@ -17,3 +17,38 @@ table.bordered td {
 .footnotes {
   font-size: 0.8em;
 }
+
+/* QC examples stay collapsed until opened; every montage remains uncropped. */
+.qc-examples {
+  margin: 1rem 0;
+  border: 1px solid #d7dde3;
+  border-radius: .35rem;
+}
+.qc-examples > summary {
+  cursor: pointer;
+  padding: .65rem .85rem;
+  font-weight: 600;
+}
+.qc-examples > summary:focus-visible {
+  outline: 3px solid #0759a5;
+  outline-offset: 2px;
+}
+.qc-example-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+  padding: .85rem;
+  align-items: start;
+}
+.qc-example-gallery > .quarto-figure { margin: 0; min-width: 0; }
+.qc-example-gallery figure { margin: 0; }
+.qc-example-gallery img {
+  width: 100% !important;
+  height: 180px !important;
+  object-fit: contain;
+  background: #111;
+}
+.qc-example-gallery figcaption {
+  font-size: .85rem;
+  line-height: 1.4;
+}

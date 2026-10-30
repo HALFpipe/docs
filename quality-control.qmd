@@ -153,6 +153,11 @@ Skull stripping is the process separating the brain (cortex and cerebellum) from
 - There are no skull stripping errors, such as portions of the brain missing, or too much of the skull retained
 - The red line follows the outline of the brain
 
+<details class="qc-examples">
+<summary>Examples (12)</summary>
+
+::: {.qc-example-gallery}
+
 ![T1w skull stripping: examples of good subjects](images/qc/03-t1w_skull_stripping_good-03_crop.png){group="good-skull-stripping" width=1200}
 
 ![T1w skull stripping: examples of good subjects](images/qc/03-t1w_skull_stripping_good-04_crop.png){group="good-skull-stripping" width=1200}
@@ -177,10 +182,19 @@ Skull stripping is the process separating the brain (cortex and cerebellum) from
 
 ![T1w skull stripping: examples of good subjects](images/qc/03-t1w_skull_stripping_good-14_crop.png){group="good-skull-stripping" width=1200}
 
+:::
+
+</details>
+
 ### **<span style="color: #d00;">Example of a bad subject</span>** 
 
 - There are skull stripping errors, such as portions of the brain missing, or too much of the skull retained
 - **NOTE:** check all the images (slices) in the report. If only one image (slice) looks problematic, it is possible that the subject is okay and it is just a visual issue in that particular screenshot 
+
+<details class="qc-examples">
+<summary>Examples (9)</summary>
+
+::: {.qc-example-gallery}
 
 ![T1w skull stripping: example of a bad subject: some portions of the brain have been left out. Note that in this subject, the 'ring' markers at the edge of the brain are likely indicative of high motion.](images/qc/03-t1w_skull_stripping_bad-01_crop.png){group="bad-skull-stripping" width=1200}
 
@@ -199,6 +213,10 @@ Skull stripping is the process separating the brain (cortex and cerebellum) from
 ![T1w skull stripping: example of a bad subject: portions of the brain have been left out, large parts of the cranium and the eyes are included in the red line. The shape of the brain does not correspond to the shape drawn by the red line.](images/qc/03-t1w_skull_stripping_bad-09_crop.png){group="bad-skull-stripping" width=1200}
 
 ![T1w skull stripping: example of a bad subject: portions of the brain have been left out, large parts of the cranium and the eyes are included in the red line. The shape of the brain does not correspond to the shape drawn by the red line. The jaw region, the oral cavity and the neck region look off, a scanner issue might be possible here.](images/qc/03-t1w_skull_stripping_bad-10_crop.png){group="bad-skull-stripping" width=1200}
+
+:::
+
+</details>
 
 ### **Summary**
 
@@ -223,6 +241,11 @@ The registered T1 image is shown in the background with a brain atlas in MNI spa
 
 - If the registration performed well, you should see an overlap (i.e., correspondence of structures) between the MNI template and the T1 registered to the MNI space. 
 
+<details class="qc-examples">
+<summary>Examples (6)</summary>
+
+::: {.qc-example-gallery}
+
 ![T1w spatial normalisation: example of a good subject](images/qc/04-dt1w_spatial_normalisation_good-03.png){group="good-dt1w-spatial-normalisation"}
 
 ![T1w spatial normalisation: example of a good subject](images/qc/04-dt1w_spatial_normalisation_good-04.png){group="good-dt1w-spatial-normalisation"}
@@ -235,9 +258,18 @@ The registered T1 image is shown in the background with a brain atlas in MNI spa
 
 ![T1w spatial normalisation: example of a good subject](images/qc/04-dt1w_spatial_normalisation_good-08.png){group="good-dt1w-spatial-normalisation"}
 
+:::
+
+</details>
+
 ### **<span style="color: #d00;">Example of a bad subject</span>** 
 
 - In case of poor registration, you should see a misalignment between the MNI template and the T1 (e.g., brain shifted down).  
+
+<details class="qc-examples">
+<summary>Examples (6)</summary>
+
+::: {.qc-example-gallery}
 
 ![T1w spatial normalisation: example of a bad subject](images/qc/04-dt1w_spatial_normalisation_bad-01.png){group="bad-dt1w-spatial-normalisation"}
 
@@ -250,6 +282,10 @@ The registered T1 image is shown in the background with a brain atlas in MNI spa
 ![T1 spatial normalisation: example of a bad subject. MNI and T1 are very misaligned.](images/qc/04-dt1w_spatial_normalisation_bad-06.png){group="bad-dt1w-spatial-normalisation"}
 
 ![T1 spatial normalisation: example of a bad subject. MNI and T1 are misaligned.](images/qc/04-dt1w_spatial_normalisation_bad-07.png){group="bad-dt1w-spatial-normalisation"}
+
+:::
+
+</details>
 
 ### **Summary**
 
@@ -265,6 +301,11 @@ In the signal to noise ratio images of the resting state image the desired signa
 ### **<span style="color: #28a745;">Example of a good subject</span>** 
 
 - Signal to noise is symmetrically distributed and there is no signal distortion
+
+<details class="qc-examples">
+<summary>Examples (12)</summary>
+
+::: {.qc-example-gallery}
 
 ![tSNR: example of a good subject](images/qc/05-epi_tsnr_good-01.png){group="good-epi_tsnr"}
 
@@ -290,6 +331,10 @@ In the signal to noise ratio images of the resting state image the desired signa
 
 ![tSNR: example of a good subject](images/qc/05-epi_tsnr_good-12.png){group="good-epi_tsnr"}
 
+:::
+
+</details>
+
 ### **<span style="color: #d00;">Example of a bad subject</span>** 
 
 - Asymmetry
@@ -300,6 +345,11 @@ In the signal to noise ratio images of the resting state image the desired signa
 ::: {.callout-note collapse="false"}
 Clear large artefact (e.g., zebra stripes in example 1) are worth the exclusion of the subject. If you are unsure, *check the other quality metrics for that subject to decide whether they should be excluded*.
 :::
+
+<details class="qc-examples">
+<summary>Examples (10)</summary>
+
+::: {.qc-example-gallery}
 
 ![tSNR: example of a bad subject: stripes](images/qc/05-epi_tsnr_bad-01.png){group="bad-epi_tsnr"}
 
@@ -320,6 +370,10 @@ Clear large artefact (e.g., zebra stripes in example 1) are worth the exclusion 
 ![tSNR: example of a bad subject: asymmetric signal drop.](images/qc/05-epi_tsnr_bad-10.png){group="bad-epi_tsnr"}
 
 ![tSNR: example of a bad subject: due to a technical issue, no normal brain shape is recognizable in the upper two rows](images/qc/05-epi_tsnr_bad-11.png){group="bad-epi_tsnr"}
+
+:::
+
+</details>
 
 ### **Summary**
 
@@ -342,13 +396,31 @@ In the carpet plot it is important to look for changes in heatmap/intensity and 
 - No changes in the heatmap, low motion (FD mean < 0.5), no sudden large jumps in the FD line or GS
 - Small changes in the heatmap identifiable as caused by motion or other causes (i.e., corresponding to changes in the graphs above the heatmap)
 
+<details class="qc-examples">
+<summary>Examples (1)</summary>
+
+::: {.qc-example-gallery}
+
 ![Example of a good subject: no clear changes in the heatmap, low motion, no large jumps/ changes](images/qc/06-epi_confounds_good-01.png){group="good-epi_confounds"}
 
+:::
+
+</details>
+
 ### **<span style="color: #f4a261;">Example of an uncertain subject</span>** 
+
+<details class="qc-examples">
+<summary>Examples (2)</summary>
+
+::: {.qc-example-gallery}
 
 ![Example of a uncertain subject: small changes in the heatmap that correspond to spikes of motion < 3 mm (FD max here is 2.110)](images/qc/06-epi_confounds_uncertain-01.png){group="good-epi_confounds"}
 
 ![Example of a uncertain subject: changes in the heatmap that correspond to spikes of motion, max FD is below 3, mean FD is below 0.5](images/qc/06-epi_confounds_uncertain-02.png){group="good-epi_confounds"}
+
+:::
+
+</details>
 
 
 ### **<span style="color: #d00;">Example of a bad subject</span>** 
@@ -364,6 +436,11 @@ In the carpet plot it is important to look for changes in heatmap/intensity and 
 - If you think that the carpet plot shows artefacts or other problematic issues, check the other quality metrics for that subject to decide whether they should be excluded
 :::
 
+<details class="qc-examples">
+<summary>Examples (5)</summary>
+
+::: {.qc-example-gallery}
+
 ![Example of a very bad carpet plot: many sudden changes in the heatmap that correspond to high spikes of motion (max FD is very high) and mean FD > 0.5](images/qc/06-epi_confounds_bad-01.png){group="good-epi_confounds"}
 
 ![Carpet plot: example of a bad subject: large changes in the heatmap that correspond to motion. This subject has mean FD =1.161 and max FD = 11.072, meaning that it should be excluded because of high motion. Because mean FD > 0.5, it will be automatically excluded from the group analysis.](images/qc/06-epi_confounds_bad-02.png){group="good-epi_confounds"}
@@ -373,6 +450,10 @@ In the carpet plot it is important to look for changes in heatmap/intensity and 
 ![Carpet plot: example of a bad subject. Very high FD at the beginning of the scan and mean FD > 0.5.](images/qc/06-epi_confounds_bad-05.png){group="good-epi_confounds"}
 
 ![Carpet plot: example of a subject that might be excluded. Changes in the heatmap can be explained through motion and mean FD is below 0.5, but max FD above 3 mm. With a carpet plot like this, it makes sense to check the other images to see if any issues that lead to exclusion have come up either way.](images/qc/06-epi_confounds_bad-06.png){group="good-epi_confounds"}
+
+:::
+
+</details>
 
 ### **Summary**
 
@@ -395,7 +476,10 @@ We don't expect you to check all the components for every subject. Rather, try t
 :::
 
 
-::: {.lightbox style="display: grid;grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));grid-gap: 1em;"}
+<details class="qc-examples">
+<summary>Examples (3)</summary>
+
+::: {.qc-example-gallery}
 
 ![Example of a signal component (the Default Mode Network)](images/qc/07-epi_ica-01.png){group="epi_ica"}
 
@@ -405,11 +489,23 @@ We don't expect you to check all the components for every subject. Rather, try t
 
 :::
 
+</details>
+
+
 ### **<span style="color: #28a745;">Example of a good subject</span>** 
 
 - Components correctly classified in noise (red) and signal (green), conservative classification (uncertain components classified as signal).
 
+<details class="qc-examples">
+<summary>Examples (1)</summary>
+
+::: {.qc-example-gallery}
+
 ![ICA AROMA: example of a good/ok subject](images/qc/07-epi_ica_good.jpg){group="good-epi_ica"}
+
+:::
+
+</details>
 
 ### **<span style="color: #d00;">Example of a bad subject</span>** 
 
@@ -422,7 +518,16 @@ We don't expect you to check all the components for every subject. Rather, try t
 **NOTE:** If you think that ICA AROMA performed poorly or the subject looks problematic, check the other quality metrics for that subject to decide whether they should be excluded. 
 :::
 
+<details class="qc-examples">
+<summary>Examples (1)</summary>
+
+::: {.qc-example-gallery}
+
 ![ICA AROMA: example of a bad subject: a large part of the components has been classified as noise (picture on the left). Other QC images of the same participant show that this subject is problematic: the tSNR page for this subjects shows stripes artefacts (picture on the right).](images/qc/07-epi_ica_bad.png){group="bad-epi_ica"}
+
+:::
+
+</details>
 
 ### **Summary**
 
@@ -444,6 +549,11 @@ This QC step shows the registration of the EPI image to MNI space.
 - If the registration performed well, you should see an overlap (i.e., correspondence of structures) between the MNI template and the EPI registered to the MNI space. 
 - If parts of the brain are missing due to the scanner field of view, this is fine. For example, the cerebellum may be cut off for a participant with a large head.
 
+<details class="qc-examples">
+<summary>Examples (9)</summary>
+
+::: {.qc-example-gallery}
+
 ![EPI spatial normalisation: example of a good subject](images/qc/08-epi_spatial_normalisation_good-01.jpg){group="good-epi_spatial_normalisation"}
 
 ![EPI spatial normalisation: example of a good subject.](images/qc/08-epi_spatial_normalisation_good-04.png){group="good-epi_spatial_normalisation"}
@@ -462,9 +572,18 @@ This QC step shows the registration of the EPI image to MNI space.
 
 ![EPI spatial normalisation: example of a good subject.](images/qc/08-epi_spatial_normalisation_good-11.png){group="good-epi_spatial_normalisation"}
 
+:::
+
+</details>
+
 ### **<span style="color: #d00;">Example of a bad subject</span>** 
 
 - In case of poor registration, you should see a misalignment of the EPI and the MNI template
+
+<details class="qc-examples">
+<summary>Examples (7)</summary>
+
+::: {.qc-example-gallery}
 
 ![EPI spatial normalisation: example of a bad subject, the EPI and the MNI template do not properly overlap](images/qc/08-epi_spatial_normalisation_bad-01.png){group="bad-epi_spatial_normalisation"}
 
@@ -479,6 +598,10 @@ This QC step shows the registration of the EPI image to MNI space.
 ![EPI spatial normalisation: example of a bad subject. EPI and MNI template do not properly overlap, it seems like there was a significant technical issue](images/qc/08-epi_spatial_normalisation_bad-06.png){group="bad-epi_spatial_normalisation"}
 
 ![EPI spatial normalisation: example of a bad subject. EPI and MNI do not properly overlap.](images/qc/08-epi_spatial_normalisation_bad-07.png){group="bad-epi_spatial_normalisation"}
+
+:::
+
+</details>
 
 ### **Summary**
 
