@@ -1,0 +1,45 @@
+---
+title: "Before starting the QC"
+---
+
+::: {.qc-page-tools}
+[Quality control](../quality-control.qmd){.btn .btn-outline-secondary .btn-sm}
+[Cheat Sheet](cheat-sheet.qmd){.btn .btn-outline-secondary .btn-sm}
+:::
+
+<span id="before-starting-the-qc"></span>
+
+<!-- qc-source-start -->
+After running the pipeline, an output folder will be created. If the pipeline ran successfully, your output folder should look like this:
+
+```
+📂 /Output
+├──reports → this contains all the QC information
+├──derivatives → this contains the extracted features for each subject (from the CorrMatrix, DualReg, fALFF, ReHo, SeedCorr analyses), along with the confound file (confounds.tsv), the preprocessed image(s) (preproc.nii.gz) and the mask_file.nii.gz
+├──nypipe  → this contains the intermediate pre-processing files. When using the standard pipeline, not all intermediate images are saved to save space. However you can choose to save everything by changing the flag: --keep (more information can be found on GitHub)
+├──rawdata → this folder contains the raw T1 images and epi in BIDS
+├──log.txt
+├──err.txt
+├──halfpipe.log.txt
+├──spec.json
+├── an execgraph and workflow file (you can ignore this)
+└──possibly files starting with ‘crash’
+```
+
+The files important for **QC** are in the **reports** folder. This contains:
+
+- The web file `index.html`, which is the main web page that you will use to perform quality control (see below)
+- `reportvals.txt` → this is a group file that contains the mean of the quality metrics (aroma_noise_frac, the fd_gt_0_5, mean_fd, mean_gm_tsnr) for each subject
+- `reportpreproc.txt` → this is a group file that reports the status of the pre-processing (done/missing) of the resting state image for each subject
+- In the reports folder there are also individual subject folders (that contain the images used to create the index.html and other files .js and .json.lock. You don’t have to worry about these files.)
+
+::: {.callout-tip collapse="false"}
+**Note:** you can copy the QC folder (reports) anywhere (e.g., on a local machine) as long as you copy the entire reports folder. The reports folder will take ~10 MB of space per subject plus 10 MB for each functional image. So if each subject has just the resting state, it would take ~20 MB per subject.
+:::
+
+Important files for troubleshooting:
+
+- The log.txt file contains the record of all the steps performed by the pipeline when it was running. Checking the log will help you troubleshoot if you run into any problems.
+- The err.txt file contains the record of the errors
+- The crash files might contain information about processes that crashed. If you submit an issue on GitHub, please include this file.
+<!-- qc-source-end -->
