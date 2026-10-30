@@ -60,75 +60,84 @@
   .qc-photo-controls, .qc-photo-thumbnails { display: none; }
 }
 
-/* The full-window preview reserves rows for controls and captions, outside the image. */
-.glightbox-container .qc-zoom-slide .ginner-container {
-  display: grid !important;
-  grid-template-rows: auto minmax(0, 1fr) auto;
-  width: 100vw !important;
-  max-width: none !important;
-  height: 100vh !important;
-  height: 100dvh !important;
+/* A native top-layer dialog avoids fitted Quarto/GLightbox ancestor dimensions. */
+body.qc-image-preview-open { overflow: hidden; }
+dialog.qc-image-dialog {
+  position: fixed;
+  inset: 0;
   margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  height: 100dvh;
+  max-height: none;
+  box-sizing: border-box;
+  background: #0e1218;
+  color: #eef2f7;
+  font: inherit;
 }
-.glightbox-container .qc-zoom-slide .qc-zoom-viewport {
-  grid-row: 2;
-  width: 100% !important;
-  height: 100% !important;
+.qc-image-dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+.qc-image-dialog::backdrop { background: #0e1218; }
+.qc-image-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding: .45rem .75rem;
+  border-bottom: 1px solid #35404e;
+  background: #19212c;
+}
+.qc-image-navigation, .qc-image-zoom { display: flex; align-items: center; gap: .4rem; }
+.qc-image-navigation > span, .qc-image-zoom > span { min-width: 3.5rem; text-align: center; }
+.qc-image-dialog button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: .25rem .55rem;
+  border: 1px solid #758396;
+  border-radius: .3rem;
+  background: #263343;
+  color: inherit;
+  font: inherit;
+}
+.qc-image-dialog button:disabled { opacity: .4; }
+.qc-image-dialog :focus-visible { outline: 3px solid #89bfff; outline-offset: -3px; }
+.qc-image-workspace {
+  min-width: 0;
   min-height: 0;
-  margin: 0 !important;
+  position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  box-shadow: none;
 }
-.glightbox-container .qc-zoom-slide .qc-zoom-viewport img {
-  width: auto !important;
-  height: auto !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
+.qc-image-workspace > img {
+  flex: none;
+  max-width: none;
+  max-height: none;
   min-width: 0;
-  object-fit: contain;
   transform-origin: center;
   user-select: none;
 }
-.glightbox-container .qc-zoom-slide .gslide-description {
-  grid-row: 3;
-  position: static !important;
-  width: 100% !important;
-  max-height: 30vh !important;
-  max-height: 30dvh !important;
-  overflow: auto !important;
-  margin: 0 !important;
-  background: var(--quarto-body-bg, #fff) !important;
-  color: var(--quarto-body-color, #222) !important;
+.qc-image-dialog [hidden] { display: none !important; }
+.qc-image-workspace.qc-is-zoomed { cursor: grab; }
+.qc-image-workspace.qc-is-dragging { cursor: grabbing; }
+.qc-image-message { position: absolute; }
+.qc-image-caption {
+  box-sizing: border-box;
+  min-height: 0;
+  max-height: 30vh;
+  max-height: 30dvh;
+  overflow: auto;
+  padding: .65rem 1rem;
+  line-height: 1.4;
+  border-top: 1px solid #35404e;
+  background: #19212c;
 }
-.glightbox-container .qc-zoom-slide .gdesc-inner { padding: .65rem 1rem; }
-.glightbox-container .qc-zoom-slide .gslide-title,
-.glightbox-container .qc-zoom-slide .gslide-desc { color: inherit; }
-.qc-zoom-viewport.qc-is-zoomed img { cursor: grab; }
-.qc-zoom-viewport.qc-is-dragging img { cursor: grabbing; }
-.qc-zoom-viewport:focus-visible { outline: 3px solid #79b9ff; outline-offset: -3px; }
-.qc-zoom-controls {
-  grid-row: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: .35rem;
-  padding: .4rem 3.5rem;
-  background: #18222e;
-  color: #fff;
+@media (max-width: 600px) {
+  .qc-image-toolbar { display: grid; grid-template-columns: 1fr auto; }
+  .qc-image-navigation { grid-row: 1; grid-column: 1; }
+  .qc-image-close { grid-row: 1; grid-column: 2; }
+  .qc-image-zoom { grid-row: 2; grid-column: 1 / -1; justify-content: center; }
 }
-.qc-zoom-controls button {
-  min-width: 44px;
-  min-height: 44px;
-  border: 1px solid #8a99a9;
-  border-radius: .25rem;
-  background: #263747;
-  color: #fff;
-  font: inherit;
-}
-.qc-zoom-controls button:disabled { opacity: .4; }
-.qc-zoom-controls button:focus-visible { outline: 3px solid #79b9ff; outline-offset: 1px; }
-.qc-zoom-controls [role="status"] { min-width: 3.5rem; text-align: center; }

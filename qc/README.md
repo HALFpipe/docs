@@ -49,21 +49,21 @@ or a real browser. It covers navigation, thumbnail state, keyboard selection,
 boundaries, independent groups, singleton handling, and fallback. Touch behavior
 and the final visual layout still require browser/device testing.
 
-`preview-zoom.js` adds wheel zoom and mouse-drag panning to the existing Quarto
-lightbox. It uses its slide lifecycle hooks and disables the conflicting native
-mouse zoom/drag handlers before each image loads. Zoom is bounded from fit (100%)
-to 800%; the pointer stays over the same image location where pan bounds allow.
-The full-window preview has three rows: controls, an expanding image workspace,
-and the original caption. Zoom/pan uses all space between the controls and caption;
-neither overlaps the image or disappears while zooming. Long captions scroll in
-their footer (up to 30% of the window height). The image cannot be dragged wholly
-out of view. Buttons provide zoom and Fit;
-when the image has keyboard focus, +/− zoom, 0 fits, and arrow keys pan while
-zoomed. Fit and switching/closing images reset the view, as does resizing. The
-page's normal scrolling and image files are unchanged. Native touch behavior
-still needs device testing. Styling is in `photo-viewer.css`.
+`preview-zoom.js` opens a native HTML dialog for QC image links, intercepting the
+click before Quarto's lightbox handler. The dialog lives in the browser top layer,
+independent of the page's fitted wrappers. It has a toolbar, a full-width image
+workspace, and an always-visible caption footer. Long captions scroll in that
+footer. The document figures, captions, and files remain unchanged.
 
-Run `node tests/qc-preview-zoom.mjs` for synthetic zoom/pan checks: cursor anchoring,
-wheel units, scale and translation bounds, pointer capture, controls, keyboard
-handling, and resets. It uses fabricated geometry and a lightbox-event stand-in;
-it does not verify real-browser GLightbox integration or touch interactions.
+Wheel zoom (100–800% of fit), mouse dragging, buttons, and keyboard controls use
+the image workspace dimensions. Previous/next stays within the clicked example
+group. Escape or Close exits; focus and the selected in-page example are restored.
+Resizing and changing images reset zoom. Only dialog events intercept scrolling.
+Without JavaScript, the original image links remain usable.
+
+Run `node tests/qc-preview-zoom.mjs` with Playwright installed for Chromium checks
+using fabricated SVGs and an intentionally narrow containing page. No participant
+images, local manual pages, or web server are used by the browser test. It checks
+full-window sizing, pan/zoom, caption and control separation, responsive layout,
+keyboard close/focus, and suppression of Quarto's original lightbox. The separate
+photo-viewer and bookmark controller tests still use synthetic stand-ins.
