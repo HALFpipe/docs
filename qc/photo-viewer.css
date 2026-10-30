@@ -60,26 +60,63 @@
   .qc-photo-controls, .qc-photo-thumbnails { display: none; }
 }
 
-/* Transforms affect only the open preview; captions and page images remain in place. */
-/* Only the full-window lightbox clips the image, not its original fitted frame. */
-.qc-zoom-viewport { overflow: visible; }
-.qc-preview-zoomed .gslide-description { visibility: hidden; }
-.glightbox-container .qc-preview-zoomed .gslide-media { box-shadow: none; background: transparent; }
-.qc-zoom-viewport img { transform-origin: center; user-select: none; }
+/* The full-window preview reserves rows for controls and captions, outside the image. */
+.glightbox-container .qc-zoom-slide .ginner-container {
+  display: grid !important;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  width: 100vw !important;
+  max-width: none !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  margin: 0;
+}
+.glightbox-container .qc-zoom-slide .qc-zoom-viewport {
+  grid-row: 2;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0;
+  margin: 0 !important;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  box-shadow: none;
+}
+.glightbox-container .qc-zoom-slide .qc-zoom-viewport img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  min-width: 0;
+  object-fit: contain;
+  transform-origin: center;
+  user-select: none;
+}
+.glightbox-container .qc-zoom-slide .gslide-description {
+  grid-row: 3;
+  position: static !important;
+  width: 100% !important;
+  max-height: 30vh !important;
+  max-height: 30dvh !important;
+  overflow: auto !important;
+  margin: 0 !important;
+  background: var(--quarto-body-bg, #fff) !important;
+  color: var(--quarto-body-color, #222) !important;
+}
+.glightbox-container .qc-zoom-slide .gdesc-inner { padding: .65rem 1rem; }
+.glightbox-container .qc-zoom-slide .gslide-title,
+.glightbox-container .qc-zoom-slide .gslide-desc { color: inherit; }
 .qc-zoom-viewport.qc-is-zoomed img { cursor: grab; }
 .qc-zoom-viewport.qc-is-dragging img { cursor: grabbing; }
 .qc-zoom-viewport:focus-visible { outline: 3px solid #79b9ff; outline-offset: -3px; }
 .qc-zoom-controls {
-  position: absolute;
-  top: .75rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
+  grid-row: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: .35rem;
-  padding: .3rem;
-  border-radius: .4rem;
+  padding: .4rem 3.5rem;
   background: #18222e;
   color: #fff;
 }

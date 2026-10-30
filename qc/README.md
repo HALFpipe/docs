@@ -53,11 +53,11 @@ and the final visual layout still require browser/device testing.
 lightbox. It uses its slide lifecycle hooks and disables the conflicting native
 mouse zoom/drag handlers before each image loads. Zoom is bounded from fit (100%)
 to 800%; the pointer stays over the same image location where pan bounds allow.
-Zoomed images extend beyond their fitted frame into the full browser window.
-Panning uses the window edges rather than the original preview dimensions. The
-caption is hidden while zoomed (with its layout space preserved) and restored by
-Fit, so it does not cover enlarged image details. The image cannot be dragged
-wholly out of view. Buttons provide zoom and Fit;
+The full-window preview has three rows: controls, an expanding image workspace,
+and the original caption. Zoom/pan uses all space between the controls and caption;
+neither overlaps the image or disappears while zooming. Long captions scroll in
+their footer (up to 30% of the window height). The image cannot be dragged wholly
+out of view. Buttons provide zoom and Fit;
 when the image has keyboard focus, +/− zoom, 0 fits, and arrow keys pan while
 zoomed. Fit and switching/closing images reset the view, as does resizing. The
 page's normal scrolling and image files are unchanged. Native touch behavior

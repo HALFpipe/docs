@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const image = slide.querySelector(".gslide-image img");
     if (!image) return;
     const viewport = image.closest(".gslide-image");
+    const container = viewport.closest(".ginner-container");
+    slide.classList.add("qc-zoom-slide");
     viewport.classList.add("qc-zoom-viewport");
     viewport.tabIndex = 0;
     viewport.setAttribute("aria-label", "Image preview: scroll to zoom; drag to pan when zoomed");
@@ -33,24 +35,19 @@ document.addEventListener("DOMContentLoaded", () => {
     status.setAttribute("aria-live", "polite");
     status.setAttribute("aria-atomic", "true");
     toolbar.append(out, status, into, fit);
-    slide.append(toolbar);
+    container.prepend(toolbar);
     let scale = 1, x = 0, y = 0, drag;
-    const bound = (position, size, center, screenSize) => {
-      const half = size * scale / 2;
-      const firstEdge = half - center;
-      const secondEdge = screenSize - half - center;
-      // Small images stay inside the window; larger images can pan to either edge.
-      return Math.max(Math.min(firstEdge, secondEdge),
-        Math.min(Math.max(firstEdge, secondEdge), position));
+    const bound = (position, size, available) => {
+      const limit = Math.abs(size * scale - available) / 2;
+      return Math.max(-limit, Math.min(limit, position));
     };
     const render = () => {
-      const rect = viewport.getBoundingClientRect();
-      x = bound(x, image.clientWidth, rect.left + rect.width / 2, window.innerWidth);
-      y = bound(y, image.clientHeight, rect.top + rect.height / 2, window.innerHeight);
+      // The image workspace excludes the always-visible toolbar and caption rows.
+      x = bound(x, image.clientWidth, viewport.clientWidth);
+      y = bound(y, image.clientHeight, viewport.clientHeight);
       if (scale === 1) x = y = 0;
       image.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
       viewport.classList.toggle("qc-is-zoomed", scale > 1);
-      slide.classList.toggle("qc-preview-zoomed", scale > 1);
       status.textContent = `${Math.round(scale * 100)}%`;
       out.disabled = scale <= 1; into.disabled = scale >= 8;
     };
