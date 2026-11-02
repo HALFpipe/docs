@@ -9,6 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
     viewer.className = "qc-photo-viewer";
     viewer.setAttribute("role", "region");
     viewer.setAttribute("aria-label", heading?.textContent.trim() || "QC examples");
+    const context = document.createElement("div");
+    context.className = "qc-photo-context";
+    const type = gallery.closest("main")?.querySelector("h1")?.textContent.trim();
+    context.textContent = [type, heading?.textContent.trim()].filter(Boolean).join(" · ");
+    viewer.append(context);
     const stage = document.createElement("div");
     stage.className = "qc-photo-stage carousel";
     gallery.before(viewer);
@@ -44,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     status.setAttribute("aria-live", "polite");
     status.setAttribute("aria-atomic", "true");
     controls.append(previous, status, next);
-    viewer.prepend(controls);
+    stage.before(controls);
     const strip = document.createElement("div");
     strip.className = "qc-photo-thumbnails";
     strip.setAttribute("role", "group");

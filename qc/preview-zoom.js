@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
     element.setAttribute("aria-label", label);
     return element;
   };
+  const context = document.createElement("div");
+  context.className = "qc-image-context";
+  context.id = "qc-image-context";
+  dialog.setAttribute("aria-labelledby", context.id);
   const header = document.createElement("div");
   header.className = "qc-image-toolbar";
   const navigation = document.createElement("div");
@@ -48,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   caption.id = "qc-image-caption";
   caption.tabIndex = 0;
   caption.setAttribute("aria-label", "Image caption");
-  dialog.append(header, stage, caption);
+  dialog.append(context, header, stage, caption);
   document.body.append(dialog);
   let links = [], selected = 0, opener, ready = false;
   let baseWidth = 0, baseHeight = 0, scale = 1, x = 0, y = 0, drag;
@@ -97,6 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
     stopDrag(); selected = index; ready = false;
     scale = 1; x = y = 0; image.hidden = true;
     const link = links[index];
+    context.textContent = link.closest(".qc-photo-viewer")?.querySelector(".qc-photo-context")?.textContent ||
+      link.closest("main")?.querySelector("h1")?.textContent || "QC image preview";
     const source = link.querySelector("img");
     const figure = link.closest("figure");
     caption.textContent = figure?.querySelector("figcaption")?.textContent ||

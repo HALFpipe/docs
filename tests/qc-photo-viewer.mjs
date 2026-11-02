@@ -92,7 +92,8 @@ function run(counts, bootstrapAvailable = true) {
 const { groups, instances } = run([3, 2, 1, 0]);
 assert.equal(instances.length, 2);
 const viewer = groups[0].gallery.parent.parent;
-const [controls, stage, strip] = viewer.children;
+const [context, controls, stage, strip] = viewer.children;
+assert.equal(context.textContent, "Synthetic examples");
 const [previous, status, next] = controls.children;
 const [first, second, third] = strip.children;
 assert.equal(previous.disabled, true);
@@ -124,7 +125,7 @@ assert.equal(instances[0].options.interval, false); assert.equal(instances[0].op
 assert.equal(instances[0].options.wrap, false); assert.equal(instances[0].options.touch, true);
 assert.equal(instances[1].selected, 0); // Each gallery has independent state.
 const singleton = groups[2].gallery.parent.parent;
-assert.equal(singleton.children.length, 1); // No redundant thumbnail strip or buttons.
+assert.equal(singleton.children.length, 2); // No redundant thumbnail strip or buttons.
 assert.equal(groups[2].originals[0].classList.contains('active'), true);
 assert.notEqual(groups[0].originals[0].id, groups[1].originals[0].id);
 const fallback = run([3], false).groups[0];

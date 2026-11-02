@@ -78,7 +78,7 @@ dialog.qc-image-dialog {
   color: #eef2f7;
   font: inherit;
 }
-.qc-image-dialog[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+.qc-image-dialog[open] { display: grid; grid-template-rows: auto auto minmax(0, 1fr) auto; }
 .qc-image-dialog::backdrop { background: #0e1218; }
 .qc-image-toolbar {
   display: flex;
@@ -141,3 +141,13 @@ dialog.qc-image-dialog {
   .qc-image-close { grid-row: 1; grid-column: 2; }
   .qc-image-zoom { grid-row: 2; grid-column: 1 / -1; justify-content: center; }
 }
+
+/* Repeat the existing page and example headings where readers view the images. */
+.qc-photo-context, .qc-image-context {
+  padding: .65rem 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.qc-photo-context { background: #eef3f8; border-bottom: 1px solid #d7dde3; }
+.qc-image-context { background: #19212c; border-bottom: 1px solid #35404e; }

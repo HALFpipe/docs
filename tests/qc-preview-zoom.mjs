@@ -20,7 +20,7 @@ const captions = ['Fabricated wide example: all seven columns should use the win
   'A long fabricated caption, retained exactly. '.repeat(160)];
 const figure = (src, caption) => `<div class="quarto-figure"><figure><p><a class="lightbox" href="${src}" data-gallery="synthetic"><img src="${src}" alt="Fabricated test image"></a></p><figcaption>${caption}</figcaption></figure></div>`;
 const html = `<html><head><meta name="viewport" content="width=device-width, initial-scale=1"></head>
-<body class="qc-manual"><main style="max-width:720px;margin:60px auto"><section><h2>Synthetic fixture</h2><div class="qc-example-gallery">${figure(svg(1200,600,'Wide'),captions[0])}${figure(svg(400,1200,'Portrait'),captions[1])}</div></section></main></body></html>`;
+<body class="qc-manual"><main style="max-width:720px;margin:60px auto"><h1>Synthetic image type</h1><section><h2>Example of a good subject</h2><div class="qc-example-gallery">${figure(svg(1200,600,'Wide'),captions[0])}${figure(svg(400,1200,'Portrait'),captions[1])}</div></section></main></body></html>`;
 const browser = await chromium.launch({ headless: true });
 const output = process.env.QC_TEST_OUTPUT || '/tmp/qc-preview-browser';
 mkdirSync(output, { recursive: true });
@@ -39,7 +39,10 @@ try {
     await page.addScriptTag({ content: read('qc/photo-viewer.js') });
     await page.addScriptTag({ content: read('qc/preview-zoom.js') });
     await page.evaluate(() => document.dispatchEvent(new Event('DOMContentLoaded')));
+    const expectedContext = 'Synthetic image type · Example of a good subject';
+    assert.equal(await page.locator('.qc-photo-context').textContent(), expectedContext);
     await page.locator('.qc-photo-viewer .carousel-item.active a.lightbox').click();
+    assert.equal(await page.locator('.qc-image-context').textContent(), expectedContext);
     await page.waitForFunction(() => {
       const image = document.querySelector('.qc-image-workspace img');
       return document.querySelector('dialog').open && !image.hidden && image.naturalWidth > 0;
@@ -97,6 +100,8 @@ try {
     await page.locator('dialog').getByRole('button',{name:'Next example'}).click();
     await page.waitForFunction(() => !document.querySelector('.qc-image-workspace img').hidden);
     assert.equal(await page.locator('.qc-image-caption').textContent(),captions[1]);
+    assert.equal(await page.locator('.qc-image-context').textContent(),expectedContext);
+    assert.ok(await page.locator('.qc-image-context').evaluate(el => el.getBoundingClientRect().top >= 0));
     assert.equal((await state()).scale,1);
     g=await geometry();assert.equal(g.stage.width,width);assert.ok(g.stage.bottom<=g.caption.y+1);
     assert.ok(g.caption.height<=height*.3+1);
