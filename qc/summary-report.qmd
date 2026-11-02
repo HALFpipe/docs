@@ -1,0 +1,45 @@
+---
+title: "Step 1: Open the summary report in the reports folder"
+---
+
+[Quality control](../quality-control.qmd) · [Cheat Sheet](cheat-sheet.qmd)
+
+<span id="step-1-open-the-summary-report-in-the-reports-folder"></span>
+
+<!-- qc-source-start -->
+The summary report (`reportpreproc.txt` in the reports folder) should look something like this:
+
+|subject  |task  | status   |
+|:--------|:-----|----------|
+|1   	  |rest	 |done      |
+|2   	  |rest	 |missing   |
+|3        |rest	 |missing   |
+|4   	  |rest	 |done      |
+
+- **Done** means that all the output files of interest (i.e., preprocessed image, confound files, connectivity matrices, ICA maps, seed connectivity maps, alff, reho) for that subject were created. These derivative files can be found in the folder `<path/to/output/derivatives/halfpipe/subjectfolder>`.
+
+- Conversely, subjects with the status **missing** did not run completely. This means that not all the output files were created.
+
+## Step 1.1: Check for missing files in the summary report {#step-1.1-check-for-missing-files-in-the-summary-report}
+
+::: {.panel-tabset}
+### If you don’t have any subject listed under missing
+*If you are on a HPC*, you can download the entire `/reports` folder on a local machine to open and visualize the index.html file on your browser.
+
+Continue to [step 2](reports.qmd#step-2-open-the-index.html-page).
+
+### If you have any subject listed under missing
+
+Please have a look at the `log.txt` file (located in the main output folder). To open the log file, you can use any text editor. Use the search function to search for ‘error’, to understand if something and what went wrong. Common errors are listed in the `troubleshooting section`.
+
+#### Step 1.1.1: Re-run missing or failed subjects {#step-1.1.1-re-run-missing-or-failed-subjects}
+
+- If there are any missing subjects, make a text file with all the missing subject IDs, one on each line. These could also be new participants that have not yet been processed.
+- Re-run HALFpipe as before, but add the option `--subject-list <full path to text file> to the end of the command.`
+
+*Only if running on HPC *
+- Edit your submission script to add the option, and then submit the job to the HPC queue.
+
+If you are unable to troubleshoot, please open an issue on GitHub.
+:::
+<!-- qc-source-end -->

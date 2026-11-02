@@ -1,0 +1,57 @@
+---
+title: "Cheat Sheet"
+---
+
+[Quality control](../quality-control.qmd)
+
+<span id="cheat-sheet"></span>
+
+<!-- qc-source-start -->
+This section brings together all the summary tables and can serve as a checklist for quality control once you're familiar with both good and bad examples. However, we still recommend first going through the manual step by step and reviewing the provided examples carefully to build experience.
+
+| **Good** | **Bad** |
+|:---|:---|
+| The brain is fully inside the red line | Structures like the cranium or the eyes are inside the red line |
+| No important brain structures are outside of the red line red line follows the natural outline of the brain | Important brain structures are missing inside of the red line |
+: Table summary for skull stripping {.striped .hover}
+
+
+| **Good** | **Bad** |
+|---|---|
+| Structures of the MNI template and the registered T1 are well aligned | Structures of the MNI template and the registered T1 aren't well aligned, <br><br>*e.g. brain is shifted downwards* |
+: Table summary for dT1w spatial normalisation {.striped .hover}
+
+
+| **Good** | **Bad** |
+|---|---|
+| Symmetrical distribution of noise and signal | Asymmetry |
+| No disruptions of the signal <br>(no “black patches”) | Potential signal disruptions <br>(could be related to artefacts) |
+| No stripes <br>(sign of high motion) | Signal drop |
+|  | Stripe artefacts <br>(“zebra” stripes due to motion) |
+: Table summary for EPI tSNR {.striped .hover}
+
+
+| **Good** | **Bad** |
+|---|---|
+| No changes in the heatmap | Big changes: <br>- could be related to motion <br>(change in the FD-line) |
+| Small changes in the heatmap caused by motion mean FD < 0.5 | Mean FD > 0.5 or maximum FD > 3 mm |
+| DVARS and FD “similar” |  |
+| No big spikes |  |
+: Table summary for wEPI confounds (carpet plot) {.striped .hover}
+
+
+| **Good** | **Bad** |
+|---|---|
+| Time series (at the top): no sudden jumps power (bottom) | More noise (red) than signal (green): <br>- Occurs more often with block design <br>- or “problematic” subject (lots of movement, lots of artefacts) rings, bands, artefacts <br>- should be classified as noise |
+| Spatial patterns are visible |  |
+| No sudden jumps/spikes |  |
+| No big spikes |  |
+: Table summary for EPI ICA-based artefact removal (carpet plot) {.striped .hover}
+
+
+| **Good** | **Bad** |
+|---|---|
+| Overlap (i.e. match of structures) between the MNI template and the EPI registered in the MNI space | Misalignment of the EPI and the MNI template |
+| If parts of the brain are missing because the field of view of the scanner is limited, the EPI spatial normalisation does not have to be excluded <br><br>*e.g. cerebellum cut off in person with large head* |  |
+: Table summary for EPI spatial normalisation (carpet plot) {.striped .hover}
+<!-- qc-source-end -->
