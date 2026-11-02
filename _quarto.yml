@@ -23,6 +23,8 @@ website:
       - quality-control.qmd
       - check_run.qmd
       - wonkyconn_docs.qmd
+      - text: "Group-level analysis: ENIGMA-AN"
+        file: group-level.qmd
       - troubleshooting.qmd
 
   announcement: 
