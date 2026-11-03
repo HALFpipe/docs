@@ -20,7 +20,35 @@ website:
             file: manual_old_ui.qmd
           - text: "Resting-state fMRI Manual - Graphical UI"
             file: new_ui.qmd
-      - quality-control.qmd
+      - section: "Quality control"
+        href: quality-control.qmd
+        contents:
+          - text: "Overview"
+            href: quality-control.qmd
+          - text: "Before starting the QC"
+            href: qc/before-starting.qmd
+          - text: "Step 1: Open the summary report in the reports folder"
+            href: qc/summary-report.qmd
+          - text: "Step 2: Open the index.html page"
+            href: qc/reports.qmd
+          - section: "QC categories"
+            contents:
+              - text: "T1w skull stripping"
+                href: qc/skull-stripping.qmd
+              - text: "dT1w spatial normalisation"
+                href: qc/t1w-normalisation.qmd
+              - text: "EPI tSNR"
+                href: qc/tsnr.qmd
+              - text: "EPI confounds (carpet plot)"
+                href: qc/confounds.qmd
+              - text: "EPI ICA-based artefact removal"
+                href: qc/ica.qmd
+              - text: "EPI spatial normalisation"
+                href: qc/epi-normalisation.qmd
+          - text: "Step 2b: Rerun subjects (if needed)"
+            href: qc/rerun.qmd
+          - text: "Cheat Sheet"
+            href: qc/cheat-sheet.qmd
       - check_run.qmd
       - wonkyconn_docs.qmd
       - text: "Group-level analysis: ENIGMA-AN"

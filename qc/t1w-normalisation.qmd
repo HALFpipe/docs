@@ -1,0 +1,68 @@
+---
+title: "dT1w spatial normalisation"
+---
+
+::: {.qc-page-tools}
+[Quality control](../quality-control.qmd){.btn .btn-outline-secondary .btn-sm}
+[Cheat Sheet](cheat-sheet.qmd){.btn .btn-outline-secondary .btn-sm}
+[Examples](#example-of-a-good-subject-1){.btn .btn-outline-secondary .btn-sm}
+[Summary](#summary-1){.btn .btn-outline-secondary .btn-sm}
+:::
+
+<span id="dt1w-spatial-normalisation"></span>
+
+<!-- qc-source-start -->
+This QC step shows the registration of the T1 image to MNI space.
+
+The registered T1 image is shown in the background with a brain atlas in MNI space as an overlay.
+
+
+## **<span style="color: #28a745;">Example of a good subject</span>**  {#example-of-a-good-subject-1}
+
+- If the registration performed well, you should see an overlap (i.e., correspondence of structures) between the MNI template and the T1 registered to the MNI space.
+
+::: {.qc-example-gallery}
+
+![T1w spatial normalisation: example of a good subject](../images/qc/04-dt1w_spatial_normalisation_good-03.png){group="good-dt1w-spatial-normalisation"}
+
+![T1w spatial normalisation: example of a good subject](../images/qc/04-dt1w_spatial_normalisation_good-04.png){group="good-dt1w-spatial-normalisation"}
+
+![T1w spatial normalisation: example of a good subject](../images/qc/04-dt1w_spatial_normalisation_good-05.png){group="good-dt1w-spatial-normalisation"}
+
+![T1w spatial normalisation: example of a good subject](../images/qc/04-dt1w_spatial_normalisation_good-06.png){group="good-dt1w-spatial-normalisation"}
+
+![T1w spatial normalisation: example of a good subject](../images/qc/04-dt1w_spatial_normalisation_good-07.png){group="good-dt1w-spatial-normalisation"}
+
+![T1w spatial normalisation: example of a good subject](../images/qc/04-dt1w_spatial_normalisation_good-08.png){group="good-dt1w-spatial-normalisation"}
+
+:::
+
+
+## **<span style="color: #d00;">Example of a bad subject</span>**  {#example-of-a-bad-subject-1}
+
+- In case of poor registration, you should see a misalignment between the MNI template and the T1 (e.g., brain shifted down).
+
+::: {.qc-example-gallery}
+
+![T1w spatial normalisation: example of a bad subject](../images/qc/04-dt1w_spatial_normalisation_bad-01.png){group="bad-dt1w-spatial-normalisation"}
+
+![T1w spatial normalisation: example of a bad subject. The MNI and the T1 don't align.](../images/qc/04-dt1w_spatial_normalisation_bad-02.png){group="bad-dt1w-spatial-normalisation"}
+
+![T1w spatial normalisation: example of a bad subject. MNI and T1 don't align, which can be seen especially in the lowest row.](../images/qc/04-dt1w_spatial_normalisation_bad-03.png){group="bad-dt1w-spatial-normalisation"}
+
+![T1w spatial normalisation: example of a bad subject. MNI and T1 are very misaligned.](../images/qc/04-dt1w_spatial_normalisation_bad-05.png){group="bad-dt1w-spatial-normalisation"}
+
+![T1 spatial normalisation: example of a bad subject. MNI and T1 are very misaligned.](../images/qc/04-dt1w_spatial_normalisation_bad-06.png){group="bad-dt1w-spatial-normalisation"}
+
+![T1 spatial normalisation: example of a bad subject. MNI and T1 are misaligned.](../images/qc/04-dt1w_spatial_normalisation_bad-07.png){group="bad-dt1w-spatial-normalisation"}
+
+:::
+
+
+## **Summary** {#summary-1}
+
+| **good** | **bad** |
+|---|---|
+| Structures of the MNI template and the registered T1 are well aligned | Structures of the MNI template and the registered T1 aren't well aligned, <br>*e.g. brain is shifted downwards* |
+: Table summary for dT1w spatial normalisation {.striped .hover}
+<!-- qc-source-end -->
