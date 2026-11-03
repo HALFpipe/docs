@@ -6,6 +6,8 @@ format:
     include-after-body: qc-legacy-links.html
 ---
 
+If the pipeline is still running or expected outputs are missing, see [3. Run and check outputs](check_run.qmd) to check completion and rerun failed subjects. If the expected outputs are present, start the QC review below.
+
 [Before starting the QC](qc/before-starting.qmd){.btn .btn-primary}
 [Cheat Sheet](qc/cheat-sheet.qmd){.btn .btn-outline-primary}
 
@@ -26,7 +28,7 @@ format:
 :::
 
 ::: {.qc-nav-card}
-[Step 2b: Rerun subjects (if needed)](qc/rerun.qmd){.qc-card-title}
+[4.6 Rerun subjects if needed](qc/rerun.qmd){.qc-card-title}
 :::
 
 :::

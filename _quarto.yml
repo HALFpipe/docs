@@ -12,48 +12,55 @@ website:
     collapse-level: 1
     contents:
       - index.qmd
-      - about.qmd
-      - installation.qmd
-      - section: "Manuals"
+      - text: "1. Get started: installation"
+        href: installation.qmd
+      - section: "2. Configure resting-state analysis"
         contents:
-          - text: "Resting-state fMRI Manual - Terminal UI"
-            file: manual_old_ui.qmd
-          - text: "Resting-state fMRI Manual - Graphical UI"
+          - text: "2.1 Graphical UI"
             file: new_ui.qmd
-      - section: "Quality control"
+          - text: "2.2 Terminal UI"
+            file: manual_old_ui.qmd
+      - text: "3. Run and check outputs"
+        href: check_run.qmd
+      - section: "4. Quality control"
         href: quality-control.qmd
         contents:
-          - text: "Overview"
+          - text: "4.1 Overview"
             href: quality-control.qmd
-          - text: "Before starting the QC"
+          - text: "4.2 Before starting the QC"
             href: qc/before-starting.qmd
-          - text: "Step 1: Open the summary report in the reports folder"
+          - text: "4.3 Open the summary report"
             href: qc/summary-report.qmd
-          - text: "Step 2: Open the index.html page"
+          - text: "4.4 Open the QC report"
             href: qc/reports.qmd
-          - section: "QC categories"
+          - section: "4.5 QC categories"
             contents:
-              - text: "T1w skull stripping"
+              - text: "4.5.1 T1w skull stripping"
                 href: qc/skull-stripping.qmd
-              - text: "dT1w spatial normalisation"
+              - text: "4.5.2 dT1w spatial normalisation"
                 href: qc/t1w-normalisation.qmd
-              - text: "EPI tSNR"
+              - text: "4.5.3 EPI tSNR"
                 href: qc/tsnr.qmd
-              - text: "EPI confounds (carpet plot)"
+              - text: "4.5.4 EPI confounds (carpet plot)"
                 href: qc/confounds.qmd
-              - text: "EPI ICA-based artefact removal"
+              - text: "4.5.5 EPI ICA-based artefact removal"
                 href: qc/ica.qmd
-              - text: "EPI spatial normalisation"
+              - text: "4.5.6 EPI spatial normalisation"
                 href: qc/epi-normalisation.qmd
-          - text: "Step 2b: Rerun subjects (if needed)"
+          - text: "4.6 Rerun subjects if needed"
             href: qc/rerun.qmd
-          - text: "Cheat Sheet"
+          - text: "4.7 Cheat Sheet"
             href: qc/cheat-sheet.qmd
-      - check_run.qmd
-      - wonkyconn_docs.qmd
-      - text: "Group-level analysis: ENIGMA-AN"
-        file: group-level.qmd
-      - troubleshooting.qmd
+      - section: "5. After QC"
+        contents:
+          - text: "5.1 WonkyConn"
+            href: wonkyconn_docs.qmd
+          - text: "5.2 Group-level analysis: ENIGMA-AN"
+            href: group-level.qmd
+      - text: "6. Troubleshooting"
+        href: troubleshooting.qmd
+      - text: "7. About and citation"
+        href: about.qmd
 
   announcement: 
     icon: info-circle
