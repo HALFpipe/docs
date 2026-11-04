@@ -47,10 +47,10 @@ website:
                 href: qc/tsnr.qmd
               - text: "4.5.4 EPI confounds (carpet plot)"
                 href: qc/confounds.qmd
-              - text: "4.5.5 EPI ICA-based artefact removal"
-                href: qc/ica.qmd
-              - text: "4.5.6 EPI spatial normalisation"
+              - text: "4.5.5 EPI spatial normalisation"
                 href: qc/epi-normalisation.qmd
+              - text: "Optional ICA-AROMA examples"
+                href: qc/ica.qmd
           - text: "4.6 Rerun if needed and export ratings"
             href: qc/rerun.qmd
           - text: "4.7 Cheat Sheet"

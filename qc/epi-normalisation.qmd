@@ -1,5 +1,5 @@
 ---
-title: "4.5.6 EPI spatial normalisation"
+title: "4.5.5 EPI spatial normalisation"
 ---
 
 ::: {.qc-page-tools}

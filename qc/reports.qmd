@@ -37,8 +37,9 @@ When you've reviewed the images, [rerun subjects if needed and export your ratin
 - [dT1w spatial normalisation](t1w-normalisation.qmd#example-of-a-good-subject-1)
 - [EPI tSNR](tsnr.qmd#example-of-a-good-subject-2)
 - [EPI confounds (carpet plot)](confounds.qmd#example-of-a-good-subject-3)
-- [EPI ICA-based artefact removal](ica.qmd#example-of-a-good-subject-4) (if your run produced this report)
 - [EPI spatial normalisation](epi-normalisation.qmd#example-of-a-good-subject-5)
+
+If your run produced an ICA-AROMA report, see the [optional ICA-AROMA examples](review.qmd#optional-ica-aroma).
 
 ## Keyboard shortcuts {#keyboard-shortcuts}
 

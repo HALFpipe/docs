@@ -11,7 +11,7 @@ In your HALFpipe report, open **Explore reports** and sort by image type. Choose
 
 ## Examples by report type {#examples-by-report-type}
 
-Review the report types your run produced. Use the ICA-AROMA examples if your run included that report.
+Review the report types your run produced.
 
 ::: {.qc-category-grid}
 
@@ -40,12 +40,6 @@ Review the report types your run produced. Use the ICA-AROMA examples if your ru
 :::
 
 ::: {.qc-nav-card}
-[EPI ICA-based artefact removal](ica.qmd){.qc-card-title}
-
-[![ICA AROMA: example of a good/ok subject](../images/qc/07-epi_ica_good.jpg){.qc-card-image .nolightbox}](ica.qmd)
-:::
-
-::: {.qc-nav-card}
 [EPI spatial normalisation](epi-normalisation.qmd){.qc-card-title}
 
 [![EPI spatial normalisation: example of a good subject](../images/qc/08-epi_spatial_normalisation_good-01.jpg){.qc-card-image .nolightbox}](epi-normalisation.qmd)
@@ -54,3 +48,7 @@ Review the report types your run produced. Use the ICA-AROMA examples if your ru
 :::
 
 When you've finished rating, [review any reruns and export your ratings](rerun.qmd).
+
+## Optional ICA-AROMA examples {#optional-ica-aroma}
+
+The five denoising pipelines in the current ENIGMA resting-state workflow do not use ICA-AROMA. HALFpipe can still generate this panel for QC. See the [ICA-AROMA examples](ica.qmd) if you need to interpret it.

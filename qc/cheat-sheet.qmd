@@ -58,7 +58,17 @@ Use this checklist once you are familiar with the [QC category examples](../qual
 : Table summary for EPI confounds (carpet plot) {.striped .hover}
 
 
-## EPI ICA-based artefact removal {#ica}
+## EPI spatial normalisation {#epi-normalisation}
+
+[View examples](epi-normalisation.qmd#example-of-a-good-subject-5)
+
+| **Good** | **Bad** |
+|---|---|
+| Overlap (i.e. match of structures) between the MNI template and the EPI registered in the MNI space | Misalignment of the EPI and the MNI template |
+| If parts of the brain are missing because the field of view of the scanner is limited, the EPI spatial normalisation does not have to be excluded <br><br>*e.g. cerebellum cut off in person with large head* |  |
+: Table summary for EPI spatial normalisation {.striped .hover}
+
+## Optional ICA-AROMA {#ica}
 
 [View examples](ica.qmd#example-of-a-good-subject-4) if your run produced an ICA-AROMA report.
 
@@ -69,15 +79,4 @@ Use this checklist once you are familiar with the [QC category examples](../qual
 | No sudden jumps/spikes |  |
 | No big spikes |  |
 : Table summary for EPI ICA-based artefact removal {.striped .hover}
-
-
-## EPI spatial normalisation {#epi-normalisation}
-
-[View examples](epi-normalisation.qmd#example-of-a-good-subject-5)
-
-| **Good** | **Bad** |
-|---|---|
-| Overlap (i.e. match of structures) between the MNI template and the EPI registered in the MNI space | Misalignment of the EPI and the MNI template |
-| If parts of the brain are missing because the field of view of the scanner is limited, the EPI spatial normalisation does not have to be excluded <br><br>*e.g. cerebellum cut off in person with large head* |  |
-: Table summary for EPI spatial normalisation {.striped .hover}
 <!-- qc-source-end -->
