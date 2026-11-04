@@ -3,9 +3,17 @@ title: "6. ENIGMA AN - Resting-state fMRI Group-level Analysis"
 lightbox: true
 ---
 
-Instructions adapted by Clara El Khantour from the original TaskBasedfMRI Genetics Manual written by Lea Waller, Susanne Erk and Gina-Isabelle Henze: [ENIGMATaskBasedfMRI\_2303\_GeneticsManual](https://docs.google.com/document/d/1awvW2UD3BITdkbl-EXF0qqrSy0G6ZOSCz4o07yv6lWk/edit?usp=sharing)
+::: {.author-text}
+<span style="color: #808080;">AUTHOR</span>
 
-Review and testing: Pierre Bergeret & Mathieu Dugré
+Adapted by Clara El Khantour from the original TaskBasedfMRI Genetics Manual by Lea Waller, Susanne Erk, and Gina-Isabelle Henze.
+
+Reviewed and tested by Pierre Bergeret and Mathieu Dugré.
+:::
+
+::: {.callout-note title="Work in progress"}
+This group-level analysis guide is being revised.
+:::
 
 [Prerequisites](#prerequisites)
 
