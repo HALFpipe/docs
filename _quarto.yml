@@ -32,26 +32,26 @@ website:
             href: quality-control.qmd
           - text: "4.2 Prepare for QC"
             href: qc/before-starting.qmd
-          - text: "4.4 Open the QC report"
+          - text: "4.3 Open the QC report"
             href: qc/reports.qmd
-          - section: "4.5 Review and rate images"
+          - section: "4.4 Review and rate images"
             href: qc/review.qmd
             contents:
-              - text: "4.5.1 T1w skull stripping"
+              - text: "4.4.1 T1w skull stripping"
                 href: qc/skull-stripping.qmd
-              - text: "4.5.2 dT1w spatial normalisation"
+              - text: "4.4.2 dT1w spatial normalisation"
                 href: qc/t1w-normalisation.qmd
-              - text: "4.5.3 EPI tSNR"
+              - text: "4.4.3 EPI tSNR"
                 href: qc/tsnr.qmd
-              - text: "4.5.4 EPI confounds (carpet plot)"
+              - text: "4.4.4 EPI confounds (carpet plot)"
                 href: qc/confounds.qmd
-              - text: "4.5.5 EPI spatial normalisation"
+              - text: "4.4.5 EPI spatial normalisation"
                 href: qc/epi-normalisation.qmd
               - text: "Optional ICA-AROMA examples"
                 href: qc/ica.qmd
-          - text: "4.6 Rerun if needed and export ratings"
+          - text: "4.5 Rerun if needed and export ratings"
             href: qc/rerun.qmd
-          - text: "4.7 Cheat Sheet"
+          - text: "4.6 Cheat Sheet"
             href: qc/cheat-sheet.qmd
       - section: "5. After QC"
         contents:

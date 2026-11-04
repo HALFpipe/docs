@@ -1,5 +1,5 @@
 ---
-title: "4.4 Open the QC report"
+title: "4.3 Open the QC report"
 ---
 
 ::: {.qc-page-tools}

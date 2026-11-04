@@ -1,5 +1,5 @@
 ---
-title: "4.5 Review and rate images"
+title: "4.4 Review and rate images"
 ---
 
 ::: {.qc-page-tools}
