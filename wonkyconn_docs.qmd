@@ -1,5 +1,5 @@
 ---
-title: "5.1 Wonkyconn"
+title: "5. Check functional connectivity with WonkyConn"
 format: 
   html:
     css: styles.css

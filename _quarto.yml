@@ -51,15 +51,13 @@ website:
             href: qc/rerun.qmd
           - text: "4.5 Cheat Sheet"
             href: qc/cheat-sheet.qmd
-      - section: "5. After QC"
-        contents:
-          - text: "5.1 WonkyConn"
-            href: wonkyconn_docs.qmd
-          - text: "5.2 Group-level analysis: ENIGMA-AN"
-            href: group-level.qmd
-      - text: "6. Troubleshooting"
+      - text: "5. Check functional connectivity with WonkyConn"
+        href: wonkyconn_docs.qmd
+      - text: "6. Run group-level analysis (ENIGMA-AN)"
+        href: group-level.qmd
+      - text: "7. Troubleshooting"
         href: troubleshooting.qmd
-      - text: "7. About and citation"
+      - text: "8. About and citation"
         href: about.qmd
 
   announcement: 

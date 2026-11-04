@@ -1,5 +1,5 @@
 ---
-title: "5.2 ENIGMA AN - Resting-state fMRI Group-level Analysis"
+title: "6. ENIGMA AN - Resting-state fMRI Group-level Analysis"
 lightbox: true
 ---
 

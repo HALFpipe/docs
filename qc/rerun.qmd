@@ -26,5 +26,5 @@ Before exporting, revisit subjects flagged for high mean framewise displacement 
 
 ![](../images/qc/09-setp2b.png)
 
-For group analysis with HALFpipe, supply the saved file as described in [5.2 Group-level analysis](../group-level.qmd). HALFpipe uses the supplied ratings to skip scans marked bad. See that guide for how to pass the file and specify any separate motion cutoffs.
+For group analysis with HALFpipe, supply the saved file as described in [6. Run group-level analysis (ENIGMA-AN)](../group-level.qmd). HALFpipe uses the supplied ratings to skip scans marked bad. See that guide for how to pass the file and specify any separate motion cutoffs.
 <!-- qc-source-end -->

@@ -13,7 +13,8 @@ fly.
 - [Choose an interface and configure resting-state analysis (2)](configure.qmd) if HALFpipe is installed. Start with the terminal UI.
 - [Run and check outputs (3)](check_run.qmd) if your analysis is configured.
 - [Review your outputs for quality (4)](quality-control.qmd) if preprocessing and feature extraction are complete.
-- After QC, see [WonkyConn (5.1)](wonkyconn_docs.qmd) or [ENIGMA-AN group-level analysis (5.2)](group-level.qmd), depending on your workflow.
+- [Check functional connectivity with WonkyConn (5)](wonkyconn_docs.qmd) to review connectivity outputs.
+- [Run ENIGMA-AN group-level analysis (6)](group-level.qmd) when your derivatives and QC ratings are ready.
 
 `HALFpipe` relies on tools from well-established neuroimaging software packages, either directly or through our dependencies, including [ANTs](https://antspy.readthedocs.io/), [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/),  [FSL](http://fsl.fmrib.ox.ac.uk/), [AFNI](https://afni.nimh.nih.gov/>) and [nipype](https://nipype.readthedocs.io/>).
 We strongly urge users to acknowledge these tools when publishing results obtained with HALFpipe.
