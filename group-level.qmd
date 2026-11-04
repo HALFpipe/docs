@@ -182,11 +182,11 @@ docker run \
  --input-directory \
      /mnt/data/berlin/derivatives/halfpipe \
      /mnt/data/paris/derivatives/halfpipe \
- --qc-exclude-file /mnt/data/halfpipe/exclude.json \
+ --qc-exclude-files /mnt/data/halfpipe/exclude.json \
  --fd-mean-cutoff 0.5 \
  --fd-perc-cutoff 10 \
  --output-directory /mnt/data/cwas-output \
- --include feature /mnt/feature-list.txt \
+ --include-list feature /mnt/feature-list.txt \
  --spreadsheet /mnt/data/participants.tsv \
  --id-column id \
  --continuous-variable age \
@@ -207,11 +207,11 @@ singularity run \
  --input-directory \
      /mnt/data/berlin/derivatives/halfpipe \
      /mnt/data/paris/derivatives/halfpipe \
- --qc-exclude-file /mnt/data/halfpipe/exclude.json \
+ --qc-exclude-files /mnt/data/halfpipe/exclude.json \
  --fd-mean-cutoff 0.5 \
  --fd-perc-cutoff 10 \
  --output-directory /mnt/data/cwas-output \
- --include feature /mnt/feature-list.txt \
+ --include-list feature /mnt/feature-list.txt \
  --spreadsheet /mnt/data/participants.tsv \
  --id-column id \
  --continuous-variable age \
@@ -244,11 +244,11 @@ singularity run \
 | Command text |  | Explanation |
 | :---- | ----- | :---- |
 | **\--input-directory** |  | Specify one or more HALFpipe working directories that have finished processing and quality control by pointing to the derivatives/halfpipe folder in your working directory. For example, if you have one working directory (the most common case): \--input-directory /mnt/data/berlin/derivatives/halfpipe \\ And if you have, for example, processed two study sites in two different working directories: \--input-directory \\     /mnt/data/berlin/derivatives/halfpipe \\     /mnt/data/paris/derivatives/halfpipe \\ Please keep in mind to update the **\--bind** flag accordingly, so that your data is available in the container. |
-| **\--qc-exclude-file** |  | Specify the path of one or more output files from the [quality assessment step of the imaging manual](https://fmri.science/halfpipe/quality-control.html). This way scans with bad quality will automatically be skipped. For example \--qc-exclude-file /mnt/data/halfpipe/exclude.json \\ if you have only one file, or if you have multiple files \--qc-exclude-file /mnt/data/halfpipe/exclude\_lea.json \\     /mnt/data/halfpipe/exclude\_susanne.json \\ |
+| **\--qc-exclude-files** |  | Specify the path of one or more output files from the [quality assessment step of the imaging manual](https://fmri.science/halfpipe/quality-control.html). This way scans with bad quality will automatically be skipped. For example \--qc-exclude-files /mnt/data/halfpipe/exclude.json \\ if you have only one file, or if you have multiple files \--qc-exclude-files /mnt/data/halfpipe/exclude\_lea.json \\     /mnt/data/halfpipe/exclude\_susanne.json \\ |
 | **\--fd-mean-cutoff \--fd-perc-cutoff** |  | Specify exclusion criteria based on image quality metrics. These will be processed in addition to the exclude files from the previous step. \--fd-mean-cutoff 0.5 \\ \--fd-perc-cutoff 10 \\ |
 | **\--output-directory** |  | Specify the folder where the phenotype file will be placed. This should be the same folder from the previous step. \--output-directory /mnt/data/gwas \\ |
 | \--aggregate |  | *Optional.* If you have multiple runs or sessions, then you can use this flag to aggregate them. For example, if you have two runs for each participant \--aggregate run \\ will give you one averaged output per participant. Alternatively, for multiple  sessions \--aggregate ses \\ |
-| \--include \--exclude |  | We will run the analysis only on correlation matrices and seed-based maps.  To do that, we need to specify  \--include feature feature-list.txt \\  This option works for any tag in the input data, including “sub” for subjects, “run”, “ses” for session, “taskcontrast” for task contrasts, etc. |
+| \--include-list \--exclude |  | We will run the analysis only on correlation matrices and seed-based maps.  To do that, we need to specify  \--include-list feature feature-list.txt \\  This option works for any tag in the input data, including “sub” for subjects, “run”, “ses” for session, “taskcontrast” for task contrasts, etc. |
 
 * Next we need to point to the spreadsheet file that we created in the previous section.
 
