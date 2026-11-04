@@ -212,7 +212,7 @@ echo "Done. See count-files-subject-list.txt for subject file counts."
 
 4. **Check the Generated Files**
 
-The command writes `count-files-subject-list.txt` in your working directory. It lists subject IDs and the number of output files found for each subject.
+The command writes `count-files-subject-list.txt` in your working directory. It lists one count per `func` directory. A subject with multiple sessions can appear on multiple rows, and a subject without a `func` directory will be absent. Use the [summary report](qc/before-starting.qmd#step-1-open-the-summary-report-in-the-reports-folder) to check for missing outputs.
 
 ---
 
