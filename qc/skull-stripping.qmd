@@ -1,5 +1,5 @@
 ---
-title: "T1w skull stripping"
+title: "4.5.1 T1w skull stripping"
 ---
 
 ::: {.qc-page-tools}

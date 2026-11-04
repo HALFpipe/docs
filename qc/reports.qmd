@@ -1,5 +1,5 @@
 ---
-title: "Step 2: Open the index.html page"
+title: "4.4 Step 2: Open the index.html page"
 ---
 
 ::: {.qc-page-tools}

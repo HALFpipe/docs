@@ -1,5 +1,5 @@
 ---
-title: "Installation instructions"
+title: "1. Installation instructions"
 format: 
   html:
     css: styles.css

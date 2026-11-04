@@ -1,5 +1,5 @@
 ---
-title: "Before starting the QC"
+title: "4.2 Before starting the QC"
 ---
 
 ::: {.qc-page-tools}
