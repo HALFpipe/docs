@@ -30,7 +30,7 @@ website:
         contents:
           - text: "4.1 Overview"
             href: quality-control.qmd
-          - text: "4.2–4.3 Prepare for QC"
+          - text: "4.2 Prepare for QC"
             href: qc/before-starting.qmd
           - text: "4.4 Open the QC report"
             href: qc/reports.qmd

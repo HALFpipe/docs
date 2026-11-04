@@ -1,5 +1,5 @@
 ---
-title: "4.2–4.3 Prepare for QC"
+title: "4.2 Prepare for QC"
 ---
 
 ::: {.qc-page-tools}

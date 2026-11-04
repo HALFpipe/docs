@@ -17,7 +17,7 @@ Quality control (QC) is the visual review of HALFpipe outputs. First use [3. Run
 ::: {.qc-workflow-grid}
 
 ::: {.qc-nav-card}
-[4.2–4.3 Prepare for QC](qc/before-starting.qmd){.qc-card-title}
+[4.2 Prepare for QC](qc/before-starting.qmd){.qc-card-title}
 
 Find the reports folder and check the summary report to see which outputs are ready to review.
 :::
