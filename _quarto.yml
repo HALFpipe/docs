@@ -36,7 +36,8 @@ website:
             href: qc/summary-report.qmd
           - text: "4.4 Open the QC report"
             href: qc/reports.qmd
-          - section: "4.5 QC categories"
+          - section: "4.5 Review and rate images"
+            href: qc/review.qmd
             contents:
               - text: "4.5.1 T1w skull stripping"
                 href: qc/skull-stripping.qmd

@@ -31,7 +31,13 @@ Check which outputs are ready to review.
 ::: {.qc-nav-card}
 [4.4 Open the QC report](qc/reports.qmd){.qc-card-title}
 
-Open the browser report and rate the available images using the examples in section 4.5.
+Open `reports/index.html` in your browser and choose **Explore reports**.
+:::
+
+::: {.qc-nav-card}
+[4.5 Review and rate images](qc/review.qmd){.qc-card-title}
+
+Inspect each available image and record a rating. Choose a report type to see what to look for and compare examples.
 :::
 
 ::: {.qc-nav-card}
@@ -42,49 +48,9 @@ Review any updated outputs, then save your ratings.
 
 :::
 
-## QC categories
+## Examples by report type {#qc-categories}
 
-Use the examples to see what to look for in each report type. The ICA-based examples apply when your run produced an ICA-AROMA report.
-
-::: {.qc-category-grid}
-
-::: {.qc-nav-card}
-[T1w skull stripping](qc/skull-stripping.qmd){.qc-card-title}
-
-[![T1w skull stripping: examples of good subjects](images/qc/03-t1w_skull_stripping_good-03_crop.png){.qc-card-image .nolightbox}](qc/skull-stripping.qmd)
-:::
-
-::: {.qc-nav-card}
-[dT1w spatial normalisation](qc/t1w-normalisation.qmd){.qc-card-title}
-
-[![T1w spatial normalisation: example of a good subject](images/qc/04-dt1w_spatial_normalisation_good-03.png){.qc-card-image .nolightbox}](qc/t1w-normalisation.qmd)
-:::
-
-::: {.qc-nav-card}
-[EPI tSNR](qc/tsnr.qmd){.qc-card-title}
-
-[![tSNR: example of a good subject](images/qc/05-epi_tsnr_good-01.png){.qc-card-image .nolightbox}](qc/tsnr.qmd)
-:::
-
-::: {.qc-nav-card}
-[EPI confounds (carpet plot)](qc/confounds.qmd){.qc-card-title}
-
-[![Example of a good subject: no clear changes in the heatmap, low motion, no large jumps/ changes](images/qc/06-epi_confounds_good-01.png){.qc-card-image .nolightbox}](qc/confounds.qmd)
-:::
-
-::: {.qc-nav-card}
-[EPI ICA-based artefact removal](qc/ica.qmd){.qc-card-title}
-
-[![ICA AROMA: example of a good/ok subject](images/qc/07-epi_ica_good.jpg){.qc-card-image .nolightbox}](qc/ica.qmd)
-:::
-
-::: {.qc-nav-card}
-[EPI spatial normalisation](qc/epi-normalisation.qmd){.qc-card-title}
-
-[![EPI spatial normalisation: example of a good subject](images/qc/08-epi_spatial_normalisation_good-01.jpg){.qc-card-image .nolightbox}](qc/epi-normalisation.qmd)
-:::
-
-:::
+[Browse the example galleries](qc/review.qmd#examples-by-report-type) for the report you are rating.
 
 <details class="qc-credits">
 <summary>About this manual</summary>

@@ -1,0 +1,56 @@
+---
+title: "4.5 Review and rate images"
+---
+
+::: {.qc-page-tools}
+[Rating instructions](reports.qmd#explore-reports){.btn .btn-outline-secondary .btn-sm}
+[Cheat Sheet](cheat-sheet.qmd){.btn .btn-outline-secondary .btn-sm}
+:::
+
+In your HALFpipe report, open **Explore reports** and sort by image type. Choose the matching report type below to see what to look for and compare examples as you rate. If you're unsure about an image, switch to sorting by subject and check that participant's other reports.
+
+## Examples by report type {#examples-by-report-type}
+
+Review the report types your run produced. Use the ICA-AROMA examples if your run included that report.
+
+::: {.qc-category-grid}
+
+::: {.qc-nav-card}
+[T1w skull stripping](skull-stripping.qmd){.qc-card-title}
+
+[![T1w skull stripping: examples of good subjects](../images/qc/03-t1w_skull_stripping_good-03_crop.png){.qc-card-image .nolightbox}](skull-stripping.qmd)
+:::
+
+::: {.qc-nav-card}
+[dT1w spatial normalisation](t1w-normalisation.qmd){.qc-card-title}
+
+[![T1w spatial normalisation: example of a good subject](../images/qc/04-dt1w_spatial_normalisation_good-03.png){.qc-card-image .nolightbox}](t1w-normalisation.qmd)
+:::
+
+::: {.qc-nav-card}
+[EPI tSNR](tsnr.qmd){.qc-card-title}
+
+[![tSNR: example of a good subject](../images/qc/05-epi_tsnr_good-01.png){.qc-card-image .nolightbox}](tsnr.qmd)
+:::
+
+::: {.qc-nav-card}
+[EPI confounds (carpet plot)](confounds.qmd){.qc-card-title}
+
+[![Example of a good subject: no clear changes in the heatmap, low motion, no large jumps/ changes](../images/qc/06-epi_confounds_good-01.png){.qc-card-image .nolightbox}](confounds.qmd)
+:::
+
+::: {.qc-nav-card}
+[EPI ICA-based artefact removal](ica.qmd){.qc-card-title}
+
+[![ICA AROMA: example of a good/ok subject](../images/qc/07-epi_ica_good.jpg){.qc-card-image .nolightbox}](ica.qmd)
+:::
+
+::: {.qc-nav-card}
+[EPI spatial normalisation](epi-normalisation.qmd){.qc-card-title}
+
+[![EPI spatial normalisation: example of a good subject](../images/qc/08-epi_spatial_normalisation_good-01.jpg){.qc-card-image .nolightbox}](epi-normalisation.qmd)
+:::
+
+:::
+
+When you've finished rating, [review any reruns and export your ratings](rerun.qmd).
