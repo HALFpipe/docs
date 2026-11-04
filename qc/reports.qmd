@@ -1,5 +1,5 @@
 ---
-title: "4.3 Open the QC report"
+title: "4.3 Rate the reports"
 ---
 
 ::: {.qc-page-tools}
@@ -33,13 +33,45 @@ When you've reviewed the images, [rerun subjects if needed and export your ratin
 
 ## Examples by report type {#examples-by-report-type}
 
-- [T1w skull stripping](skull-stripping.qmd#example-of-a-good-subject)
-- [dT1w spatial normalisation](t1w-normalisation.qmd#example-of-a-good-subject-1)
-- [EPI tSNR](tsnr.qmd#example-of-a-good-subject-2)
-- [EPI confounds (carpet plot)](confounds.qmd#example-of-a-good-subject-3)
-- [EPI spatial normalisation](epi-normalisation.qmd#example-of-a-good-subject-5)
+Review the report types your run produced.
 
-If your run produced an ICA-AROMA report, see the [optional ICA-AROMA examples](review.qmd#optional-ica-aroma).
+::: {.qc-category-grid}
+
+::: {.qc-nav-card}
+[T1w skull stripping](skull-stripping.qmd){.qc-card-title}
+
+[![T1w skull stripping: examples of good subjects](../images/qc/03-t1w_skull_stripping_good-03_crop.png){.qc-card-image .nolightbox}](skull-stripping.qmd)
+:::
+
+::: {.qc-nav-card}
+[dT1w spatial normalisation](t1w-normalisation.qmd){.qc-card-title}
+
+[![T1w spatial normalisation: example of a good subject](../images/qc/04-dt1w_spatial_normalisation_good-03.png){.qc-card-image .nolightbox}](t1w-normalisation.qmd)
+:::
+
+::: {.qc-nav-card}
+[EPI tSNR](tsnr.qmd){.qc-card-title}
+
+[![tSNR: example of a good subject](../images/qc/05-epi_tsnr_good-01.png){.qc-card-image .nolightbox}](tsnr.qmd)
+:::
+
+::: {.qc-nav-card}
+[EPI confounds (carpet plot)](confounds.qmd){.qc-card-title}
+
+[![Example of a good subject: no clear changes in the heatmap, low motion, no large jumps/ changes](../images/qc/06-epi_confounds_good-01.png){.qc-card-image .nolightbox}](confounds.qmd)
+:::
+
+::: {.qc-nav-card}
+[EPI spatial normalisation](epi-normalisation.qmd){.qc-card-title}
+
+[![EPI spatial normalisation: example of a good subject](../images/qc/08-epi_spatial_normalisation_good-01.jpg){.qc-card-image .nolightbox}](epi-normalisation.qmd)
+:::
+
+:::
+
+## Optional ICA-AROMA examples {#optional-ica-aroma}
+
+The five denoising pipelines in the current ENIGMA resting-state workflow do not use ICA-AROMA. HALFpipe can still generate this panel for QC. See the [ICA-AROMA examples](ica.qmd) if you need to interpret it.
 
 ## Keyboard shortcuts {#keyboard-shortcuts}
 

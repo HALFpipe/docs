@@ -41,7 +41,7 @@ Open `reports/reportpreproc.txt` in a text editor. The example below shows how t
 
 <span id="tabset-1-1"></span>
 
-**All expected outputs are present.** Continue to [4.3 Open the QC report](reports.qmd).
+**All expected outputs are present.** Continue to [4.3 Rate the reports](reports.qmd).
 
 <span id="tabset-1-2"></span>
 <span id="step-1.1.1-re-run-missing-or-failed-subjects"></span>

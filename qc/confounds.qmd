@@ -1,9 +1,9 @@
 ---
-title: "4.4.4 EPI confounds (carpet plot)"
+title: "4.3.4 EPI confounds (carpet plot)"
 ---
 
 ::: {.qc-page-tools}
-[All report types](review.qmd#examples-by-report-type){.btn .btn-outline-secondary .btn-sm}
+[All report types](reports.qmd#examples-by-report-type){.btn .btn-outline-secondary .btn-sm}
 [Back to rating](reports.qmd#explore-reports){.btn .btn-outline-secondary .btn-sm}
 [Cheat Sheet](cheat-sheet.qmd){.btn .btn-outline-secondary .btn-sm}
 [Examples](#example-of-a-good-subject-3){.btn .btn-outline-secondary .btn-sm}

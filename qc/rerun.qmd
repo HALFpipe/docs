@@ -1,5 +1,5 @@
 ---
-title: "4.5 Rerun if needed and export ratings"
+title: "4.4 Export ratings and rerun if needed"
 ---
 
 ::: {.qc-page-tools}

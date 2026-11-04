@@ -23,19 +23,13 @@ Find the reports folder and check the summary report to see which outputs are re
 :::
 
 ::: {.qc-nav-card}
-[4.3 Open the QC report](qc/reports.qmd){.qc-card-title}
+[4.3 Rate the reports](qc/reports.qmd){.qc-card-title}
 
-Open `reports/index.html` in your browser and choose **Explore reports**.
+Open `reports/index.html`, choose **Explore reports**, and rate the available images. Use the examples for each report type as a reference.
 :::
 
 ::: {.qc-nav-card}
-[4.4 Review and rate images](qc/review.qmd){.qc-card-title}
-
-Inspect each available image and record a rating. Choose a report type to see what to look for and compare examples.
-:::
-
-::: {.qc-nav-card}
-[4.5 Rerun if needed and export ratings](qc/rerun.qmd){.qc-card-title}
+[4.4 Export ratings and rerun if needed](qc/rerun.qmd){.qc-card-title}
 
 Review any updated outputs, then save your ratings.
 :::
@@ -44,7 +38,7 @@ Review any updated outputs, then save your ratings.
 
 ## Examples by report type {#qc-categories}
 
-[Browse the example galleries](qc/review.qmd#examples-by-report-type) for the report you are rating.
+[Browse the example galleries](qc/reports.qmd#examples-by-report-type) for the report you are rating.
 
 <details class="qc-credits">
 <summary>About this manual</summary>
