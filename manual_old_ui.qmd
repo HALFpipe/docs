@@ -1,5 +1,5 @@
 ---
-title: "Resting-State fMRI with the old UI"
+title: "2.1 Resting-state fMRI with the terminal UI"
 lightbox: true
 format: 
   html:
@@ -912,7 +912,7 @@ We have completed specifying all pipelines for the available features, and **no 
 
 <span style="background-color: #cce5ff;">Specify group-level model?</span> <span style="background-color: #f8d7da; text-decoration: underline;">No</span> For now, you can choose No, however, if you would like to have group statistics, you can select Yes, load in a file with group and covariate information and choose your preferred settings
 
-**You have now finished specifying the settings\! 🎉 See the [Check and run page](check_run.qmd#) to see the next steps.**
+**You have now finished specifying the settings\! 🎉 See the [3. Run and check outputs](check_run.qmd) to see the next steps.**
 
 :::{.footnotes}
 

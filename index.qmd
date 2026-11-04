@@ -10,7 +10,7 @@ fly.
 ## Where to start
 
 - [Set up HALFpipe (1)](installation.qmd) if you need to install the software or prepare your inputs.
-- [Configure your analysis in the graphical UI (2.1)](new_ui.qmd) or [terminal UI (2.2)](manual_old_ui.qmd) if HALFpipe is installed.
+- [Choose an interface and configure resting-state analysis (2)](configure.qmd) if HALFpipe is installed. Start with the terminal UI.
 - [Run and check outputs (3)](check_run.qmd) if your analysis is configured.
 - [Review your outputs for quality (4)](quality-control.qmd) if preprocessing and feature extraction are complete.
 - After QC, see [WonkyConn (5.1)](wonkyconn_docs.qmd) or [ENIGMA-AN group-level analysis (5.2)](group-level.qmd), depending on your workflow.
