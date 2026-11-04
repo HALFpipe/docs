@@ -4,11 +4,9 @@ title: "2. Configure resting-state analysis"
 
 ## Terminal or graphical?
 
-Start with the **terminal UI**, the default interface in HALFpipe. It guides you through configuring your data, preprocessing and features.
+Both interfaces run in your terminal, including over SSH.
 
-- [2.1 Terminal UI (recommended)](manual_old_ui.qmd)
-- [2.2 Graphical UI (in development)](new_ui.qmd)
-
-Both interfaces run inside the terminal, including over SSH. The newer graphical UI uses Textual to draw widgets such as tabs and buttons in the terminal. It does not require X forwarding or a desktop session.
+- [2.1 Terminal UI (recommended)](manual_old_ui.qmd) is the default. Use this guide to set up your data, preprocessing, and features.
+- [2.2 Graphical UI (in development)](new_ui.qmd) adds tabs and buttons inside the terminal using Textual. You can use it without X forwarding or a desktop session.
 
 Once your analysis is configured, continue to [3. Run and check outputs](check_run.qmd).

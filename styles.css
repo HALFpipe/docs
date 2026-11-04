@@ -71,3 +71,25 @@ table.bordered td {
   outline-offset: 3px;
 }
 .qc-manual .qc-credits > summary { cursor: pointer; margin: 1rem 0; }
+
+.start-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: .75rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.start-card {
+  border: 1px solid #d7dde3;
+  border-radius: .5rem;
+  padding: .9rem 1rem;
+}
+
+.start-card p:first-child {
+  font-weight: 600;
+  margin-bottom: .35rem;
+}
+
+.start-card p:last-child {
+  margin-bottom: 0;
+}

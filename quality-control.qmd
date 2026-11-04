@@ -6,10 +6,10 @@ format:
     include-after-body: qc-legacy-links.html
 ---
 
-Quality control (QC) is the visual review of HALFpipe outputs. First use [3. Run and check outputs](check_run.qmd) to confirm that processing finished and the expected files are present. Then use this guide to judge whether those outputs are usable.
+Use this guide to review and rate HALFpipe’s output images. If you’re still checking for missing files or failed runs, start with [3. Run and check outputs](check_run.qmd).
 
-[Start the QC review](qc/before-starting.qmd){.btn .btn-primary}
-[Go to rating instructions](qc/reports.qmd#explore-reports){.btn .btn-outline-primary}
+[Prepare for QC](qc/before-starting.qmd){.btn .btn-primary}
+[Rate the reports](qc/reports.qmd#explore-reports){.btn .btn-outline-primary}
 [Cheat Sheet](qc/cheat-sheet.qmd){.btn .btn-outline-primary}
 
 ## Workflow
@@ -31,7 +31,7 @@ Open `reports/index.html`, choose **Explore reports**, and rate the available im
 ::: {.qc-nav-card}
 [4.4 Export ratings and rerun if needed](qc/rerun.qmd){.qc-card-title}
 
-Review any updated outputs, then save your ratings.
+If you rerun a subject, review the new images first. Export your final ratings from the report menu.
 :::
 
 :::

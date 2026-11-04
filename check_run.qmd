@@ -226,7 +226,7 @@ If crash files are present, inspect `err.txt` and see [Troubleshooting](troubles
 
 6. **Validate and Interpret the Output**
 
-**a.** Open `count-files-subject-list.txt` and compare it with the contents of `derivatives/halfpipe/` to verify file counts per subject.
+**a.** Open `count-files-subject-list.txt` and check whether the counts match the runs and sessions you expected to process.
 
 **b.** If some subjects have fewer files than expected:
 - Open `err.txt` to check for errors.
@@ -236,7 +236,7 @@ Subjects may legitimately have fewer files (e.g., fewer runs or sessions).
 _Cross-check with your original dataset before considering a re-run._
 :::
 
-If the expected outputs are present, continue to the [Quality Control Guide](quality-control.qmd). If outputs are incomplete, [rerun the affected subjects](#rerun-halfpipe).
+If the expected outputs are present, continue to [4. Quality control](quality-control.qmd). If outputs are incomplete, [rerun the affected subjects](#rerun-halfpipe).
 
 
 ![](images/check_run/1.png)
