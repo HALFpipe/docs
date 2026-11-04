@@ -39,7 +39,7 @@ We aknowledge that the manuals were adapted from the **MDD ENIGMA resting-state 
 - [Pierre Bergeret](https://github.com/pbergeret12)
 - [Clara El Khantour](https://github.com/claraElk)
 - [Lea Waller](https://github.com/HippocampusGirl)
-- Amber Uhls
+- [Amber Uhls](https://github.com/amberuhls)
 
 **PI and project supervision**
 
