@@ -31,7 +31,7 @@ Review and testing: Pierre Bergeret & Mathieu Dugré
 
 ## Data preprocessing, feature extraction and Quality Control {#data-preprocessing-feature-extraction-and-quality-control}
 
-This manual assumes that you have already run HALFpipe for the preprocessing, feature extraction, and QC. If not, please check: [https\://fmri.science/halfpipe/](https://fmri.science/halfpipe/) 
+This manual assumes that you have already run HALFpipe for the preprocessing, feature extraction, and QC. If you are still preparing your inputs, see [2. Configure resting-state analysis](configure.qmd), [3. Run and check outputs](check_run.qmd), and [4. Quality control](quality-control.qmd). To save your ratings, follow [4.4 Export ratings and rerun if needed](qc/rerun.qmd#export-your-qc-ratings).
 
 After completing the preprocessing and feature extraction, we are now ready to perform group-level analysis. To do so, we will need to download a more recent version of HALFpipe. 
 

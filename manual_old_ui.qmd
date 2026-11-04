@@ -120,6 +120,8 @@ By adding more CPUs, you can add the HALFpipe flag `--nipype-n-procs` to acceler
 
 ## 1.2 On a High-Performance Cluster (HPC)
 
+<span id="launch-on-hpc"></span>
+
 1. Open a terminal session and connect to your HPC.
 
 2. Running an Interactive Job on the cluster
@@ -191,7 +193,7 @@ You have now oppened the user interface, which should look like this:
 ![](images/old_ui/ui_first.png)
 
 The prompts that will be displayed by HALFpipe are shown below in <span style="background-color: #cce5ff;">blue</span>, examples are in <span style="background-color: #fff3cd;">yellow</span>, answers that need to be input/selected are <span style="background-color: #f8d7da; text-decoration: underline;">underscored and red</span>.  
-We will first specify the Data (**see section 2.1**) and then the Features (**see section 2.2**).
+First [specify your data](#data), then [choose your features](#features).
 
 ::: {.callout-note collapse="false" title="Note"}
 
@@ -199,24 +201,24 @@ If you want to go back/deselect an option, you can use Ctrl+C
 
 :::
 
-## 2.1 Data
+## Specify your data {#data}
 
 1. <span style="background-color: #cce5ff;">Specify Working directory:</span> Your output folder.  
    - *You can navigate using the Up/Down arrow keys ↓ to go to a folder and the right arrow key → to select this folder.*  
    - *Do this until you get to path/to/your_working_directory*
 
 2. <span style="background-color: #cce5ff;">Is the data available in BIDS format?</span>  
-   If your data is already in BIDS format, follow the instructions of point 2.1. If not, follow the instructions of point 2.2. 
+   If your data is already in BIDS format, use the **BIDS data** tab. Otherwise, use the **Data outside BIDS** tab.
 
 ::: {.callout-tip collapse="true" title="If you're unsure whether your data is in BIDS"}
 
-   When running on a local computer, be aware that the BIDS format is very strict. If you're unsure whether your data is properly formatted, we recommend answering "No" to this question and specifying the file name manually, as shown in Point 2.2. This can help prevent errors during execution.*
+   When running on a local computer, be aware that the BIDS format is very strict. If you're unsure whether your data is properly formatted, we recommend answering "No" to this question and specifying the file name manually, as shown in the **Data outside BIDS** tab. This can help prevent errors during execution.*
 
 :::
 
 ::: {.panel-tabset}
 
-### 2.1 If your data is in BIDS
+### BIDS data
 
 <span style="background-color: #cce5ff;">Is the data available in BIDS format?</span> <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>  
 <span style="background-color: #cce5ff;">Specify the path of the BIDS directory</span>  
@@ -233,7 +235,7 @@ You can now directly go to **point 3**.
 
 ---
 
-### 2.2 If your data is not in BIDS
+### Data outside BIDS
 
 <span style="background-color: #cce5ff;">Is the data available in BIDS format?</span> <span style="background-color: #f8d7da; text-decoration: underline;">No</span>
 
@@ -312,7 +314,7 @@ If the data was imported from a BIDS directory, Field maps will be omitted.
   6. <span style="background-color: #cce5ff;">Specify first-level features?</span> : 
   Select <span style="background-color: #f8d7da; text-decoration: underline;">Yes</span>
 
-## 2.2 Features
+## Choose your features {#features}
 
 ::: {.callout-important collapse="false"}
 # Important – Correction to the a/cCompCor Pipeline Description
