@@ -12,7 +12,7 @@ title: "4.5.1 T1w skull stripping"
 <span id="t1w-skull-stripping"></span>
 
 <!-- qc-source-start -->
-Skull stripping is the process separating the brain (cortex and cerebellum) from the skull. The red line follows the outline of the brain and it separates it from the skull.
+Skull stripping separates the brain from surrounding tissue. In the report, follow the red outline on each slice to check whether the cortex and cerebellum are included and whether tissue outside the brain has been left inside the outline.
 
 ## **<span style="color: #28a745;">Example of a good subject</span>**  {#example-of-a-good-subject}
 
@@ -81,7 +81,7 @@ Skull stripping is the process separating the brain (cortex and cerebellum) from
 | **Good** | **Bad** |
 |:---|:---|
 | The brain is fully inside the red line | Structures like the cranium or the eyes are inside the red line |
-| No important brain structures are outside of the red line red line follows the natural outline of the brain | Important brain structures are missing inside of the red line |
+| The red line follows the natural outline of the brain and includes all important brain structures | Important brain structures are missing inside of the red line |
 : Table summary for skull stripping {.striped .hover}
 
 :::{.callout-note collapse="false"}

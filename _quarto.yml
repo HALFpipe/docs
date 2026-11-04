@@ -30,7 +30,7 @@ website:
         contents:
           - text: "4.1 Overview"
             href: quality-control.qmd
-          - text: "4.2 Before starting the QC"
+          - text: "4.2 Prepare the reports folder"
             href: qc/before-starting.qmd
           - text: "4.3 Open the summary report"
             href: qc/summary-report.qmd
@@ -50,7 +50,7 @@ website:
                 href: qc/ica.qmd
               - text: "4.5.6 EPI spatial normalisation"
                 href: qc/epi-normalisation.qmd
-          - text: "4.6 Rerun subjects if needed"
+          - text: "4.6 Rerun if needed and export ratings"
             href: qc/rerun.qmd
           - text: "4.7 Cheat Sheet"
             href: qc/cheat-sheet.qmd

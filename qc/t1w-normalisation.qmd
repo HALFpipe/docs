@@ -12,9 +12,7 @@ title: "4.5.2 dT1w spatial normalisation"
 <span id="dt1w-spatial-normalisation"></span>
 
 <!-- qc-source-start -->
-This QC step shows the registration of the T1 image to MNI space.
-
-The registered T1 image is shown in the background with a brain atlas in MNI space as an overlay.
+This report shows how the T1 anatomical image aligns to the MNI reference space. The registered T1 image is the background. Compare its anatomy with the brain atlas overlaid on top.
 
 
 ## **<span style="color: #28a745;">Example of a good subject</span>**  {#example-of-a-good-subject-1}

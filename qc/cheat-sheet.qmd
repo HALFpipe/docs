@@ -9,12 +9,12 @@ title: "4.7 Cheat Sheet"
 <span id="cheat-sheet"></span>
 
 <!-- qc-source-start -->
-This section brings together all the summary tables and can serve as a checklist for quality control once you're familiar with both good and bad examples. However, we still recommend first going through the manual step by step and reviewing the provided examples carefully to build experience.
+Use this checklist once you are familiar with the [QC category examples](../quality-control.qmd#qc-categories). If you are reviewing HALFpipe outputs for the first time, start with the example pages to see how each finding looks in a report.
 
 | **Good** | **Bad** |
 |:---|:---|
 | The brain is fully inside the red line | Structures like the cranium or the eyes are inside the red line |
-| No important brain structures are outside of the red line red line follows the natural outline of the brain | Important brain structures are missing inside of the red line |
+| The red line follows the natural outline of the brain and includes all important brain structures | Important brain structures are missing inside of the red line |
 : Table summary for skull stripping {.striped .hover}
 
 

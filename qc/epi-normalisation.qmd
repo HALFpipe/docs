@@ -12,7 +12,7 @@ title: "4.5.6 EPI spatial normalisation"
 <span id="epi-spatial-normalisation"></span>
 
 <!-- qc-source-start -->
-This QC step shows the registration of the EPI image to MNI space.
+This report shows how the EPI functional image aligns to the MNI template. Compare corresponding brain structures in the two images.
 
 ## **<span style="color: #28a745;">Example of a good subject</span>**  {#example-of-a-good-subject-5}
 

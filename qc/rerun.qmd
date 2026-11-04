@@ -1,5 +1,5 @@
 ---
-title: "4.6 Rerun subjects if needed"
+title: "4.6 Rerun if needed and export ratings"
 ---
 
 ::: {.qc-page-tools}
@@ -10,17 +10,21 @@ title: "4.6 Rerun subjects if needed"
 <span id="step-2b-rerun-subjects-if-needed"></span>
 
 <!-- qc-source-start -->
-If a subject is rated as ‘bad’ in one of the functional QC steps, it will be excluded. You can try to rerun these subjects.
+If you decide to rerun a subject after QC, follow the [HALFpipe rerun instructions](../check_run.qmd#rerun-halfpipe). [Check that the rerun completed](../check_run.qmd#check-preprocessing-outputs), then [review the updated images and update their ratings](reports.qmd#explore-reports).
 
-If you choose to rerun a subject, follow the [instructions for rerunning subjects](summary-report.qmd#step-1.1.1-re-run-missing-or-failed-subjects), then [review the updated outputs](reports.qmd#explore-reports). If the subject still fails QC, exclude them from your output.
-
-If you have no subjects to rerun, or you have finished reviewing the reruns, continue to [export your QC ratings](#export-your-qc-ratings).
+If there are no subjects to rerun, or you've finished reviewing the updated outputs, [export your ratings](#export-your-qc-ratings).
 
 ## Export your QC ratings {#export-your-qc-ratings}
 
-After finishing the QC, it makes sense to check if all of the “outliers” (which show high mean framewise displacement) are excluded. If they aren't, it makes sense to check again.
+Before exporting, revisit subjects flagged for high mean framewise displacement (FD) and check the relevant ratings and exclusion decisions.
 
-Once you have finished the QC, click on the three horizontal stripes on the left (to open the menu), and select ‘Export’. An exclude.json file with the ratings will now be created.
+1. Return to `reports/index.html`.
+2. Open the menu in the upper left and select **Export**. Your browser downloads `exclude.json`.
+3. Keep that file with your QC records. Export again if you change any ratings.
+
+![The report menu includes the Export command](../images/qc/02-explore_reports.jpg)
 
 ![](../images/qc/09-setp2b.png)
+
+For group analysis with HALFpipe, supply the saved file as described in [5.2 Group-level analysis](../group-level.qmd). HALFpipe uses the supplied ratings to skip scans marked bad. See that guide for how to pass the file and specify any separate motion cutoffs.
 <!-- qc-source-end -->

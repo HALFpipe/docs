@@ -12,7 +12,7 @@ title: "4.5.3 EPI tSNR"
 <span id="epi-tsnr"></span>
 
 <!-- qc-source-start -->
-In the signal to noise ratio images of the resting state image the desired signal is compared to the amount of background noise. It is important to check all the views (sagittal, coronal, axial) because some artefacts (e.g., stripes) may be evident only in one particular view.
+The temporal signal-to-noise ratio (tSNR) map shows where the resting-state signal is more or less stable over time. Check all three views (sagittal, coronal, and axial) for asymmetry, signal drop-out, distortion, or stripes. Some artefacts are visible in only one view.
 
 ## **<span style="color: #28a745;">Example of a good subject</span>**  {#example-of-a-good-subject-2}
 

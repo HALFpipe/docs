@@ -12,9 +12,9 @@ title: "4.5.4 EPI confounds (carpet plot)"
 <span id="epi-confounds-carpet-plot"></span>
 
 <!-- qc-source-start -->
-A carpet plot is a 2D 'heatmap' of relevant time series within a scan, with voxels on the vertical axis and time on the horizontal axis. Voxels are grouped into blue=cortical GM, orange=subcortical GM, green=cerebellum, red=white matter and CSF, as indicated by the colour map on the left-hand side of the plot.
+Read the carpet plot from left to right. The horizontal axis shows time, and each row shows the signal from one voxel. The colour strip groups voxels by tissue or region: cortical grey matter (blue), subcortical grey matter (orange), cerebellum (green), and white matter and cerebrospinal fluid (red).
 
-In the carpet plot it is important to look for changes in heatmap/intensity and how they relate to motion (frame-wise displacement (FD)) and global signal (GS) measures (the graphs above the carpet plot). Unusual changes might represent other artefacts (e.g., hardware related) or changes in respiratory patterns.
+Look for sudden changes in the heatmap. Compare them with the framewise displacement (FD) and global signal (GS) traces above the plot. FD measures motion between successive frames. Changes that do not line up with motion may reflect other causes, such as hardware artefacts or changes in breathing.
 
 ## **<span style="color: #28a745;">Example of a good subject</span>**  {#example-of-a-good-subject-3}
 

@@ -6,9 +6,9 @@ format:
     include-after-body: qc-legacy-links.html
 ---
 
-If the pipeline is still running or expected outputs are missing, see [3. Run and check outputs](check_run.qmd) to check completion and rerun failed subjects. If the expected outputs are present, start the QC review below.
+Quality control (QC) is the visual review of HALFpipe outputs. First use [3. Run and check outputs](check_run.qmd) to confirm that processing finished and the expected files are present. Then use this guide to judge whether those outputs are usable.
 
-[Before starting the QC](qc/before-starting.qmd){.btn .btn-primary}
+[Start the QC review](qc/before-starting.qmd){.btn .btn-primary}
 [Cheat Sheet](qc/cheat-sheet.qmd){.btn .btn-outline-primary}
 
 ## Workflow
@@ -16,24 +16,34 @@ If the pipeline is still running or expected outputs are missing, see [3. Run an
 ::: {.qc-workflow-grid}
 
 ::: {.qc-nav-card}
-[Before starting the QC](qc/before-starting.qmd){.qc-card-title}
+[4.2 Prepare the reports folder](qc/before-starting.qmd){.qc-card-title}
+
+Find the files you need and copy the full folder if you will review it on another computer.
 :::
 
 ::: {.qc-nav-card}
-[Step 1: Open the summary report in the reports folder](qc/summary-report.qmd){.qc-card-title}
+[4.3 Open the summary report](qc/summary-report.qmd){.qc-card-title}
+
+Check which outputs are ready to review.
 :::
 
 ::: {.qc-nav-card}
-[Step 2: Open the index.html page](qc/reports.qmd){.qc-card-title}
+[4.4 Open the QC report](qc/reports.qmd){.qc-card-title}
+
+Open the browser report and rate the available images using the examples in section 4.5.
 :::
 
 ::: {.qc-nav-card}
-[4.6 Rerun subjects if needed](qc/rerun.qmd){.qc-card-title}
+[4.6 Rerun if needed and export ratings](qc/rerun.qmd){.qc-card-title}
+
+Review any updated outputs, then save your ratings.
 :::
 
 :::
 
 ## QC categories
+
+Use the examples to see what to look for in each report type. The ICA-based examples apply when your run produced an ICA-AROMA report.
 
 ::: {.qc-category-grid}
 
