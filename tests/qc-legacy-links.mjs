@@ -21,7 +21,7 @@ assert.deepEqual(visit('#epi-tsnr').destinations,
 assert.deepEqual(visit('#summary-2').destinations,
   ['https://example.test/halfpipe/qc/tsnr.html#summary-2']);
 assert.deepEqual(visit('#tabset-1-2').destinations,
-  ['https://example.test/halfpipe/qc/summary-report.html#tabset-1-2']);
+  ['https://example.test/halfpipe/qc/before-starting.html#tabset-1-2']);
 assert.deepEqual(visit('#epi%2Dtsnr').destinations,
   ['https://example.test/halfpipe/qc/tsnr.html#epi-tsnr']);
 for (const hash of ['', '#workflow', '#unknown', '#constructor', '#__proto__', '#%invalid']) {
