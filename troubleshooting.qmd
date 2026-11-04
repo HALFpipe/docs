@@ -1,5 +1,5 @@
 ---
-title: "Troubleshooting"
+title: "7. Troubleshooting"
 format: 
   html:
     css: styles.css
@@ -119,7 +119,7 @@ This step cannot be parallelized. In a small sample, this step will only take a 
 
 ## 6. Resuming a HALFpipe container run from a crash, adding more features to an existing run, reselecting features for an existing run, starting a run from scratch.
 
-If at all you need to perform any of the above on an existing working directory follow this paragraph. Redo **[section 1 of the old manual](manual_old_ui.qmd#)** to launch an interactive session and run the container launch command. Begin with the instructions in **[section 2.1 of the old manual](manual_old_ui.qmd#)** and select your existing working directory instead of a new one. You will be prompted with the options above. Please select the one which you need.
+If at all you need to perform any of the above on an existing working directory follow this paragraph. Follow the instructions to [launch HALFpipe](manual_old_ui.qmd#launching-the-pipeline). Begin with the instructions in **[working directory prompt](manual_old_ui.qmd#data)** and select your existing working directory instead of a new one. You will be prompted with the options above. Please select the one which you need.
 
 ```bash
 Found spec file in working directory
@@ -134,14 +134,14 @@ Found spec file in working directory
 
 ## 7. Avoiding interruption of HALFpipe execution due to HPC disconnection using tmux.
 
-**For HPC Users:** if your connection to the cluster drops during **[section 1 and/or 2 of the old manual](manual_old_ui.qmd#)**, the execution will fail and you will have to restart the process. To avoid this, you can **use TMUX to run your HALFpipe execution persistently in the background (if available on your HPC)**. This way, even if your SSH connection drops, you are able to disconnect and later reattach to the session without interrupting HALFpipe’s execution**.** Please refer to your cluster documentation or IT support.
+**For HPC Users:** if your connection to the cluster drops during **[launch or configuration](manual_old_ui.qmd#launching-the-pipeline)**, the execution will fail and you will have to restart the process. To avoid this, you can **use TMUX to run your HALFpipe execution persistently in the background (if available on your HPC)**. This way, even if your SSH connection drops, you are able to disconnect and later reattach to the session without interrupting HALFpipe’s execution**.** Please refer to your cluster documentation or IT support.
 
 Follow the steps below to run a TMUX session:
 
 1. Open a terminal session and connect to your cluster,  
 2. Start a new TMUX session: **tmux new -s halfpipe**  
-3. Run your HALFpipe launch command from **[section 1 of the old manual](manual_old_ui.qmd#)**.  
-4. Once the process is running and after specifying the settings in **[section 2 of the old manual](manual_old_ui.qmd#)**, you can detach from TMUX: **Ctrl + b** then **d**  
+3. Run the [HALFpipe launch command](manual_old_ui.qmd#launching-the-pipeline).
+4. Once the process is running and after specifying the settings in **[Pipeline Settings](manual_old_ui.qmd#pipeline-settings)**, you can detach from TMUX: **Ctrl + b** then **d**
 5. You can reattach at any time with: **tmux attach -t halfpipe**   
    1. Tip: Type **tmux** ls to list active sessions.  
 6. When done, type **exit** inside the session to close it. 

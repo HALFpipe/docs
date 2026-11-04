@@ -1,5 +1,5 @@
 ---
-title: "Installation instructions"
+title: "1. Installation instructions"
 format: 
   html:
     css: styles.css
@@ -197,6 +197,8 @@ Open a terminal session.
 7. Ensure that these items are accessible in your environment before proceeding:
 - Atlas and Seed files (downloaded in section [Before Starting](#before-starting))
 - Your unprocessed, resting-state fMRI dataset. 
+
+Once HALFpipe is installed and your inputs are ready, continue to [2. Configure resting-state analysis](configure.qmd) to choose an interface.
 
 :::{.footnotes}
 _Manual adapted from the **MDD ENIGMA resting-state fMRI manual** and the **OCD ENIGMA task-based fMRI manual**._

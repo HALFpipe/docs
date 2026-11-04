@@ -1,5 +1,5 @@
 ---
-title: "Resting-State fMRI with the new UI"
+title: "2.2 Resting-state fMRI with the graphical UI"
 lightbox: true
 format: 
   html:
@@ -10,7 +10,7 @@ format:
 
 # The New-UI is still under development 
 
-We are still working on the implementation of the New UI for HALFpipe. Please report any issue you might encounter at halfpipe@fmri.science or on GitHub.
+The graphical UI runs inside your terminal and is still under development. We recommend starting with the [terminal UI](manual_old_ui.qmd). Please report any issue you might encounter at halfpipe@fmri.science or on GitHub.
 
 :::
 
@@ -529,9 +529,9 @@ If you make changes to the settings or selected features, always click Refresh b
 ## On HPC
 HALFpipe will generate files that you need to run by submitting jobs on your cluster. Wait for the green confirmation message indicating that the cluster submission script templates have been created
 
-You can then see how to run HALFpipe on [HPC](check_run.qmd)
+Continue to [3. Run and check outputs](check_run.qmd) for cluster submission instructions.
 
 ## On a local machine
 
-If you are running this on a local computer, the pipeline will have started. Once it has finished, [continue to check your preprocessing](check_run.qmd#check-pre-processing-and-re-run-if-necessary).
+If you are running this on a local computer, the pipeline will have started. Once it has finished, check your preprocessing in [3. Run and check outputs](check_run.qmd#check-pre-processing-and-re-run-if-necessary).
 :::

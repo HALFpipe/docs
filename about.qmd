@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "8. About"
 ---
 
 ![](images/enigma_logo.png){fig-align="center"}
@@ -39,6 +39,7 @@ We aknowledge that the manuals were adapted from the **MDD ENIGMA resting-state 
 - [Pierre Bergeret](https://github.com/pbergeret12)
 - [Clara El Khantour](https://github.com/claraElk)
 - [Lea Waller](https://github.com/HippocampusGirl)
+- [Amber Uhls](https://github.com/amberuhls)
 
 **PI and project supervision**
 
