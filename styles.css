@@ -93,3 +93,15 @@ table.bordered td {
 .start-card p:last-child {
   margin-bottom: 0;
 }
+
+.group-level-guide main {
+  overflow-wrap: anywhere;
+}
+
+.group-level-guide main :not(pre) > code {
+  white-space: normal;
+}
+
+.group-level-guide pre {
+  overflow-x: auto;
+}

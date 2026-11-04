@@ -1,6 +1,7 @@
 ---
 title: "6. ENIGMA AN - Resting-state fMRI Group-level Analysis"
 lightbox: true
+body-classes: group-level-guide
 ---
 
 ::: {.author-text}
@@ -70,10 +71,14 @@ To export the exclusion file, simply return to the index.html page (your ratings
 
 ## Download the latest version of HALFpipe {#download-the-latest-version-of-halfpipe}
 
+::: {.table-responsive}
+
 | Container | Instructions |
 | :---- | :---- |
 | Docker Desktop |  `docker pull --platform linux/amd64 halfpipe/halfpipe:latest` |
 | Singularity (3.x) or Apptainer | `curl -O https://download.fmri.science/singularity/halfpipe-latest.sif` |
+
+:::
 
 # **Identify your paths** {#identify-your-paths}
 
@@ -92,10 +97,14 @@ Please find the folder where the outputs from HALFpipe were generated and copy-p
 - **If your data are coded differently**, then you may need to adapt the command line flags when specifying your data (as described in the section [Run group-level analysis](#run-group-level-analysis)).  
 - For example, your spreadsheet could look like this.
 
+::: {.table-responsive}
+
 |  | id | age | sex | diagnosis | scanner |
 | :---- | :---- | :---- | :---- | :---- | :---- |
 |  | 01 | 28 | female | anorexia | scanner1 |
 |  | 02 | 25 | male | control | scanner2 |
+
+:::
 
 In our analysis, we will include these variables as **mandatory covariates**: 
 
@@ -163,10 +172,14 @@ singularity run \
 
   3. Execute the file using the appropriate command.
 
+::: {.table-responsive}
+
 | SLURM | `sbatch submit-grouplevel.slurm.sh` |
 | :---- | :---- |
 | **SGE** | `qsub submit-grouplevel.sge.sh` |
 | **Torque/PBS** | `qsub submit-grouplevel.torque.sh` |
+
+:::
 
 * **On a local computer**: simply copy and paste the command line below in your terminal using Singularity (Apptainer) or Docker, depending on your system. You will have to adjust the paths and variables as described [in the following section](#command-explanations).
 
@@ -234,20 +247,30 @@ singularity run \
 
 * Based on this example, we can start building your own command specific to your dataset. First, we need to configure how Singularity will run the HALFpipe container. **This should be the same configuration as the one you used to run HALFpipe initially.**
 
+::: {.table-responsive}
+
 | Command text |  | Explanation |
 | :---- | ----- | :---- |
 | **singularity (or apptainer) run Or  Docker run (for Docker)** |  | The first part of the command calls Singularity and specifies that we want to run a container. |
 | **\--bind Or  \--volume (for Docker)** |  | **You can use the same bind arguments as the ones you used for running HALFpipe initially.** The container can only see your current folder and your home folder. If your data is stored somewhere else (for example, a shortcut in your home folder that points to another disk), the container won't be able to open it. To fix this, tell the container where your data is by adding the `--bind` option with the real location of your data: For example, if your data is stored in /mnt/data/gwas, you can make it available to the container with the flag \--bind /mnt \\ If your data is in /home/data, then you should set this to \--bind /home. The [Singularity documentation](https://docs.sylabs.io/guides/3.10/user-guide/bind_paths_and_mounts.html) has additional [examples](https://docs.sylabs.io/guides/3.10/user-guide/bind_paths_and_mounts.html#bind-examples). **→ Make sure to adjust all your paths in the command line** *If you get a "file not found" or "permission denied" error on data you know exists, a missing `--bind` is the most likely cause.* |
 | **halfpipe-halfpipe-latest.sif Or  halfpipe:latest (for docker)** |  | We add the path to the container file, so that Singularity knows which container we want to run. |
 
+:::
+
 * The second part of the command is where we configure HALFpipe on a basic level.
+
+::: {.table-responsive}
 
 | Command text |  | Explanation |
 | :---- | ----- | :---- |
 | \--num-threads |  | *Optional.* Sometimes you do not want to use all of the CPU cores on your computer.  This could happen because you will need to run other processing at the same time or because you are sharing your computer with others. For example, you can restrict HALFpipe to only use eight cores with \--num-threads 8 |
 | **group-level** |  | Select the group-level command. |
 
+:::
+
 * Now we will configure the inputs.
+
+::: {.table-responsive}
 
 | Command text |  | Explanation |
 | :---- | ----- | :---- |
@@ -258,25 +281,39 @@ singularity run \
 | \--aggregate |  | *Optional.* If you have multiple runs or sessions, then you can use this flag to aggregate them. For example, if you have two runs for each participant \--aggregate run \\ will give you one averaged output per participant. Alternatively, for multiple  sessions \--aggregate ses \\ |
 | \--include-list \--exclude |  | We will run the analysis only on correlation matrices and seed-based maps.  To do that, we need to specify  \--include-list feature feature-list.txt \\  This option works for any tag in the input data, including “sub” for subjects, “run”, “ses” for session, “taskcontrast” for task contrasts, etc. |
 
+:::
+
 * Next we need to point to the spreadsheet file that we created in the previous section.
+
+::: {.table-responsive}
 
 | Command text | Explanation |
 | :---- | :---- |
 | **\--spreadsheet** | Specify the path to your group-level covariates that you prepared. All common formats (CSV, TSV, XLSX) are supported. For example \--spreadsheet /mnt/data/behavioral/participants.tsv \\ |
 | **\--id-column** | Specify the column heading for the subject IDs. In the example above, we would use \--id-column id \\ |
 
+:::
+
 * We now need to point to the column names in our spreadsheet.
+
+::: {.table-responsive}
 
 | Command text | Explanation |
 | :---- | :---- |
 | **\--continuous-variable** | Specify the column headings for the continuous covariates, which in our case is only age. \--continuous-variable age \\ |
 | **\--categorical-variable \--levels** | Specify the column headings and levels for the categorical covariates.  All levels that should be included in the analysis should be listed. → **Include sex and diagnosis as categorical covariates.** If data were acquired on multiple sites, please indicate site as a covariate as well.  **Important: You must indicate the levels in the order indicated here for sex and diagnosis**. E.g., for diagnosis, indicate control first, then anorexia, so the target group is the same for all sites.  Any participants that have levels not listed will be seen as missing data by the command. In our case, we start with sex. \--categorical-variable sex \--levels female male \\ Then we indicate the diagnosis.  \--categorical-variable diagnosis \--levels control anorexia\\  *Optional:* \--categorical-variable scanner \--levels scanner1 scanner2 \\  |
 
+:::
+
 * Next, we will instruct HALFpipe to also include a number of imaging-derived variables as phenotypes. We will include the **mean framewise displacement** as a covariate. This variable will be extracted directly from the imaging data, so you don’t need to have a specific column in your spreadsheet.
+
+::: {.table-responsive}
 
 | Command text |  |  |
 | :---- | ----- | ----- |
 | **\--imaging-variable fd\_mean \\ \--export-variable fd\_mean** |  |  |
+
+:::
 
 # **Send your group-level folder** {#send-your-group-level-folder}
 
