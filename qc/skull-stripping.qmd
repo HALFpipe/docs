@@ -3,7 +3,7 @@ title: "4.5.1 T1w skull stripping"
 ---
 
 ::: {.qc-page-tools}
-[Quality control](../quality-control.qmd){.btn .btn-outline-secondary .btn-sm}
+[Back to rating](reports.qmd#explore-reports){.btn .btn-outline-secondary .btn-sm}
 [Cheat Sheet](cheat-sheet.qmd){.btn .btn-outline-secondary .btn-sm}
 [Examples](#example-of-a-good-subject){.btn .btn-outline-secondary .btn-sm}
 [Summary](#summary){.btn .btn-outline-secondary .btn-sm}

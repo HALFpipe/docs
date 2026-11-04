@@ -3,7 +3,7 @@ title: "4.5.3 EPI tSNR"
 ---
 
 ::: {.qc-page-tools}
-[Quality control](../quality-control.qmd){.btn .btn-outline-secondary .btn-sm}
+[Back to rating](reports.qmd#explore-reports){.btn .btn-outline-secondary .btn-sm}
 [Cheat Sheet](cheat-sheet.qmd){.btn .btn-outline-secondary .btn-sm}
 [Examples](#example-of-a-good-subject-2){.btn .btn-outline-secondary .btn-sm}
 [Summary](#summary-2){.btn .btn-outline-secondary .btn-sm}

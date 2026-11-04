@@ -9,6 +9,7 @@ format:
 Quality control (QC) is the visual review of HALFpipe outputs. First use [3. Run and check outputs](check_run.qmd) to confirm that processing finished and the expected files are present. Then use this guide to judge whether those outputs are usable.
 
 [Start the QC review](qc/before-starting.qmd){.btn .btn-primary}
+[Go to rating instructions](qc/reports.qmd#explore-reports){.btn .btn-outline-primary}
 [Cheat Sheet](qc/cheat-sheet.qmd){.btn .btn-outline-primary}
 
 ## Workflow

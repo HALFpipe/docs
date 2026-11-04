@@ -20,17 +20,8 @@ The report saves ratings in your browser's local storage. To resume a review, re
 
 ## Explore reports {#explore-reports}
 
-1. **Sort by image type.** Compare the same kind of report across participants. Open the [QC category examples](../quality-control.qmd#qc-categories) for the report you are rating. Review the report types generated for your run. The [ICA-AROMA examples](ica.qmd) apply only if that report is present.
-2. **Inspect and rate the image.** Click the image or open **Report detail view** for a closer look. Select **good**, **uncertain**, or **bad** using the rating icons. You can also use these keys.
-
-   | Key | Action |
-   |---|---|
-   | `w` | Good |
-   | `s` | Uncertain |
-   | `x` | Bad |
-   | `a` | Previous image |
-   | `d` | Next image |
-
+1. **Sort by image type.** Compare the same kind of report across participants. Use the [examples for your report type](#examples-by-report-type) as a reference.
+2. **Inspect and rate the image.** Click the image or open **Report detail view** for a closer look. Select **good**, **uncertain**, or **bad** using the rating icons or [keyboard shortcuts](#keyboard-shortcuts).
 3. **If you're unsure, sort by subject.** Compare that participant's other reports before making a decision. This is especially helpful for the carpet plot and, where available, the ICA-AROMA report.
 4. **Check for unrated images.** Review each available image. An unselected rating is distinct from **uncertain**, which you choose explicitly.
 
@@ -38,11 +29,30 @@ The report saves ratings in your browser's local storage. To resume a review, re
 Examples include a large part of the brain missing after skull stripping, poor alignment to the template, or clear artefacts in the tSNR image. Use the category examples to assess the problem. Check the other reports for that participant if the finding is unclear. The [rerun and export page](rerun.qmd) explains what to do after rating.
 :::
 
+When you've reviewed the images, [rerun subjects if needed and export your ratings](rerun.qmd).
+
+## Examples by report type {#examples-by-report-type}
+
+- [T1w skull stripping](skull-stripping.qmd#example-of-a-good-subject)
+- [dT1w spatial normalisation](t1w-normalisation.qmd#example-of-a-good-subject-1)
+- [EPI tSNR](tsnr.qmd#example-of-a-good-subject-2)
+- [EPI confounds (carpet plot)](confounds.qmd#example-of-a-good-subject-3)
+- [EPI ICA-based artefact removal](ica.qmd#example-of-a-good-subject-4) (if your run produced this report)
+- [EPI spatial normalisation](epi-normalisation.qmd#example-of-a-good-subject-5)
+
+## Keyboard shortcuts {#keyboard-shortcuts}
+
+| Key | Action |
+|---|---|
+| `w` | Good |
+| `s` | Uncertain |
+| `x` | Bad |
+| `a` | Previous image |
+| `d` | Next image |
+
 ## Charts {#charts}
 
 Use **Charts** to review processing status, see your ratings by report type, and inspect group plots. These include mean framewise displacement (FD), the percentage of frames with FD above 0.5, mean grey matter tSNR, and the percentage of ICA components classified as noise when available. Select a point to open that participant's QC page.
 
 ![](../images/qc/01-charts.png)
-
-When you've reviewed the images, [rerun subjects if needed and export your ratings](rerun.qmd).
 <!-- qc-source-end -->
